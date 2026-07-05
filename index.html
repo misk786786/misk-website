@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Misk</title>
+
+<style>
+
+/* =====================
+   LUXURY COLOR SYSTEM
+===================== */
+:root {
+    --black: #0a0a0a;
+    --black-2: #111111;
+
+    --gold: #d4af37;
+    --gold-dark: #b8860b;
+
+    --silver: #c0c0c0;
+    --silver-light: #e5e5e5;
+}
+
+/* =====================
+   GLOBAL STYLES
+===================== */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: var(--black);
+    color: var(--silver-light);
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+/* =====================
+   NAVBAR
+===================== */
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 30px;
+    background: #000;
+    border-bottom: 1px solid var(--gold);
+}
+
+nav h1 {
+    color: var(--gold);
+    font-size: 20px;
+    letter-spacing: 2px;
+}
+
+nav a {
+    color: var(--silver);
+    text-decoration: none;
+    margin: 0 10px;
+    font-weight: bold;
+    transition: color 0.2s ease;
+}
+
+nav a:hover {
+    color: var(--gold);
+}
+
+/* =====================
+   HERO
+===================== */
+.hero {
+    position: relative;
+    height: 80vh;
+    background: url("banner.png") center/cover no-repeat;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.hero::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(0,0,0,0.6);
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+}
+
+.hero h2 {
+    font-size: 60px;
+    color: var(--gold);
+    margin: 0;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+}
+
+.hero p {
+    font-size: 18px;
+    color: var(--silver);
+}
+
+/* =====================
+   SECTIONS
+===================== */
+section {
+    padding: 60px 20px;
+    max-width: 1100px;
+    margin: auto;
+}
+
+h2 {
+    color: var(--gold);
+}
+
+/* =====================
+   PRODUCT GRID
+===================== */
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 20px;
+}
+
+/* =====================
+   CARDS
+===================== */
+.card {
+    background: var(--black-2);
+    border: 1px solid var(--gold);
+    padding: 15px;
+    text-align: center;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(212,175,55,0.15);
+}
+
+.card h3 {
+    color: var(--silver-light);
+}
+
+.desc {
+    font-size: 14px;
+    color: var(--silver);
+    margin: 8px 0 10px;
+    line-height: 1.4;
+}
+
+.price {
+    color: var(--silver);
+    margin: 10px 0;
+}
+
+/* =====================
+   BUTTON
+===================== */
+button {
+    background: linear-gradient(135deg, var(--gold), var(--silver));
+    border: none;
+    padding: 10px;
+    font-weight: bold;
+    cursor: pointer;
+    color: #000;
+    transition: opacity 0.2s ease;
+}
+
+button:hover {
+    opacity: 0.85;
+}
+
+/* =====================
+   FOOTER
+===================== */
+footer {
+    text-align: center;
+    padding: 30px;
+    border-top: 1px solid var(--gold);
+    color: var(--silver);
+}
+
+</style>
+</head>
+
+<body>
+
+<nav>
+    <h1>MISK</h1>
+    <div>
+        <a href="#about">About</a>
+        <a href="#products">Collection</a>
+    </div>
+</nav>
+
+<div class="hero">
+    <div class="hero-content">
+        <h2>MISK</h2>
+        <p>Fragrance in Every Drop</p>
+    </div>
+</div>
+
+<section id="about">
+    <h2>About Us</h2>
+    <p>
+        Premium fragrance oils inspired by luxury oud, musk, floral and signature scents.
+        Crafted for long-lasting elegance and everyday confidence.
+    </p>
+</section>
+
+<section id="products">
+    <h2>Featured Collection</h2>
+
+    <div class="grid">
+
+        <div class="card">
+            <h3>Royal Oud</h3>
+            <p class="desc">A deep, rich oud blend with warm woody notes and a luxurious oriental finish.</p>
+            <p class="price">£5.99</p>
+            <button>Coming Soon</button>
+        </div>
+
+        <div class="card">
+            <h3>Imperial Musk</h3>
+            <p class="desc">Soft musk infused with subtle floral undertones for a clean, elegant aura.</p>
+            <p class="price">£4.99</p>
+            <button>Coming Soon</button>
+        </div>
+
+        <div class="card">
+            <h3>Signature Homme</h3>
+            <p class="desc">A bold masculine scent combining spice, amber, and smooth woody accords.</p>
+            <p class="price">£5.99</p>
+            <button>Coming Soon</button>
+        </div>
+
+        <div class="card">
+            <h3>Signature Femme</h3>
+            <p class="desc">A graceful floral blend with soft musk and sweet undertones for everyday elegance.</p>
+            <p class="price">£5.99</p>
+            <button>Coming Soon</button>
+        </div>
+
+        <div class="card">
+            <h3>Petrol Noir</h3>
+            <p class="desc">A dark, smoky fragrance with leathery depth and modern masculine energy.</p>
+            <p class="price">£4.99</p>
+            <button>Coming Soon</button>
+        </div>
+
+        <div class="card">
+            <h3>Jeeru Essence</h3>
+            <p class="desc">A fresh, aromatic attar with herbal brightness and a light earthy base.</p>
+            <p class="price">£4.99</p>
+            <button>Coming Soon</button>
+        </div>
+
+        <div class="card">
+            <h3>Rose Prestige</h3>
+            <p class="desc">A luxurious rose-forward scent blended with soft musk and powdery elegance.</p>
+            <p class="price">£4.99</p>
+            <button>Coming Soon</button>
+        </div>
+
+    </div>
+</section>
+
+<footer>
+    © 2026 Misk
+</footer>
+
+</body>
+</html>
