@@ -67,6 +67,38 @@ nav a:hover{
     color:white;
 }
 
+/* AUDIO PLAYER */
+
+.audio-controls{
+    display:flex;
+    align-items:center;
+    gap:10px;
+}
+
+.audio-controls button{
+    background:var(--gold);
+    border:none;
+    color:#000;
+    padding:8px 16px;
+    cursor:pointer;
+    border-radius:4px;
+    font-weight:bold;
+    transition:.3s;
+}
+
+.audio-controls button:hover{
+    background:var(--gold-dark);
+}
+
+.volume-control{
+    width:100px;
+}
+
+.volume-control input{
+    width:100%;
+    cursor:pointer;
+}
+
 /* HERO */
 
 .hero{
@@ -174,29 +206,6 @@ section h2{
     color:white;
 }
 
-/* MUSIC PLAYER */
-
-#music{
-    background:#1a1a1a;
-    border-top:1px solid var(--gold);
-    border-bottom:1px solid var(--gold);
-}
-
-#music h2{
-    text-align:center;
-}
-
-.youtube-player{
-    display:flex;
-    justify-content:center;
-    margin:20px 0;
-}
-
-.youtube-player iframe{
-    border:1px solid var(--gold);
-    border-radius:4px;
-}
-
 /* FOOTER */
 
 footer{
@@ -221,9 +230,9 @@ nav{
     font-size:18px;
 }
 
-.youtube-player iframe{
-    width:100%;
-    max-width:400px;
+.audio-controls{
+    flex-wrap:wrap;
+    justify-content:center;
 }
 
 }
@@ -233,15 +242,28 @@ nav{
 
 <body>
 
+<audio id="bgAudio" loop>
+<source src="https://www.youtube.com/watch?v=iShJ02jiXqo" type="audio/mpeg">
+Your browser does not support the audio element.
+</audio>
+
 <nav>
 
 <h1>MISK Fragrances UK</h1>
 
+<div style="display:flex; align-items:center; gap:30px;">
+<div class="audio-controls">
+<button id="playBtn" onclick="playAudio()">♫ Play</button>
+<button id="pauseBtn" onclick="pauseAudio()" style="display:none;">⏸ Pause</button>
+<div class="volume-control">
+<input type="range" id="volumeControl" min="0" max="100" value="30" onchange="changeVolume()">
+</div>
+</div>
 <div>
 <a href="#about">About</a>
 <a href="#products">Collection</a>
-<a href="#music">Music</a>
 <a href="#contact">Contact</a>
+</div>
 </div>
 
 </nav>
@@ -332,16 +354,6 @@ Crafted for lasting elegance, confidence and everyday wear.
 
 </section>
 
-<section id="music">
-
-<h2>Ambiance</h2>
-
-<div class="youtube-player">
-<iframe width="560" height="315" src="https://www.youtube.com/embed/iShJ02jiXqo" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-</div>
-
-</section>
-
 <section id="contact">
 
 <h2>Contact Us</h2>
@@ -362,6 +374,25 @@ We'd love to hear from you.
 © 2026 MISK Fragrances UK. All Rights Reserved.
 
 </footer>
+
+<script>
+function playAudio(){
+    document.getElementById("bgAudio").play();
+    document.getElementById("playBtn").style.display = "none";
+    document.getElementById("pauseBtn").style.display = "block";
+}
+
+function pauseAudio(){
+    document.getElementById("bgAudio").pause();
+    document.getElementById("playBtn").style.display = "block";
+    document.getElementById("pauseBtn").style.display = "none";
+}
+
+function changeVolume(){
+    var vol = document.getElementById("volumeControl").value;
+    document.getElementById("bgAudio").volume = vol / 100;
+}
+</script>
 
 </body>
 </html>
