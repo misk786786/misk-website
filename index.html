@@ -67,38 +67,6 @@ nav a:hover{
     color:white;
 }
 
-/* AUDIO PLAYER */
-
-.audio-controls{
-    display:flex;
-    align-items:center;
-    gap:10px;
-}
-
-.audio-controls button{
-    background:var(--gold);
-    border:none;
-    color:#000;
-    padding:8px 16px;
-    cursor:pointer;
-    border-radius:4px;
-    font-weight:bold;
-    transition:.3s;
-}
-
-.audio-controls button:hover{
-    background:var(--gold-dark);
-}
-
-.volume-control{
-    width:100px;
-}
-
-.volume-control input{
-    width:100%;
-    cursor:pointer;
-}
-
 /* HERO */
 
 .hero{
@@ -230,11 +198,6 @@ nav{
     font-size:18px;
 }
 
-.audio-controls{
-    flex-wrap:wrap;
-    justify-content:center;
-}
-
 }
 
 </style>
@@ -242,28 +205,14 @@ nav{
 
 <body>
 
-<audio id="bgAudio" loop>
-<source src="https://www.youtube.com/watch?v=iShJ02jiXqo" type="audio/mpeg">
-Your browser does not support the audio element.
-</audio>
-
 <nav>
 
 <h1>MISK Fragrances UK</h1>
 
-<div style="display:flex; align-items:center; gap:30px;">
-<div class="audio-controls">
-<button id="playBtn" onclick="playAudio()">♫ Play</button>
-<button id="pauseBtn" onclick="pauseAudio()" style="display:none;">⏸ Pause</button>
-<div class="volume-control">
-<input type="range" id="volumeControl" min="0" max="100" value="30" onchange="changeVolume()">
-</div>
-</div>
 <div>
 <a href="#about">About</a>
 <a href="#products">Collection</a>
 <a href="#contact">Contact</a>
-</div>
 </div>
 
 </nav>
@@ -374,25 +323,6 @@ We'd love to hear from you.
 © 2026 MISK Fragrances UK. All Rights Reserved.
 
 </footer>
-
-<script>
-function playAudio(){
-    document.getElementById("bgAudio").play();
-    document.getElementById("playBtn").style.display = "none";
-    document.getElementById("pauseBtn").style.display = "block";
-}
-
-function pauseAudio(){
-    document.getElementById("bgAudio").pause();
-    document.getElementById("playBtn").style.display = "block";
-    document.getElementById("pauseBtn").style.display = "none";
-}
-
-function changeVolume(){
-    var vol = document.getElementById("volumeControl").value;
-    document.getElementById("bgAudio").volume = vol / 100;
-}
-</script>
 
 </body>
 </html>
