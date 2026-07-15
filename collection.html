@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Collection - MISK Fragrances | Premium Fragrance Oils</title>
+
+<meta name="description" content="Explore our premium fragrance oils collection - oud, musk, floral and signature scents.">
+
+<style>
+
+:root{
+    --gold:#d4af37;
+    --gold-dark:#b8860b;
+    --silver:#c0c0c0;
+    --silver-light:#e5e5e5;
+    --bg:#0a0a0a;
+    --card:#111;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+*{
+    box-sizing:border-box;
+}
+
+body{
+    margin:0;
+    font-family:Arial,Helvetica,sans-serif;
+    background:var(--bg);
+    color:var(--silver-light);
+}
+
+/* NAVIGATION */
+
+nav{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:18px 35px;
+    background:#000;
+    border-bottom:1px solid var(--gold);
+    position:sticky;
+    top:0;
+    z-index:1000;
+}
+
+nav h1{
+    margin:0;
+    color:var(--gold);
+    letter-spacing:3px;
+}
+
+nav a{
+    color:var(--gold);
+    text-decoration:none;
+    margin-left:25px;
+    font-weight:bold;
+    transition:.3s;
+}
+
+nav a:hover{
+    color:white;
+}
+
+/* SECTIONS */
+
+section{
+    max-width:1150px;
+    margin:auto;
+    padding:70px 20px;
+}
+
+section h2{
+    color:var(--gold);
+    margin-bottom:20px;
+}
+
+/* PRODUCTS */
+
+.grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+    gap:25px;
+}
+
+.card{
+    background:var(--card);
+    border:1px solid var(--gold);
+    padding:25px;
+    text-align:center;
+    transition:.25s;
+}
+
+.card:hover{
+    transform:translateY(-6px);
+    box-shadow:0 10px 25px rgba(212,175,55,.18);
+}
+
+.card h3{
+    color:var(--gold);
+    margin-bottom:15px;
+}
+
+.card p{
+    color:var(--silver);
+    line-height:1.6;
+}
+
+.price{
+    color:white;
+    font-size:18px;
+    font-weight:bold;
+    margin:18px 0;
+}
+
+.badge{
+    display:inline-block;
+    background:linear-gradient(var(--gold),var(--gold-dark));
+    color:#000;
+    font-weight:bold;
+    padding:10px 20px;
+    border-radius:4px;
+}
+
+/* FOOTER */
+
+footer{
+    text-align:center;
+    padding:30px;
+    border-top:1px solid var(--gold);
+    color:#999;
+}
+
+@media(max-width:700px){
+
+nav{
+    flex-direction:column;
+    gap:15px;
+}
+
+}
+
+</style>
+</head>
+
+<body>
+
+<nav>
+
+<h1>MISK Fragrances</h1>
+
+<div>
+<a href="index.html">Home</a>
+<a href="about.html">About</a>
+<a href="collection.html">Collection</a>
+<a href="reviews.html">Reviews</a>
+<a href="contact.html">Contact</a>
+</div>
+
+</nav>
+
+<section>
+
+<h2>Featured Collection</h2>
+
+<div class="grid">
+
+<div class="card">
+<h3>Royal Oud</h3>
+<p>Rich woody oud with warm oriental notes for a bold and timeless fragrance.</p>
+<p class="price">£5.99</p>
+<span class="badge">Coming Soon</span>
+</div>
+
+<div class="card">
+<h3>Imperial Musk</h3>
+<p>A smooth white musk with clean, soft and long-lasting elegance.</p>
+<p class="price">£4.99</p>
+<span class="badge">Coming Soon</span>
+</div>
+
+<div class="card">
+<h3>Signature Homme</h3>
+<p>A refined masculine blend with fresh citrus, woods and amber.</p>
+<p class="price">£5.99</p>
+<span class="badge">Coming Soon</span>
+</div>
+
+<div class="card">
+<h3>Signature Femme</h3>
+<p>Elegant floral notes blended with soft musk for everyday luxury.</p>
+<p class="price">£5.99</p>
+<span class="badge">Coming Soon</span>
+</div>
+
+<div class="card">
+<h3>Petrol Noir</h3>
+<p>A unique dark fragrance with smoky, woody and modern character.</p>
+<p class="price">£4.99</p>
+<span class="badge">Coming Soon</span>
+</div>
+
+<div class="card">
+<h3>Jeeru Essence</h3>
+<p>A warm spicy scent balanced with sweet aromatic undertones.</p>
+<p class="price">£4.99</p>
+<span class="badge">Coming Soon</span>
+</div>
+
+<div class="card">
+<h3>Rose Prestige</h3>
+<p>A luxurious rose fragrance enhanced with delicate musk and amber.</p>
+<p class="price">£4.99</p>
+<span class="badge">Coming Soon</span>
+</div>
+
+<div class="card">
+<h3>Lavande Royale</h3>
+<p>Fresh lavender blended with soft woods for a calming premium finish.</p>
+<p class="price">£5.99</p>
+<span class="badge">Coming Soon</span>
+</div>
+
+</div>
+
+</section>
+
+<footer>
+
+© 2026 MISK Fragrances. All Rights Reserved.
+
+</footer>
+
+</body>
+</html>
