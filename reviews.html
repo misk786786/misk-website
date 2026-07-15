@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Reviews - MISK Fragrances | Customer Reviews</title>
+
+<meta name="description" content="Read customer reviews of MISK Fragrances premium fragrance oils.">
+
+<style>
+
+:root{
+    --gold:#d4af37;
+    --gold-dark:#b8860b;
+    --silver:#c0c0c0;
+    --silver-light:#e5e5e5;
+    --bg:#0a0a0a;
+    --card:#111;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+*{
+    box-sizing:border-box;
+}
+
+body{
+    margin:0;
+    font-family:Arial,Helvetica,sans-serif;
+    background:var(--bg);
+    color:var(--silver-light);
+}
+
+/* NAVIGATION */
+
+nav{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:18px 35px;
+    background:#000;
+    border-bottom:1px solid var(--gold);
+    position:sticky;
+    top:0;
+    z-index:1000;
+}
+
+nav h1{
+    margin:0;
+    color:var(--gold);
+    letter-spacing:3px;
+}
+
+nav a{
+    color:var(--gold);
+    text-decoration:none;
+    margin-left:25px;
+    font-weight:bold;
+    transition:.3s;
+}
+
+nav a:hover{
+    color:white;
+}
+
+/* SECTIONS */
+
+section{
+    max-width:1150px;
+    margin:auto;
+    padding:70px 20px;
+    text-align:center;
+}
+
+section h2{
+    color:var(--gold);
+    margin-bottom:20px;
+}
+
+/* REVIEW FORM */
+
+.review-form{
+    background:var(--card);
+    border:1px solid var(--gold);
+    padding:30px;
+    border-radius:4px;
+    max-width:600px;
+    margin:30px auto;
+}
+
+.form-group{
+    margin-bottom:20px;
+    text-align:left;
+}
+
+.form-group label{
+    display:block;
+    color:var(--gold);
+    font-weight:bold;
+    margin-bottom:8px;
+}
+
+.form-group input,
+.form-group textarea,
+.form-group select{
+    width:100%;
+    padding:12px;
+    background:#000;
+    color:var(--silver-light);
+    border:1px solid var(--gold);
+    border-radius:4px;
+    font-family:Arial,Helvetica,sans-serif;
+    font-size:14px;
+}
+
+.form-group textarea{
+    resize:vertical;
+    min-height:100px;
+}
+
+.form-group input:focus,
+.form-group textarea:focus,
+.form-group select:focus{
+    outline:none;
+    box-shadow:0 0 8px rgba(212,175,55,.5);
+}
+
+.submit-btn{
+    background:linear-gradient(var(--gold),var(--gold-dark));
+    color:#000;
+    border:none;
+    padding:12px 30px;
+    font-weight:bold;
+    border-radius:4px;
+    cursor:pointer;
+    transition:.3s;
+    font-size:16px;
+}
+
+.submit-btn:hover{
+    transform:scale(1.05);
+}
+
+/* REVIEWS LIST */
+
+.reviews-list{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+    gap:25px;
+    margin-top:40px;
+}
+
+.review-card{
+    background:var(--card);
+    border:1px solid var(--gold);
+    padding:25px;
+    border-radius:4px;
+    text-align:left;
+}
+
+.review-header{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    margin-bottom:15px;
+}
+
+.review-name{
+    color:var(--gold);
+    font-weight:bold;
+}
+
+.review-rating{
+    color:var(--gold);
+    font-size:18px;
+}
+
+.review-product{
+    color:var(--gold);
+    font-size:12px;
+    font-style:italic;
+    margin-bottom:10px;
+}
+
+.review-text{
+    color:var(--silver);
+    line-height:1.6;
+}
+
+/* FOOTER */
+
+footer{
+    text-align:center;
+    padding:30px;
+    border-top:1px solid var(--gold);
+    color:#999;
+}
+
+@media(max-width:700px){
+
+nav{
+    flex-direction:column;
+    gap:15px;
+}
+
+}
+
+</style>
+</head>
+
+<body>
+
+<nav>
+
+<h1>MISK Fragrances</h1>
+
+<div>
+<a href="index.html">Home</a>
+<a href="about.html">About</a>
+<a href="collection.html">Collection</a>
+<a href="reviews.html">Reviews</a>
+<a href="contact.html">Contact</a>
+</div>
+
+</nav>
+
+<section>
+
+<h2>Customer Reviews</h2>
+
+<p>Share your experience with MISK Fragrances</p>
+
+<div class="review-form">
+<form id="reviewForm">
+<div class="form-group">
+<label for="name">Your Name</label>
+<input type="text" id="name" name="name" required>
+</div>
+
+<div class="form-group">
+<label for="product">Which Fragrance?</label>
+<select id="product" name="product" required>
+<option value="">Select a product</option>
+<option value="Royal Oud">Royal Oud</option>
+<option value="Imperial Musk">Imperial Musk</option>
+<option value="Signature Homme">Signature Homme</option>
+<option value="Signature Femme">Signature Femme</option>
+<option value="Petrol Noir">Petrol Noir</option>
+<option value="Jeeru Essence">Jeeru Essence</option>
+<option value="Rose Prestige">Rose Prestige</option>
+<option value="Lavande Royale">Lavande Royale</option>
+</select>
+</div>
+
+<div class="form-group">
+<label for="rating">Rating</label>
+<select id="rating" name="rating" required>
+<option value="">Select a rating</option>
+<option value="⭐">⭐ 1 Star</option>
+<option value="⭐⭐">⭐⭐ 2 Stars</option>
+<option value="⭐⭐⭐">⭐⭐⭐ 3 Stars</option>
+<option value="⭐⭐⭐⭐">⭐⭐⭐⭐ 4 Stars</option>
+<option value="⭐⭐⭐⭐⭐">⭐⭐⭐⭐⭐ 5 Stars</option>
+</select>
+</div>
+
+<div class="form-group">
+<label for="review">Your Review</label>
+<textarea id="review" name="review" required></textarea>
+</div>
+
+<button type="submit" class="submit-btn">Submit Review</button>
+</form>
+</div>
+
+<div class="reviews-list" id="reviewsList"></div>
+
+</section>
+
+<footer>
+
+© 2026 MISK Fragrances. All Rights Reserved.
+
+</footer>
+
+<script>
+// Load reviews from localStorage
+function loadReviews() {
+    const reviews = JSON.parse(localStorage.getItem('miskReviews')) || [];
+    const reviewsList = document.getElementById('reviewsList');
+    reviewsList.innerHTML = '';
+    
+    if (reviews.length === 0) {
+        reviewsList.innerHTML = '<p style="grid-column:1/-1; color:var(--silver);">No reviews yet. Be the first to review!</p>';
+        return;
+    }
+    
+    reviews.forEach(review => {
+        const reviewCard = document.createElement('div');
+        reviewCard.className = 'review-card';
+        reviewCard.innerHTML = `
+            <div class="review-header">
+                <span class="review-name">${review.name}</span>
+                <span class="review-rating">${review.rating}</span>
+            </div>
+            <p class="review-product">Product: ${review.product}</p>
+            <p class="review-text">${review.review}</p>
+        `;
+        reviewsList.appendChild(reviewCard);
+    });
+}
+
+// Submit review
+document.getElementById('reviewForm').addEventListener('submit', function(e) {
+    e.preventDefault();
+    
+    const name = document.getElementById('name').value;
+    const product = document.getElementById('product').value;
+    const rating = document.getElementById('rating').value;
+    const review = document.getElementById('review').value;
+    
+    const reviews = JSON.parse(localStorage.getItem('miskReviews')) || [];
+    reviews.unshift({ name, product, rating, review });
+    
+    localStorage.setItem('miskReviews', JSON.stringify(reviews));
+    
+    // Reset form
+    document.getElementById('reviewForm').reset();
+    
+    // Reload reviews
+    loadReviews();
+    
+    alert('Thank you for your review!');
+});
+
+// Load reviews on page load
+loadReviews();
+</script>
+
+</body>
+</html>
