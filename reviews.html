@@ -11,6 +11,10 @@
 
 <style>
 
+/* ==============================
+   MISK FRAGRANCES - COLOURS
+============================== */
+
 :root{
     --gold:#d4af37;
     --gold-dark:#b8860b;
@@ -19,6 +23,10 @@
     --bg:#0a0a0a;
     --card:#111;
 }
+
+/* ==============================
+   GENERAL
+============================== */
 
 html{
     scroll-behavior:smooth;
@@ -35,7 +43,9 @@ body{
     color:var(--silver-light);
 }
 
-/* NAVIGATION */
+/* ==============================
+   NAVIGATION
+============================== */
 
 nav{
     display:flex;
@@ -67,7 +77,9 @@ nav a:hover{
     color:white;
 }
 
-/* SECTIONS */
+/* ==============================
+   MAIN SECTION
+============================== */
 
 section{
     max-width:1150px;
@@ -87,7 +99,9 @@ section h2{
     margin-bottom:35px;
 }
 
-/* REVIEW FORM */
+/* ==============================
+   REVIEW FORM
+============================== */
 
 .review-form{
     background:var(--card);
@@ -163,7 +177,9 @@ section h2{
     line-height:1.5;
 }
 
-/* REVIEWS SECTION */
+/* ==============================
+   REVIEWS
+============================== */
 
 .reviews-heading{
     color:var(--gold);
@@ -178,7 +194,9 @@ section h2{
     margin-top:30px;
 }
 
-/* REVIEW CARD */
+/* ==============================
+   REVIEW CARD
+============================== */
 
 .review-card{
     background:linear-gradient(145deg,#151515,#0d0d0d);
@@ -239,15 +257,29 @@ section h2{
     margin:0;
 }
 
-/* REVIEW DIVIDER */
-
 .review-divider{
     height:1px;
     background:#292929;
     margin:20px 0;
 }
 
-/* FOOTER */
+/* ==============================
+   EMPTY REVIEWS MESSAGE
+============================== */
+
+.no-reviews{
+    grid-column:1/-1;
+    text-align:center;
+    color:var(--silver);
+    padding:35px 20px;
+    border:1px solid #222;
+    background:#0d0d0d;
+    border-radius:8px;
+}
+
+/* ==============================
+   FOOTER
+============================== */
 
 footer{
     text-align:center;
@@ -256,6 +288,10 @@ footer{
     color:#777;
     margin-top:40px;
 }
+
+/* ==============================
+   MOBILE
+============================== */
 
 @media(max-width:700px){
 
@@ -286,23 +322,33 @@ footer{
 
 <body>
 
-<!-- NAVIGATION -->
+<!-- ==============================
+     NAVIGATION
+============================== -->
 
 <nav>
 
 <h1>MISK Fragrances</h1>
 
 <div>
+
 <a href="index.html">Home</a>
+
 <a href="about.html">About</a>
+
 <a href="collection.html">Collection</a>
+
 <a href="reviews.html">Reviews</a>
+
 <a href="contact.html">Contact</a>
+
 </div>
 
 </nav>
 
-<!-- MAIN -->
+<!-- ==============================
+     MAIN
+============================== -->
 
 <section>
 
@@ -312,33 +358,75 @@ footer{
 Discover what our customers think about MISK Fragrances.
 </p>
 
-<!-- REVIEW SUBMISSION -->
+<!-- ==============================
+     REVIEW SUBMISSION FORM
+============================== -->
 
 <div class="review-form">
 
 <form id="reviewForm">
 
 <div class="form-group">
-<label for="name">Your Name</label>
-<input type="text" id="name" required>
+
+<label for="name">
+Your Name
+</label>
+
+<input
+type="text"
+id="name"
+name="name"
+placeholder="Enter your name"
+required>
+
 </div>
 
 <div class="form-group">
 
-<label for="product">Which Fragrance?</label>
+<label for="product">
+Which Fragrance?
+</label>
 
-<select id="product" required>
+<select
+id="product"
+name="product"
+required>
 
-<option value="">Select a product</option>
+<option value="">
+Select a product
+</option>
 
-<option>Royal Oud</option>
-<option>MISK Noir</option>
-<option>Imperial Musk</option>
-<option>Signature Homme</option>
-<option>Rose Prestige</option>
-<option>Legacy</option>
-<option>Obsidian</option>
-<option>MISK Royale</option>
+<option value="Royal Oud">
+Royal Oud
+</option>
+
+<option value="MISK Noir">
+MISK Noir
+</option>
+
+<option value="Imperial Musk">
+Imperial Musk
+</option>
+
+<option value="Signature Homme">
+Signature Homme
+</option>
+
+<option value="Rose Prestige">
+Rose Prestige
+</option>
+
+<option value="Legacy">
+Legacy
+</option>
+
+<option value="Obsidian">
+Obsidian
+</option>
+
+<option value="MISK Royale">
+MISK Royale
+</option>
 
 </select>
 
@@ -346,16 +434,38 @@ Discover what our customers think about MISK Fragrances.
 
 <div class="form-group">
 
-<label for="rating">Rating</label>
+<label for="rating">
+Rating
+</label>
 
-<select id="rating" required>
+<select
+id="rating"
+name="rating"
+required>
 
-<option value="">Select a rating</option>
-<option value="1">⭐ 1 Star</option>
-<option value="2">⭐⭐ 2 Stars</option>
-<option value="3">⭐⭐⭐ 3 Stars</option>
-<option value="4">⭐⭐⭐⭐ 4 Stars</option>
-<option value="5">⭐⭐⭐⭐⭐ 5 Stars</option>
+<option value="">
+Select a rating
+</option>
+
+<option value="1">
+⭐ 1 Star
+</option>
+
+<option value="2">
+⭐⭐ 2 Stars
+</option>
+
+<option value="3">
+⭐⭐⭐ 3 Stars
+</option>
+
+<option value="4">
+⭐⭐⭐⭐ 4 Stars
+</option>
+
+<option value="5">
+⭐⭐⭐⭐⭐ 5 Stars
+</option>
 
 </select>
 
@@ -363,37 +473,56 @@ Discover what our customers think about MISK Fragrances.
 
 <div class="form-group">
 
-<label for="review">Your Review</label>
+<label for="review">
+Your Review
+</label>
 
 <textarea
 id="review"
+name="review"
 placeholder="Tell us about your experience..."
 required></textarea>
 
 </div>
 
-<button type="submit" class="submit-btn">
+<button
+type="submit"
+class="submit-btn">
+
 Submit Review
+
 </button>
 
 <p class="email-note">
-Your email app will open with your review ready to send.
+
+When you click Submit Review, your email app will open with your review ready to send to MISK Fragrances.
+
 Reviews are checked before being displayed on our website.
+
 </p>
 
 </form>
 
 </div>
 
-<!-- CUSTOMER REVIEWS -->
+<!-- ==============================
+     CUSTOMER REVIEWS
+============================== -->
 
 <h3 class="reviews-heading">
+
 What Our Customers Say
+
 </h3>
 
 <div class="reviews-list">
 
-<!-- REVIEW 1 -->
+<!--
+========================================
+ADD APPROVED REVIEWS HERE
+========================================
+
+Example:
 
 <div class="review-card">
 
@@ -404,7 +533,7 @@ What Our Customers Say
 <div class="review-name-row">
 
 <span class="review-name">
-Ahmed
+Customer Name
 </span>
 
 <span class="verified">
@@ -420,72 +549,17 @@ Royal Oud
 <div class="review-divider"></div>
 
 <p class="review-text">
-Amazing oud fragrance. It smells rich, luxurious and lasts for a long time. Definitely one of my favourites.
+Customer review goes here.
 </p>
 
 </div>
 
-<!-- REVIEW 2 -->
+========================================
+-->
 
-<div class="review-card">
+<div class="no-reviews">
 
-<div class="stars">
-★★★★★
-</div>
-
-<div class="review-name-row">
-
-<span class="review-name">
-Customer
-</span>
-
-<span class="verified">
-✓ VERIFIED PURCHASE
-</span>
-
-</div>
-
-<div class="review-product">
-MISK Noir
-</div>
-
-<div class="review-divider"></div>
-
-<p class="review-text">
-A beautiful dark fragrance with a really elegant scent. Perfect for evenings.
-</p>
-
-</div>
-
-<!-- REVIEW 3 -->
-
-<div class="review-card">
-
-<div class="stars">
-★★★★★
-</div>
-
-<div class="review-name-row">
-
-<span class="review-name">
-Customer
-</span>
-
-<span class="verified">
-✓ VERIFIED PURCHASE
-</span>
-
-</div>
-
-<div class="review-product">
-Imperial Musk
-</div>
-
-<div class="review-divider"></div>
-
-<p class="review-text">
-Very smooth and clean. The musk is soft and lasts really well.
-</p>
+No reviews yet. Be the first to share your experience!
 
 </div>
 
@@ -493,7 +567,9 @@ Very smooth and clean. The musk is soft and lasts really well.
 
 </section>
 
-<!-- FOOTER -->
+<!-- ==============================
+     FOOTER
+============================== -->
 
 <footer>
 
@@ -501,38 +577,68 @@ Very smooth and clean. The musk is soft and lasts really well.
 
 </footer>
 
-<!-- EMAIL SUBMISSION -->
+<!-- ==============================
+     EMAIL SUBMISSION
+============================== -->
 
 <script>
 
-document.getElementById("reviewForm").addEventListener("submit", function(event){
+document
+.getElementById("reviewForm")
+.addEventListener("submit", function(event){
 
     event.preventDefault();
 
-    const name = document.getElementById("name").value.trim();
-    const product = document.getElementById("product").value;
-    const rating = document.getElementById("rating").value;
-    const review = document.getElementById("review").value.trim();
+
+    const name =
+        document
+        .getElementById("name")
+        .value
+        .trim();
 
 
-    const stars = "⭐".repeat(Number(rating));
+    const product =
+        document
+        .getElementById("product")
+        .value;
+
+
+    const rating =
+        document
+        .getElementById("rating")
+        .value;
+
+
+    const review =
+        document
+        .getElementById("review")
+        .value
+        .trim();
+
+
+    const stars =
+        "⭐".repeat(Number(rating));
 
 
     /*
-    IMPORTANT:
-    Replace YOUR-EMAIL-HERE with the email address
-    where you want to receive customer reviews.
+    ========================================
+    MISK FRAGRANCES EMAIL
+    ========================================
     */
 
-    const email = "YOUR-EMAIL-HERE";
+    const email =
+        "miskfragrances.uk@gmail.com";
 
 
-    const subject = encodeURIComponent(
-        "MISK Fragrances - New Customer Review"
-    );
+    const subject =
+        encodeURIComponent(
+            "MISK Fragrances - New Customer Review"
+        );
 
 
-    const body = encodeURIComponent(
+    const body =
+        encodeURIComponent(
+
 `New MISK Fragrances Review
 
 Name: ${name}
@@ -542,10 +648,12 @@ Fragrance: ${product}
 Rating: ${stars}
 
 Review:
+
 ${review}
 
-Please check and approve this review before adding it to the website.`
-    );
+Please check this review and approve it before adding it to the MISK website.`
+
+        );
 
 
     window.location.href =
