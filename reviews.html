@@ -11,10 +11,6 @@
 
 <style>
 
-/* ==============================
-   MISK FRAGRANCES - COLOURS
-============================== */
-
 :root{
     --gold:#d4af37;
     --gold-dark:#b8860b;
@@ -23,10 +19,6 @@
     --bg:#0a0a0a;
     --card:#111;
 }
-
-/* ==============================
-   GENERAL
-============================== */
 
 html{
     scroll-behavior:smooth;
@@ -78,7 +70,7 @@ nav a:hover{
 }
 
 /* ==============================
-   MAIN SECTION
+   MAIN
 ============================== */
 
 section{
@@ -160,7 +152,6 @@ section h2{
     font-weight:bold;
     border-radius:5px;
     cursor:pointer;
-    text-decoration:none;
     transition:.3s;
     font-size:16px;
 }
@@ -264,20 +255,6 @@ section h2{
 }
 
 /* ==============================
-   EMPTY REVIEWS MESSAGE
-============================== */
-
-.no-reviews{
-    grid-column:1/-1;
-    text-align:center;
-    color:var(--silver);
-    padding:35px 20px;
-    border:1px solid #222;
-    background:#0d0d0d;
-    border-radius:8px;
-}
-
-/* ==============================
    FOOTER
 ============================== */
 
@@ -322,9 +299,7 @@ footer{
 
 <body>
 
-<!-- ==============================
-     NAVIGATION
-============================== -->
+<!-- NAVIGATION -->
 
 <nav>
 
@@ -332,23 +307,13 @@ footer{
 
 <div>
 
-<a href="index.html">Home</a>
-
-<a href="about.html">About</a>
-
-<a href="collection.html">Collection</a>
-
-<a href="reviews.html">Reviews</a>
-
-<a href="contact.html">Contact</a>
+<a href="index.html">Home</a> <a href="about.html">About</a> <a href="collection.html">Collection</a> <a href="reviews.html">Reviews</a> <a href="contact.html">Contact</a>
 
 </div>
 
 </nav>
 
-<!-- ==============================
-     MAIN
-============================== -->
+<!-- MAIN -->
 
 <section>
 
@@ -358,9 +323,7 @@ footer{
 Discover what our customers think about MISK Fragrances.
 </p>
 
-<!-- ==============================
-     REVIEW SUBMISSION FORM
-============================== -->
+<!-- REVIEW FORM -->
 
 <div class="review-form">
 
@@ -505,24 +468,15 @@ Reviews are checked before being displayed on our website.
 
 </div>
 
-<!-- ==============================
-     CUSTOMER REVIEWS
-============================== -->
+<!-- CUSTOMER REVIEWS -->
 
 <h3 class="reviews-heading">
-
 What Our Customers Say
-
 </h3>
 
 <div class="reviews-list">
 
-<!--
-========================================
-ADD APPROVED REVIEWS HERE
-========================================
-
-Example:
+<!-- HAMZA REVIEW -->
 
 <div class="review-card">
 
@@ -533,7 +487,7 @@ Example:
 <div class="review-name-row">
 
 <span class="review-name">
-Customer Name
+Hamza
 </span>
 
 <span class="verified">
@@ -543,23 +497,46 @@ Customer Name
 </div>
 
 <div class="review-product">
-Royal Oud
+Imperial Musk
 </div>
 
 <div class="review-divider"></div>
 
 <p class="review-text">
-Customer review goes here.
+Fantastic fragrance, long lasting and smells great. Would recommend.
 </p>
 
 </div>
 
-========================================
--->
+<!-- UMAR GHANI REVIEW -->
 
-<div class="no-reviews">
+<div class="review-card">
 
-No reviews yet. Be the first to share your experience!
+<div class="stars">
+★★★★★
+</div>
+
+<div class="review-name-row">
+
+<span class="review-name">
+Umar Ghani
+</span>
+
+<span class="verified">
+✓ VERIFIED PURCHASE
+</span>
+
+</div>
+
+<div class="review-product">
+Fruity Oud
+</div>
+
+<div class="review-divider"></div>
+
+<p class="review-text">
+Another top quality fragrance. The creators understanding of a person's sense of smell is unmatched. I urge all perfume lovers to try any of his fragrances. They're all AMAZING. He has a bright future and I look forward to his future releases.
+</p>
 
 </div>
 
@@ -567,9 +544,7 @@ No reviews yet. Be the first to share your experience!
 
 </section>
 
-<!-- ==============================
-     FOOTER
-============================== -->
+<!-- FOOTER -->
 
 <footer>
 
@@ -577,9 +552,7 @@ No reviews yet. Be the first to share your experience!
 
 </footer>
 
-<!-- ==============================
-     EMAIL SUBMISSION
-============================== -->
+<!-- EMAIL SUBMISSION -->
 
 <script>
 
@@ -589,25 +562,21 @@ document
 
     event.preventDefault();
 
-
     const name =
         document
         .getElementById("name")
         .value
         .trim();
 
-
     const product =
         document
         .getElementById("product")
         .value;
 
-
     const rating =
         document
         .getElementById("rating")
         .value;
-
 
     const review =
         document
@@ -615,26 +584,16 @@ document
         .value
         .trim();
 
-
     const stars =
         "⭐".repeat(Number(rating));
 
-
-    /*
-    ========================================
-    MISK FRAGRANCES EMAIL
-    ========================================
-    */
-
     const email =
         "miskfragrances.uk@gmail.com";
-
 
     const subject =
         encodeURIComponent(
             "MISK Fragrances - New Customer Review"
         );
-
 
     const body =
         encodeURIComponent(
@@ -654,7 +613,6 @@ ${review}
 Please check this review and approve it before adding it to the MISK website.`
 
         );
-
 
     window.location.href =
         `mailto:${email}?subject=${subject}&body=${body}`;
