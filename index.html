@@ -1,190 +1,62 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!-- MISK LUXURY HERO SLIDESHOW -->
 
-<title>MISK Fragrances | Premium Fragrance Oils</title>
+<section class="misk-hero">
 
-<meta name="description" content="MISK Fragrances - Premium fragrance oils inspired by luxury oud, musk and signature scents.">
-<meta name="keywords" content="misk fragrances, fragrance oils, attar, perfume oil, oud, musk">
+    <div class="hero-slides">
 
-<style>
+        <img src="images/bottle1.jpg" class="hero-slide active" alt="MISK fragrance bottle">
+        <img src="images/bottle2.jpg" class="hero-slide" alt="MISK fragrance bottle">
+        <img src="images/bottle3.jpg" class="hero-slide" alt="MISK fragrance bottle">
+        <img src="images/bottle4.jpg" class="hero-slide" alt="MISK fragrance bottle">
 
-:root{
-    --gold:#d4af37;
-    --gold-dark:#b8860b;
-    --silver:#c0c0c0;
-    --silver-light:#e5e5e5;
-    --bg:#0a0a0a;
-    --card:#111;
-}
+    </div>
 
-html{
-    scroll-behavior:smooth;
-}
+    <div class="hero-overlay"></div>
 
-*{
-    box-sizing:border-box;
-}
+    <div class="hero-content">
 
-body{
-    margin:0;
-    font-family:Arial,Helvetica,sans-serif;
-    background:var(--bg);
-    color:var(--silver-light);
-}
+        <p class="hero-small">PREMIUM FRAGRANCE OILS</p>
 
-/* NAVIGATION */
+        <h1>MISK Fragrances</h1>
 
-nav{
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-    padding:18px 35px;
-    background:#000;
-    border-bottom:1px solid var(--gold);
-    position:sticky;
-    top:0;
-    z-index:1000;
-}
+        <div class="gold-line"></div>
 
-nav h1{
-    margin:0;
-    color:var(--gold);
-    letter-spacing:3px;
-}
+        <p class="hero-tagline">Fragrance in Every Drop</p>
 
-nav a{
-    color:var(--gold);
-    text-decoration:none;
-    margin-left:25px;
-    font-weight:bold;
-    transition:.3s;
-}
+        <p class="hero-description">
+            Discover luxurious fragrance oils and timeless scents
+            crafted to leave a lasting impression.
+        </p>
 
-nav a:hover{
-    color:white;
-}
+        <div class="hero-buttons">
 
-/* HERO */
+            <a href="collection.html" class="hero-btn">
+                Explore Collection
+            </a>
 
-.hero{
-    position:relative;
-    height:80vh;
-    background:linear-gradient(rgba(0,0,0,.75),rgba(0,0,0,.75));
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    text-align:center;
-    border-bottom:1px solid var(--gold);
-}
+            <a href="reviews.html" class="hero-btn secondary">
+                Customer Reviews
+            </a>
 
-.hero-content{
-    position:relative;
-    z-index:2;
-}
+        </div>
 
-.hero h2{
-    font-size:65px;
-    margin:0;
-    color:var(--gold);
-    letter-spacing:5px;
-    text-transform:uppercase;
-}
+    </div>
 
-.hero p{
-    color:var(--silver);
-    font-size:20px;
-}
+    <button class="slide-arrow prev" onclick="changeSlide(-1)">
+        &#10094;
+    </button>
 
-/* SECTIONS */
+    <button class="slide-arrow next" onclick="changeSlide(1)">
+        &#10095;
+    </button>
 
-section{
-    max-width:1150px;
-    margin:auto;
-    padding:70px 20px;
-}
+    <div class="slide-dots">
 
-section h2{
-    color:var(--gold);
-    margin-bottom:20px;
-}
+        <span class="dot active" onclick="showSlide(0)"></span>
+        <span class="dot" onclick="showSlide(1)"></span>
+        <span class="dot" onclick="showSlide(2)"></span>
+        <span class="dot" onclick="showSlide(3)"></span>
 
-/* FOOTER */
-
-footer{
-    text-align:center;
-    padding:30px;
-    border-top:1px solid var(--gold);
-    color:#999;
-}
-
-@media(max-width:700px){
-
-nav{
-    flex-direction:column;
-    gap:15px;
-}
-
-.hero h2{
-    font-size:42px;
-}
-
-.hero p{
-    font-size:18px;
-}
-
-}
-
-</style>
-</head>
-
-<body>
-
-<nav>
-
-<h1>MISK Fragrances</h1>
-
-<div>
-<a href="index.html">Home</a>
-<a href="about.html">About</a>
-<a href="collection.html">Collection</a>
-<a href="reviews.html">Reviews</a>
-<a href="contact.html">Contact</a>
-</div>
-
-</nav>
-
-<div class="hero">
-
-<div class="hero-content">
-<h2>MISK Fragrances</h2>
-<p>Fragrance in Every Drop</p>
-</div>
-
-</div>
-
-<section>
-
-<h2>Welcome to MISK Fragrances</h2>
-
-<p>
-Discover premium fragrance oils inspired by luxurious oud, musk, floral and signature scents.
-Crafted for lasting elegance, confidence and everyday wear.
-</p>
-
-<p>
-Explore our <a href="collection.html" style="color:var(--gold);text-decoration:none;font-weight:bold;">collection</a>, read customer <a href="reviews.html" style="color:var(--gold);text-decoration:none;font-weight:bold;">reviews</a>, and <a href="contact.html" style="color:var(--gold);text-decoration:none;font-weight:bold;">contact us</a> for more information.
-</p>
+    </div>
 
 </section>
-
-<footer>
-
-© 2026 MISK Fragrances. All Rights Reserved.
-
-</footer>
-
-</body>
-</html>
