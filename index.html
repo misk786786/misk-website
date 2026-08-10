@@ -1,9 +1,10 @@
 <!DOCTYPE html>
-
 <html lang="en">
+
 <head>
 
 <meta charset="UTF-8">
+
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>MISK Fragrances UK | Premium Fragrance Oils & Attar</title>
@@ -57,15 +58,21 @@ nav {
 
 nav h2 {
     color: #d4af37;
+
     font-family: Georgia, "Times New Roman", serif;
+
     letter-spacing: 3px;
 }
 
 nav a {
     color: #d4af37;
+
     text-decoration: none;
+
     margin-left: 22px;
+
     font-weight: bold;
+
     transition: 0.3s;
 }
 
@@ -80,12 +87,17 @@ nav a:hover {
 
 .misk-hero {
     position: relative;
+
     min-height: 680px;
+
     width: 100%;
+
     overflow: hidden;
 
     display: flex;
+
     align-items: center;
+
     justify-content: center;
 
     background: #050505;
@@ -98,12 +110,15 @@ nav a:hover {
 
 .hero-slides {
     position: absolute;
+
     inset: 0;
+
     z-index: 1;
 }
 
 .hero-slide {
     position: absolute;
+
     inset: 0;
 
     width: 100%;
@@ -113,7 +128,7 @@ nav a:hover {
 
     opacity: 0;
 
-    transform: scale(1.08);
+    transform: scale(1.02);
 
     transition:
         opacity 1.2s ease-in-out,
@@ -122,7 +137,8 @@ nav a:hover {
 
 .hero-slide.active {
     opacity: 1;
-    transform: scale(1);
+
+    transform: scale(1.02);
 }
 
 
@@ -132,16 +148,18 @@ nav a:hover {
 
 .hero-overlay {
     position: absolute;
+
     inset: 0;
+
     z-index: 2;
 
     background:
         linear-gradient(
             90deg,
-            rgba(0,0,0,0.92),
-            rgba(0,0,0,0.60),
-            rgba(0,0,0,0.30),
-            rgba(0,0,0,0.75)
+            rgba(0, 0, 0, 0.45),
+            rgba(0, 0, 0, 0.25),
+            rgba(0, 0, 0, 0.10),
+            rgba(0, 0, 0, 0.40)
         );
 }
 
@@ -152,9 +170,11 @@ nav a:hover {
 
 .hero-content {
     position: relative;
+
     z-index: 3;
 
     width: 90%;
+
     max-width: 850px;
 
     text-align: center;
@@ -164,6 +184,7 @@ nav a:hover {
     color: #d4af37;
 
     font-size: 13px;
+
     font-weight: bold;
 
     letter-spacing: 5px;
@@ -180,14 +201,14 @@ nav a:hover {
 
     letter-spacing: 6px;
 
-    text-shadow:
-        0 4px 25px black;
+    text-shadow: 0 4px 25px black;
 
     margin-bottom: 15px;
 }
 
 .gold-line {
     width: 100px;
+
     height: 2px;
 
     background: #d4af37;
@@ -226,8 +247,11 @@ nav a:hover {
 
 .hero-buttons {
     display: flex;
+
     justify-content: center;
+
     gap: 15px;
+
     flex-wrap: wrap;
 }
 
@@ -236,11 +260,12 @@ nav a:hover {
 
     padding: 14px 30px;
 
-    background: linear-gradient(
-        135deg,
-        #d4af37,
-        #b8860b
-    );
+    background:
+        linear-gradient(
+            135deg,
+            #d4af37,
+            #b8860b
+        );
 
     color: black;
 
@@ -259,16 +284,19 @@ nav a:hover {
     transform: translateY(-3px);
 
     box-shadow:
-        0 8px 25px rgba(212,175,55,0.4);
+        0 8px 25px
+        rgba(212, 175, 55, 0.4);
 }
 
 .hero-btn.secondary {
-    background: rgba(0,0,0,0.65);
+    background: rgba(0, 0, 0, 0.65);
+
     color: #d4af37;
 }
 
 .hero-btn.secondary:hover {
     background: #d4af37;
+
     color: black;
 }
 
@@ -281,18 +309,20 @@ nav a:hover {
     position: absolute;
 
     top: 50%;
+
     transform: translateY(-50%);
 
     z-index: 5;
 
     width: 48px;
+
     height: 48px;
 
     border-radius: 50%;
 
     border: 1px solid #d4af37;
 
-    background: rgba(0,0,0,0.55);
+    background: rgba(0, 0, 0, 0.55);
 
     color: #d4af37;
 
@@ -305,6 +335,7 @@ nav a:hover {
 
 .slide-arrow:hover {
     background: #d4af37;
+
     color: black;
 }
 
@@ -325,6 +356,7 @@ nav a:hover {
     position: absolute;
 
     bottom: 25px;
+
     left: 50%;
 
     transform: translateX(-50%);
@@ -332,11 +364,13 @@ nav a:hover {
     z-index: 5;
 
     display: flex;
+
     gap: 10px;
 }
 
 .dot {
     width: 11px;
+
     height: 11px;
 
     border-radius: 50%;
@@ -395,16 +429,15 @@ nav a:hover {
 ========================= */
 
 .features {
-    max-width: 1100px;
+    max-width: 1400px;
 
     margin: auto;
 
-    padding: 20px 25px 80px;
+    padding: 20px 30px 80px;
 
     display: grid;
 
-    grid-template-columns:
-        repeat(auto-fit, minmax(220px, 1fr));
+    grid-template-columns: repeat(4, 1fr);
 
     gap: 25px;
 }
@@ -449,7 +482,7 @@ nav a:hover {
 
 
 /* =========================
-   CTA
+   CALL TO ACTION
 ========================= */
 
 .cta {
@@ -460,6 +493,7 @@ nav a:hover {
     background: #030303;
 
     border-top: 1px solid #222;
+
     border-bottom: 1px solid #222;
 }
 
@@ -500,6 +534,19 @@ footer {
 
 
 /* =========================
+   TABLET
+========================= */
+
+@media (max-width: 900px) {
+
+    .features {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+}
+
+
+/* =========================
    MOBILE
 ========================= */
 
@@ -507,7 +554,9 @@ footer {
 
     nav {
         flex-direction: column;
+
         gap: 15px;
+
         padding: 18px 12px;
     }
 
@@ -517,6 +566,7 @@ footer {
 
     nav a {
         margin: 0 6px;
+
         font-size: 13px;
     }
 
@@ -538,6 +588,7 @@ footer {
 
     .slide-arrow {
         width: 38px;
+
         height: 38px;
     }
 
@@ -548,13 +599,29 @@ footer {
     .slide-arrow.next {
         right: 10px;
     }
+
+}
+
+
+/* =========================
+   SMALL PHONES
+========================= */
+
+@media (max-width: 550px) {
+
+    .features {
+        grid-template-columns: 1fr;
+    }
+
 }
 
 </style>
 
 </head>
 
+
 <body>
+
 
 <!-- =========================
      NAVIGATION
@@ -562,25 +629,34 @@ footer {
 
 <nav>
 
-```
-<h2>MISK Fragrances</h2>
+    <h2>MISK Fragrances</h2>
 
-<div>
+    <div>
 
-    <a href="index.html">Home</a>
+        <a href="index.html">
+            Home
+        </a>
 
-    <a href="about.html">About</a>
+        <a href="about.html">
+            About
+        </a>
 
-    <a href="collection.html">Collection</a>
+        <a href="collection.html">
+            Collection
+        </a>
 
-    <a href="reviews.html">Reviews</a>
+        <a href="reviews.html">
+            Reviews
+        </a>
 
-    <a href="contact.html">Contact</a>
+        <a href="contact.html">
+            Contact
+        </a>
 
-</div>
-```
+    </div>
 
 </nav>
+
 
 <!-- =========================
      HERO
@@ -588,137 +664,137 @@ footer {
 
 <section class="misk-hero">
 
-```
-<!-- BOTTLE SLIDESHOW -->
 
-<div class="hero-slides">
+    <!-- BOTTLE SLIDESHOW -->
 
-    <img
-        src="./bottle1.jpg.jpeg"
-        class="hero-slide active"
-        alt="MISK fragrance bottle"
-    >
+    <div class="hero-slides">
 
-    <img
-        src="./bottle2.jpg.jpeg"
-        class="hero-slide"
-        alt="MISK fragrance bottle"
-    >
-
-    <img
-        src="./bottle3.jpg.jpeg"
-        class="hero-slide"
-        alt="MISK fragrance bottle"
-    >
-
-    <img
-        src="./bottle4.jpg.jpeg"
-        class="hero-slide"
-        alt="MISK fragrance bottle"
-    >
-
-</div>
-
-
-<!-- DARK BACKGROUND OVERLAY -->
-
-<div class="hero-overlay"></div>
-
-
-<!-- HERO TEXT -->
-
-<div class="hero-content">
-
-    <p class="hero-small">
-        PREMIUM FRAGRANCE OILS
-    </p>
-
-    <h1>
-        MISK Fragrances
-    </h1>
-
-    <div class="gold-line"></div>
-
-    <p class="hero-tagline">
-        Fragrance in Every Drop
-    </p>
-
-    <p class="hero-description">
-        Discover luxurious fragrance oils and timeless
-        scents created to leave a lasting impression.
-    </p>
-
-    <div class="hero-buttons">
-
-        <a
-            href="collection.html"
-            class="hero-btn"
+        <img
+            src="./bottle1.jpg.jpeg"
+            class="hero-slide active"
+            alt="MISK fragrance bottle"
         >
-            Explore Collection
-        </a>
 
-        <a
-            href="reviews.html"
-            class="hero-btn secondary"
+        <img
+            src="./bottle2.jpg.jpeg"
+            class="hero-slide"
+            alt="MISK fragrance bottle"
         >
-            Customer Reviews
-        </a>
+
+        <img
+            src="./bottle3.jpg.jpeg"
+            class="hero-slide"
+            alt="MISK fragrance bottle"
+        >
+
+        <img
+            src="./bottle4.jpg.jpeg"
+            class="hero-slide"
+            alt="MISK fragrance bottle"
+        >
 
     </div>
 
-</div>
+
+    <!-- DARK OVERLAY -->
+
+    <div class="hero-overlay"></div>
 
 
-<!-- PREVIOUS BUTTON -->
+    <!-- HERO TEXT -->
 
-<button
-    class="slide-arrow prev"
-    onclick="changeSlide(-1)"
-    aria-label="Previous bottle"
->
-    &#10094;
-</button>
+    <div class="hero-content">
+
+        <p class="hero-small">
+            PREMIUM FRAGRANCE OILS
+        </p>
+
+        <h1>
+            MISK Fragrances
+        </h1>
+
+        <div class="gold-line"></div>
+
+        <p class="hero-tagline">
+            Fragrance in Every Drop
+        </p>
+
+        <p class="hero-description">
+            Discover luxurious fragrance oils and timeless
+            scents created to leave a lasting impression.
+        </p>
+
+        <div class="hero-buttons">
+
+            <a
+                href="collection.html"
+                class="hero-btn"
+            >
+                Explore Collection
+            </a>
+
+            <a
+                href="reviews.html"
+                class="hero-btn secondary"
+            >
+                Customer Reviews
+            </a>
+
+        </div>
+
+    </div>
 
 
-<!-- NEXT BUTTON -->
+    <!-- PREVIOUS BUTTON -->
 
-<button
-    class="slide-arrow next"
-    onclick="changeSlide(1)"
-    aria-label="Next bottle"
->
-    &#10095;
-</button>
+    <button
+        class="slide-arrow prev"
+        onclick="changeSlide(-1)"
+        aria-label="Previous bottle"
+    >
+        &#10094;
+    </button>
 
 
-<!-- DOTS -->
+    <!-- NEXT BUTTON -->
 
-<div class="slide-dots">
+    <button
+        class="slide-arrow next"
+        onclick="changeSlide(1)"
+        aria-label="Next bottle"
+    >
+        &#10095;
+    </button>
 
-    <span
-        class="dot active"
-        onclick="showSlide(0)"
-    ></span>
 
-    <span
-        class="dot"
-        onclick="showSlide(1)"
-    ></span>
+    <!-- SLIDESHOW DOTS -->
 
-    <span
-        class="dot"
-        onclick="showSlide(2)"
-    ></span>
+    <div class="slide-dots">
 
-    <span
-        class="dot"
-        onclick="showSlide(3)"
-    ></span>
+        <span
+            class="dot active"
+            onclick="showSlide(0)"
+        ></span>
 
-</div>
-```
+        <span
+            class="dot"
+            onclick="showSlide(1)"
+        ></span>
+
+        <span
+            class="dot"
+            onclick="showSlide(2)"
+        ></span>
+
+        <span
+            class="dot"
+            onclick="showSlide(3)"
+        ></span>
+
+    </div>
 
 </section>
+
 
 <!-- =========================
      WELCOME
@@ -726,21 +802,20 @@ footer {
 
 <section class="welcome">
 
-```
-<h2>
-    Welcome to MISK
-</h2>
+    <h2>
+        Welcome to MISK
+    </h2>
 
-<p>
-    At MISK Fragrances, we believe fragrance is more than
-    just a scent. It is a way to express your personality,
-    create memories and leave a lasting impression.
-    Explore our collection of premium fragrance oils,
-    oud and musk-inspired scents.
-</p>
-```
+    <p>
+        At MISK Fragrances, we believe fragrance is more than
+        just a scent. It is a way to express your personality,
+        create memories and leave a lasting impression.
+        Explore our collection of premium fragrance oils,
+        oud and musk-inspired scents.
+    </p>
 
 </section>
+
 
 <!-- =========================
      FEATURES
@@ -748,80 +823,89 @@ footer {
 
 <section class="features">
 
-```
-<div class="feature-card">
 
-    <div class="feature-icon">
-        ✨
+    <!-- CARD 1 -->
+
+    <div class="feature-card">
+
+        <div class="feature-icon">
+            ✨
+        </div>
+
+        <h3>
+            Premium Scents
+        </h3>
+
+        <p>
+            Carefully selected fragrance oils
+            for a luxurious experience.
+        </p>
+
     </div>
 
-    <h3>
-        Premium Scents
-    </h3>
 
-    <p>
-        Carefully selected fragrance oils
-        for a luxurious experience.
-    </p>
+    <!-- CARD 2 -->
 
-</div>
+    <div class="feature-card">
 
+        <div class="feature-icon">
+            🌙
+        </div>
 
-<div class="feature-card">
+        <h3>
+            Long Lasting
+        </h3>
 
-    <div class="feature-icon">
-        🌙
+        <p>
+            Elegant fragrances designed to
+            leave a memorable impression.
+        </p>
+
     </div>
 
-    <h3>
-        Long Lasting
-    </h3>
 
-    <p>
-        Elegant fragrances designed to
-        leave a memorable impression.
-    </p>
+    <!-- CARD 3 -->
 
-</div>
+    <div class="feature-card">
 
+        <div class="feature-icon">
+            🖤
+        </div>
 
-<div class="feature-card">
+        <h3>
+            Luxury Inspired
+        </h3>
 
-    <div class="feature-icon">
-        🖤
+        <p>
+            Rich oud, musk, floral and
+            oriental-inspired fragrance styles.
+        </p>
+
     </div>
 
-    <h3>
-        Luxury Inspired
-    </h3>
 
-    <p>
-        Rich oud, musk, floral and
-        oriental-inspired fragrance styles.
-    </p>
+    <!-- CARD 4 -->
 
-</div>
+    <div class="feature-card">
 
+        <div class="feature-icon">
+            ⭐
+        </div>
 
-<div class="feature-card">
+        <h3>
+            Customer Reviews
+        </h3>
 
-    <div class="feature-icon">
-        ⭐
+        <p>
+            See what customers think about
+            the MISK fragrance collection.
+        </p>
+
     </div>
 
-    <h3>
-        Customer Reviews
-    </h3>
-
-    <p>
-        See what customers think about
-        the MISK fragrance collection.
-    </p>
-
-</div>
-```
 
 </section>
+
 
 <!-- =========================
      CALL TO ACTION
@@ -829,25 +913,24 @@ footer {
 
 <section class="cta">
 
-```
-<h2>
-    Find Your Signature Scent
-</h2>
+    <h2>
+        Find Your Signature Scent
+    </h2>
 
-<p>
-    Explore the MISK collection and discover
-    your next favourite fragrance.
-</p>
+    <p>
+        Explore the MISK collection and discover
+        your next favourite fragrance.
+    </p>
 
-<a
-    href="collection.html"
-    class="hero-btn"
->
-    View Collection
-</a>
-```
+    <a
+        href="collection.html"
+        class="hero-btn"
+    >
+        View Collection
+    </a>
 
 </section>
+
 
 <!-- =========================
      FOOTER
@@ -855,11 +938,10 @@ footer {
 
 <footer>
 
-```
-© 2026 MISK Fragrances. All Rights Reserved.
-```
+    © 2026 MISK Fragrances. All Rights Reserved.
 
 </footer>
+
 
 <!-- =========================
      SLIDESHOW JAVASCRIPT
@@ -905,7 +987,6 @@ function showSlide(index) {
 
     dots[index].classList.add("active");
 
-
     currentSlide = index;
 
 }
@@ -928,5 +1009,7 @@ setInterval(function() {
 
 </script>
 
+
 </body>
+
 </html>
