@@ -1,932 +1,1099 @@
 <!DOCTYPE html>
+
 <html lang="en">
-
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<meta charset="UTF-8">
+```
+<title>MISK Fragrances | Premium Fragrance Oils</title>
 
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="MISK Fragrances - Discover premium fragrance oils, oud, musk and timeless luxury-inspired scents. Fragrance in Every Drop.">
 
-<title>MISK Fragrances UK | Premium Fragrance Oils & Attar</title>
+<meta name="keywords" content="MISK Fragrances, fragrance oils, attar, perfume oils, oud, musk, luxury fragrance, UK fragrance">
 
-<meta name="description" content="MISK Fragrances UK - Premium fragrance oils, oud, musk and elegant signature scents. Fragrance in Every Drop.">
-
-<meta name="keywords" content="MISK Fragrances, MISK Fragrances UK, attar, fragrance oils, oud, musk, perfume oils">
-
+<meta name="author" content="MISK Fragrances">
 
 <style>
-
-/* =========================
-   BASIC SETTINGS
-========================= */
-
-* {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-}
-
-html {
-    scroll-behavior: smooth;
-}
-
-body {
-    background: #050505;
-    color: white;
-    font-family: Arial, Helvetica, sans-serif;
-}
-
-
-/* =========================
-   NAVIGATION
-========================= */
-
-nav {
-    position: sticky;
-    top: 0;
-    z-index: 1000;
-
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-
-    padding: 18px 35px;
-
-    background: rgba(0, 0, 0, 0.96);
-
-    border-bottom: 1px solid #d4af37;
-}
-
-nav h2 {
-    color: #d4af37;
-
-    font-family: Georgia, "Times New Roman", serif;
-
-    letter-spacing: 3px;
-}
-
-nav a {
-    color: #d4af37;
-
-    text-decoration: none;
-
-    margin-left: 22px;
-
-    font-weight: bold;
-
-    transition: 0.3s;
-}
-
-nav a:hover {
-    color: white;
-}
-
-
-/* =========================
-   HERO
-========================= */
-
-.misk-hero {
-    position: relative;
-
-    min-height: 680px;
-
-    width: 100%;
-
-    overflow: hidden;
-
-    display: flex;
-
-    align-items: center;
-
-    justify-content: center;
-
-    background: #050505;
-}
-
-
-/* =========================
-   BOTTLE SLIDESHOW
-========================= */
-
-.hero-slides {
-    position: absolute;
-
-    inset: 0;
-
-    z-index: 1;
-}
-
-.hero-slide {
-    position: absolute;
-
-    inset: 0;
-
-    width: 100%;
-    height: 100%;
-
-    object-fit: cover;
-
-    opacity: 0;
-
-    transition: opacity 0.8s ease-in-out;
-}
-
-.hero-slide.active {
-    opacity: 1;
-}
-
-
-/* =========================
-   LIGHT OVERLAY
-========================= */
-
-.hero-overlay {
-    position: absolute;
-
-    inset: 0;
-
-    z-index: 2;
-
-    background:
-        linear-gradient(
-            90deg,
-            rgba(0, 0, 0, 0.25),
-            rgba(0, 0, 0, 0.10),
-            rgba(0, 0, 0, 0.05),
-            rgba(0, 0, 0, 0.20)
-        );
-}
-
-
-/* =========================
-   HERO TEXT
-========================= */
-
-.hero-content {
-    position: relative;
-
-    z-index: 3;
-
-    width: 90%;
-
-    max-width: 850px;
-
-    text-align: center;
-}
-
-.hero-small {
-    color: #d4af37;
-
-    font-size: 13px;
-
-    font-weight: bold;
-
-    letter-spacing: 5px;
-
-    margin-bottom: 18px;
-
-    text-shadow: 0 2px 10px black;
-}
-
-.hero-content h1 {
-    color: #d4af37;
-
-    font-family: Georgia, "Times New Roman", serif;
-
-    font-size: clamp(45px, 8vw, 85px);
-
-    letter-spacing: 6px;
-
-    text-shadow:
-        0 4px 25px black,
-        0 2px 5px black;
-
-    margin-bottom: 15px;
-}
-
-.gold-line {
-    width: 100px;
-
-    height: 2px;
-
-    background: #d4af37;
-
-    margin: 20px auto;
-}
-
-.hero-tagline {
-    color: white;
-
-    font-family: Georgia, "Times New Roman", serif;
-
-    font-size: clamp(25px, 4vw, 40px);
-
-    font-style: italic;
-
-    margin-bottom: 20px;
-
-    text-shadow:
-        0 3px 12px black;
-}
-
-.hero-description {
-    max-width: 600px;
-
-    margin: 0 auto 30px;
-
-    color: #ffffff;
-
-    line-height: 1.8;
-
-    font-size: 16px;
-
-    text-shadow:
-        0 2px 8px black;
-}
-
-
-/* =========================
-   BUTTONS
-========================= */
-
-.hero-buttons {
-    display: flex;
-
-    justify-content: center;
-
-    gap: 15px;
-
-    flex-wrap: wrap;
-}
-
-.hero-btn {
-    display: inline-block;
-
-    padding: 14px 30px;
-
-    background:
-        linear-gradient(
-            135deg,
-            #d4af37,
-            #b8860b
-        );
-
-    color: black;
-
-    text-decoration: none;
-
-    font-weight: bold;
-
-    border: 1px solid #d4af37;
-
-    border-radius: 4px;
-
-    transition: 0.3s;
-}
-
-.hero-btn:hover {
-    transform: translateY(-3px);
-
-    box-shadow:
-        0 8px 25px
-        rgba(212, 175, 55, 0.4);
-}
-
-.hero-btn.secondary {
-    background: rgba(0, 0, 0, 0.65);
-
-    color: #d4af37;
-}
-
-.hero-btn.secondary:hover {
-    background: #d4af37;
-
-    color: black;
-}
-
-
-/* =========================
-   SLIDESHOW ARROWS
-========================= */
-
-.slide-arrow {
-    position: absolute;
-
-    top: 50%;
-
-    transform: translateY(-50%);
-
-    z-index: 5;
-
-    width: 48px;
-
-    height: 48px;
-
-    border-radius: 50%;
-
-    border: 1px solid #d4af37;
-
-    background: rgba(0, 0, 0, 0.55);
-
-    color: #d4af37;
-
-    font-size: 22px;
-
-    cursor: pointer;
-
-    transition: 0.3s;
-}
-
-.slide-arrow:hover {
-    background: #d4af37;
-
-    color: black;
-}
-
-.slide-arrow.prev {
-    left: 25px;
-}
-
-.slide-arrow.next {
-    right: 25px;
-}
-
-
-/* =========================
-   SLIDESHOW DOTS
-========================= */
-
-.slide-dots {
-    position: absolute;
-
-    bottom: 25px;
-
-    left: 50%;
-
-    transform: translateX(-50%);
-
-    z-index: 5;
-
-    display: flex;
-
-    gap: 10px;
-}
-
-.dot {
-    width: 11px;
-
-    height: 11px;
-
-    border-radius: 50%;
-
-    border: 1px solid #d4af37;
-
-    background: transparent;
-
-    cursor: pointer;
-}
-
-.dot.active {
-    background: #d4af37;
-
-    transform: scale(1.25);
-}
-
-
-/* =========================
-   WELCOME
-========================= */
-
-.welcome {
-    max-width: 1000px;
-
-    margin: auto;
-
-    padding: 80px 25px;
-
-    text-align: center;
-}
-
-.welcome h2 {
-    color: #d4af37;
-
-    font-family: Georgia, "Times New Roman", serif;
-
-    font-size: 36px;
-
-    margin-bottom: 20px;
-}
-
-.welcome p {
-    color: #c0c0c0;
-
-    max-width: 750px;
-
-    margin: auto;
-
-    line-height: 1.8;
-}
-
-
-/* =========================
-   FEATURE CARDS
-========================= */
-
-.features {
-    max-width: 1400px;
-
-    margin: auto;
-
-    padding: 20px 30px 80px;
-
-    display: grid;
-
-    grid-template-columns: repeat(4, 1fr);
-
-    gap: 25px;
-}
-
-.feature-card {
-    background: #111;
-
-    border: 1px solid #333;
-
-    padding: 30px 20px;
-
-    text-align: center;
-
-    transition: 0.3s;
-}
-
-.feature-card:hover {
-    border-color: #d4af37;
-
-    transform: translateY(-5px);
-}
-
-.feature-icon {
-    font-size: 35px;
-
-    margin-bottom: 15px;
-}
-
-.feature-card h3 {
-    color: #d4af37;
-
-    margin-bottom: 10px;
-}
-
-.feature-card p {
-    color: #c0c0c0;
-
-    font-size: 14px;
-
-    line-height: 1.6;
-}
-
-
-/* =========================
-   CALL TO ACTION
-========================= */
-
-.cta {
-    padding: 80px 25px;
-
-    text-align: center;
-
-    background: #030303;
-
-    border-top: 1px solid #222;
-
-    border-bottom: 1px solid #222;
-}
-
-.cta h2 {
-    color: #d4af37;
-
-    font-family: Georgia, "Times New Roman", serif;
-
-    font-size: 36px;
-
-    margin-bottom: 15px;
-}
-
-.cta p {
-    color: #c0c0c0;
-
-    margin-bottom: 25px;
-}
-
-
-/* =========================
-   FOOTER
-========================= */
-
-footer {
-    padding: 30px 20px;
-
-    text-align: center;
-
-    color: #888;
-
-    background: #000;
-
-    border-top: 1px solid #d4af37;
-
-    font-size: 14px;
-}
-
-
-/* =========================
-   TABLET
-========================= */
-
-@media (max-width: 900px) {
-
-    .features {
-        grid-template-columns: repeat(2, 1fr);
+    /* =========================
+       RESET
+    ========================= */
+
+    * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
     }
 
-}
+    html {
+        scroll-behavior: smooth;
+    }
+
+    body {
+        background: #050505;
+        color: #ffffff;
+        font-family: Arial, Helvetica, sans-serif;
+        line-height: 1.6;
+    }
+
+    a {
+        color: inherit;
+    }
 
 
-/* =========================
-   MOBILE
-========================= */
+    /* =========================
+       NAVIGATION
+    ========================= */
 
-@media (max-width: 700px) {
+    header {
+        width: 100%;
+        background: #050505;
+        border-bottom: 1px solid rgba(212, 175, 55, 0.25);
+        position: relative;
+        z-index: 20;
+    }
 
-    nav {
-        flex-direction: column;
+    .navbar {
+        max-width: 1400px;
+        margin: auto;
+        padding: 20px 5%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 30px;
+    }
 
+    .logo {
+        color: #d4af37;
+        font-family: Georgia, "Times New Roman", serif;
+        font-size: 28px;
+        font-weight: bold;
+        letter-spacing: 4px;
+        text-decoration: none;
+        white-space: nowrap;
+    }
+
+    .nav-links {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 30px;
+    }
+
+    .nav-links a {
+        color: #ffffff;
+        text-decoration: none;
+        font-size: 14px;
+        letter-spacing: 1px;
+        transition: 0.3s;
+    }
+
+    .nav-links a:hover {
+        color: #d4af37;
+    }
+
+
+    /* =========================
+       HERO
+    ========================= */
+
+    .misk-hero {
+        position: relative;
+        min-height: 680px;
+        width: 100%;
+        overflow: hidden;
+        display: flex;
+        align-items: center;
+        background: #050505;
+    }
+
+
+    /* =========================
+       BOTTLE SLIDES
+    ========================= */
+
+    .hero-slides {
+        position: absolute;
+        top: 0;
+        right: 0;
+
+        width: 55%;
+        height: 100%;
+
+        z-index: 1;
+        overflow: hidden;
+    }
+
+    .hero-slide {
+        position: absolute;
+        inset: 0;
+
+        width: 100%;
+        height: 100%;
+
+        object-fit: contain;
+
+        padding: 35px;
+
+        opacity: 0;
+
+        transition: opacity 0.8s ease-in-out;
+    }
+
+    .hero-slide.active {
+        opacity: 1;
+    }
+
+
+    /* =========================
+       HERO OVERLAY
+    ========================= */
+
+    .hero-overlay {
+        position: absolute;
+        inset: 0;
+
+        z-index: 2;
+
+        background:
+            linear-gradient(
+                90deg,
+                #050505 0%,
+                #050505 27%,
+                rgba(5, 5, 5, 0.94) 40%,
+                rgba(5, 5, 5, 0.55) 60%,
+                rgba(5, 5, 5, 0.08) 100%
+            );
+    }
+
+
+    /* =========================
+       HERO CONTENT
+    ========================= */
+
+    .hero-content {
+        position: relative;
+        z-index: 3;
+
+        width: 48%;
+        max-width: 700px;
+
+        margin-left: 7%;
+
+        text-align: left;
+    }
+
+    .hero-small {
+        color: #d4af37;
+
+        font-size: 13px;
+        font-weight: bold;
+
+        letter-spacing: 5px;
+
+        margin-bottom: 18px;
+    }
+
+    .hero-content h1 {
+        color: #d4af37;
+
+        font-family: Georgia, "Times New Roman", serif;
+
+        font-size: clamp(50px, 6vw, 85px);
+
+        line-height: 1.05;
+
+        letter-spacing: 5px;
+
+        text-shadow: 0 4px 20px #000000;
+
+        margin-bottom: 15px;
+    }
+
+    .gold-line {
+        width: 100px;
+        height: 2px;
+
+        background: #d4af37;
+
+        margin: 20px 0;
+    }
+
+    .hero-tagline {
+        color: #ffffff;
+
+        font-family: Georgia, "Times New Roman", serif;
+
+        font-size: clamp(25px, 3vw, 40px);
+
+        font-style: italic;
+
+        margin-bottom: 20px;
+    }
+
+    .hero-description {
+        max-width: 550px;
+
+        margin: 0 0 30px;
+
+        color: #dddddd;
+
+        line-height: 1.8;
+
+        font-size: 16px;
+    }
+
+
+    /* =========================
+       BUTTONS
+    ========================= */
+
+    .hero-buttons {
+        display: flex;
+        justify-content: flex-start;
         gap: 15px;
-
-        padding: 18px 12px;
+        flex-wrap: wrap;
     }
 
-    nav h2 {
-        font-size: 20px;
+    .hero-btn {
+        display: inline-block;
+
+        padding: 14px 30px;
+
+        background:
+            linear-gradient(
+                135deg,
+                #d4af37,
+                #b8860b
+            );
+
+        color: #000000;
+
+        text-decoration: none;
+
+        font-weight: bold;
+
+        border: 1px solid #d4af37;
+
+        border-radius: 4px;
+
+        transition: 0.3s;
     }
 
-    nav a {
-        margin: 0 6px;
+    .hero-btn:hover {
+        transform: translateY(-3px);
+
+        box-shadow:
+            0 8px 25px
+            rgba(212, 175, 55, 0.4);
+    }
+
+    .hero-btn.secondary {
+        background: rgba(0, 0, 0, 0.65);
+
+        color: #d4af37;
+    }
+
+    .hero-btn.secondary:hover {
+        background: #d4af37;
+        color: #000000;
+    }
+
+
+    /* =========================
+       SLIDE ARROWS
+    ========================= */
+
+    .slide-arrow {
+        position: absolute;
+
+        top: 50%;
+        transform: translateY(-50%);
+
+        z-index: 5;
+
+        width: 48px;
+        height: 48px;
+
+        border-radius: 50%;
+
+        border: 1px solid #d4af37;
+
+        background: rgba(0, 0, 0, 0.55);
+
+        color: #d4af37;
+
+        font-size: 22px;
+
+        cursor: pointer;
+
+        transition: 0.3s;
+    }
+
+    .slide-arrow:hover {
+        background: #d4af37;
+        color: #000000;
+    }
+
+    .slide-arrow.prev {
+        left: 25px;
+    }
+
+    .slide-arrow.next {
+        right: 25px;
+    }
+
+
+    /* =========================
+       SLIDE DOTS
+    ========================= */
+
+    .slide-dots {
+        position: absolute;
+
+        bottom: 25px;
+        left: 50%;
+
+        transform: translateX(-50%);
+
+        z-index: 5;
+
+        display: flex;
+        gap: 10px;
+    }
+
+    .dot {
+        width: 11px;
+        height: 11px;
+
+        border-radius: 50%;
+
+        border: 1px solid #d4af37;
+
+        background: transparent;
+
+        cursor: pointer;
+
+        transition: 0.3s;
+    }
+
+    .dot.active {
+        background: #d4af37;
+
+        transform: scale(1.25);
+    }
+
+
+    /* =========================
+       WELCOME SECTION
+    ========================= */
+
+    .welcome-section {
+        max-width: 1000px;
+
+        margin: auto;
+
+        padding: 90px 30px;
+
+        text-align: center;
+    }
+
+    .welcome-section h2 {
+        color: #d4af37;
+
+        font-family: Georgia, "Times New Roman", serif;
+
+        font-size: 42px;
+
+        margin-bottom: 25px;
+    }
+
+    .welcome-section p {
+        color: #cccccc;
+
+        font-size: 17px;
+
+        line-height: 1.9;
+    }
+
+
+    /* =========================
+       FEATURES
+    ========================= */
+
+    .features-section {
+        max-width: 1300px;
+
+        margin: auto;
+
+        padding: 20px 30px 100px;
+
+        display: grid;
+
+        grid-template-columns:
+            repeat(4, 1fr);
+
+        gap: 22px;
+    }
+
+    .feature-card {
+        background:
+            linear-gradient(
+                145deg,
+                #111111,
+                #080808
+            );
+
+        border: 1px solid rgba(212, 175, 55, 0.25);
+
+        border-radius: 10px;
+
+        padding: 35px 25px;
+
+        text-align: center;
+
+        transition: 0.3s;
+    }
+
+    .feature-card:hover {
+        transform: translateY(-7px);
+
+        border-color: #d4af37;
+
+        box-shadow:
+            0 15px 35px
+            rgba(0, 0, 0, 0.5);
+    }
+
+    .feature-icon {
+        font-size: 35px;
+
+        margin-bottom: 15px;
+    }
+
+    .feature-card h3 {
+        color: #d4af37;
+
+        font-family: Georgia, "Times New Roman", serif;
+
+        font-size: 23px;
+
+        margin-bottom: 12px;
+    }
+
+    .feature-card p {
+        color: #bbbbbb;
+
+        font-size: 14px;
+
+        line-height: 1.7;
+    }
+
+
+    /* =========================
+       COLLECTION CTA
+    ========================= */
+
+    .collection-cta {
+        max-width: 1000px;
+
+        margin: 0 auto 100px;
+
+        padding: 70px 30px;
+
+        text-align: center;
+
+        border-top: 1px solid rgba(212, 175, 55, 0.25);
+
+        border-bottom: 1px solid rgba(212, 175, 55, 0.25);
+    }
+
+    .collection-cta h2 {
+        color: #d4af37;
+
+        font-family: Georgia, "Times New Roman", serif;
+
+        font-size: 40px;
+
+        margin-bottom: 15px;
+    }
+
+    .collection-cta p {
+        color: #cccccc;
+
+        margin-bottom: 30px;
+    }
+
+
+    /* =========================
+       FOOTER
+    ========================= */
+
+    footer {
+        padding: 30px 20px;
+
+        text-align: center;
+
+        border-top: 1px solid rgba(212, 175, 55, 0.2);
+
+        color: #888888;
 
         font-size: 13px;
     }
 
-    .misk-hero {
-        min-height: 620px;
+
+    /* =========================
+       BACK TO TOP
+    ========================= */
+
+    #backToTop {
+        position: fixed;
+
+        right: 20px;
+        bottom: 20px;
+
+        width: 45px;
+        height: 45px;
+
+        border-radius: 50%;
+
+        border: 1px solid #d4af37;
+
+        background: #080808;
+
+        color: #d4af37;
+
+        font-size: 20px;
+
+        cursor: pointer;
+
+        z-index: 50;
+
+        opacity: 0;
+
+        visibility: hidden;
+
+        transition: 0.3s;
     }
 
-    .hero-content h1 {
-        letter-spacing: 3px;
+    #backToTop.show {
+        opacity: 1;
+        visibility: visible;
     }
 
-    .hero-small {
-        letter-spacing: 3px;
+    #backToTop:hover {
+        background: #d4af37;
+        color: #000000;
     }
 
-    .hero-description {
-        font-size: 14px;
+
+    /* =========================
+       TABLET
+    ========================= */
+
+    @media (max-width: 1000px) {
+
+        .navbar {
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .features-section {
+            grid-template-columns:
+                repeat(2, 1fr);
+        }
+
+        .hero-content h1 {
+            font-size: 55px;
+        }
     }
 
-    .slide-arrow {
-        width: 38px;
 
-        height: 38px;
+    /* =========================
+       MOBILE
+    ========================= */
+
+    @media (max-width: 700px) {
+
+        .navbar {
+            padding: 18px 15px;
+        }
+
+        .logo {
+            font-size: 24px;
+        }
+
+        .nav-links {
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        .nav-links a {
+            font-size: 12px;
+        }
+
+
+        .misk-hero {
+            min-height: 720px;
+
+            flex-direction: column;
+
+            justify-content: flex-start;
+        }
+
+
+        .hero-slides {
+            top: 0;
+            right: 0;
+
+            width: 100%;
+            height: 100%;
+        }
+
+
+        .hero-slide {
+            padding: 20px;
+
+            object-fit: contain;
+
+            opacity: 0.35;
+        }
+
+        .hero-slide.active {
+            opacity: 0.35;
+        }
+
+
+        .hero-overlay {
+            background:
+                linear-gradient(
+                    180deg,
+                    rgba(5, 5, 5, 0.35),
+                    rgba(5, 5, 5, 0.75),
+                    #050505 90%
+                );
+        }
+
+
+        .hero-content {
+            width: 90%;
+
+            max-width: none;
+
+            margin: 100px auto 0;
+
+            text-align: center;
+        }
+
+
+        .hero-small {
+            font-size: 11px;
+            letter-spacing: 3px;
+        }
+
+
+        .hero-content h1 {
+            font-size: clamp(45px, 12vw, 70px);
+
+            letter-spacing: 3px;
+        }
+
+
+        .gold-line {
+            margin: 20px auto;
+        }
+
+
+        .hero-description {
+            margin: 0 auto 30px;
+        }
+
+
+        .hero-buttons {
+            justify-content: center;
+        }
+
+
+        .slide-arrow {
+            width: 42px;
+            height: 42px;
+
+            font-size: 18px;
+        }
+
+
+        .slide-arrow.prev {
+            left: 10px;
+        }
+
+        .slide-arrow.next {
+            right: 10px;
+        }
+
+
+        .slide-dots {
+            bottom: 18px;
+        }
+
+
+        .welcome-section {
+            padding: 65px 25px;
+        }
+
+
+        .welcome-section h2 {
+            font-size: 34px;
+        }
+
+
+        .welcome-section p {
+            font-size: 15px;
+        }
+
+
+        .features-section {
+            grid-template-columns: 1fr;
+
+            padding-left: 20px;
+            padding-right: 20px;
+        }
+
+
+        .collection-cta {
+            margin-left: 20px;
+            margin-right: 20px;
+        }
+
+
+        .collection-cta h2 {
+            font-size: 32px;
+        }
     }
-
-    .slide-arrow.prev {
-        left: 10px;
-    }
-
-    .slide-arrow.next {
-        right: 10px;
-    }
-
-}
-
-
-/* =========================
-   SMALL PHONES
-========================= */
-
-@media (max-width: 550px) {
-
-    .features {
-        grid-template-columns: 1fr;
-    }
-
-}
-
 </style>
+```
 
 </head>
 
-
 <body>
 
-
+```
 <!-- =========================
-     NAVIGATION
+     HEADER
 ========================= -->
 
-<nav>
+<header>
 
-    <h2>MISK Fragrances</h2>
+    <nav class="navbar">
 
-    <div>
-
-        <a href="index.html">
-            Home
+        <a href="index.html" class="logo">
+            MISK
         </a>
 
-        <a href="about.html">
-            About
-        </a>
+        <div class="nav-links">
 
-        <a href="collection.html">
-            Collection
-        </a>
+            <a href="index.html">
+                Home
+            </a>
 
-        <a href="reviews.html">
-            Reviews
-        </a>
+            <a href="about.html">
+                About
+            </a>
 
-        <a href="contact.html">
-            Contact
-        </a>
+            <a href="collection.html">
+                Collection
+            </a>
 
-    </div>
+            <a href="reviews.html">
+                Reviews
+            </a>
 
-</nav>
+            <a href="contact.html">
+                Contact
+            </a>
+
+        </div>
+
+    </nav>
+
+</header>
 
 
 <!-- =========================
      HERO
 ========================= -->
 
-<section class="misk-hero">
+<main>
+
+    <section class="misk-hero">
 
 
-    <!-- BOTTLE SLIDESHOW -->
+        <!-- BOTTLE SLIDESHOW -->
 
-    <div class="hero-slides">
+        <div class="hero-slides">
 
-        <img
-            src="./bottle1.jpg.jpeg"
-            class="hero-slide active"
-            alt="MISK fragrance bottle"
-        >
-
-        <img
-            src="./bottle2.jpg.jpeg"
-            class="hero-slide"
-            alt="MISK fragrance bottle"
-        >
-
-        <img
-            src="./bottle3.jpg.jpeg"
-            class="hero-slide"
-            alt="MISK fragrance bottle"
-        >
-
-        <img
-            src="./bottle4.jpg.jpeg"
-            class="hero-slide"
-            alt="MISK fragrance bottle"
-        >
-
-    </div>
-
-
-    <!-- LIGHT OVERLAY -->
-
-    <div class="hero-overlay"></div>
-
-
-    <!-- HERO TEXT -->
-
-    <div class="hero-content">
-
-        <p class="hero-small">
-            PREMIUM FRAGRANCE OILS
-        </p>
-
-        <h1>
-            MISK Fragrances
-        </h1>
-
-        <div class="gold-line"></div>
-
-        <p class="hero-tagline">
-            Fragrance in Every Drop
-        </p>
-
-        <p class="hero-description">
-            Discover luxurious fragrance oils and timeless
-            scents created to leave a lasting impression.
-        </p>
-
-        <div class="hero-buttons">
-
-            <a
-                href="collection.html"
-                class="hero-btn"
+            <img
+                src="./bottle1.jpg.jpeg"
+                class="hero-slide active"
+                alt="MISK fragrance bottle"
             >
-                Explore Collection
-            </a>
 
-            <a
-                href="reviews.html"
-                class="hero-btn secondary"
+            <img
+                src="./bottle2.jpg.jpeg"
+                class="hero-slide"
+                alt="MISK fragrance bottle"
             >
+
+            <img
+                src="./bottle3.jpg.jpeg"
+                class="hero-slide"
+                alt="MISK fragrance bottle"
+            >
+
+            <img
+                src="./bottle4.jpg.jpeg"
+                class="hero-slide"
+                alt="MISK fragrance bottle"
+            >
+
+        </div>
+
+
+        <!-- HERO OVERLAY -->
+
+        <div class="hero-overlay"></div>
+
+
+        <!-- HERO TEXT -->
+
+        <div class="hero-content">
+
+            <p class="hero-small">
+                PREMIUM FRAGRANCE OILS
+            </p>
+
+            <h1>
+                MISK Fragrances
+            </h1>
+
+            <div class="gold-line"></div>
+
+            <p class="hero-tagline">
+                Fragrance in Every Drop
+            </p>
+
+            <p class="hero-description">
+                Discover luxurious fragrance oils and timeless
+                scents created to leave a lasting impression.
+            </p>
+
+            <div class="hero-buttons">
+
+                <a
+                    href="collection.html"
+                    class="hero-btn"
+                >
+                    Explore Collection
+                </a>
+
+                <a
+                    href="reviews.html"
+                    class="hero-btn secondary"
+                >
+                    Customer Reviews
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <!-- PREVIOUS BUTTON -->
+
+        <button
+            class="slide-arrow prev"
+            onclick="changeSlide(-1)"
+            aria-label="Previous bottle"
+        >
+            &#10094;
+        </button>
+
+
+        <!-- NEXT BUTTON -->
+
+        <button
+            class="slide-arrow next"
+            onclick="changeSlide(1)"
+            aria-label="Next bottle"
+        >
+            &#10095;
+        </button>
+
+
+        <!-- SLIDESHOW DOTS -->
+
+        <div class="slide-dots">
+
+            <span
+                class="dot active"
+                onclick="showSlide(0)"
+                role="button"
+                aria-label="Show bottle 1"
+            ></span>
+
+            <span
+                class="dot"
+                onclick="showSlide(1)"
+                role="button"
+                aria-label="Show bottle 2"
+            ></span>
+
+            <span
+                class="dot"
+                onclick="showSlide(2)"
+                role="button"
+                aria-label="Show bottle 3"
+            ></span>
+
+            <span
+                class="dot"
+                onclick="showSlide(3)"
+                role="button"
+                aria-label="Show bottle 4"
+            ></span>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         WELCOME
+    ========================= -->
+
+    <section class="welcome-section">
+
+        <h2>
+            Welcome to MISK
+        </h2>
+
+        <p>
+            At MISK Fragrances, we believe fragrance is more than
+            just a scent. It is a way to express your personality,
+            create memories and leave a lasting impression.
+            Explore our collection of premium fragrance oils,
+            oud and musk-inspired scents.
+        </p>
+
+    </section>
+
+
+    <!-- =========================
+         FEATURES
+    ========================= -->
+
+    <section class="features-section">
+
+
+        <div class="feature-card">
+
+            <div class="feature-icon">
+                ✨
+            </div>
+
+            <h3>
+                Premium Scents
+            </h3>
+
+            <p>
+                Carefully selected fragrance oils
+                for a luxurious experience.
+            </p>
+
+        </div>
+
+
+        <div class="feature-card">
+
+            <div class="feature-icon">
+                🌙
+            </div>
+
+            <h3>
+                Long Lasting
+            </h3>
+
+            <p>
+                Elegant fragrances designed to
+                leave a memorable impression.
+            </p>
+
+        </div>
+
+
+        <div class="feature-card">
+
+            <div class="feature-icon">
+                🖤
+            </div>
+
+            <h3>
+                Luxury Inspired
+            </h3>
+
+            <p>
+                Rich oud, musk, floral and
+                oriental-inspired fragrance styles.
+            </p>
+
+        </div>
+
+
+        <div class="feature-card">
+
+            <div class="feature-icon">
+                ⭐
+            </div>
+
+            <h3>
                 Customer Reviews
-            </a>
+            </h3>
+
+            <p>
+                See what customers think about
+                the MISK fragrance collection.
+            </p>
 
         </div>
 
-    </div>
+
+    </section>
 
 
-    <!-- PREVIOUS BUTTON -->
+    <!-- =========================
+         COLLECTION CTA
+    ========================= -->
 
-    <button
-        class="slide-arrow prev"
-        onclick="changeSlide(-1)"
-        aria-label="Previous bottle"
-    >
-        &#10094;
-    </button>
+    <section class="collection-cta">
 
-
-    <!-- NEXT BUTTON -->
-
-    <button
-        class="slide-arrow next"
-        onclick="changeSlide(1)"
-        aria-label="Next bottle"
-    >
-        &#10095;
-    </button>
-
-
-    <!-- SLIDESHOW DOTS -->
-
-    <div class="slide-dots">
-
-        <span
-            class="dot active"
-            onclick="showSlide(0)"
-        ></span>
-
-        <span
-            class="dot"
-            onclick="showSlide(1)"
-        ></span>
-
-        <span
-            class="dot"
-            onclick="showSlide(2)"
-        ></span>
-
-        <span
-            class="dot"
-            onclick="showSlide(3)"
-        ></span>
-
-    </div>
-
-</section>
-
-
-<!-- =========================
-     WELCOME
-========================= -->
-
-<section class="welcome">
-
-    <h2>
-        Welcome to MISK
-    </h2>
-
-    <p>
-        At MISK Fragrances, we believe fragrance is more than
-        just a scent. It is a way to express your personality,
-        create memories and leave a lasting impression.
-        Explore our collection of premium fragrance oils,
-        oud and musk-inspired scents.
-    </p>
-
-</section>
-
-
-<!-- =========================
-     FEATURES
-========================= -->
-
-<section class="features">
-
-
-    <div class="feature-card">
-
-        <div class="feature-icon">
-            ✨
-        </div>
-
-        <h3>
-            Premium Scents
-        </h3>
+        <h2>
+            Find Your Signature Scent
+        </h2>
 
         <p>
-            Carefully selected fragrance oils
-            for a luxurious experience.
+            Explore the MISK collection and discover
+            your next favourite fragrance.
         </p>
 
-    </div>
+        <a
+            href="collection.html"
+            class="hero-btn"
+        >
+            View Collection
+        </a>
 
+    </section>
 
-    <div class="feature-card">
-
-        <div class="feature-icon">
-            🌙
-        </div>
-
-        <h3>
-            Long Lasting
-        </h3>
-
-        <p>
-            Elegant fragrances designed to
-            leave a memorable impression.
-        </p>
-
-    </div>
-
-
-    <div class="feature-card">
-
-        <div class="feature-icon">
-            🖤
-        </div>
-
-        <h3>
-            Luxury Inspired
-        </h3>
-
-        <p>
-            Rich oud, musk, floral and
-            oriental-inspired fragrance styles.
-        </p>
-
-    </div>
-
-
-    <div class="feature-card">
-
-        <div class="feature-icon">
-            ⭐
-        </div>
-
-        <h3>
-            Customer Reviews
-        </h3>
-
-        <p>
-            See what customers think about
-            the MISK fragrance collection.
-        </p>
-
-    </div>
-
-
-</section>
-
-
-<!-- =========================
-     CALL TO ACTION
-========================= -->
-
-<section class="cta">
-
-    <h2>
-        Find Your Signature Scent
-    </h2>
-
-    <p>
-        Explore the MISK collection and discover
-        your next favourite fragrance.
-    </p>
-
-    <a
-        href="collection.html"
-        class="hero-btn"
-    >
-        View Collection
-    </a>
-
-</section>
+</main>
 
 
 <!-- =========================
@@ -940,73 +1107,109 @@ footer {
 </footer>
 
 
+<!-- BACK TO TOP -->
+
+<button
+    id="backToTop"
+    onclick="window.scrollTo({top: 0, behavior: 'smooth'})"
+    aria-label="Back to top"
+>
+    ↑
+</button>
+
+
 <!-- =========================
-     SLIDESHOW JAVASCRIPT
+     JAVASCRIPT
 ========================= -->
 
 <script>
 
-let currentSlide = 0;
+    let currentSlide = 0;
 
-const slides =
-    document.querySelectorAll(".hero-slide");
+    const slides =
+        document.querySelectorAll(".hero-slide");
 
-const dots =
-    document.querySelectorAll(".dot");
+    const dots =
+        document.querySelectorAll(".dot");
 
 
-function showSlide(index) {
+    function showSlide(index) {
 
-    if (index >= slides.length) {
-        index = 0;
+        if (index >= slides.length) {
+            index = 0;
+        }
+
+        if (index < 0) {
+            index = slides.length - 1;
+        }
+
+        currentSlide = index;
+
+
+        slides.forEach(function(slide) {
+
+            slide.classList.remove("active");
+
+        });
+
+
+        dots.forEach(function(dot) {
+
+            dot.classList.remove("active");
+
+        });
+
+
+        slides[currentSlide]
+            .classList.add("active");
+
+
+        dots[currentSlide]
+            .classList.add("active");
+
     }
 
-    if (index < 0) {
-        index = slides.length - 1;
+
+    function changeSlide(direction) {
+
+        showSlide(
+            currentSlide + direction
+        );
+
     }
 
 
-    slides.forEach(function(slide) {
+    /* AUTOMATIC SLIDESHOW */
 
-        slide.classList.remove("active");
+    setInterval(function() {
+
+        changeSlide(1);
+
+    }, 5000);
+
+
+    /* BACK TO TOP BUTTON */
+
+    const backToTop =
+        document.getElementById("backToTop");
+
+
+    window.addEventListener("scroll", function() {
+
+        if (window.scrollY > 400) {
+
+            backToTop.classList.add("show");
+
+        } else {
+
+            backToTop.classList.remove("show");
+
+        }
 
     });
-
-
-    dots.forEach(function(dot) {
-
-        dot.classList.remove("active");
-
-    });
-
-
-    slides[index].classList.add("active");
-
-    dots[index].classList.add("active");
-
-    currentSlide = index;
-
-}
-
-
-function changeSlide(direction) {
-
-    showSlide(currentSlide + direction);
-
-}
-
-
-/* Automatically change bottle every 5 seconds */
-
-setInterval(function() {
-
-    showSlide(currentSlide + 1);
-
-}, 5000);
 
 </script>
-
+```
 
 </body>
-
 </html>
