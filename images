@@ -1,4 +1,4 @@
-bottle1.jpg.jpeg
-bottle2.jpg.jpeg
-bottle3.jpg.jpeg
-bottle4.jpg.jpeg
+<img src="images/bottle1.jpg.jpeg">
+<img src="images/bottle2.jpg.jpeg">
+<img src="images/bottle3.jpg.jpeg">
+<img src="images/bottle4.jpg.jpeg">
