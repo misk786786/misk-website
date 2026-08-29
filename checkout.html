@@ -1,0 +1,440 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport"
+content="width=device-width, initial-scale=1.0">
+
+<title>Checkout - MISK Fragrances</title>
+
+<style>
+
+:root{
+    --gold:#d4af37;
+    --gold-dark:#b8860b;
+    --silver:#c0c0c0;
+    --silver-light:#e5e5e5;
+    --bg:#0a0a0a;
+    --card:#111;
+}
+
+*{
+    box-sizing:border-box;
+}
+
+body{
+    margin:0;
+    font-family:Arial,Helvetica,sans-serif;
+    background:var(--bg);
+    color:var(--silver-light);
+}
+
+/* NAV */
+
+nav{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:18px 35px;
+    background:#000;
+    border-bottom:1px solid var(--gold);
+}
+
+nav h1{
+    color:var(--gold);
+    letter-spacing:3px;
+    margin:0;
+}
+
+nav a{
+    color:var(--gold);
+    text-decoration:none;
+    margin-left:20px;
+}
+
+/* CHECKOUT */
+
+.container{
+    max-width:650px;
+    margin:auto;
+    padding:60px 20px;
+}
+
+h2{
+    color:var(--gold);
+    text-align:center;
+    font-size:34px;
+}
+
+.order-box{
+    background:var(--card);
+    border:1px solid var(--gold);
+    border-radius:8px;
+    padding:30px;
+    margin-top:30px;
+}
+
+.form-group{
+    margin-bottom:20px;
+}
+
+label{
+    display:block;
+    color:var(--gold);
+    font-weight:bold;
+    margin-bottom:8px;
+}
+
+input,
+textarea{
+    width:100%;
+    padding:13px;
+    background:#000;
+    color:white;
+    border:1px solid #555;
+    border-radius:5px;
+    font-family:Arial,Helvetica,sans-serif;
+}
+
+textarea{
+    min-height:100px;
+    resize:vertical;
+}
+
+.order-summary{
+    border-top:1px solid #333;
+    margin-top:25px;
+    padding-top:20px;
+}
+
+.order-summary h3{
+    color:var(--gold);
+}
+
+.place-order{
+    width:100%;
+    padding:14px;
+    background:linear-gradient(var(--gold),var(--gold-dark));
+    border:none;
+    border-radius:5px;
+    color:#000;
+    font-weight:bold;
+    font-size:16px;
+    cursor:pointer;
+}
+
+.place-order:hover{
+    transform:scale(1.02);
+}
+
+.back{
+    display:block;
+    text-align:center;
+    margin-top:20px;
+    color:var(--gold);
+}
+
+/* FOOTER */
+
+footer{
+    text-align:center;
+    padding:30px;
+    border-top:1px solid var(--gold);
+    color:#777;
+    margin-top:40px;
+}
+
+@media(max-width:700px){
+
+nav{
+    flex-direction:column;
+    gap:15px;
+}
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<nav>
+
+<h1>MISK Fragrances</h1>
+
+<div>
+
+<a href="index.html">Home</a>
+<a href="collection.html">Collection</a>
+<a href="cart.html">🛒 Cart</a>
+
+</div>
+
+</nav>
+
+
+<div class="container">
+
+<h2>Checkout</h2>
+
+<div class="order-box">
+
+<form id="checkoutForm">
+
+<div class="form-group">
+
+<label for="name">
+Full Name
+</label>
+
+<input
+type="text"
+id="name"
+required
+placeholder="Enter your name">
+
+</div>
+
+
+<div class="form-group">
+
+<label for="email">
+Email Address
+</label>
+
+<input
+type="email"
+id="email"
+required
+placeholder="Enter your email">
+
+</div>
+
+
+<div class="form-group">
+
+<label for="address">
+Delivery Address
+</label>
+
+<textarea
+id="address"
+required
+placeholder="Enter your delivery address"></textarea>
+
+</div>
+
+
+<div class="form-group">
+
+<label for="postcode">
+Postcode
+</label>
+
+<input
+type="text"
+id="postcode"
+required
+placeholder="Enter your postcode">
+
+</div>
+
+
+<div class="order-summary">
+
+<h3>
+Your Order
+</h3>
+
+<div id="orderSummary"></div>
+
+</div>
+
+
+<button
+type="submit"
+class="place-order">
+
+Send Order Request
+
+</button>
+
+</form>
+
+
+<a href="cart.html" class="back">
+← Back to Cart
+</a>
+
+</div>
+
+</div>
+
+
+<footer>
+
+© 2026 MISK Fragrances. All Rights Reserved.
+
+</footer>
+
+
+<script>
+
+let cart =
+JSON.parse(localStorage.getItem("miskCart")) || [];
+
+
+/* SHOW ORDER */
+
+function showOrder(){
+
+    const summary =
+        document.getElementById("orderSummary");
+
+    if(cart.length === 0){
+
+        summary.innerHTML =
+        "<p>Your cart is empty.</p>";
+
+        return;
+    }
+
+
+    let html = "";
+
+    let total = 0;
+
+
+    cart.forEach(item => {
+
+        const itemTotal =
+            item.price * item.quantity;
+
+        total += itemTotal;
+
+
+        html += `
+        <p>
+        ${item.name} × ${item.quantity}
+        — £${itemTotal.toFixed(2)}
+        </p>
+        `;
+
+    });
+
+
+    html += `
+    <hr>
+    <strong>
+    Total: £${total.toFixed(2)}
+    </strong>
+    `;
+
+
+    summary.innerHTML = html;
+
+}
+
+
+showOrder();
+
+
+/* SEND ORDER EMAIL */
+
+document
+.getElementById("checkoutForm")
+.addEventListener("submit",function(event){
+
+    event.preventDefault();
+
+
+    if(cart.length === 0){
+
+        alert("Your cart is empty.");
+
+        return;
+
+    }
+
+
+    const name =
+        document.getElementById("name").value.trim();
+
+    const email =
+        document.getElementById("email").value.trim();
+
+    const address =
+        document.getElementById("address").value.trim();
+
+    const postcode =
+        document.getElementById("postcode").value.trim();
+
+
+    let orderText = "";
+
+    let total = 0;
+
+
+    cart.forEach(item => {
+
+        const itemTotal =
+            item.price * item.quantity;
+
+        total += itemTotal;
+
+
+        orderText +=
+        `${item.name} x ${item.quantity} - £${itemTotal.toFixed(2)}\n`;
+
+    });
+
+
+    const subject =
+        encodeURIComponent(
+            "MISK Fragrances - New Order"
+        );
+
+
+    const body =
+        encodeURIComponent(
+
+`NEW MISK FRAGRANCES ORDER
+
+Customer Name:
+${name}
+
+Customer Email:
+${email}
+
+Delivery Address:
+${address}
+
+Postcode:
+${postcode}
+
+ORDER:
+
+${orderText}
+
+TOTAL:
+£${total.toFixed(2)}
+
+Please contact the customer to arrange payment and delivery.`
+
+        );
+
+
+    window.location.href =
+        `mailto:miskfragrances.uk@gmail.com?subject=${subject}&body=${body}`;
+
+});
+
+</script>
+
+</body>
+</html>
+```
