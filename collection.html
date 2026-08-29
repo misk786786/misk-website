@@ -1,3 +1,4 @@
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -66,6 +67,23 @@ nav a:hover{
     color:white;
 }
 
+/* CART LINK */
+
+.cart-link{
+    border:1px solid var(--gold);
+    padding:8px 14px;
+    border-radius:5px;
+}
+
+.cart-count{
+    background:var(--gold);
+    color:#000;
+    padding:2px 7px;
+    border-radius:50%;
+    font-size:12px;
+    margin-left:4px;
+}
+
 /* SECTIONS */
 
 section{
@@ -77,6 +95,8 @@ section{
 section h2{
     color:var(--gold);
     margin-bottom:20px;
+    text-align:center;
+    font-size:32px;
 }
 
 /* PRODUCTS */
@@ -93,6 +113,7 @@ section h2{
     padding:25px;
     text-align:center;
     transition:.25s;
+    border-radius:8px;
 }
 
 .card:hover{
@@ -108,16 +129,40 @@ section h2{
 .card p{
     color:var(--silver);
     line-height:1.6;
+    min-height:80px;
 }
 
-.badge{
-    display:inline-block;
+.price{
+    display:block;
+    color:var(--gold);
+    font-size:20px;
+    font-weight:bold;
+    margin:15px 0;
+}
+
+/* ADD TO CART */
+
+.add-cart{
     background:linear-gradient(var(--gold),var(--gold-dark));
     color:#000;
+    border:none;
+    padding:11px 22px;
+    border-radius:5px;
     font-weight:bold;
-    padding:10px 20px;
-    border-radius:4px;
-    font-size:16px;
+    cursor:pointer;
+    font-size:15px;
+    transition:.3s;
+}
+
+.add-cart:hover{
+    transform:scale(1.04);
+    box-shadow:0 5px 15px rgba(212,175,55,.3);
+}
+
+.add-cart.added{
+    background:#222;
+    color:var(--gold);
+    border:1px solid var(--gold);
 }
 
 /* FOOTER */
@@ -134,6 +179,16 @@ footer{
 nav{
     flex-direction:column;
     gap:15px;
+    padding:18px 15px;
+}
+
+nav div{
+    text-align:center;
+}
+
+nav a{
+    display:inline-block;
+    margin:5px 6px;
 }
 
 }
@@ -143,19 +198,28 @@ nav{
 
 <body>
 
+<!-- NAVIGATION -->
+
 <nav>
 
 <h1>MISK Fragrances</h1>
 
 <div>
+
 <a href="index.html">Home</a>
 <a href="about.html">About</a>
 <a href="collection.html">Collection</a>
 <a href="reviews.html">Reviews</a>
 <a href="contact.html">Contact</a>
+<a href="cart.html" class="cart-link">
+🛒 Cart <span class="cart-count" id="cartCount">0</span>
+</a>
+
 </div>
 
 </nav>
+
+<!-- COLLECTION -->
 
 <section>
 
@@ -163,57 +227,169 @@ nav{
 
 <div class="grid">
 
+<!-- ROYAL OUD -->
+
 <div class="card">
+
 <h3>Royal Oud</h3>
-<p>Rich woody oud with warm oriental notes for a bold and timeless fragrance.</p>
-<span class="badge">£5.99</span>
+
+<p>
+Rich woody oud with warm oriental notes for a bold and timeless fragrance.
+</p>
+
+<span class="price">£5.99</span>
+
+<button class="add-cart"
+onclick="addToCart('Royal Oud', 5.99)">
+Add to Cart
+</button>
+
 </div>
 
+
+<!-- MISK NOIR -->
+
 <div class="card">
+
 <h3>MISK Noir</h3>
-<p>A luxurious dark blend of rich florals, woods and amber for elegant evenings.</p>
-<span class="badge">£5.99</span>
+
+<p>
+A luxurious dark blend of rich florals, woods and amber for elegant evenings.
+</p>
+
+<span class="price">£5.99</span>
+
+<button class="add-cart"
+onclick="addToCart('MISK Noir', 5.99)">
+Add to Cart
+</button>
+
 </div>
 
+
+<!-- IMPERIAL MUSK -->
+
 <div class="card">
+
 <h3>Imperial Musk</h3>
-<p>A smooth white musk with clean, soft and long-lasting elegance.</p>
-<span class="badge">£4.99</span>
+
+<p>
+A smooth white musk with clean, soft and long-lasting elegance.
+</p>
+
+<span class="price">£4.99</span>
+
+<button class="add-cart"
+onclick="addToCart('Imperial Musk', 4.99)">
+Add to Cart
+</button>
+
 </div>
 
+
+<!-- SIGNATURE HOMME -->
+
 <div class="card">
+
 <h3>Signature Homme</h3>
-<p>A refined masculine blend with fresh citrus, woods and amber.</p>
-<span class="badge">£5.99</span>
+
+<p>
+A refined masculine blend with fresh citrus, woods and amber.
+</p>
+
+<span class="price">£5.99</span>
+
+<button class="add-cart"
+onclick="addToCart('Signature Homme', 5.99)">
+Add to Cart
+</button>
+
 </div>
 
+
+<!-- ROSE PRESTIGE -->
+
 <div class="card">
+
 <h3>Rose Prestige</h3>
-<p>A luxurious rose fragrance enriched with soft musk and warm amber.</p>
-<span class="badge">£4.99</span>
+
+<p>
+A luxurious rose fragrance enriched with soft musk and warm amber.
+</p>
+
+<span class="price">£4.99</span>
+
+<button class="add-cart"
+onclick="addToCart('Rose Prestige', 4.99)">
+Add to Cart
+</button>
+
 </div>
 
+
+<!-- LEGACY -->
+
 <div class="card">
+
 <h3>Legacy</h3>
-<p>A modern, sophisticated fragrance combining fresh notes with smooth woods.</p>
-<span class="badge">£5.99</span>
+
+<p>
+A modern, sophisticated fragrance combining fresh notes with smooth woods.
+</p>
+
+<span class="price">£5.99</span>
+
+<button class="add-cart"
+onclick="addToCart('Legacy', 5.99)">
+Add to Cart
+</button>
+
 </div>
 
+
+<!-- OBSIDIAN -->
+
 <div class="card">
+
 <h3>Obsidian</h3>
-<p>A deep, smoky blend with dark woods and a mysterious oriental finish.</p>
-<span class="badge">£5.99</span>
+
+<p>
+A deep, smoky blend with dark woods and a mysterious oriental finish.
+</p>
+
+<span class="price">£5.99</span>
+
+<button class="add-cart"
+onclick="addToCart('Obsidian', 5.99)">
+Add to Cart
+</button>
+
 </div>
 
+
+<!-- MISК ROYALE -->
+
 <div class="card">
+
 <h3>MISK Royale</h3>
-<p>An elegant Middle Eastern-inspired fragrance featuring rich oud, musk and warm oriental notes.</p>
-<span class="badge">£5.99</span>
+
+<p>
+An elegant Middle Eastern-inspired fragrance featuring rich oud, musk and warm oriental notes.
+</p>
+
+<span class="price">£5.99</span>
+
+<button class="add-cart"
+onclick="addToCart('MISK Royale', 5.99)">
+Add to Cart
+</button>
+
 </div>
 
 </div>
 
 </section>
+
 
 <footer>
 
@@ -221,5 +397,68 @@ nav{
 
 </footer>
 
+
+<script>
+
+/* ==============================
+   SHOPPING CART
+============================== */
+
+let cart = JSON.parse(localStorage.getItem("miskCart")) || [];
+
+
+/* ADD PRODUCT */
+
+function addToCart(name, price){
+
+    const existingProduct = cart.find(
+        item => item.name === name
+    );
+
+    if(existingProduct){
+
+        existingProduct.quantity += 1;
+
+    }else{
+
+        cart.push({
+            name:name,
+            price:price,
+            quantity:1
+        });
+
+    }
+
+    localStorage.setItem(
+        "miskCart",
+        JSON.stringify(cart)
+    );
+
+    updateCartCount();
+
+    alert(name + " has been added to your cart!");
+
+}
+
+
+/* UPDATE CART NUMBER */
+
+function updateCartCount(){
+
+    const totalItems = cart.reduce(
+        (total,item) => total + item.quantity,
+        0
+    );
+
+    document.getElementById("cartCount").textContent =
+        totalItems;
+
+}
+
+updateCartCount();
+
+</script>
+
 </body>
 </html>
+```
