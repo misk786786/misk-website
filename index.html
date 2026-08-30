@@ -1,4 +1,3 @@
-```html
 <!DOCTYPE html>
 <html lang="en">
 
@@ -6,8 +5,7 @@
 
 <meta charset="UTF-8">
 
-<meta name="viewport"
-content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>MISK Fragrances | Premium Fragrance Oils</title>
 
@@ -61,6 +59,8 @@ a {
 header {
     background: #050505;
     border-bottom: 1px solid rgba(212,175,55,0.25);
+    position: relative;
+    z-index: 20;
 }
 
 .navbar {
@@ -75,7 +75,9 @@ header {
 }
 
 
-/* MISK LOGO */
+/* =====================================================
+   MISK LOGO
+===================================================== */
 
 .logo {
     color: #d4af37;
@@ -86,10 +88,18 @@ header {
     font-weight: bold;
 
     letter-spacing: 5px;
+
+    transition: 0.3s;
+}
+
+.logo:hover {
+    color: #ffffff;
 }
 
 
-/* NAVIGATION LINKS */
+/* =====================================================
+   NAVIGATION
+===================================================== */
 
 .nav-links {
     display: flex;
@@ -116,19 +126,39 @@ header {
 }
 
 
-/* CART */
+/* =====================================================
+   CART
+===================================================== */
 
 .cart-link {
     border: 1px solid #d4af37;
+
     padding: 8px 12px;
+
     border-radius: 5px;
+
+    transition: 0.3s;
+}
+
+.cart-link:hover {
+    background: #d4af37;
+    color: #050505 !important;
 }
 
 .cart-count {
+    display: inline-flex;
+
+    justify-content: center;
+    align-items: center;
+
+    min-width: 20px;
+    height: 20px;
+
     background: #d4af37;
+
     color: #050505;
 
-    padding: 2px 7px;
+    padding: 2px 6px;
 
     border-radius: 50%;
 
@@ -150,20 +180,22 @@ header {
 
     width: 100%;
 
-    min-height: 850px;
+    min-height: 750px;
 
     background: #050505;
 
     overflow: hidden;
 
     display: flex;
+
     align-items: center;
+
     justify-content: center;
 }
 
 
 /* =====================================================
-   BACKGROUND BOTTLE AREA
+   HERO SLIDES
 ===================================================== */
 
 .hero-slides {
@@ -176,10 +208,16 @@ header {
     height: 100%;
 
     z-index: 1;
+
+    overflow: hidden;
 }
 
 
-/* BOTTLE IMAGES */
+/* =====================================================
+   BOTTLE IMAGES
+
+   CONTAIN keeps the complete bottle visible.
+===================================================== */
 
 .hero-slide {
 
@@ -190,15 +228,21 @@ header {
     width: 100%;
     height: 100%;
 
-    object-fit: cover;
+    object-fit: contain;
 
-    padding: 0;
+    object-position: center center;
+
+    padding: 20px;
 
     opacity: 0;
 
     z-index: 1;
 
-    transition: opacity 0.7s ease;
+    transform: scale(1.08);
+
+    transition:
+        opacity 0.7s ease,
+        transform 0.7s ease;
 }
 
 .hero-slide.active {
@@ -226,15 +270,15 @@ header {
     background:
         linear-gradient(
             to right,
-            rgba(0,0,0,0.78),
-            rgba(0,0,0,0.38),
+            rgba(0,0,0,0.76),
+            rgba(0,0,0,0.30),
             rgba(0,0,0,0.62)
         );
 }
 
 
 /* =====================================================
-   HERO TEXT
+   HERO CONTENT
 ===================================================== */
 
 .hero-content {
@@ -245,7 +289,7 @@ header {
 
     width: 90%;
 
-    max-width: 800px;
+    max-width: 900px;
 
     margin: 0 auto;
 
@@ -255,7 +299,9 @@ header {
 }
 
 
-/* SMALL TITLE */
+/* =====================================================
+   HERO SMALL TITLE
+===================================================== */
 
 .hero-small {
 
@@ -273,7 +319,9 @@ header {
 }
 
 
-/* MAIN TITLE */
+/* =====================================================
+   HERO MAIN TITLE
+===================================================== */
 
 .hero-content h1 {
 
@@ -293,7 +341,9 @@ header {
 }
 
 
-/* GOLD LINE */
+/* =====================================================
+   GOLD LINE
+===================================================== */
 
 .gold-line {
 
@@ -307,7 +357,9 @@ header {
 }
 
 
-/* TAGLINE */
+/* =====================================================
+   TAGLINE
+===================================================== */
 
 .hero-tagline {
 
@@ -325,7 +377,9 @@ header {
 }
 
 
-/* DESCRIPTION */
+/* =====================================================
+   DESCRIPTION
+===================================================== */
 
 .hero-description {
 
@@ -344,7 +398,7 @@ header {
 
 
 /* =====================================================
-   BUTTONS
+   HERO BUTTONS
 ===================================================== */
 
 .hero-buttons {
@@ -385,7 +439,6 @@ header {
     transition: 0.3s;
 }
 
-
 .hero-btn:hover {
 
     transform: translateY(-3px);
@@ -413,7 +466,7 @@ header {
 
 
 /* =====================================================
-   WELCOME
+   WELCOME SECTION
 ===================================================== */
 
 .welcome-section {
@@ -676,11 +729,11 @@ footer {
     }
 
 
-    /* FULL BACKGROUND HERO */
+    /* HERO */
 
     .misk-hero {
 
-        min-height: 680px;
+        min-height: 720px;
 
         display: flex;
 
@@ -708,7 +761,13 @@ footer {
 
         height: 100%;
 
-        object-fit: cover;
+        object-fit: contain;
+
+        object-position: center center;
+
+        padding: 20px;
+
+        transform: scale(1.08);
     }
 
 
@@ -725,8 +784,8 @@ footer {
         background:
             linear-gradient(
                 to right,
-                rgba(5,5,5,0.78),
-                rgba(5,5,5,0.35),
+                rgba(5,5,5,0.76),
+                rgba(5,5,5,0.30),
                 rgba(5,5,5,0.62)
             );
     }
@@ -806,20 +865,26 @@ footer {
 
 
 /* =====================================================
-   SMALL MOBILE
+   MOBILE
 ===================================================== */
 
 @media (max-width: 700px) {
 
     .misk-hero {
 
-        min-height: 750px;
+        min-height: 700px;
     }
 
 
     .hero-slide {
 
-        object-fit: cover;
+        object-fit: contain;
+
+        object-position: center center;
+
+        padding: 15px;
+
+        transform: scale(1.05);
     }
 
 
@@ -828,8 +893,8 @@ footer {
         background:
             linear-gradient(
                 to bottom,
-                rgba(0,0,0,0.35),
-                rgba(0,0,0,0.75)
+                rgba(0,0,0,0.30),
+                rgba(0,0,0,0.78)
             );
     }
 
@@ -885,12 +950,79 @@ footer {
         text-align: center;
     }
 
+
+    .nav-links {
+
+        gap: 10px 14px;
+    }
+
+
+    .nav-links a {
+
+        font-size: 11px;
+    }
+
+
+    .cart-link {
+
+        padding: 7px 10px;
+    }
+
 }
 
 
 /* =====================================================
-   JAVASCRIPT-FRIENDLY
+   VERY SMALL PHONES
 ===================================================== */
+
+@media (max-width: 400px) {
+
+    .navbar {
+
+        padding: 15px 10px;
+    }
+
+
+    .logo {
+
+        font-size: 24px;
+
+        letter-spacing: 4px;
+    }
+
+
+    .nav-links {
+
+        gap: 8px 11px;
+    }
+
+
+    .nav-links a {
+
+        font-size: 10px;
+    }
+
+
+    .misk-hero {
+
+        min-height: 650px;
+    }
+
+
+    .hero-slide {
+
+        padding: 10px;
+
+        transform: scale(1.02);
+    }
+
+
+    .hero-content h1 {
+
+        font-size: 39px;
+    }
+
+}
 
 </style>
 
@@ -955,7 +1087,9 @@ Contact
 <section class="misk-hero">
 
 
-<!-- FRAGRANCE IMAGES -->
+<!-- =====================================================
+     BOTTLE IMAGES
+===================================================== -->
 
 <div class="hero-slides">
 
@@ -963,40 +1097,44 @@ Contact
 <img
 src="./bottle1.jpg.jpeg"
 class="hero-slide active"
-alt="MISK fragrance bottle"
+alt="MISK fragrance bottle 1"
 >
 
 
 <img
 src="./bottle2.jpg.jpeg"
 class="hero-slide"
-alt="MISK fragrance bottle"
+alt="MISK fragrance bottle 2"
 >
 
 
 <img
 src="./bottle3.jpg.jpeg"
 class="hero-slide"
-alt="MISK fragrance bottle"
+alt="MISK fragrance bottle 3"
 >
 
 
 <img
 src="./bottle4.jpg.jpeg"
 class="hero-slide"
-alt="MISK fragrance bottle"
+alt="MISK fragrance bottle 4"
 >
 
 
 </div>
 
 
-<!-- DARK OVERLAY -->
+<!-- =====================================================
+     DARK OVERLAY
+===================================================== -->
 
 <div class="hero-overlay"></div>
 
 
-<!-- HERO TEXT -->
+<!-- =====================================================
+     HERO TEXT
+===================================================== -->
 
 <div class="hero-content">
 
@@ -1020,8 +1158,10 @@ Fragrance in Every Drop
 
 
 <p class="hero-description">
+
 Discover luxurious fragrance oils and timeless
 scents created to leave a lasting impression.
+
 </p>
 
 
@@ -1220,7 +1360,6 @@ aria-label="Back to top"
 
 <script>
 
-
 /* =====================================================
    HERO SLIDESHOW
 ===================================================== */
@@ -1257,8 +1396,11 @@ function showSlide(index) {
     });
 
 
-    slides[currentSlide]
-        .classList.add("active");
+    if (slides[currentSlide]) {
+
+        slides[currentSlide].classList.add("active");
+
+    }
 
 }
 
@@ -1278,16 +1420,30 @@ setInterval(function() {
 
 function updateCartCount() {
 
-    const cart =
-        JSON.parse(
-            localStorage.getItem("miskCart")
-        ) || [];
+    let cart = [];
+
+    try {
+
+        cart =
+            JSON.parse(
+                localStorage.getItem("miskCart")
+            ) || [];
+
+    } catch (error) {
+
+        cart = [];
+
+    }
 
 
     const totalItems =
         cart.reduce(
-            (total, item) =>
-                total + item.quantity,
+            function(total, item) {
+
+                return total +
+                    (Number(item.quantity) || 0);
+
+            },
             0
         );
 
@@ -1310,7 +1466,7 @@ updateCartCount();
 
 
 /* =====================================================
-   UPDATE CART COUNT WHEN RETURNING TO PAGE
+   UPDATE CART WHEN RETURNING TO PAGE
 ===================================================== */
 
 window.addEventListener(
@@ -1318,6 +1474,24 @@ window.addEventListener(
     function(event) {
 
         if (event.key === "miskCart") {
+
+            updateCartCount();
+
+        }
+
+    }
+);
+
+
+/* =====================================================
+   UPDATE CART WHEN PAGE BECOMES VISIBLE
+===================================================== */
+
+document.addEventListener(
+    "visibilitychange",
+    function() {
+
+        if (!document.hidden) {
 
             updateCartCount();
 
@@ -1352,11 +1526,9 @@ window.addEventListener(
     }
 );
 
-
 </script>
 
 
 </body>
 
 </html>
-```
