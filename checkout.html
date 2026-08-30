@@ -25,6 +25,10 @@ content="width=device-width, initial-scale=1.0">
     box-sizing:border-box;
 }
 
+html{
+    scroll-behavior:smooth;
+}
+
 body{
     margin:0;
     font-family:Arial,Helvetica,sans-serif;
@@ -32,7 +36,9 @@ body{
     color:var(--silver-light);
 }
 
-/* NAV */
+/* ==============================
+   NAVIGATION
+============================== */
 
 nav{
     display:flex;
@@ -41,6 +47,9 @@ nav{
     padding:18px 35px;
     background:#000;
     border-bottom:1px solid var(--gold);
+    position:sticky;
+    top:0;
+    z-index:1000;
 }
 
 nav h1{
@@ -53,9 +62,17 @@ nav a{
     color:var(--gold);
     text-decoration:none;
     margin-left:20px;
+    font-weight:bold;
+    transition:.3s;
 }
 
-/* CHECKOUT */
+nav a:hover{
+    color:white;
+}
+
+/* ==============================
+   CHECKOUT
+============================== */
 
 .container{
     max-width:650px;
@@ -88,6 +105,13 @@ label{
     margin-bottom:8px;
 }
 
+.optional{
+    color:#888;
+    font-size:12px;
+    font-weight:normal;
+    margin-left:5px;
+}
+
 input,
 textarea{
     width:100%;
@@ -97,12 +121,35 @@ textarea{
     border:1px solid #555;
     border-radius:5px;
     font-family:Arial,Helvetica,sans-serif;
+    font-size:14px;
+}
+
+input:focus,
+textarea:focus{
+    outline:none;
+    border-color:var(--gold);
+    box-shadow:0 0 8px rgba(212,175,55,.25);
 }
 
 textarea{
     min-height:100px;
     resize:vertical;
 }
+
+/* ORDER NOTE */
+
+.note-textarea{
+    min-height:120px;
+}
+
+.note-help{
+    color:#777;
+    font-size:12px;
+    margin-top:7px;
+    line-height:1.5;
+}
+
+/* ORDER SUMMARY */
 
 .order-summary{
     border-top:1px solid #333;
@@ -114,6 +161,19 @@ textarea{
     color:var(--gold);
 }
 
+.order-summary p{
+    color:var(--silver);
+    line-height:1.6;
+}
+
+.order-summary hr{
+    border:none;
+    border-top:1px solid #333;
+    margin:15px 0;
+}
+
+/* PLACE ORDER */
+
 .place-order{
     width:100%;
     padding:14px;
@@ -124,10 +184,12 @@ textarea{
     font-weight:bold;
     font-size:16px;
     cursor:pointer;
+    transition:.3s;
 }
 
 .place-order:hover{
     transform:scale(1.02);
+    box-shadow:0 5px 15px rgba(212,175,55,.3);
 }
 
 .back{
@@ -135,9 +197,50 @@ textarea{
     text-align:center;
     margin-top:20px;
     color:var(--gold);
+    text-decoration:none;
 }
 
-/* FOOTER */
+.back:hover{
+    color:white;
+}
+
+/* ==============================
+   BACK TO TOP
+============================== */
+
+#backToTop{
+    position:fixed;
+    right:20px;
+    bottom:20px;
+    width:45px;
+    height:45px;
+    border-radius:50%;
+    border:1px solid var(--gold);
+    background:#000;
+    color:var(--gold);
+    font-size:22px;
+    cursor:pointer;
+    z-index:2000;
+
+    opacity:0;
+    visibility:hidden;
+
+    transition:.3s;
+}
+
+#backToTop.show{
+    opacity:1;
+    visibility:visible;
+}
+
+#backToTop:hover{
+    background:var(--gold);
+    color:#000;
+}
+
+/* ==============================
+   FOOTER
+============================== */
 
 footer{
     text-align:center;
@@ -147,11 +250,33 @@ footer{
     margin-top:40px;
 }
 
+/* ==============================
+   MOBILE
+============================== */
+
 @media(max-width:700px){
 
 nav{
     flex-direction:column;
     gap:15px;
+    padding:18px 15px;
+}
+
+nav div{
+    text-align:center;
+}
+
+nav a{
+    display:inline-block;
+    margin:5px 7px;
+}
+
+.container{
+    padding:45px 15px;
+}
+
+.order-box{
+    padding:22px;
 }
 
 }
@@ -162,6 +287,10 @@ nav{
 
 <body>
 
+<!-- ==============================
+     NAVIGATION
+============================== -->
+
 <nav>
 
 <h1>MISK Fragrances</h1>
@@ -169,13 +298,20 @@ nav{
 <div>
 
 <a href="index.html">Home</a>
+<a href="about.html">About</a>
 <a href="collection.html">Collection</a>
+<a href="reviews.html">Reviews</a>
+<a href="contact.html">Contact</a>
 <a href="cart.html">🛒 Cart</a>
 
 </div>
 
 </nav>
 
+
+<!-- ==============================
+     CHECKOUT
+============================== -->
 
 <div class="container">
 
@@ -184,6 +320,8 @@ nav{
 <div class="order-box">
 
 <form id="checkoutForm">
+
+<!-- NAME -->
 
 <div class="form-group">
 
@@ -200,6 +338,8 @@ placeholder="Enter your name">
 </div>
 
 
+<!-- EMAIL -->
+
 <div class="form-group">
 
 <label for="email">
@@ -215,6 +355,8 @@ placeholder="Enter your email">
 </div>
 
 
+<!-- ADDRESS -->
+
 <div class="form-group">
 
 <label for="address">
@@ -228,6 +370,8 @@ placeholder="Enter your delivery address"></textarea>
 
 </div>
 
+
+<!-- POSTCODE -->
 
 <div class="form-group">
 
@@ -244,6 +388,29 @@ placeholder="Enter your postcode">
 </div>
 
 
+<!-- OPTIONAL NOTE -->
+
+<div class="form-group">
+
+<label for="note">
+Order Note
+<span class="optional">(Optional)</span>
+</label>
+
+<textarea
+id="note"
+class="note-textarea"
+placeholder="Leave a note about your order..."></textarea>
+
+<p class="note-help">
+Optional — for example, you can leave a delivery request or a message about your order.
+</p>
+
+</div>
+
+
+<!-- ORDER SUMMARY -->
+
 <div class="order-summary">
 
 <h3>
@@ -254,6 +421,8 @@ Your Order
 
 </div>
 
+
+<!-- SEND ORDER -->
 
 <button
 type="submit"
@@ -275,6 +444,24 @@ Send Order Request
 </div>
 
 
+<!-- ==============================
+     BACK TO TOP
+============================== -->
+
+<button
+id="backToTop"
+onclick="window.scrollTo({top:0,behavior:'smooth'})"
+aria-label="Back to top">
+
+↑
+
+</button>
+
+
+<!-- ==============================
+     FOOTER
+============================== -->
+
 <footer>
 
 © 2026 MISK Fragrances. All Rights Reserved.
@@ -284,11 +471,17 @@ Send Order Request
 
 <script>
 
+/* ==============================
+   LOAD CART
+============================== */
+
 let cart =
 JSON.parse(localStorage.getItem("miskCart")) || [];
 
 
-/* SHOW ORDER */
+/* ==============================
+   SHOW ORDER
+============================== */
 
 function showOrder(){
 
@@ -329,6 +522,7 @@ function showOrder(){
 
     html += `
     <hr>
+
     <strong>
     Total: £${total.toFixed(2)}
     </strong>
@@ -343,7 +537,9 @@ function showOrder(){
 showOrder();
 
 
-/* SEND ORDER EMAIL */
+/* ==============================
+   SEND ORDER EMAIL
+============================== */
 
 document
 .getElementById("checkoutForm")
@@ -362,16 +558,40 @@ document
 
 
     const name =
-        document.getElementById("name").value.trim();
+        document
+        .getElementById("name")
+        .value
+        .trim();
+
 
     const email =
-        document.getElementById("email").value.trim();
+        document
+        .getElementById("email")
+        .value
+        .trim();
+
 
     const address =
-        document.getElementById("address").value.trim();
+        document
+        .getElementById("address")
+        .value
+        .trim();
+
 
     const postcode =
-        document.getElementById("postcode").value.trim();
+        document
+        .getElementById("postcode")
+        .value
+        .trim();
+
+
+    /* OPTIONAL NOTE */
+
+    const note =
+        document
+        .getElementById("note")
+        .value
+        .trim();
 
 
     let orderText = "";
@@ -391,6 +611,14 @@ document
         `${item.name} x ${item.quantity} - £${itemTotal.toFixed(2)}\n`;
 
     });
+
+
+    /* NOTE TEXT */
+
+    const noteText =
+        note
+        ? note
+        : "No note provided";
 
 
     const subject =
@@ -423,6 +651,9 @@ ${orderText}
 TOTAL:
 £${total.toFixed(2)}
 
+ORDER NOTE:
+${noteText}
+
 Please contact the customer to arrange payment and delivery.`
 
         );
@@ -432,6 +663,32 @@ Please contact the customer to arrange payment and delivery.`
         `mailto:miskfragrances.uk@gmail.com?subject=${subject}&body=${body}`;
 
 });
+
+
+/* ==============================
+   BACK TO TOP
+============================== */
+
+const backToTop =
+document.getElementById("backToTop");
+
+
+window.addEventListener(
+    "scroll",
+    function(){
+
+        if(window.scrollY > 400){
+
+            backToTop.classList.add("show");
+
+        }else{
+
+            backToTop.classList.remove("show");
+
+        }
+
+    }
+);
 
 </script>
 
