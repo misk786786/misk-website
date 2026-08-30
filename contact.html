@@ -1,10 +1,11 @@
-```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
 
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<meta name="viewport"
+content="width=device-width, initial-scale=1.0">
 
 <title>Contact - MISK Fragrances | Get in Touch</title>
 
@@ -44,54 +45,76 @@ nav{
     display:flex;
     justify-content:space-between;
     align-items:center;
-    padding:18px 35px;
+    padding:14px 24px;
     background:#000;
-    border-bottom:1px solid var(--gold);
+    border-bottom:1px solid #292929;
     position:sticky;
     top:0;
     z-index:1000;
 }
 
-nav h1{
-    margin:0;
-    color:var(--gold);
-    letter-spacing:3px;
-}
+/* MISK TOP LEFT BUTTON */
 
-nav a{
+.logo-button{
     color:var(--gold);
     text-decoration:none;
-    margin-left:25px;
+    font-family:Georgia,serif;
+    font-size:40px;
     font-weight:bold;
+    letter-spacing:8px;
+    padding:0;
     transition:.3s;
 }
 
-nav a:hover{
+.logo-button:hover{
     color:white;
 }
 
-/* ==============================
-   CART
-============================== */
+/* NAV LINKS */
+
+.nav-links{
+    display:flex;
+    align-items:center;
+}
+
+.nav-links a{
+    color:var(--gold);
+    text-decoration:none;
+    margin-left:30px;
+    font-size:20px;
+    font-weight:500;
+    transition:.3s;
+}
+
+.nav-links a:hover{
+    color:white;
+}
+
+/* CART */
 
 .cart-link{
     border:1px solid var(--gold);
-    padding:8px 14px;
-    border-radius:5px;
+    padding:10px 15px;
+    border-radius:7px;
+    margin-left:30px !important;
 }
 
 .cart-count{
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
     background:var(--gold);
     color:#000;
-    padding:2px 7px;
+    width:28px;
+    height:28px;
     border-radius:50%;
-    font-size:12px;
-    margin-left:4px;
+    font-size:14px;
     font-weight:bold;
+    margin-left:5px;
 }
 
 /* ==============================
-   SECTIONS
+   MAIN
 ============================== */
 
 section{
@@ -104,23 +127,13 @@ section{
 section h2{
     color:var(--gold);
     margin-bottom:20px;
-    font-size:32px;
+    font-size:34px;
 }
 
 section p{
     line-height:1.8;
     font-size:16px;
     margin-bottom:20px;
-}
-
-section a{
-    color:var(--gold);
-    text-decoration:none;
-    font-weight:bold;
-}
-
-section a:hover{
-    color:white;
 }
 
 /* ==============================
@@ -141,6 +154,14 @@ section a:hover{
     margin:30px 0;
 }
 
+.contact-item:first-child{
+    margin-top:0;
+}
+
+.contact-item:last-child{
+    margin-bottom:0;
+}
+
 .contact-label{
     color:var(--gold);
     font-weight:bold;
@@ -151,6 +172,17 @@ section a:hover{
 
 .contact-value{
     font-size:18px;
+    line-height:1.6;
+}
+
+.contact-value a{
+    color:var(--gold);
+    text-decoration:none;
+    font-weight:bold;
+}
+
+.contact-value a:hover{
+    color:white;
 }
 
 /* ==============================
@@ -158,55 +190,23 @@ section a:hover{
 ============================== */
 
 #backToTop{
-
     position:fixed;
-
-    right:20px;
-    bottom:20px;
-
-    width:48px;
-    height:48px;
-
-    border-radius:50%;
-
-    border:1px solid var(--gold);
-
-    background:#080808;
-
-    color:var(--gold);
-
-    font-size:22px;
-
+    bottom:25px;
+    right:25px;
+    display:none;
+    background:linear-gradient(var(--gold),var(--gold-dark));
+    color:#000;
+    border:none;
+    padding:13px 18px;
+    border-radius:6px;
     font-weight:bold;
-
+    font-size:14px;
     cursor:pointer;
-
-    z-index:2000;
-
-    opacity:0;
-    visibility:hidden;
-
-    transform:translateY(10px);
-
-    transition:.3s;
-
-    box-shadow:0 5px 20px rgba(0,0,0,.5);
-}
-
-#backToTop.show{
-
-    opacity:1;
-    visibility:visible;
-
-    transform:translateY(0);
+    z-index:999;
+    box-shadow:0 5px 20px rgba(0,0,0,.4);
 }
 
 #backToTop:hover{
-
-    background:var(--gold);
-
-    color:#000;
-
     transform:translateY(-3px);
 }
 
@@ -219,27 +219,38 @@ footer{
     padding:30px;
     border-top:1px solid var(--gold);
     color:#999;
+    margin-top:40px;
 }
 
 /* ==============================
    MOBILE
 ============================== */
 
-@media(max-width:700px){
+@media(max-width:800px){
 
     nav{
         flex-direction:column;
         gap:15px;
-        padding:18px 15px;
+        padding:15px;
     }
 
-    nav div{
-        text-align:center;
+    .logo-button{
+        font-size:34px;
     }
 
-    nav a{
+    .nav-links{
+        flex-wrap:wrap;
+        justify-content:center;
+    }
+
+    .nav-links a{
         display:inline-block;
-        margin:5px 6px;
+        margin:5px 7px;
+        font-size:16px;
+    }
+
+    .cart-link{
+        margin-left:7px !important;
     }
 
     section{
@@ -247,14 +258,7 @@ footer{
     }
 
     .contact-info{
-        padding:30px 20px;
-    }
-
-    #backToTop{
-        right:15px;
-        bottom:15px;
-        width:45px;
-        height:45px;
+        padding:25px 20px;
     }
 
 }
@@ -263,7 +267,7 @@ footer{
 
 </head>
 
-<body>
+<body id="top">
 
 <!-- ==============================
      NAVIGATION
@@ -271,18 +275,16 @@ footer{
 
 <nav>
 
-<h1>MISK Fragrances</h1>
+<a href="index.html" class="logo-button">
+MISK
+</a>
 
-<div>
+<div class="nav-links">
 
 <a href="index.html">Home</a>
-
 <a href="about.html">About</a>
-
 <a href="collection.html">Collection</a>
-
 <a href="reviews.html">Reviews</a>
-
 <a href="contact.html">Contact</a>
 
 <a href="cart.html" class="cart-link">
@@ -304,7 +306,8 @@ footer{
 <h2>Contact Us</h2>
 
 <p>
-Have a question about our fragrances or an upcoming launch?<br>
+Have a question about our fragrances or an upcoming launch?
+<br>
 We'd love to hear from you!
 </p>
 
@@ -332,13 +335,11 @@ miskfragrances.uk@gmail.com
 <div class="contact-item">
 
 <div class="contact-label">
-Saturday - Sunday:
+Saturday - Sunday
 </div>
 
 <div class="contact-value">
-
 We aim to respond to all inquiries within 24-48 hours.
-
 </div>
 
 </div>
@@ -360,23 +361,12 @@ We aim to respond to all inquiries within 24-48 hours.
 </footer>
 
 
-<!-- ==============================
-     BACK TO TOP
-============================== -->
+<!-- BACK TO TOP -->
 
-<button
-id="backToTop"
-onclick="window.scrollTo({top:0,behavior:'smooth'})"
-aria-label="Back to top">
-
-↑
-
+<button id="backToTop" onclick="topFunction()">
+↑ Back to Top
 </button>
 
-
-<!-- ==============================
-     JAVASCRIPT
-============================== -->
 
 <script>
 
@@ -384,53 +374,23 @@ aria-label="Back to top">
    CART COUNT
 ============================== */
 
+let cart =
+JSON.parse(localStorage.getItem("miskCart")) || [];
+
+
 function updateCartCount(){
 
-    const cart =
-        JSON.parse(
-            localStorage.getItem("miskCart")
-        ) || [];
+    const totalItems = cart.reduce(
+        (total,item) => total + item.quantity,
+        0
+    );
 
-    const totalItems =
-        cart.reduce(
-            (total,item) =>
-                total + Number(item.quantity || 0),
-            0
-        );
-
-    const cartCount =
-        document.getElementById("cartCount");
-
-    if(cartCount){
-
-        cartCount.textContent =
-            totalItems;
-
-    }
+    document.getElementById("cartCount").textContent =
+        totalItems;
 
 }
 
-
-/* INITIAL CART COUNT */
-
 updateCartCount();
-
-
-/* UPDATE CART COUNT
-   WHEN CART CHANGES */
-
-window.addEventListener(
-    "storage",
-    function(event){
-
-        if(event.key === "miskCart"){
-
-            updateCartCount();
-
-        }
-
-    }
-);
 
 
 /* ==============================
@@ -438,28 +398,37 @@ window.addEventListener(
 ============================== */
 
 const backToTop =
-    document.getElementById("backToTop");
+document.getElementById("backToTop");
 
 
-window.addEventListener(
-    "scroll",
-    function(){
+window.addEventListener("scroll", function(){
 
-        if(window.scrollY > 400){
+    if(
+        document.body.scrollTop > 300 ||
+        document.documentElement.scrollTop > 300
+    ){
 
-            backToTop.classList.add("show");
+        backToTop.style.display = "block";
 
-        }else{
+    }else{
 
-            backToTop.classList.remove("show");
-
-        }
+        backToTop.style.display = "none";
 
     }
-);
+
+});
+
+
+function topFunction(){
+
+    window.scrollTo({
+        top:0,
+        behavior:"smooth"
+    });
+
+}
 
 </script>
 
 </body>
 </html>
-```
