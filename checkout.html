@@ -1,4 +1,3 @@
-```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -44,58 +43,118 @@ nav{
     display:flex;
     justify-content:space-between;
     align-items:center;
-    padding:18px 35px;
+    padding:14px 24px;
     background:#000;
-    border-bottom:1px solid var(--gold);
+    border-bottom:1px solid rgba(212,175,55,.3);
     position:sticky;
     top:0;
     z-index:1000;
 }
 
-nav h1{
-    color:var(--gold);
-    letter-spacing:3px;
-    margin:0;
-}
-
-nav a{
+.logo-button{
     color:var(--gold);
     text-decoration:none;
-    margin-left:20px;
+    font-family:Georgia,"Times New Roman",serif;
+    font-size:40px;
     font-weight:bold;
+    letter-spacing:8px;
     transition:.3s;
 }
 
-nav a:hover{
+.logo-button:hover{
+    color:white;
+}
+
+.nav-links{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    flex-wrap:wrap;
+    gap:5px;
+}
+
+.nav-links a{
+    color:var(--gold);
+    text-decoration:none;
+    margin-left:20px;
+    font-size:16px;
+    font-weight:500;
+    transition:.3s;
+}
+
+.nav-links a:hover{
     color:white;
 }
 
 /* ==============================
-   CHECKOUT
+   CART
+============================== */
+
+.cart-link{
+    border:1px solid var(--gold);
+    padding:9px 13px;
+    border-radius:6px;
+}
+
+.cart-count{
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    background:var(--gold);
+    color:#000;
+    min-width:24px;
+    height:24px;
+    border-radius:50%;
+    font-size:12px;
+    font-weight:bold;
+    margin-left:5px;
+}
+
+/* ==============================
+   MAIN
 ============================== */
 
 .container{
-    max-width:650px;
+    max-width:700px;
     margin:auto;
-    padding:60px 20px;
+    padding:65px 20px;
+    min-height:600px;
 }
 
 h2{
     color:var(--gold);
     text-align:center;
-    font-size:34px;
+    font-family:Georgia,"Times New Roman",serif;
+    font-size:42px;
+    letter-spacing:2px;
+    margin:0 0 35px;
 }
+
+/* ==============================
+   CHECKOUT BOX
+============================== */
 
 .order-box{
-    background:var(--card);
-    border:1px solid var(--gold);
-    border-radius:8px;
-    padding:30px;
-    margin-top:30px;
+    background:
+        linear-gradient(
+            145deg,
+            #151515,
+            #0c0c0c
+        );
+
+    border:1px solid rgba(212,175,55,.5);
+    border-radius:10px;
+    padding:32px;
+    box-shadow:
+        0 15px 40px rgba(0,0,0,.45);
 }
 
+/* ==============================
+   FORM
+============================== */
+
 .form-group{
-    margin-bottom:20px;
+    margin-bottom:22px;
 }
 
 label{
@@ -115,13 +174,14 @@ label{
 input,
 textarea{
     width:100%;
-    padding:13px;
+    padding:14px;
     background:#000;
     color:white;
-    border:1px solid #555;
+    border:1px solid #444;
     border-radius:5px;
     font-family:Arial,Helvetica,sans-serif;
     font-size:14px;
+    transition:.3s;
 }
 
 input:focus,
@@ -132,11 +192,9 @@ textarea:focus{
 }
 
 textarea{
-    min-height:100px;
+    min-height:110px;
     resize:vertical;
 }
-
-/* ORDER NOTE */
 
 .note-textarea{
     min-height:120px;
@@ -145,40 +203,59 @@ textarea{
 .note-help{
     color:#777;
     font-size:12px;
-    margin-top:7px;
     line-height:1.5;
+    margin:7px 0 0;
 }
 
-/* ORDER SUMMARY */
+/* ==============================
+   ORDER SUMMARY
+============================== */
 
 .order-summary{
     border-top:1px solid #333;
-    margin-top:25px;
-    padding-top:20px;
+    margin-top:28px;
+    padding-top:22px;
 }
 
 .order-summary h3{
     color:var(--gold);
+    font-family:Georgia,"Times New Roman",serif;
+    font-size:22px;
+    margin:0 0 15px;
 }
 
 .order-summary p{
     color:var(--silver);
-    line-height:1.6;
+    line-height:1.7;
+    margin:8px 0;
 }
 
 .order-summary hr{
     border:none;
     border-top:1px solid #333;
-    margin:15px 0;
+    margin:18px 0;
 }
 
-/* PLACE ORDER */
+.order-total{
+    color:var(--gold);
+    font-size:20px;
+}
+
+/* ==============================
+   PLACE ORDER
+============================== */
 
 .place-order{
     width:100%;
-    padding:14px;
-    background:linear-gradient(var(--gold),var(--gold-dark));
-    border:none;
+    margin-top:25px;
+    padding:15px;
+    background:
+        linear-gradient(
+            135deg,
+            var(--gold),
+            var(--gold-dark)
+        );
+    border:1px solid var(--gold);
     border-radius:5px;
     color:#000;
     font-weight:bold;
@@ -188,16 +265,39 @@ textarea{
 }
 
 .place-order:hover{
-    transform:scale(1.02);
-    box-shadow:0 5px 15px rgba(212,175,55,.3);
+    transform:translateY(-2px);
+    box-shadow:
+        0 7px 20px rgba(212,175,55,.3);
 }
+
+/* ==============================
+   EMPTY CART MESSAGE
+============================== */
+
+.empty-message{
+    text-align:center;
+    background:#0d0d0d;
+    border:1px solid #333;
+    border-radius:7px;
+    padding:20px;
+    color:#999;
+}
+
+.empty-message strong{
+    color:var(--gold);
+}
+
+/* ==============================
+   BACK TO CART
+============================== */
 
 .back{
     display:block;
     text-align:center;
-    margin-top:20px;
+    margin-top:22px;
     color:var(--gold);
     text-decoration:none;
+    transition:.3s;
 }
 
 .back:hover{
@@ -212,30 +312,39 @@ textarea{
     position:fixed;
     right:20px;
     bottom:20px;
-    width:45px;
-    height:45px;
+    width:48px;
+    height:48px;
     border-radius:50%;
     border:1px solid var(--gold);
-    background:#000;
+    background:#080808;
     color:var(--gold);
     font-size:22px;
+    font-weight:bold;
     cursor:pointer;
     z-index:2000;
 
     opacity:0;
     visibility:hidden;
 
-    transition:.3s;
+    transform:translateY(10px);
+
+    transition:
+        opacity .3s,
+        visibility .3s,
+        transform .3s,
+        background .3s;
 }
 
 #backToTop.show{
     opacity:1;
     visibility:visible;
+    transform:translateY(0);
 }
 
 #backToTop:hover{
     background:var(--gold);
     color:#000;
+    transform:translateY(-3px);
 }
 
 /* ==============================
@@ -245,8 +354,9 @@ textarea{
 footer{
     text-align:center;
     padding:30px;
-    border-top:1px solid var(--gold);
+    border-top:1px solid rgba(212,175,55,.3);
     color:#777;
+    font-size:13px;
     margin-top:40px;
 }
 
@@ -254,30 +364,60 @@ footer{
    MOBILE
 ============================== */
 
-@media(max-width:700px){
+@media(max-width:800px){
 
-nav{
-    flex-direction:column;
-    gap:15px;
-    padding:18px 15px;
+    nav{
+        flex-direction:column;
+        gap:14px;
+        padding:15px;
+    }
+
+    .logo-button{
+        font-size:34px;
+    }
+
+    .nav-links{
+        gap:4px 8px;
+    }
+
+    .nav-links a{
+        margin:4px 5px;
+        font-size:13px;
+    }
+
+    .cart-link{
+        padding:7px 10px;
+    }
+
+    .container{
+        padding:50px 15px;
+    }
+
+    h2{
+        font-size:34px;
+    }
+
+    .order-box{
+        padding:23px 18px;
+    }
+
 }
 
-nav div{
-    text-align:center;
-}
+@media(max-width:400px){
 
-nav a{
-    display:inline-block;
-    margin:5px 7px;
-}
+    .logo-button{
+        font-size:30px;
+        letter-spacing:6px;
+    }
 
-.container{
-    padding:45px 15px;
-}
+    .nav-links a{
+        font-size:11px;
+        margin:3px;
+    }
 
-.order-box{
-    padding:22px;
-}
+    h2{
+        font-size:30px;
+    }
 
 }
 
@@ -285,7 +425,7 @@ nav a{
 
 </head>
 
-<body>
+<body id="top">
 
 <!-- ==============================
      NAVIGATION
@@ -293,16 +433,36 @@ nav a{
 
 <nav>
 
-<h1>MISK Fragrances</h1>
+<a href="index.html" class="logo-button">
+MISK
+</a>
 
-<div>
+<div class="nav-links">
 
-<a href="index.html">Home</a>
-<a href="about.html">About</a>
-<a href="collection.html">Collection</a>
-<a href="reviews.html">Reviews</a>
-<a href="contact.html">Contact</a>
-<a href="cart.html">🛒 Cart</a>
+<a href="index.html">
+Home
+</a>
+
+<a href="about.html">
+About
+</a>
+
+<a href="collection.html">
+Collection
+</a>
+
+<a href="reviews.html">
+Reviews
+</a>
+
+<a href="contact.html">
+Contact
+</a>
+
+<a href="cart.html" class="cart-link">
+🛒 Cart
+<span class="cart-count" id="cartCount">0</span>
+</a>
 
 </div>
 
@@ -315,7 +475,9 @@ nav a{
 
 <div class="container">
 
-<h2>Checkout</h2>
+<h2>
+Checkout
+</h2>
 
 <div class="order-box">
 
@@ -333,6 +495,7 @@ Full Name
 type="text"
 id="name"
 required
+autocomplete="name"
 placeholder="Enter your name">
 
 </div>
@@ -350,6 +513,7 @@ Email Address
 type="email"
 id="email"
 required
+autocomplete="email"
 placeholder="Enter your email">
 
 </div>
@@ -366,6 +530,7 @@ Delivery Address
 <textarea
 id="address"
 required
+autocomplete="street-address"
 placeholder="Enter your delivery address"></textarea>
 
 </div>
@@ -383,6 +548,7 @@ Postcode
 type="text"
 id="postcode"
 required
+autocomplete="postal-code"
 placeholder="Enter your postcode">
 
 </div>
@@ -394,7 +560,9 @@ placeholder="Enter your postcode">
 
 <label for="note">
 Order Note
-<span class="optional">(Optional)</span>
+<span class="optional">
+(Optional)
+</span>
 </label>
 
 <textarea
@@ -403,7 +571,7 @@ class="note-textarea"
 placeholder="Leave a note about your order..."></textarea>
 
 <p class="note-help">
-Optional — for example, you can leave a delivery request or a message about your order.
+Optional — leave a delivery request or any message you'd like us to see with your order.
 </p>
 
 </div>
@@ -472,11 +640,53 @@ aria-label="Back to top">
 <script>
 
 /* ==============================
-   LOAD CART
+   LOAD CART SAFELY
 ============================== */
 
-let cart =
-JSON.parse(localStorage.getItem("miskCart")) || [];
+let cart = [];
+
+try{
+
+    cart =
+        JSON.parse(
+            localStorage.getItem("miskCart")
+        ) || [];
+
+}catch(error){
+
+    cart = [];
+
+}
+
+
+/* ==============================
+   CART COUNT
+============================== */
+
+function updateCartCount(){
+
+    const totalItems =
+        cart.reduce(
+            function(total,item){
+
+                return total +
+                    Number(item.quantity || 0);
+
+            },
+            0
+        );
+
+    const cartCount =
+        document.getElementById("cartCount");
+
+    if(cartCount){
+
+        cartCount.textContent =
+            totalItems;
+
+    }
+
+}
 
 
 /* ==============================
@@ -490,10 +700,22 @@ function showOrder(){
 
     if(cart.length === 0){
 
-        summary.innerHTML =
-        "<p>Your cart is empty.</p>";
+        summary.innerHTML = `
+
+            <div class="empty-message">
+
+                <strong>Your cart is empty.</strong>
+
+                <br><br>
+
+                Please add a fragrance before checking out.
+
+            </div>
+
+        `;
 
         return;
+
     }
 
 
@@ -502,30 +724,45 @@ function showOrder(){
     let total = 0;
 
 
-    cart.forEach(item => {
+    cart.forEach(function(item){
+
+        const price =
+            Number(item.price) || 0;
+
+        const quantity =
+            Number(item.quantity) || 0;
 
         const itemTotal =
-            item.price * item.quantity;
+            price * quantity;
 
         total += itemTotal;
 
 
         html += `
-        <p>
-        ${item.name} × ${item.quantity}
-        — £${itemTotal.toFixed(2)}
-        </p>
+
+            <p>
+                ${escapeHTML(item.name)}
+                × ${quantity}
+                — £${itemTotal.toFixed(2)}
+            </p>
+
         `;
 
     });
 
 
     html += `
-    <hr>
 
-    <strong>
-    Total: £${total.toFixed(2)}
-    </strong>
+        <hr>
+
+        <div class="order-total">
+
+            <strong>
+                Total: £${total.toFixed(2)}
+            </strong>
+
+        </div>
+
     `;
 
 
@@ -534,7 +771,21 @@ function showOrder(){
 }
 
 
-showOrder();
+/* ==============================
+   ESCAPE TEXT
+============================== */
+
+function escapeHTML(text){
+
+    const div =
+        document.createElement("div");
+
+    div.textContent =
+        text ?? "";
+
+    return div.innerHTML;
+
+}
 
 
 /* ==============================
@@ -543,92 +794,96 @@ showOrder();
 
 document
 .getElementById("checkoutForm")
-.addEventListener("submit",function(event){
+.addEventListener(
+    "submit",
+    function(event){
 
-    event.preventDefault();
-
-
-    if(cart.length === 0){
-
-        alert("Your cart is empty.");
-
-        return;
-
-    }
+        event.preventDefault();
 
 
-    const name =
-        document
-        .getElementById("name")
-        .value
-        .trim();
+        if(cart.length === 0){
+
+            alert(
+                "Your cart is empty. Please add a fragrance before checking out."
+            );
+
+            return;
+
+        }
 
 
-    const email =
-        document
-        .getElementById("email")
-        .value
-        .trim();
+        const name =
+            document
+            .getElementById("name")
+            .value
+            .trim();
 
 
-    const address =
-        document
-        .getElementById("address")
-        .value
-        .trim();
+        const email =
+            document
+            .getElementById("email")
+            .value
+            .trim();
 
 
-    const postcode =
-        document
-        .getElementById("postcode")
-        .value
-        .trim();
+        const address =
+            document
+            .getElementById("address")
+            .value
+            .trim();
 
 
-    /* OPTIONAL NOTE */
-
-    const note =
-        document
-        .getElementById("note")
-        .value
-        .trim();
+        const postcode =
+            document
+            .getElementById("postcode")
+            .value
+            .trim();
 
 
-    let orderText = "";
-
-    let total = 0;
-
-
-    cart.forEach(item => {
-
-        const itemTotal =
-            item.price * item.quantity;
-
-        total += itemTotal;
+        const note =
+            document
+            .getElementById("note")
+            .value
+            .trim();
 
 
-        orderText +=
-        `${item.name} x ${item.quantity} - £${itemTotal.toFixed(2)}\n`;
+        let orderText = "";
 
-    });
-
-
-    /* NOTE TEXT */
-
-    const noteText =
-        note
-        ? note
-        : "No note provided";
+        let total = 0;
 
 
-    const subject =
-        encodeURIComponent(
-            "MISK Fragrances - New Order"
-        );
+        cart.forEach(function(item){
+
+            const price =
+                Number(item.price) || 0;
+
+            const quantity =
+                Number(item.quantity) || 0;
+
+            const itemTotal =
+                price * quantity;
+
+            total += itemTotal;
 
 
-    const body =
-        encodeURIComponent(
+            orderText +=
+                `${item.name} x ${quantity} - £${itemTotal.toFixed(2)}\n`;
+
+        });
+
+
+        const noteText =
+            note || "No note provided";
+
+
+        const subject =
+            encodeURIComponent(
+                "MISK Fragrances - New Order"
+            );
+
+
+        const body =
+            encodeURIComponent(
 
 `NEW MISK FRAGRANCES ORDER
 
@@ -656,13 +911,46 @@ ${noteText}
 
 Please contact the customer to arrange payment and delivery.`
 
-        );
+            );
 
 
-    window.location.href =
-        `mailto:miskfragrances.uk@gmail.com?subject=${subject}&body=${body}`;
+        window.location.href =
+            `mailto:miskfragrances.uk@gmail.com?subject=${subject}&body=${body}`;
 
-});
+    }
+);
+
+
+/* ==============================
+   UPDATE CART IF CHANGED
+============================== */
+
+window.addEventListener(
+    "storage",
+    function(event){
+
+        if(event.key === "miskCart"){
+
+            try{
+
+                cart =
+                    JSON.parse(
+                        event.newValue
+                    ) || [];
+
+            }catch(error){
+
+                cart = [];
+
+            }
+
+            updateCartCount();
+            showOrder();
+
+        }
+
+    }
+);
 
 
 /* ==============================
@@ -670,7 +958,7 @@ Please contact the customer to arrange payment and delivery.`
 ============================== */
 
 const backToTop =
-document.getElementById("backToTop");
+    document.getElementById("backToTop");
 
 
 window.addEventListener(
@@ -690,8 +978,15 @@ window.addEventListener(
     }
 );
 
+
+/* ==============================
+   START
+============================== */
+
+updateCartCount();
+showOrder();
+
 </script>
 
 </body>
 </html>
-```
