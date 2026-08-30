@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+
 <html lang="en">
 <head>
 
@@ -9,256 +10,868 @@ content="width=device-width, initial-scale=1.0">
 
 <title>Contact - MISK Fragrances | Get in Touch</title>
 
-<meta name="description" content="Contact MISK Fragrances - Have questions about our fragrances? We'd love to hear from you.">
+<meta
+name="description"
+content="Contact MISK Fragrances - Have questions about our fragrances? We'd love to hear from you."
+
+>
 
 <style>
 
+/* =====================================================
+   VARIABLES
+===================================================== */
+
 :root{
+
     --gold:#d4af37;
     --gold-dark:#b8860b;
+
     --silver:#c0c0c0;
     --silver-light:#e5e5e5;
-    --bg:#0a0a0a;
-    --card:#111;
+
+    --bg:#050505;
+    --card:#111111;
+
+}
+
+
+/* =====================================================
+   BASIC RESET
+===================================================== */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
 }
 
 html{
     scroll-behavior:smooth;
 }
 
-*{
-    box-sizing:border-box;
-}
-
 body{
-    margin:0;
-    font-family:Arial,Helvetica,sans-serif;
+
     background:var(--bg);
-    color:var(--silver-light);
+
+    color:white;
+
+    font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
+
+    overflow-x:hidden;
+
 }
 
-/* ==============================
-   NAVIGATION
-============================== */
+a{
+    text-decoration:none;
+}
 
-nav{
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-    padding:14px 24px;
-    background:#000;
-    border-bottom:1px solid #292929;
+
+/* =====================================================
+   HEADER
+===================================================== */
+
+header{
+
+    background:#050505;
+
+    border-bottom:
+        1px solid
+        rgba(212,175,55,0.25);
+
     position:sticky;
+
     top:0;
+
     z-index:1000;
+
 }
 
-/* MISK TOP LEFT BUTTON */
+
+/* =====================================================
+   NAVBAR
+===================================================== */
+
+.navbar{
+
+    width:100%;
+
+    max-width:1400px;
+
+    margin:auto;
+
+    padding:18px 5%;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:space-between;
+
+    gap:20px;
+
+}
+
+
+/* =====================================================
+   MISK LOGO / TOP LEFT BUTTON
+===================================================== */
 
 .logo-button{
+
     color:var(--gold);
-    text-decoration:none;
-    font-family:Georgia,serif;
-    font-size:40px;
+
+    font-family:
+        Georgia,
+        "Times New Roman",
+        serif;
+
+    font-size:27px;
+
     font-weight:bold;
-    letter-spacing:8px;
-    padding:0;
-    transition:.3s;
+
+    letter-spacing:5px;
+
+    transition:0.3s;
+
+    white-space:nowrap;
+
 }
 
 .logo-button:hover{
+
     color:white;
+
 }
 
-/* NAV LINKS */
+
+/* =====================================================
+   NAVIGATION LINKS
+===================================================== */
 
 .nav-links{
+
     display:flex;
+
     align-items:center;
+
+    justify-content:center;
+
+    flex-wrap:wrap;
+
+    gap:25px;
+
 }
 
 .nav-links a{
+
     color:var(--gold);
-    text-decoration:none;
-    margin-left:30px;
-    font-size:20px;
-    font-weight:500;
-    transition:.3s;
+
+    font-size:14px;
+
+    letter-spacing:0.5px;
+
+    transition:0.3s;
+
 }
 
 .nav-links a:hover{
+
     color:white;
+
 }
 
-/* CART */
+
+/* =====================================================
+   CART
+===================================================== */
 
 .cart-link{
-    border:1px solid var(--gold);
-    padding:10px 15px;
-    border-radius:7px;
-    margin-left:30px !important;
+
+    border:
+        1px solid
+        var(--gold);
+
+    padding:8px 12px;
+
+    border-radius:5px;
+
+    transition:0.3s;
+
+}
+
+.cart-link:hover{
+
+    background:var(--gold);
+
+    color:#050505 !important;
+
 }
 
 .cart-count{
+
     display:inline-flex;
+
     align-items:center;
+
     justify-content:center;
+
+    min-width:20px;
+
+    height:20px;
+
     background:var(--gold);
-    color:#000;
-    width:28px;
-    height:28px;
+
+    color:#050505;
+
     border-radius:50%;
-    font-size:14px;
+
+    padding:2px 6px;
+
+    font-size:11px;
+
+    margin-left:4px;
+
     font-weight:bold;
-    margin-left:5px;
+
 }
 
-/* ==============================
-   MAIN
-============================== */
 
-section{
-    max-width:1150px;
-    margin:auto;
-    padding:70px 20px;
+/* =====================================================
+   CONTACT HERO
+===================================================== */
+
+.contact-hero{
+
+    min-height:420px;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
     text-align:center;
+
+    padding:80px 20px;
+
+    position:relative;
+
+    overflow:hidden;
+
+    background:
+
+        radial-gradient(
+            circle at center,
+            rgba(212,175,55,0.10),
+            transparent 55%
+        ),
+
+        linear-gradient(
+            145deg,
+            #111111,
+            #050505
+        );
+
+    border-bottom:
+        1px solid
+        rgba(212,175,55,0.20);
+
 }
 
-section h2{
+
+.contact-hero-content{
+
+    max-width:850px;
+
+    position:relative;
+
+    z-index:2;
+
+}
+
+
+.contact-small{
+
     color:var(--gold);
-    margin-bottom:20px;
-    font-size:34px;
+
+    font-size:13px;
+
+    font-weight:bold;
+
+    letter-spacing:5px;
+
+    margin-bottom:15px;
+
 }
 
-section p{
+
+.contact-hero h1{
+
+    color:var(--gold);
+
+    font-family:
+        Georgia,
+        "Times New Roman",
+        serif;
+
+    font-size:
+        clamp(50px,7vw,85px);
+
+    letter-spacing:5px;
+
+    margin-bottom:15px;
+
+    text-shadow:
+        0 3px 20px
+        rgba(0,0,0,0.8);
+
+}
+
+
+.gold-line{
+
+    width:80px;
+
+    height:2px;
+
+    background:var(--gold);
+
+    margin:20px auto;
+
+}
+
+
+.contact-tagline{
+
+    color:var(--silver-light);
+
+    font-family:
+        Georgia,
+        "Times New Roman",
+        serif;
+
+    font-size:
+        clamp(22px,3vw,34px);
+
+    font-style:italic;
+
+}
+
+
+/* =====================================================
+   CONTACT SECTION
+===================================================== */
+
+.contact-section{
+
+    width:90%;
+
+    max-width:1000px;
+
+    margin:auto;
+
+    padding:75px 0 90px;
+
+    text-align:center;
+
+}
+
+
+.contact-section h2{
+
+    color:var(--gold);
+
+    font-family:
+        Georgia,
+        "Times New Roman",
+        serif;
+
+    font-size:40px;
+
+    margin-bottom:15px;
+
+}
+
+
+.contact-intro{
+
+    color:#aaaaaa;
+
+    max-width:650px;
+
+    margin:0 auto 45px;
+
+    font-size:15px;
+
     line-height:1.8;
-    font-size:16px;
-    margin-bottom:20px;
+
 }
 
-/* ==============================
-   CONTACT INFO
-============================== */
+
+/* =====================================================
+   CONTACT CARD
+===================================================== */
 
 .contact-info{
-    background:var(--card);
-    border:1px solid var(--gold);
-    padding:40px;
-    border-radius:8px;
-    max-width:600px;
-    margin:40px auto;
-    box-shadow:0 10px 30px rgba(0,0,0,.4);
+
+    max-width:700px;
+
+    margin:auto;
+
+    background:
+        linear-gradient(
+            145deg,
+            #131313,
+            #080808
+        );
+
+    border:
+        1px solid
+        rgba(212,175,55,0.35);
+
+    border-radius:10px;
+
+    padding:45px 35px;
+
+    box-shadow:
+        0 12px 35px
+        rgba(0,0,0,0.4);
+
 }
 
+
+/* =====================================================
+   CONTACT ITEM
+===================================================== */
+
 .contact-item{
-    margin:30px 0;
+
+    padding:25px 0;
+
+    border-bottom:
+        1px solid
+        rgba(212,175,55,0.15);
+
 }
 
 .contact-item:first-child{
-    margin-top:0;
+
+    padding-top:0;
+
 }
 
 .contact-item:last-child{
-    margin-bottom:0;
+
+    padding-bottom:0;
+
+    border-bottom:none;
+
 }
+
+
+.contact-icon{
+
+    font-size:32px;
+
+    margin-bottom:12px;
+
+}
+
 
 .contact-label{
+
     color:var(--gold);
+
+    font-size:13px;
+
     font-weight:bold;
-    font-size:14px;
+
+    letter-spacing:2px;
+
     text-transform:uppercase;
+
     margin-bottom:10px;
+
 }
+
 
 .contact-value{
-    font-size:18px;
-    line-height:1.6;
+
+    color:var(--silver-light);
+
+    font-size:17px;
+
+    line-height:1.7;
+
 }
+
 
 .contact-value a{
+
     color:var(--gold);
-    text-decoration:none;
+
     font-weight:bold;
+
+    transition:0.3s;
+
 }
+
 
 .contact-value a:hover{
+
     color:white;
+
 }
 
-/* ==============================
-   BACK TO TOP
-============================== */
 
-#backToTop{
-    position:fixed;
-    bottom:25px;
-    right:25px;
-    display:none;
-    background:linear-gradient(var(--gold),var(--gold-dark));
-    color:#000;
-    border:none;
-    padding:13px 18px;
-    border-radius:6px;
+/* =====================================================
+   CONTACT CTA
+===================================================== */
+
+.contact-cta{
+
+    margin-top:45px;
+
+    padding-top:40px;
+
+    border-top:
+        1px solid
+        rgba(212,175,55,0.20);
+
+}
+
+
+.contact-cta h3{
+
+    color:var(--gold);
+
+    font-family:
+        Georgia,
+        "Times New Roman",
+        serif;
+
+    font-size:27px;
+
+    margin-bottom:12px;
+
+}
+
+
+.contact-cta p{
+
+    color:#aaaaaa;
+
+    line-height:1.7;
+
+    margin-bottom:25px;
+
+}
+
+
+.email-button{
+
+    display:inline-block;
+
+    padding:13px 28px;
+
+    border:
+        1px solid
+        var(--gold);
+
+    border-radius:5px;
+
+    background:
+        linear-gradient(
+            135deg,
+            var(--gold),
+            var(--gold-dark)
+        );
+
+    color:#050505;
+
     font-weight:bold;
+
     font-size:14px;
-    cursor:pointer;
-    z-index:999;
-    box-shadow:0 5px 20px rgba(0,0,0,.4);
+
+    transition:0.3s;
+
 }
 
-#backToTop:hover{
+
+.email-button:hover{
+
     transform:translateY(-3px);
+
+    box-shadow:
+        0 8px 25px
+        rgba(212,175,55,0.30);
+
 }
 
-/* ==============================
+
+/* =====================================================
    FOOTER
-============================== */
+===================================================== */
 
 footer{
+
+    padding:30px 20px;
+
     text-align:center;
-    padding:30px;
-    border-top:1px solid var(--gold);
-    color:#999;
-    margin-top:40px;
+
+    border-top:
+        1px solid
+        rgba(212,175,55,0.20);
+
+    color:#888888;
+
+    font-size:13px;
+
 }
 
-/* ==============================
+
+/* =====================================================
+   BACK TO TOP
+===================================================== */
+
+#backToTop{
+
+    position:fixed;
+
+    right:20px;
+
+    bottom:20px;
+
+    width:48px;
+
+    height:48px;
+
+    border-radius:50%;
+
+    border:
+        1px solid
+        var(--gold);
+
+    background:#080808;
+
+    color:var(--gold);
+
+    font-size:22px;
+
+    font-weight:bold;
+
+    cursor:pointer;
+
+    z-index:2000;
+
+    opacity:0;
+
+    visibility:hidden;
+
+    transform:translateY(15px);
+
+    transition:
+        opacity 0.3s ease,
+        visibility 0.3s ease,
+        transform 0.3s ease,
+        background 0.3s ease;
+
+    box-shadow:
+        0 5px 20px
+        rgba(0,0,0,0.5);
+
+}
+
+
+#backToTop.show{
+
+    opacity:1;
+
+    visibility:visible;
+
+    transform:translateY(0);
+
+}
+
+
+#backToTop:hover{
+
+    background:var(--gold);
+
+    color:#050505;
+
+    transform:translateY(-3px);
+
+}
+
+
+/* =====================================================
    MOBILE
-============================== */
+===================================================== */
 
-@media(max-width:800px){
+@media(max-width:700px){
 
-    nav{
+    .navbar{
+
         flex-direction:column;
+
+        padding:16px 12px;
+
         gap:15px;
-        padding:15px;
+
     }
+
 
     .logo-button{
-        font-size:34px;
+
+        font-size:25px;
+
     }
+
 
     .nav-links{
-        flex-wrap:wrap;
-        justify-content:center;
+
+        gap:10px 14px;
+
     }
+
 
     .nav-links a{
-        display:inline-block;
-        margin:5px 7px;
-        font-size:16px;
+
+        font-size:11px;
+
     }
+
 
     .cart-link{
-        margin-left:7px !important;
+
+        padding:7px 10px;
+
     }
 
-    section{
-        padding:50px 15px;
+
+    .contact-hero{
+
+        min-height:380px;
+
+        padding:65px 20px;
+
     }
+
+
+    .contact-small{
+
+        font-size:10px;
+
+        letter-spacing:3px;
+
+    }
+
+
+    .contact-hero h1{
+
+        font-size:
+            clamp(42px,12vw,65px);
+
+        letter-spacing:3px;
+
+    }
+
+
+    .contact-tagline{
+
+        font-size:23px;
+
+    }
+
+
+    .contact-section{
+
+        padding:60px 0;
+
+    }
+
+
+    .contact-section h2{
+
+        font-size:32px;
+
+    }
+
+
+    .contact-intro{
+
+        font-size:14px;
+
+    }
+
 
     .contact-info{
-        padding:25px 20px;
+
+        padding:30px 20px;
+
+    }
+
+
+    .contact-value{
+
+        font-size:15px;
+
+    }
+
+
+    .contact-cta h3{
+
+        font-size:25px;
+
+    }
+
+
+    #backToTop{
+
+        width:44px;
+
+        height:44px;
+
+        right:15px;
+
+        bottom:15px;
+
+        font-size:20px;
+
+    }
+
+}
+
+
+/* =====================================================
+   VERY SMALL PHONES
+===================================================== */
+
+@media(max-width:400px){
+
+    .nav-links{
+
+        gap:8px 10px;
+
+    }
+
+
+    .nav-links a{
+
+        font-size:10px;
+
+    }
+
+
+    .contact-hero h1{
+
+        font-size:40px;
+
     }
 
 }
@@ -269,53 +882,126 @@ footer{
 
 <body id="top">
 
-<!-- ==============================
-     NAVIGATION
-============================== -->
+<!-- =====================================================
+     HEADER
+===================================================== -->
 
-<nav>
+<header>
 
-<a href="index.html" class="logo-button">
+<nav class="navbar">
+
+<a
+href="index.html"
+class="logo-button"
+
+>
+
 MISK
+
 </a>
 
 <div class="nav-links">
 
-<a href="index.html">Home</a>
-<a href="about.html">About</a>
-<a href="collection.html">Collection</a>
-<a href="reviews.html">Reviews</a>
-<a href="contact.html">Contact</a>
+<a href="index.html">
+Home
+</a>
 
-<a href="cart.html" class="cart-link">
+<a href="about.html">
+About
+</a>
+
+<a href="collection.html">
+Collection
+</a>
+
+<a href="reviews.html">
+Reviews
+</a>
+
+<a href="contact.html">
+Contact
+</a>
+
+<a
+href="cart.html"
+class="cart-link"
+
+>
+
 🛒 Cart
-<span class="cart-count" id="cartCount">0</span>
+
+<span
+class="cart-count"
+id="cartCount"
+
+>
+
+0
+
+</span>
+
 </a>
 
 </div>
 
 </nav>
 
+</header>
 
-<!-- ==============================
-     CONTACT
-============================== -->
+<!-- =====================================================
+     CONTACT HERO
+===================================================== -->
 
-<section>
+<section class="contact-hero">
 
-<h2>Contact Us</h2>
+<div class="contact-hero-content">
 
-<p>
-Have a question about our fragrances or an upcoming launch?
-<br>
-We'd love to hear from you!
+<p class="contact-small">
+GET IN TOUCH
 </p>
 
+<h1>
+Contact MISK
+</h1>
+
+<div class="gold-line"></div>
+
+<p class="contact-tagline">
+We'd Love To Hear From You
+</p>
+
+</div>
+
+</section>
+
+<!-- =====================================================
+     CONTACT CONTENT
+===================================================== -->
+
+<section class="contact-section">
+
+<h2>
+Contact Us
+</h2>
+
+<p class="contact-intro">
+
+Have a question about our fragrances, your order,
+or an upcoming launch? We'd love to hear from you.
+
+We're always happy to help.
+
+</p>
 
 <div class="contact-info">
 
+<!-- EMAIL -->
 
 <div class="contact-item">
+
+<div class="contact-icon">
+✉️
+</div>
 
 <div class="contact-label">
 Email
@@ -324,35 +1010,88 @@ Email
 <div class="contact-value">
 
 <a href="mailto:miskfragrances.uk@gmail.com">
-miskfragrances.uk@gmail.com
+
+[miskfragrances.uk@gmail.com](mailto:miskfragrances.uk@gmail.com)
+
 </a>
 
 </div>
 
 </div>
 
+<!-- RESPONSE TIME -->
 
 <div class="contact-item">
 
+<div class="contact-icon">
+⏱️
+</div>
+
 <div class="contact-label">
-Saturday - Sunday
+Response Time
 </div>
 
 <div class="contact-value">
-We aim to respond to all inquiries within 24-48 hours.
-</div>
+
+We aim to respond to all enquiries
+within 24–48 hours.
 
 </div>
 
+</div>
+
+<!-- SUPPORT -->
+
+<div class="contact-item">
+
+<div class="contact-icon">
+✨
+</div>
+
+<div class="contact-label">
+MISK Support
+</div>
+
+<div class="contact-value">
+
+Whether you have a question about a fragrance
+or need help with your order, we're here to help.
+
+</div>
+
+</div>
+
+<!-- CTA -->
+
+<div class="contact-cta">
+
+<h3>
+Have a Question?
+</h3>
+
+<p>
+Send us an email and we'll get back to you as soon as possible.
+</p>
+
+<a
+href="mailto:miskfragrances[.uk@gmail.com](mailto:.uk@gmail.com)"
+class="email-button"
+
+>
+
+Email MISK
+
+</a>
+
+</div>
 
 </div>
 
 </section>
 
-
-<!-- ==============================
+<!-- =====================================================
      FOOTER
-============================== -->
+===================================================== -->
 
 <footer>
 
@@ -360,73 +1099,141 @@ We aim to respond to all inquiries within 24-48 hours.
 
 </footer>
 
+<!-- =====================================================
+     BACK TO TOP
+===================================================== -->
 
-<!-- BACK TO TOP -->
+<button
+id="backToTop"
+onclick="window.scrollTo({
+top:0,
+behavior:'smooth'
+})"
+aria-label="Back to top"
 
-<button id="backToTop" onclick="topFunction()">
-↑ Back to Top
+>
+
+↑
+
 </button>
 
+<!-- =====================================================
+     JAVASCRIPT
+===================================================== -->
 
 <script>
 
-/* ==============================
+/* =====================================================
    CART COUNT
-============================== */
-
-let cart =
-JSON.parse(localStorage.getItem("miskCart")) || [];
-
+===================================================== */
 
 function updateCartCount(){
 
-    const totalItems = cart.reduce(
-        (total,item) => total + item.quantity,
-        0
-    );
+    let cart = [];
 
-    document.getElementById("cartCount").textContent =
-        totalItems;
+    try{
+
+        cart =
+            JSON.parse(
+                localStorage.getItem("miskCart")
+            ) || [];
+
+    }catch(error){
+
+        cart = [];
+
+    }
+
+
+    const totalItems =
+        cart.reduce(
+            function(total,item){
+
+                return total +
+                    (Number(item.quantity) || 0);
+
+            },
+            0
+        );
+
+
+    const cartCount =
+        document.getElementById("cartCount");
+
+
+    if(cartCount){
+
+        cartCount.textContent =
+            totalItems;
+
+    }
 
 }
+
 
 updateCartCount();
 
 
-/* ==============================
-   BACK TO TOP
-============================== */
+/* =====================================================
+   UPDATE CART WHEN STORAGE CHANGES
+===================================================== */
 
-const backToTop =
-document.getElementById("backToTop");
+window.addEventListener(
+    "storage",
+    function(event){
 
+        if(event.key === "miskCart"){
 
-window.addEventListener("scroll", function(){
+            updateCartCount();
 
-    if(
-        document.body.scrollTop > 300 ||
-        document.documentElement.scrollTop > 300
-    ){
-
-        backToTop.style.display = "block";
-
-    }else{
-
-        backToTop.style.display = "none";
+        }
 
     }
+);
 
-});
+
+/* =====================================================
+   UPDATE CART WHEN RETURNING TO PAGE
+===================================================== */
+
+document.addEventListener(
+    "visibilitychange",
+    function(){
+
+        if(!document.hidden){
+
+            updateCartCount();
+
+        }
+
+    }
+);
 
 
-function topFunction(){
+/* =====================================================
+   BACK TO TOP
+===================================================== */
 
-    window.scrollTo({
-        top:0,
-        behavior:"smooth"
-    });
+const backToTop =
+    document.getElementById("backToTop");
 
-}
+
+window.addEventListener(
+    "scroll",
+    function(){
+
+        if(window.scrollY > 400){
+
+            backToTop.classList.add("show");
+
+        }else{
+
+            backToTop.classList.remove("show");
+
+        }
+
+    }
+);
 
 </script>
 
