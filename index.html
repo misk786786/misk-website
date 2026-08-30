@@ -1,3 +1,4 @@
+```html
 <!DOCTYPE html>
 <html lang="en">
 
@@ -5,7 +6,8 @@
 
 <meta charset="UTF-8">
 
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport"
+content="width=device-width, initial-scale=1.0">
 
 <title>MISK Fragrances | Premium Fragrance Oils</title>
 
@@ -19,8 +21,10 @@ name="keywords"
 content="MISK Fragrances, fragrance oils, attar, oud, musk, perfume oils, UK fragrance"
 >
 
-<meta name="author" content="MISK Fragrances">
-
+<meta
+name="author"
+content="MISK Fragrances"
+>
 
 <style>
 
@@ -70,6 +74,9 @@ header {
     gap: 15px;
 }
 
+
+/* MISK LOGO */
+
 .logo {
     color: #d4af37;
 
@@ -80,6 +87,9 @@ header {
 
     letter-spacing: 5px;
 }
+
+
+/* NAVIGATION LINKS */
 
 .nav-links {
     display: flex;
@@ -92,7 +102,7 @@ header {
 }
 
 .nav-links a {
-    color: white;
+    color: #d4af37;
 
     font-size: 12px;
 
@@ -102,15 +112,40 @@ header {
 }
 
 .nav-links a:hover {
-    color: #d4af37;
+    color: white;
+}
+
+
+/* CART */
+
+.cart-link {
+    border: 1px solid #d4af37;
+    padding: 8px 12px;
+    border-radius: 5px;
+}
+
+.cart-count {
+    background: #d4af37;
+    color: #050505;
+
+    padding: 2px 7px;
+
+    border-radius: 50%;
+
+    font-size: 11px;
+
+    margin-left: 4px;
+
+    font-weight: bold;
 }
 
 
 /* =====================================================
-   HERO - MOBILE FIRST
+   HERO
 ===================================================== */
 
 .misk-hero {
+
     position: relative;
 
     width: 100%;
@@ -122,80 +157,46 @@ header {
     overflow: hidden;
 
     display: flex;
-    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
 
 
 /* =====================================================
-   BOTTLE AREA
+   BACKGROUND BOTTLE AREA
 ===================================================== */
 
 .hero-slides {
-    position: relative;
+
+    position: absolute;
+
+    inset: 0;
 
     width: 100%;
-
-    height: 430px;
-
-    flex-shrink: 0;
-
-    display: flex;
-
-    justify-content: center;
-    align-items: center;
+    height: 100%;
 
     z-index: 1;
 }
 
 
-/* GOLD LIGHT BEHIND BOTTLE */
-
-.hero-slides::before {
-    content: "";
-
-    position: absolute;
-
-    width: 280px;
-    height: 280px;
-
-    left: 50%;
-    top: 50%;
-
-    transform: translate(-50%, -50%);
-
-    background: radial-gradient(
-        circle,
-        rgba(212,175,55,0.18),
-        rgba(212,175,55,0.05) 40%,
-        transparent 70%
-    );
-
-    z-index: 0;
-}
-
-
-/* =====================================================
-   BOTTLES
-===================================================== */
+/* BOTTLE IMAGES */
 
 .hero-slide {
+
     position: absolute;
 
-    width: 85%;
-    height: 400px;
+    inset: 0;
 
-    left: 50%;
-    top: 50%;
+    width: 100%;
+    height: 100%;
 
-    transform: translate(-50%, -50%);
+    object-fit: cover;
 
-    object-fit: contain;
-
-    padding: 5px;
+    padding: 0;
 
     opacity: 0;
 
-    z-index: 2;
+    z-index: 1;
 
     transition: opacity 0.7s ease;
 }
@@ -206,29 +207,29 @@ header {
 
 
 /* =====================================================
-   HERO OVERLAY
+   DARK OVERLAY
 ===================================================== */
 
 .hero-overlay {
+
     position: absolute;
 
-    top: 250px;
-    left: 0;
+    inset: 0;
 
     width: 100%;
-    height: 600px;
+    height: 100%;
 
     z-index: 2;
 
     pointer-events: none;
 
-    background: linear-gradient(
-        to bottom,
-        rgba(5,5,5,0),
-        rgba(5,5,5,0.15) 20%,
-        rgba(5,5,5,0.85) 55%,
-        #050505 75%
-    );
+    background:
+        linear-gradient(
+            to right,
+            rgba(0,0,0,0.78),
+            rgba(0,0,0,0.38),
+            rgba(0,0,0,0.62)
+        );
 }
 
 
@@ -237,81 +238,108 @@ header {
 ===================================================== */
 
 .hero-content {
+
     position: relative;
 
     z-index: 4;
 
     width: 90%;
 
-    max-width: 650px;
+    max-width: 800px;
 
     margin: 0 auto;
 
-    padding: 20px 0 60px;
+    padding: 40px 0;
 
     text-align: center;
 }
 
+
+/* SMALL TITLE */
+
 .hero-small {
+
     color: #d4af37;
 
-    font-size: 11px;
+    font-size: 13px;
 
     font-weight: bold;
 
-    letter-spacing: 3px;
+    letter-spacing: 5px;
 
     margin-bottom: 12px;
+
+    text-shadow: 0 2px 10px #000;
 }
 
+
+/* MAIN TITLE */
+
 .hero-content h1 {
+
     color: #d4af37;
 
     font-family: Georgia, "Times New Roman", serif;
 
-    font-size: clamp(42px, 12vw, 70px);
+    font-size: clamp(50px, 7vw, 90px);
 
     line-height: 1.05;
 
-    letter-spacing: 3px;
+    letter-spacing: 5px;
 
-    text-shadow: 0 3px 15px black;
+    text-shadow: 0 3px 20px #000;
 
     margin-bottom: 15px;
 }
 
+
+/* GOLD LINE */
+
 .gold-line {
+
     width: 80px;
 
     height: 2px;
 
     background: #d4af37;
 
-    margin: 18px auto;
+    margin: 20px auto;
 }
 
+
+/* TAGLINE */
+
 .hero-tagline {
+
     color: white;
 
     font-family: Georgia, "Times New Roman", serif;
 
-    font-size: 26px;
+    font-size: clamp(25px, 3vw, 40px);
 
     font-style: italic;
+
+    text-shadow: 0 2px 10px #000;
 
     margin-bottom: 15px;
 }
 
-.hero-description {
-    color: #cccccc;
 
-    font-size: 14px;
+/* DESCRIPTION */
+
+.hero-description {
+
+    color: #eeeeee;
+
+    font-size: 16px;
 
     line-height: 1.7;
 
-    max-width: 500px;
+    max-width: 600px;
 
     margin: 0 auto 25px;
+
+    text-shadow: 0 2px 8px #000;
 }
 
 
@@ -320,6 +348,7 @@ header {
 ===================================================== */
 
 .hero-buttons {
+
     display: flex;
 
     justify-content: center;
@@ -329,7 +358,9 @@ header {
     gap: 10px;
 }
 
+
 .hero-btn {
+
     display: inline-block;
 
     padding: 12px 21px;
@@ -338,11 +369,12 @@ header {
 
     border-radius: 4px;
 
-    background: linear-gradient(
-        135deg,
-        #d4af37,
-        #b8860b
-    );
+    background:
+        linear-gradient(
+            135deg,
+            #d4af37,
+            #b8860b
+        );
 
     color: #050505;
 
@@ -353,7 +385,9 @@ header {
     transition: 0.3s;
 }
 
+
 .hero-btn:hover {
+
     transform: translateY(-3px);
 
     box-shadow:
@@ -361,100 +395,20 @@ header {
         rgba(212,175,55,0.35);
 }
 
+
 .hero-btn.secondary {
-    background: rgba(0,0,0,0.7);
+
+    background: rgba(0,0,0,0.75);
 
     color: #d4af37;
 }
+
 
 .hero-btn.secondary:hover {
+
     background: #d4af37;
 
     color: #050505;
-}
-
-
-/* =====================================================
-   ARROWS
-===================================================== */
-
-.slide-arrow {
-    position: absolute;
-
-    top: 215px;
-
-    transform: translateY(-50%);
-
-    z-index: 6;
-
-    width: 42px;
-    height: 42px;
-
-    border-radius: 50%;
-
-    border: 1px solid #d4af37;
-
-    background: rgba(0,0,0,0.65);
-
-    color: #d4af37;
-
-    font-size: 18px;
-
-    cursor: pointer;
-}
-
-.slide-arrow.prev {
-    left: 10px;
-}
-
-.slide-arrow.next {
-    right: 10px;
-}
-
-.slide-arrow:hover {
-    background: #d4af37;
-
-    color: #050505;
-}
-
-
-/* =====================================================
-   DOTS
-===================================================== */
-
-.slide-dots {
-    position: absolute;
-
-    top: 405px;
-
-    left: 50%;
-
-    transform: translateX(-50%);
-
-    z-index: 7;
-
-    display: flex;
-
-    gap: 9px;
-}
-
-.dot {
-    width: 9px;
-    height: 9px;
-
-    border-radius: 50%;
-
-    border: 1px solid #d4af37;
-
-    background: transparent;
-
-    cursor: pointer;
-}
-
-.dot.active {
-    background: #d4af37;
-
-    transform: scale(1.25);
 }
 
 
@@ -463,6 +417,7 @@ header {
 ===================================================== */
 
 .welcome-section {
+
     width: 90%;
 
     max-width: 900px;
@@ -474,7 +429,9 @@ header {
     text-align: center;
 }
 
+
 .welcome-section h2 {
+
     color: #d4af37;
 
     font-family: Georgia, "Times New Roman", serif;
@@ -484,7 +441,9 @@ header {
     margin-bottom: 20px;
 }
 
+
 .welcome-section p {
+
     color: #cccccc;
 
     font-size: 15px;
@@ -498,6 +457,7 @@ header {
 ===================================================== */
 
 .features-section {
+
     width: 90%;
 
     max-width: 1200px;
@@ -513,7 +473,9 @@ header {
     gap: 18px;
 }
 
+
 .feature-card {
+
     background:
         linear-gradient(
             145deg,
@@ -532,19 +494,25 @@ header {
     transition: 0.3s;
 }
 
+
 .feature-card:hover {
+
     transform: translateY(-5px);
 
     border-color: #d4af37;
 }
 
+
 .feature-icon {
+
     font-size: 32px;
 
     margin-bottom: 12px;
 }
 
+
 .feature-card h3 {
+
     color: #d4af37;
 
     font-family: Georgia, "Times New Roman", serif;
@@ -554,7 +522,9 @@ header {
     margin-bottom: 10px;
 }
 
+
 .feature-card p {
+
     color: #bbbbbb;
 
     font-size: 14px;
@@ -568,6 +538,7 @@ header {
 ===================================================== */
 
 .collection-cta {
+
     width: 90%;
 
     max-width: 900px;
@@ -583,7 +554,9 @@ header {
     border-bottom: 1px solid rgba(212,175,55,0.25);
 }
 
+
 .collection-cta h2 {
+
     color: #d4af37;
 
     font-family: Georgia, "Times New Roman", serif;
@@ -593,7 +566,9 @@ header {
     margin-bottom: 15px;
 }
 
+
 .collection-cta p {
+
     color: #cccccc;
 
     margin-bottom: 25px;
@@ -605,6 +580,7 @@ header {
 ===================================================== */
 
 footer {
+
     padding: 30px 20px;
 
     text-align: center;
@@ -622,9 +598,11 @@ footer {
 ===================================================== */
 
 #backToTop {
+
     position: fixed;
 
     right: 18px;
+
     bottom: 18px;
 
     width: 44px;
@@ -651,7 +629,9 @@ footer {
     transition: 0.3s;
 }
 
+
 #backToTop.show {
+
     opacity: 1;
 
     visibility: visible;
@@ -665,6 +645,7 @@ footer {
 @media (min-width: 701px) {
 
     .navbar {
+
         max-width: 1400px;
 
         margin: auto;
@@ -676,95 +657,97 @@ footer {
         justify-content: space-between;
     }
 
+
     .logo {
+
         font-size: 28px;
     }
 
+
     .nav-links {
+
         gap: 30px;
     }
 
+
     .nav-links a {
+
         font-size: 14px;
     }
 
 
-    /* DESKTOP HERO */
+    /* FULL BACKGROUND HERO */
 
     .misk-hero {
+
         min-height: 680px;
 
         display: flex;
 
         align-items: center;
 
-        justify-content: flex-start;
+        justify-content: center;
     }
 
 
     .hero-slides {
+
         position: absolute;
 
-        right: 0;
-        top: 0;
+        inset: 0;
 
-        width: 55%;
+        width: 100%;
 
         height: 100%;
     }
 
 
     .hero-slide {
-        width: 88%;
 
-        height: 88%;
+        width: 100%;
 
-        max-height: 650px;
-    }
+        height: 100%;
 
-
-    .hero-slides::before {
-        width: 450px;
-
-        height: 450px;
+        object-fit: cover;
     }
 
 
     .hero-overlay {
+
         position: absolute;
 
         inset: 0;
 
         width: 100%;
+
         height: 100%;
 
         background:
             linear-gradient(
-                90deg,
-                #050505 0%,
-                #050505 25%,
-                rgba(5,5,5,0.96) 40%,
-                rgba(5,5,5,0.65) 58%,
-                rgba(5,5,5,0.15) 82%,
-                rgba(5,5,5,0) 100%
+                to right,
+                rgba(5,5,5,0.78),
+                rgba(5,5,5,0.35),
+                rgba(5,5,5,0.62)
             );
     }
 
 
     .hero-content {
-        width: 48%;
 
-        max-width: 700px;
+        width: 80%;
 
-        margin-left: 7%;
+        max-width: 900px;
+
+        margin: 0 auto;
 
         padding: 0;
 
-        text-align: left;
+        text-align: center;
     }
 
 
     .hero-small {
+
         font-size: 13px;
 
         letter-spacing: 5px;
@@ -772,77 +755,142 @@ footer {
 
 
     .hero-content h1 {
+
         font-size: clamp(50px, 6vw, 85px);
 
         letter-spacing: 5px;
     }
 
 
-    .gold-line {
-        margin: 20px 0;
-    }
-
-
     .hero-tagline {
+
         font-size: clamp(25px, 3vw, 40px);
     }
 
 
     .hero-description {
+
         font-size: 16px;
 
-        margin-left: 0;
+        margin-left: auto;
+
+        margin-right: auto;
     }
 
 
     .hero-buttons {
-        justify-content: flex-start;
-    }
 
-
-    .slide-arrow {
-        top: 50%;
-
-        width: 48px;
-        height: 48px;
-
-        font-size: 22px;
-    }
-
-
-    .slide-arrow.prev {
-        left: 25px;
-    }
-
-
-    .slide-arrow.next {
-        right: 25px;
-    }
-
-
-    .slide-dots {
-        top: auto;
-
-        bottom: 25px;
+        justify-content: center;
     }
 
 
     .features-section {
+
         grid-template-columns:
             repeat(4, 1fr);
     }
 
 
     .welcome-section h2 {
+
         font-size: 42px;
     }
 
 
     .collection-cta h2 {
+
         font-size: 40px;
     }
 
 }
+
+
+/* =====================================================
+   SMALL MOBILE
+===================================================== */
+
+@media (max-width: 700px) {
+
+    .misk-hero {
+
+        min-height: 750px;
+    }
+
+
+    .hero-slide {
+
+        object-fit: cover;
+    }
+
+
+    .hero-overlay {
+
+        background:
+            linear-gradient(
+                to bottom,
+                rgba(0,0,0,0.35),
+                rgba(0,0,0,0.75)
+            );
+    }
+
+
+    .hero-content {
+
+        width: 90%;
+
+        padding-top: 30px;
+    }
+
+
+    .hero-small {
+
+        font-size: 10px;
+
+        letter-spacing: 3px;
+    }
+
+
+    .hero-content h1 {
+
+        font-size: clamp(40px, 12vw, 65px);
+
+        letter-spacing: 3px;
+    }
+
+
+    .hero-tagline {
+
+        font-size: 25px;
+    }
+
+
+    .hero-description {
+
+        font-size: 14px;
+    }
+
+
+    .hero-buttons {
+
+        flex-direction: column;
+
+        align-items: center;
+    }
+
+
+    .hero-btn {
+
+        width: 220px;
+
+        text-align: center;
+    }
+
+}
+
+
+/* =====================================================
+   JAVASCRIPT-FRIENDLY
+===================================================== */
 
 </style>
 
@@ -860,10 +908,8 @@ footer {
 
 <nav class="navbar">
 
-<a
-href="index.html"
-class="logo"
->
+
+<a href="index.html" class="logo">
 MISK
 </a>
 
@@ -890,6 +936,11 @@ Reviews
 Contact
 </a>
 
+<a href="cart.html" class="cart-link">
+🛒 Cart
+<span class="cart-count" id="cartCount">0</span>
+</a>
+
 </div>
 
 </nav>
@@ -904,7 +955,7 @@ Contact
 <section class="misk-hero">
 
 
-<!-- BOTTLES -->
+<!-- FRAGRANCE IMAGES -->
 
 <div class="hero-slides">
 
@@ -940,12 +991,12 @@ alt="MISK fragrance bottle"
 </div>
 
 
-<!-- OVERLAY -->
+<!-- DARK OVERLAY -->
 
 <div class="hero-overlay"></div>
 
 
-<!-- TEXT -->
+<!-- HERO TEXT -->
 
 <div class="hero-content">
 
@@ -999,60 +1050,6 @@ Customer Reviews
 </div>
 
 
-<!-- PREVIOUS -->
-
-<button
-class="slide-arrow prev"
-onclick="changeSlide(-1)"
-aria-label="Previous bottle"
->
-&#10094;
-</button>
-
-
-<!-- NEXT -->
-
-<button
-class="slide-arrow next"
-onclick="changeSlide(1)"
-aria-label="Next bottle"
->
-&#10095;
-</button>
-
-
-<!-- DOTS -->
-
-<div class="slide-dots">
-
-
-<span
-class="dot active"
-onclick="showSlide(0)"
-></span>
-
-
-<span
-class="dot"
-onclick="showSlide(1)"
-></span>
-
-
-<span
-class="dot"
-onclick="showSlide(2)"
-></span>
-
-
-<span
-class="dot"
-onclick="showSlide(3)"
-></span>
-
-
-</div>
-
-
 </section>
 
 
@@ -1062,17 +1059,22 @@ onclick="showSlide(3)"
 
 <section class="welcome-section">
 
+
 <h2>
 Welcome to MISK
 </h2>
 
+
 <p>
+
 At MISK Fragrances, we believe fragrance is more than
 just a scent. It is a way to express your personality,
 create memories and leave a lasting impression.
 Explore our collection of premium fragrance oils,
 oud and musk-inspired scents.
+
 </p>
+
 
 </section>
 
@@ -1165,14 +1167,17 @@ the MISK fragrance collection.
 
 <section class="collection-cta">
 
+
 <h2>
 Find Your Signature Scent
 </h2>
+
 
 <p>
 Explore the MISK collection and discover
 your next favourite fragrance.
 </p>
+
 
 <a
 href="collection.html"
@@ -1180,6 +1185,7 @@ class="hero-btn"
 >
 View Collection
 </a>
+
 
 </section>
 
@@ -1208,10 +1214,15 @@ aria-label="Back to top"
 </button>
 
 
+<!-- =====================================================
+     JAVASCRIPT
+===================================================== -->
+
 <script>
 
+
 /* =====================================================
-   SLIDESHOW
+   HERO SLIDESHOW
 ===================================================== */
 
 let currentSlide = 0;
@@ -1219,19 +1230,22 @@ let currentSlide = 0;
 const slides =
 document.querySelectorAll(".hero-slide");
 
-const dots =
-document.querySelectorAll(".dot");
-
 
 function showSlide(index) {
 
     if (index >= slides.length) {
+
         index = 0;
+
     }
 
+
     if (index < 0) {
+
         index = slides.length - 1;
+
     }
+
 
     currentSlide = index;
 
@@ -1243,39 +1257,74 @@ function showSlide(index) {
     });
 
 
-    dots.forEach(function(dot) {
-
-        dot.classList.remove("active");
-
-    });
-
-
     slides[currentSlide]
-    .classList.add("active");
-
-
-    dots[currentSlide]
-    .classList.add("active");
+        .classList.add("active");
 
 }
 
 
-function changeSlide(direction) {
-
-    showSlide(
-        currentSlide + direction
-    );
-
-}
-
-
-/* CHANGE EVERY 5 SECONDS */
+/* CHANGE IMAGE EVERY 5 SECONDS */
 
 setInterval(function() {
 
-    changeSlide(1);
+    showSlide(currentSlide + 1);
 
 }, 5000);
+
+
+/* =====================================================
+   CART COUNT
+===================================================== */
+
+function updateCartCount() {
+
+    const cart =
+        JSON.parse(
+            localStorage.getItem("miskCart")
+        ) || [];
+
+
+    const totalItems =
+        cart.reduce(
+            (total, item) =>
+                total + item.quantity,
+            0
+        );
+
+
+    const cartCount =
+        document.getElementById("cartCount");
+
+
+    if (cartCount) {
+
+        cartCount.textContent =
+            totalItems;
+
+    }
+
+}
+
+
+updateCartCount();
+
+
+/* =====================================================
+   UPDATE CART COUNT WHEN RETURNING TO PAGE
+===================================================== */
+
+window.addEventListener(
+    "storage",
+    function(event) {
+
+        if (event.key === "miskCart") {
+
+            updateCartCount();
+
+        }
+
+    }
+);
 
 
 /* =====================================================
@@ -1287,20 +1336,22 @@ document.getElementById("backToTop");
 
 
 window.addEventListener(
-"scroll",
-function() {
+    "scroll",
+    function() {
 
-    if (window.scrollY > 400) {
+        if (window.scrollY > 400) {
 
-        backToTop.classList.add("show");
+            backToTop.classList.add("show");
 
-    } else {
+        } else {
 
-        backToTop.classList.remove("show");
+            backToTop.classList.remove("show");
+
+        }
 
     }
+);
 
-});
 
 </script>
 
@@ -1308,3 +1359,4 @@ function() {
 </body>
 
 </html>
+```
