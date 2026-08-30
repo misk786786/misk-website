@@ -1,5 +1,7 @@
 <!DOCTYPE html>
+
 <html lang="en">
+
 <head>
 
 <meta charset="UTF-8">
@@ -7,388 +9,891 @@
 
 <title>Reviews - MISK Fragrances | Customer Reviews</title>
 
-<meta name="description" content="Read customer reviews of MISK Fragrances premium fragrance oils.">
+<meta
+name="description"
+content="Read customer reviews of MISK Fragrances premium fragrance oils."
+
+>
+
+<meta
+name="keywords"
+content="MISK Fragrances, fragrance reviews, perfume oils, attar, oud, musk"
+
+>
+
+<meta
+name="author"
+content="MISK Fragrances"
+
+>
 
 <style>
 
-:root{
-    --gold:#d4af37;
-    --gold-dark:#b8860b;
-    --silver:#c0c0c0;
-    --silver-light:#e5e5e5;
-    --bg:#0a0a0a;
-    --card:#111;
+/* =====================================================
+   BASIC RESET
+===================================================== */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
 }
 
 html{
     scroll-behavior:smooth;
 }
 
-*{
-    box-sizing:border-box;
-}
-
 body{
-    margin:0;
+    background:#050505;
+    color:white;
     font-family:Arial,Helvetica,sans-serif;
-    background:var(--bg);
-    color:var(--silver-light);
+    overflow-x:hidden;
 }
 
-/* ==============================
-   NAVIGATION
-============================== */
+a{
+    text-decoration:none;
+}
 
-nav{
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-    padding:14px 24px;
-    background:#000;
-    border-bottom:1px solid #292929;
+
+/* =====================================================
+   HEADER
+===================================================== */
+
+header{
+    background:#050505;
+    border-bottom:1px solid rgba(212,175,55,0.25);
     position:sticky;
     top:0;
     z-index:1000;
 }
 
-/* MISK TOP LEFT BUTTON */
+.navbar{
+    width:100%;
+    max-width:1400px;
+    margin:auto;
+    padding:18px 5%;
 
-.logo-button{
-    color:var(--gold);
-    text-decoration:none;
-    font-family:Georgia,serif;
-    font-size:40px;
-    font-weight:bold;
-    letter-spacing:8px;
-    padding:0;
-    transition:.3s;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+
+    gap:20px;
 }
 
-.logo-button:hover{
+
+/* =====================================================
+   MISK LOGO
+===================================================== */
+
+.logo{
+    color:#d4af37;
+
+    font-family:Georgia,"Times New Roman",serif;
+
+    font-size:27px;
+    font-weight:bold;
+
+    letter-spacing:5px;
+
+    transition:0.3s;
+}
+
+.logo:hover{
     color:white;
 }
 
-/* NAV LINKS */
+
+/* =====================================================
+   NAVIGATION
+===================================================== */
 
 .nav-links{
     display:flex;
     align-items:center;
+    justify-content:center;
+
+    flex-wrap:wrap;
+
+    gap:25px;
 }
 
 .nav-links a{
-    color:var(--gold);
-    text-decoration:none;
-    margin-left:30px;
-    font-size:20px;
-    font-weight:500;
-    transition:.3s;
+    color:#d4af37;
+
+    font-size:14px;
+
+    letter-spacing:0.5px;
+
+    transition:0.3s;
 }
 
 .nav-links a:hover{
     color:white;
 }
 
-/* CART */
+
+/* =====================================================
+   CART
+===================================================== */
 
 .cart-link{
-    border:1px solid var(--gold);
-    padding:10px 15px;
-    border-radius:7px;
-    margin-left:30px !important;
+    border:1px solid #d4af37;
+
+    padding:8px 12px;
+
+    border-radius:5px;
+
+    transition:0.3s;
+}
+
+.cart-link:hover{
+    background:#d4af37;
+    color:#050505 !important;
 }
 
 .cart-count{
     display:inline-flex;
+
     align-items:center;
     justify-content:center;
-    background:var(--gold);
-    color:#000;
-    width:28px;
-    height:28px;
+
+    min-width:20px;
+    height:20px;
+
+    background:#d4af37;
+
+    color:#050505;
+
     border-radius:50%;
-    font-size:14px;
+
+    padding:2px 6px;
+
+    font-size:11px;
+
+    margin-left:4px;
+
     font-weight:bold;
-    margin-left:5px;
 }
 
-/* ==============================
-   MAIN
-============================== */
 
-section{
-    max-width:1150px;
-    margin:auto;
+/* =====================================================
+   REVIEWS HERO
+===================================================== */
+
+.reviews-hero{
+
+    min-height:400px;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    text-align:center;
+
     padding:70px 20px;
+
+    position:relative;
+
+    background:
+
+        radial-gradient(
+            circle at center,
+            rgba(212,175,55,0.10),
+            transparent 55%
+        ),
+
+        linear-gradient(
+            145deg,
+            #111111,
+            #050505
+        );
+
+    border-bottom:1px solid rgba(212,175,55,0.20);
+}
+
+.reviews-hero-content{
+    max-width:850px;
+}
+
+.reviews-small{
+
+    color:#d4af37;
+
+    font-size:13px;
+
+    font-weight:bold;
+
+    letter-spacing:5px;
+
+    margin-bottom:15px;
+}
+
+.reviews-hero h1{
+
+    color:#d4af37;
+
+    font-family:Georgia,"Times New Roman",serif;
+
+    font-size:clamp(50px,7vw,85px);
+
+    letter-spacing:5px;
+
+    margin-bottom:15px;
+
+    text-shadow:
+        0 3px 20px rgba(0,0,0,0.8);
+}
+
+.gold-line{
+
+    width:80px;
+
+    height:2px;
+
+    background:#d4af37;
+
+    margin:20px auto;
+}
+
+.reviews-tagline{
+
+    color:#e5e5e5;
+
+    font-family:Georgia,"Times New Roman",serif;
+
+    font-size:clamp(22px,3vw,34px);
+
+    font-style:italic;
+}
+
+
+/* =====================================================
+   MAIN SECTION
+===================================================== */
+
+.reviews-section{
+
+    width:90%;
+
+    max-width:1150px;
+
+    margin:auto;
+
+    padding:75px 0 90px;
+
     text-align:center;
 }
 
-section h2{
-    color:var(--gold);
+.reviews-section h2{
+
+    color:#d4af37;
+
+    font-family:Georgia,"Times New Roman",serif;
+
+    font-size:40px;
+
     margin-bottom:10px;
-    font-size:32px;
 }
 
-.intro{
-    color:var(--silver);
-    margin-bottom:35px;
+.reviews-intro{
+
+    color:#aaaaaa;
+
+    max-width:650px;
+
+    margin:0 auto 45px;
+
+    line-height:1.7;
+
+    font-size:15px;
 }
 
-/* ==============================
+
+/* =====================================================
    REVIEW FORM
-============================== */
+===================================================== */
 
 .review-form{
-    background:var(--card);
-    border:1px solid var(--gold);
-    padding:30px;
-    border-radius:8px;
-    max-width:600px;
-    margin:30px auto 60px;
-    box-shadow:0 10px 30px rgba(0,0,0,.4);
-}
 
-.form-group{
-    margin-bottom:20px;
+    background:
+        linear-gradient(
+            145deg,
+            #131313,
+            #080808
+        );
+
+    border:1px solid rgba(212,175,55,0.35);
+
+    padding:35px;
+
+    border-radius:10px;
+
+    max-width:650px;
+
+    margin:0 auto 70px;
+
+    box-shadow:
+        0 10px 35px rgba(0,0,0,0.45);
+
     text-align:left;
 }
 
+.review-form h3{
+
+    color:#d4af37;
+
+    font-family:Georgia,"Times New Roman",serif;
+
+    font-size:27px;
+
+    text-align:center;
+
+    margin-bottom:10px;
+}
+
+.form-intro{
+
+    color:#999999;
+
+    text-align:center;
+
+    font-size:14px;
+
+    line-height:1.6;
+
+    margin-bottom:30px;
+}
+
+.form-group{
+
+    margin-bottom:20px;
+}
+
 .form-group label{
+
     display:block;
-    color:var(--gold);
+
+    color:#d4af37;
+
     font-weight:bold;
+
     margin-bottom:8px;
+
+    font-size:14px;
 }
 
 .form-group input,
 .form-group textarea,
 .form-group select{
+
     width:100%;
+
     padding:13px;
+
     background:#000;
-    color:var(--silver-light);
-    border:1px solid #555;
+
+    color:#e5e5e5;
+
+    border:1px solid #444;
+
     border-radius:5px;
+
     font-family:Arial,Helvetica,sans-serif;
+
     font-size:14px;
+
+    transition:0.3s;
 }
 
 .form-group input:focus,
 .form-group textarea:focus,
 .form-group select:focus{
+
     outline:none;
-    border-color:var(--gold);
-    box-shadow:0 0 8px rgba(212,175,55,.4);
+
+    border-color:#d4af37;
+
+    box-shadow:
+        0 0 8px rgba(212,175,55,0.25);
 }
 
 .form-group textarea{
+
     resize:vertical;
-    min-height:120px;
+
+    min-height:130px;
 }
 
+
+/* OPTIONAL NOTE */
+
+.optional-label{
+
+    color:#888888;
+
+    font-size:12px;
+
+    font-weight:normal;
+
+    margin-left:5px;
+}
+
+
+/* =====================================================
+   SUBMIT BUTTON
+===================================================== */
+
 .submit-btn{
-    display:inline-block;
-    background:linear-gradient(var(--gold),var(--gold-dark));
-    color:#000;
-    border:none;
-    padding:13px 32px;
-    font-weight:bold;
+
+    width:100%;
+
+    padding:13px 25px;
+
+    border:1px solid #d4af37;
+
     border-radius:5px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #d4af37,
+            #b8860b
+        );
+
+    color:#050505;
+
+    font-weight:bold;
+
+    font-size:14px;
+
     cursor:pointer;
-    transition:.3s;
-    font-size:16px;
+
+    transition:0.3s;
 }
 
 .submit-btn:hover{
-    transform:scale(1.04);
-    box-shadow:0 5px 15px rgba(212,175,55,.3);
+
+    transform:translateY(-2px);
+
+    box-shadow:
+        0 8px 25px
+        rgba(212,175,55,0.25);
 }
 
 .email-note{
+
     margin-top:15px;
-    color:#888;
-    font-size:13px;
-    line-height:1.5;
+
+    color:#777777;
+
+    font-size:12px;
+
+    line-height:1.6;
+
+    text-align:center;
 }
 
-/* ==============================
-   REVIEWS
-============================== */
+
+/* =====================================================
+   CUSTOMER REVIEWS
+===================================================== */
 
 .reviews-heading{
-    color:var(--gold);
-    font-size:26px;
+
+    color:#d4af37;
+
+    font-family:Georgia,"Times New Roman",serif;
+
+    font-size:30px;
+
     margin-bottom:30px;
 }
 
 .reviews-list{
+
     display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
-    gap:25px;
+
+    grid-template-columns:
+        repeat(3,1fr);
+
+    gap:22px;
+
     margin-top:30px;
+
+    text-align:left;
 }
 
 .review-card{
-    background:linear-gradient(145deg,#151515,#0d0d0d);
-    border:1px solid #333;
+
+    background:
+        linear-gradient(
+            145deg,
+            #151515,
+            #0d0d0d
+        );
+
+    border:1px solid rgba(212,175,55,0.20);
+
     padding:28px;
-    border-radius:8px;
-    text-align:left;
-    box-shadow:0 8px 25px rgba(0,0,0,.35);
-    transition:.3s;
+
+    border-radius:10px;
+
+    box-shadow:
+        0 8px 25px rgba(0,0,0,0.35);
+
+    transition:0.3s;
 }
 
 .review-card:hover{
-    transform:translateY(-4px);
-    border-color:var(--gold);
+
+    transform:translateY(-5px);
+
+    border-color:#d4af37;
+
+    box-shadow:
+        0 12px 30px
+        rgba(212,175,55,0.12);
 }
 
 .stars{
-    color:var(--gold);
+
+    color:#d4af37;
+
     font-size:20px;
+
     letter-spacing:2px;
+
     margin-bottom:15px;
 }
 
 .review-name-row{
+
     display:flex;
+
     align-items:center;
+
     flex-wrap:wrap;
+
     gap:8px;
+
     margin-bottom:12px;
 }
 
 .review-name{
+
     color:white;
+
     font-size:18px;
+
     font-weight:bold;
 }
 
 .verified{
+
     background:#111;
-    color:var(--gold);
-    border:1px solid var(--gold);
+
+    color:#d4af37;
+
+    border:1px solid #d4af37;
+
     padding:4px 8px;
+
     border-radius:4px;
-    font-size:11px;
+
+    font-size:10px;
+
     font-weight:bold;
 }
 
 .review-product{
-    color:var(--gold);
+
+    color:#d4af37;
+
     font-size:13px;
+
     font-weight:bold;
+
     margin-bottom:15px;
 }
 
-.review-text{
-    color:var(--silver);
-    line-height:1.7;
-    margin:0;
-}
-
 .review-divider{
+
     height:1px;
+
     background:#292929;
+
     margin:20px 0;
 }
 
-/* ==============================
+.review-text{
+
+    color:#aaaaaa;
+
+    line-height:1.7;
+
+    margin:0;
+
+    font-size:14px;
+}
+
+
+/* =====================================================
    BACK TO TOP
-============================== */
+===================================================== */
 
 #backToTop{
+
     position:fixed;
-    bottom:25px;
-    right:25px;
-    display:none;
-    background:linear-gradient(var(--gold),var(--gold-dark));
-    color:#000;
-    border:none;
-    padding:13px 18px;
-    border-radius:6px;
+
+    right:20px;
+
+    bottom:20px;
+
+    width:48px;
+
+    height:48px;
+
+    border-radius:50%;
+
+    border:1px solid #d4af37;
+
+    background:#080808;
+
+    color:#d4af37;
+
+    font-size:22px;
+
     font-weight:bold;
-    font-size:14px;
+
     cursor:pointer;
-    z-index:999;
-    box-shadow:0 5px 20px rgba(0,0,0,.4);
+
+    z-index:2000;
+
+    opacity:0;
+
+    visibility:hidden;
+
+    transform:translateY(15px);
+
+    transition:
+        opacity 0.3s ease,
+        visibility 0.3s ease,
+        transform 0.3s ease,
+        background 0.3s ease;
+}
+
+#backToTop.show{
+
+    opacity:1;
+
+    visibility:visible;
+
+    transform:translateY(0);
 }
 
 #backToTop:hover{
+
+    background:#d4af37;
+
+    color:#050505;
+
     transform:translateY(-3px);
 }
 
-/* ==============================
+
+/* =====================================================
    FOOTER
-============================== */
+===================================================== */
 
 footer{
+
+    padding:30px 20px;
+
     text-align:center;
-    padding:30px;
-    border-top:1px solid var(--gold);
-    color:#777;
-    margin-top:40px;
+
+    border-top:1px solid rgba(212,175,55,0.20);
+
+    color:#888888;
+
+    font-size:13px;
 }
 
-/* ==============================
+
+/* =====================================================
+   TABLET
+===================================================== */
+
+@media(max-width:1000px){
+
+    .reviews-list{
+
+        grid-template-columns:
+            repeat(2,1fr);
+    }
+}
+
+
+/* =====================================================
    MOBILE
-============================== */
+===================================================== */
 
-@media(max-width:800px){
+@media(max-width:700px){
 
-    nav{
+    .navbar{
+
         flex-direction:column;
+
+        padding:16px 12px;
+
         gap:15px;
-        padding:15px;
     }
 
-    .logo-button{
-        font-size:34px;
+    .logo{
+
+        font-size:25px;
     }
 
     .nav-links{
-        flex-wrap:wrap;
-        justify-content:center;
+
+        gap:10px 14px;
     }
 
     .nav-links a{
-        display:inline-block;
-        margin:5px 7px;
-        font-size:16px;
+
+        font-size:11px;
     }
 
     .cart-link{
-        margin-left:7px !important;
+
+        padding:7px 10px;
     }
 
-    section{
-        padding:50px 15px;
+    .reviews-hero{
+
+        min-height:360px;
+
+        padding:60px 20px;
     }
 
+    .reviews-small{
+
+        font-size:10px;
+
+        letter-spacing:3px;
+    }
+
+    .reviews-hero h1{
+
+        font-size:clamp(42px,12vw,65px);
+
+        letter-spacing:3px;
+    }
+
+    .reviews-tagline{
+
+        font-size:23px;
+    }
+
+    .reviews-section{
+
+        padding-top:60px;
+    }
+
+    .reviews-section h2{
+
+        font-size:32px;
+    }
+
+    .review-form{
+
+        padding:25px 20px;
+    }
+
+    .reviews-list{
+
+        grid-template-columns:1fr;
+
+        gap:18px;
+    }
+
+    #backToTop{
+
+        width:44px;
+
+        height:44px;
+
+        right:15px;
+
+        bottom:15px;
+
+        font-size:20px;
+    }
+}
+
+
+/* =====================================================
+   VERY SMALL PHONES
+===================================================== */
+
+@media(max-width:400px){
+
+    .nav-links{
+
+        gap:8px 10px;
+    }
+
+    .nav-links a{
+
+        font-size:10px;
+    }
+
+    .reviews-hero h1{
+
+        font-size:40px;
+    }
 }
 
 </style>
 
 </head>
 
-<body id="top">
+<body>
 
-<!-- ==============================
-     NAVIGATION
-============================== -->
+<!-- =====================================================
+     HEADER
+===================================================== -->
 
-<nav>
+<header>
 
-<a href="index.html" class="logo-button">
+<nav class="navbar">
+
+<a href="index.html" class="logo">
 MISK
 </a>
 
 <div class="nav-links">
 
-<a href="index.html">Home</a>
-<a href="about.html">About</a>
-<a href="collection.html">Collection</a>
-<a href="reviews.html">Reviews</a>
-<a href="contact.html">Contact</a>
+<a href="index.html">
+Home
+</a>
+
+<a href="about.html">
+About
+</a>
+
+<a href="collection.html">
+Collection
+</a>
+
+<a href="reviews.html">
+Reviews
+</a>
+
+<a href="contact.html">
+Contact
+</a>
 
 <a href="cart.html" class="cart-link">
 🛒 Cart
@@ -399,25 +904,63 @@ MISK
 
 </nav>
 
+</header>
 
-<!-- ==============================
-     MAIN
-============================== -->
+<!-- =====================================================
+     REVIEWS HERO
+===================================================== -->
 
-<section>
+<section class="reviews-hero">
 
-<h2>Customer Reviews</h2>
+<div class="reviews-hero-content">
 
-<p class="intro">
-Discover what our customers think about MISK Fragrances.
+<p class="reviews-small">
+THE MISK EXPERIENCE
 </p>
 
+<h1>
+Reviews
+</h1>
 
-<!-- ==============================
+<div class="gold-line"></div>
+
+<p class="reviews-tagline">
+What Our Customers Say
+</p>
+
+</div>
+
+</section>
+
+<!-- =====================================================
+     REVIEWS SECTION
+===================================================== -->
+
+<section class="reviews-section">
+
+<h2>
+Customer Reviews
+</h2>
+
+<p class="reviews-intro">
+Discover what our customers think about MISK Fragrances
+and share your own experience with us.
+</p>
+
+<!-- =====================================================
      REVIEW FORM
-============================== -->
+===================================================== -->
 
 <div class="review-form">
+
+<h3>
+Share Your Experience
+</h3>
+
+<p class="form-intro">
+We would love to hear what you think about your MISK fragrance.
+Your review will be checked before it is added to the website.
+</p>
 
 <form id="reviewForm">
 
@@ -432,10 +975,11 @@ type="text"
 id="name"
 name="name"
 placeholder="Enter your name"
-required>
+required
+
+>
 
 </div>
-
 
 <div class="form-group">
 
@@ -446,7 +990,9 @@ Which Fragrance?
 <select
 id="product"
 name="product"
-required>
+required
+
+>
 
 <option value="">
 Select a product
@@ -492,7 +1038,6 @@ Fruity Oud
 
 </div>
 
-
 <div class="form-group">
 
 <label for="rating">
@@ -502,22 +1047,37 @@ Rating
 <select
 id="rating"
 name="rating"
-required>
+required
+
+>
 
 <option value="">
 Select a rating
 </option>
 
-<option value="1">⭐ 1 Star</option>
-<option value="2">⭐⭐ 2 Stars</option>
-<option value="3">⭐⭐⭐ 3 Stars</option>
-<option value="4">⭐⭐⭐⭐ 4 Stars</option>
-<option value="5">⭐⭐⭐⭐⭐ 5 Stars</option>
+<option value="1">
+⭐ 1 Star
+</option>
+
+<option value="2">
+⭐⭐ 2 Stars
+</option>
+
+<option value="3">
+⭐⭐⭐ 3 Stars
+</option>
+
+<option value="4">
+⭐⭐⭐⭐ 4 Stars
+</option>
+
+<option value="5">
+⭐⭐⭐⭐⭐ 5 Stars
+</option>
 
 </select>
 
 </div>
-
 
 <div class="form-group">
 
@@ -529,14 +1089,30 @@ Your Review
 id="review"
 name="review"
 placeholder="Tell us about your experience..."
-required></textarea>
+required
+></textarea>
 
 </div>
 
+<div class="form-group">
+
+<label for="note">
+Note <span class="optional-label">(Optional)</span>
+</label>
+
+<textarea
+id="note"
+name="note"
+placeholder="Add an optional note..."
+></textarea>
+
+</div>
 
 <button
 type="submit"
-class="submit-btn">
+class="submit-btn"
+
+>
 
 Submit Review
 
@@ -544,9 +1120,10 @@ Submit Review
 
 <p class="email-note">
 
-When you click Submit Review, your email app will open with your review ready to send to MISK Fragrances.
+When you click Submit Review, your email app will open with
+your review ready to send to MISK Fragrances.
 
-Reviews are checked before being displayed on our website.
+Reviews are checked before being displayed on the website.
 
 </p>
 
@@ -554,22 +1131,23 @@ Reviews are checked before being displayed on our website.
 
 </div>
 
-
-<!-- ==============================
+<!-- =====================================================
      CUSTOMER REVIEWS
-============================== -->
+===================================================== -->
 
 <h3 class="reviews-heading">
 What Our Customers Say
 </h3>
 
-
 <div class="reviews-list">
 
+<!-- REVIEW 1 -->
 
 <div class="review-card">
 
-<div class="stars">★★★★★</div>
+<div class="stars">
+★★★★★
+</div>
 
 <div class="review-name-row">
 
@@ -590,15 +1168,19 @@ Imperial Musk
 <div class="review-divider"></div>
 
 <p class="review-text">
-Fantastic fragrance, long lasting and smells great. Would recommend.
+Fantastic fragrance, long lasting and smells great.
+Would recommend.
 </p>
 
 </div>
 
+<!-- REVIEW 2 -->
 
 <div class="review-card">
 
-<div class="stars">★★★★★</div>
+<div class="stars">
+★★★★★
+</div>
 
 <div class="review-name-row">
 
@@ -619,15 +1201,21 @@ Fruity Oud
 <div class="review-divider"></div>
 
 <p class="review-text">
-The creators' understanding of a person's sense of smell is unmatched. I urge all perfume lovers to try any of his fragrances. They're all amazing. He has a bright future, and I look forward to his future releases.
+The creators' understanding of a person's sense of smell
+is unmatched. I urge all perfume lovers to try any of his
+fragrances. They're all amazing. He has a bright future,
+and I look forward to his future releases.
 </p>
 
 </div>
 
+<!-- REVIEW 3 -->
 
 <div class="review-card">
 
-<div class="stars">★★★★★</div>
+<div class="stars">
+★★★★★
+</div>
 
 <div class="review-name-row">
 
@@ -653,10 +1241,13 @@ Smells so good, the whole family liked it.
 
 </div>
 
+<!-- REVIEW 4 -->
 
 <div class="review-card">
 
-<div class="stars">★★★★★</div>
+<div class="stars">
+★★★★★
+</div>
 
 <div class="review-name-row">
 
@@ -677,15 +1268,19 @@ Rose Prestige
 <div class="review-divider"></div>
 
 <p class="review-text">
-It's very good. This itr and all of them smell nice. I would recommend it.
+It's very good. This itr and all of them smell nice.
+I would recommend it.
 </p>
 
 </div>
 
+<!-- REVIEW 5 -->
 
 <div class="review-card">
 
-<div class="stars">★★★★★</div>
+<div class="stars">
+★★★★★
+</div>
 
 <div class="review-name-row">
 
@@ -706,15 +1301,19 @@ Signature Homme
 <div class="review-divider"></div>
 
 <p class="review-text">
-It's very good. This itr and all of them smell nice. I would recommend it.
+It's very good. This itr and all of them smell nice.
+I would recommend it.
 </p>
 
 </div>
 
+<!-- REVIEW 6 -->
 
 <div class="review-card">
 
-<div class="stars">★★★★★</div>
+<div class="stars">
+★★★★★
+</div>
 
 <div class="review-name-row">
 
@@ -731,15 +1330,19 @@ Imperial Musk
 <div class="review-divider"></div>
 
 <p class="review-text">
-Rich and unique fragrance which always brings attention 🥰 would definitely recommend!
+Rich and unique fragrance which always brings attention
+🥰 would definitely recommend!
 </p>
 
 </div>
 
+<!-- REVIEW 7 -->
 
 <div class="review-card">
 
-<div class="stars">★★★★★</div>
+<div class="stars">
+★★★★★
+</div>
 
 <div class="review-name-row">
 
@@ -756,7 +1359,9 @@ Royal Oud
 <div class="review-divider"></div>
 
 <p class="review-text">
-Absolutely beautiful oud with such a rich, luxurious scent. It smells amazing and has a lovely long-lasting fragrance that really stands out. Definitely recommend!
+Absolutely beautiful oud with such a rich, luxurious scent.
+It smells amazing and has a lovely long-lasting fragrance
+that really stands out. Definitely recommend!
 </p>
 
 </div>
@@ -765,10 +1370,9 @@ Absolutely beautiful oud with such a rich, luxurious scent. It smells amazing an
 
 </section>
 
-
-<!-- ==============================
+<!-- =====================================================
      FOOTER
-============================== -->
+===================================================== -->
 
 <footer>
 
@@ -776,75 +1380,177 @@ Absolutely beautiful oud with such a rich, luxurious scent. It smells amazing an
 
 </footer>
 
+<!-- =====================================================
+     BACK TO TOP
+===================================================== -->
 
-<!-- BACK TO TOP -->
+<button
+id="backToTop"
+onclick="topFunction()"
+aria-label="Back to top"
 
-<button id="backToTop" onclick="topFunction()">
-↑ Back to Top
+>
+
+↑
+
 </button>
 
+<!-- =====================================================
+     JAVASCRIPT
+===================================================== -->
 
 <script>
 
-/* ==============================
+/* =====================================================
    CART COUNT
-============================== */
-
-let cart =
-JSON.parse(localStorage.getItem("miskCart")) || [];
-
+===================================================== */
 
 function updateCartCount(){
 
-    const totalItems = cart.reduce(
-        (total,item) => total + item.quantity,
-        0
-    );
+    let cart = [];
 
-    document.getElementById("cartCount").textContent =
-        totalItems;
+    try{
+
+        cart =
+            JSON.parse(
+                localStorage.getItem("miskCart")
+            ) || [];
+
+    }catch(error){
+
+        cart = [];
+
+    }
+
+
+    const totalItems =
+        cart.reduce(
+            function(total,item){
+
+                return total +
+                    (Number(item.quantity) || 0);
+
+            },
+            0
+        );
+
+
+    const cartCount =
+        document.getElementById("cartCount");
+
+
+    if(cartCount){
+
+        cartCount.textContent =
+            totalItems;
+
+    }
 
 }
+
 
 updateCartCount();
 
 
-/* ==============================
+/* =====================================================
+   UPDATE CART WHEN CHANGED
+===================================================== */
+
+window.addEventListener(
+    "storage",
+    function(event){
+
+        if(event.key === "miskCart"){
+
+            updateCartCount();
+
+        }
+
+    }
+);
+
+
+/* =====================================================
+   UPDATE CART WHEN RETURNING TO PAGE
+===================================================== */
+
+document.addEventListener(
+    "visibilitychange",
+    function(){
+
+        if(!document.hidden){
+
+            updateCartCount();
+
+        }
+
+    }
+);
+
+
+/* =====================================================
    REVIEW EMAIL
-============================== */
+===================================================== */
 
 document
 .getElementById("reviewForm")
-.addEventListener("submit", function(event){
+.addEventListener(
+    "submit",
+    function(event){
 
-    event.preventDefault();
+        event.preventDefault();
 
-    const name =
-        document.getElementById("name").value.trim();
 
-    const product =
-        document.getElementById("product").value;
+        const name =
+            document
+            .getElementById("name")
+            .value
+            .trim();
 
-    const rating =
-        document.getElementById("rating").value;
 
-    const review =
-        document.getElementById("review").value.trim();
+        const product =
+            document
+            .getElementById("product")
+            .value;
 
-    const stars =
-        "⭐".repeat(Number(rating));
 
-    const email =
-        "miskfragrances.uk@gmail.com";
+        const rating =
+            document
+            .getElementById("rating")
+            .value;
 
-    const subject =
-        encodeURIComponent(
-            "MISK Fragrances - New Customer Review"
-        );
 
-    const body =
-        encodeURIComponent(
+        const review =
+            document
+            .getElementById("review")
+            .value
+            .trim();
 
+
+        const note =
+            document
+            .getElementById("note")
+            .value
+            .trim();
+
+
+        const stars =
+            "⭐".repeat(
+                Number(rating)
+            );
+
+
+        const email =
+            "miskfragrances.uk@gmail.com";
+
+
+        const subject =
+            encodeURIComponent(
+                "MISK Fragrances - New Customer Review"
+            );
+
+
+        let body =
 `New MISK Fragrances Review
 
 Name: ${name}
@@ -855,42 +1561,58 @@ Rating: ${stars}
 
 Review:
 
-${review}
-
-Please check this review and approve it before adding it to the MISK website.`
-
-        );
-
-    window.location.href =
-        `mailto:${email}?subject=${subject}&body=${body}`;
-
-});
+${review}`;
 
 
-/* ==============================
-   BACK TO TOP
-============================== */
+        if(note){
 
-const backToTop =
-document.getElementById("backToTop");
+            body +=
+`
+
+Optional Note:
+
+${note}`;
+
+        }
 
 
-window.addEventListener("scroll", function(){
+        body +=
+`
 
-    if(
-        document.body.scrollTop > 300 ||
-        document.documentElement.scrollTop > 300
-    ){
+Please check this review and approve it before adding it to the MISK website.`;
 
-        backToTop.style.display = "block";
 
-    }else{
-
-        backToTop.style.display = "none";
+        window.location.href =
+            `mailto:${email}?subject=${subject}&body=${encodeURIComponent(body)}`;
 
     }
+);
 
-});
+
+/* =====================================================
+   BACK TO TOP
+===================================================== */
+
+const backToTop =
+    document.getElementById("backToTop");
+
+
+window.addEventListener(
+    "scroll",
+    function(){
+
+        if(window.scrollY > 400){
+
+            backToTop.classList.add("show");
+
+        }else{
+
+            backToTop.classList.remove("show");
+
+        }
+
+    }
+);
 
 
 function topFunction(){
@@ -905,4 +1627,5 @@ function topFunction(){
 </script>
 
 </body>
+
 </html>
