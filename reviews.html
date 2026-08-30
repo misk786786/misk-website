@@ -2,6 +2,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -67,6 +68,26 @@ nav a{
 
 nav a:hover{
     color:white;
+}
+
+/* ==============================
+   CART
+============================== */
+
+.cart-link{
+    border:1px solid var(--gold);
+    padding:8px 14px;
+    border-radius:5px;
+}
+
+.cart-count{
+    background:var(--gold);
+    color:#000;
+    padding:2px 7px;
+    border-radius:50%;
+    font-size:12px;
+    margin-left:4px;
+    font-weight:bold;
 }
 
 /* ==============================
@@ -255,6 +276,63 @@ section h2{
 }
 
 /* ==============================
+   BACK TO TOP
+============================== */
+
+#backToTop{
+
+    position:fixed;
+
+    right:20px;
+    bottom:20px;
+
+    width:48px;
+    height:48px;
+
+    border-radius:50%;
+
+    border:1px solid var(--gold);
+
+    background:#080808;
+
+    color:var(--gold);
+
+    font-size:22px;
+
+    font-weight:bold;
+
+    cursor:pointer;
+
+    z-index:2000;
+
+    opacity:0;
+    visibility:hidden;
+
+    transform:translateY(10px);
+
+    transition:.3s;
+
+    box-shadow:0 5px 20px rgba(0,0,0,.5);
+}
+
+#backToTop.show{
+
+    opacity:1;
+    visibility:visible;
+
+    transform:translateY(0);
+}
+
+#backToTop:hover{
+
+    background:var(--gold);
+
+    color:#000;
+
+    transform:translateY(-3px);
+}
+
+/* ==============================
    FOOTER
 ============================== */
 
@@ -284,11 +362,18 @@ footer{
 
     nav a{
         display:inline-block;
-        margin:5px 8px;
+        margin:5px 6px;
     }
 
     section{
         padding:50px 15px;
+    }
+
+    #backToTop{
+        right:15px;
+        bottom:15px;
+        width:45px;
+        height:45px;
     }
 
 }
@@ -310,14 +395,24 @@ footer{
 <div>
 
 <a href="index.html">Home</a>
+
 <a href="about.html">About</a>
+
 <a href="collection.html">Collection</a>
+
 <a href="reviews.html">Reviews</a>
+
 <a href="contact.html">Contact</a>
+
+<a href="cart.html" class="cart-link">
+🛒 Cart
+<span class="cart-count" id="cartCount">0</span>
+</a>
 
 </div>
 
 </nav>
+
 
 <!-- ==============================
      MAIN
@@ -330,6 +425,7 @@ footer{
 <p class="intro">
 Discover what our customers think about MISK Fragrances.
 </p>
+
 
 <!-- ==============================
      REVIEW FORM
@@ -353,6 +449,7 @@ placeholder="Enter your name"
 required>
 
 </div>
+
 
 <div class="form-group">
 
@@ -409,6 +506,7 @@ Fruity Oud
 
 </div>
 
+
 <div class="form-group">
 
 <label for="rating">
@@ -448,6 +546,7 @@ Select a rating
 
 </div>
 
+
 <div class="form-group">
 
 <label for="review">
@@ -462,6 +561,7 @@ required></textarea>
 
 </div>
 
+
 <button
 type="submit"
 class="submit-btn">
@@ -469,6 +569,7 @@ class="submit-btn">
 Submit Review
 
 </button>
+
 
 <p class="email-note">
 
@@ -482,6 +583,7 @@ Reviews are checked before being displayed on our website.
 
 </div>
 
+
 <!-- ==============================
      CUSTOMER REVIEWS
 ============================== -->
@@ -490,9 +592,11 @@ Reviews are checked before being displayed on our website.
 What Our Customers Say
 </h3>
 
+
 <div class="reviews-list">
 
-<!-- HAMZA REVIEW -->
+
+<!-- HAMZA -->
 
 <div class="review-card">
 
@@ -525,7 +629,7 @@ Fantastic fragrance, long lasting and smells great. Would recommend.
 </div>
 
 
-<!-- UMAR GHANI REVIEW -->
+<!-- UMAR GHANI -->
 
 <div class="review-card">
 
@@ -558,7 +662,7 @@ The creators' understanding of a person's sense of smell is unmatched. I urge al
 </div>
 
 
-<!-- MUHAMMAD.K REVIEW -->
+<!-- MUHAMMAD.K -->
 
 <div class="review-card">
 
@@ -657,7 +761,7 @@ It's very good. This itr and all of them smell nice. I would recommend it.
 </div>
 
 
-<!-- EESAA CHOPPY REVIEW -->
+<!-- EESAA CHOPPY -->
 
 <div class="review-card">
 
@@ -686,7 +790,7 @@ Rich and unique fragrance which always brings attention 🥰 would definitely re
 </div>
 
 
-<!-- HUZAIFAH REVIEW -->
+<!-- HUZAIFAH -->
 
 <div class="review-card">
 
@@ -718,6 +822,7 @@ Absolutely beautiful oud with such a rich, luxurious scent. It smells amazing an
 
 </section>
 
+
 <!-- ==============================
      FOOTER
 ============================== -->
@@ -728,53 +833,147 @@ Absolutely beautiful oud with such a rich, luxurious scent. It smells amazing an
 
 </footer>
 
+
 <!-- ==============================
-     EMAIL SUBMISSION
+     BACK TO TOP BUTTON
+============================== -->
+
+<button
+id="backToTop"
+onclick="window.scrollTo({top:0,behavior:'smooth'})"
+aria-label="Back to top">
+
+↑
+
+</button>
+
+
+<!-- ==============================
+     JAVASCRIPT
 ============================== -->
 
 <script>
 
-document
-.getElementById("reviewForm")
-.addEventListener("submit", function(event){
+/* ==============================
+   CART COUNT
+============================== */
 
-    event.preventDefault();
+function updateCartCount(){
 
-    const name =
-        document
-        .getElementById("name")
-        .value
-        .trim();
+    const cart =
+        JSON.parse(
+            localStorage.getItem("miskCart")
+        ) || [];
 
-    const product =
-        document
-        .getElementById("product")
-        .value;
-
-    const rating =
-        document
-        .getElementById("rating")
-        .value;
-
-    const review =
-        document
-        .getElementById("review")
-        .value
-        .trim();
-
-    const stars =
-        "⭐".repeat(Number(rating));
-
-    const email =
-        "miskfragrances.uk@gmail.com";
-
-    const subject =
-        encodeURIComponent(
-            "MISK Fragrances - New Customer Review"
+    const totalItems =
+        cart.reduce(
+            (total,item) =>
+                total + Number(item.quantity || 0),
+            0
         );
 
-    const body =
-        encodeURIComponent(
+    const cartCount =
+        document.getElementById("cartCount");
+
+    if(cartCount){
+        cartCount.textContent = totalItems;
+    }
+
+}
+
+
+/* INITIAL CART COUNT */
+
+updateCartCount();
+
+
+/* UPDATE WHEN CART CHANGES */
+
+window.addEventListener(
+    "storage",
+    function(event){
+
+        if(event.key === "miskCart"){
+            updateCartCount();
+        }
+
+    }
+);
+
+
+/* ==============================
+   BACK TO TOP
+============================== */
+
+const backToTop =
+    document.getElementById("backToTop");
+
+
+window.addEventListener(
+    "scroll",
+    function(){
+
+        if(window.scrollY > 400){
+
+            backToTop.classList.add("show");
+
+        }else{
+
+            backToTop.classList.remove("show");
+
+        }
+
+    }
+);
+
+
+/* ==============================
+   REVIEW EMAIL
+============================== */
+
+document
+.getElementById("reviewForm")
+.addEventListener(
+    "submit",
+    function(event){
+
+        event.preventDefault();
+
+        const name =
+            document
+            .getElementById("name")
+            .value
+            .trim();
+
+        const product =
+            document
+            .getElementById("product")
+            .value;
+
+        const rating =
+            document
+            .getElementById("rating")
+            .value;
+
+        const review =
+            document
+            .getElementById("review")
+            .value
+            .trim();
+
+        const stars =
+            "⭐".repeat(Number(rating));
+
+        const email =
+            "miskfragrances.uk@gmail.com";
+
+        const subject =
+            encodeURIComponent(
+                "MISK Fragrances - New Customer Review"
+            );
+
+        const body =
+            encodeURIComponent(
 
 `New MISK Fragrances Review
 
@@ -790,12 +989,13 @@ ${review}
 
 Please check this review and approve it before adding it to the MISK website.`
 
-        );
+            );
 
-    window.location.href =
-        `mailto:${email}?subject=${subject}&body=${body}`;
+        window.location.href =
+            `mailto:${email}?subject=${subject}&body=${body}`;
 
-});
+    }
+);
 
 </script>
 
