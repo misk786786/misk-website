@@ -1,4 +1,3 @@
-```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -44,50 +43,72 @@ nav{
     display:flex;
     justify-content:space-between;
     align-items:center;
-    padding:18px 35px;
+    padding:14px 24px;
     background:#000;
-    border-bottom:1px solid var(--gold);
+    border-bottom:1px solid #292929;
     position:sticky;
     top:0;
     z-index:1000;
 }
 
-nav h1{
-    margin:0;
-    color:var(--gold);
-    letter-spacing:3px;
-}
+/* MISK TOP LEFT BUTTON */
 
-nav a{
+.logo-button{
     color:var(--gold);
     text-decoration:none;
-    margin-left:25px;
+    font-family:Georgia,serif;
+    font-size:40px;
     font-weight:bold;
+    letter-spacing:8px;
+    padding:0;
     transition:.3s;
 }
 
-nav a:hover{
+.logo-button:hover{
     color:white;
 }
 
-/* ==============================
-   CART
-============================== */
+/* NAV LINKS */
+
+.nav-links{
+    display:flex;
+    align-items:center;
+}
+
+.nav-links a{
+    color:var(--gold);
+    text-decoration:none;
+    margin-left:30px;
+    font-size:20px;
+    font-weight:500;
+    transition:.3s;
+}
+
+.nav-links a:hover{
+    color:white;
+}
+
+/* CART */
 
 .cart-link{
     border:1px solid var(--gold);
-    padding:8px 14px;
-    border-radius:5px;
+    padding:10px 15px;
+    border-radius:7px;
+    margin-left:30px !important;
 }
 
 .cart-count{
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
     background:var(--gold);
     color:#000;
-    padding:2px 7px;
+    width:28px;
+    height:28px;
     border-radius:50%;
-    font-size:12px;
-    margin-left:4px;
+    font-size:14px;
     font-weight:bold;
+    margin-left:5px;
 }
 
 /* ==============================
@@ -206,10 +227,6 @@ section h2{
     margin-top:30px;
 }
 
-/* ==============================
-   REVIEW CARD
-============================== */
-
 .review-card{
     background:linear-gradient(145deg,#151515,#0d0d0d);
     border:1px solid #333;
@@ -280,55 +297,23 @@ section h2{
 ============================== */
 
 #backToTop{
-
     position:fixed;
-
-    right:20px;
-    bottom:20px;
-
-    width:48px;
-    height:48px;
-
-    border-radius:50%;
-
-    border:1px solid var(--gold);
-
-    background:#080808;
-
-    color:var(--gold);
-
-    font-size:22px;
-
+    bottom:25px;
+    right:25px;
+    display:none;
+    background:linear-gradient(var(--gold),var(--gold-dark));
+    color:#000;
+    border:none;
+    padding:13px 18px;
+    border-radius:6px;
     font-weight:bold;
-
+    font-size:14px;
     cursor:pointer;
-
-    z-index:2000;
-
-    opacity:0;
-    visibility:hidden;
-
-    transform:translateY(10px);
-
-    transition:.3s;
-
-    box-shadow:0 5px 20px rgba(0,0,0,.5);
-}
-
-#backToTop.show{
-
-    opacity:1;
-    visibility:visible;
-
-    transform:translateY(0);
+    z-index:999;
+    box-shadow:0 5px 20px rgba(0,0,0,.4);
 }
 
 #backToTop:hover{
-
-    background:var(--gold);
-
-    color:#000;
-
     transform:translateY(-3px);
 }
 
@@ -348,32 +333,35 @@ footer{
    MOBILE
 ============================== */
 
-@media(max-width:700px){
+@media(max-width:800px){
 
     nav{
         flex-direction:column;
         gap:15px;
-        padding:18px 15px;
+        padding:15px;
     }
 
-    nav div{
-        text-align:center;
+    .logo-button{
+        font-size:34px;
     }
 
-    nav a{
+    .nav-links{
+        flex-wrap:wrap;
+        justify-content:center;
+    }
+
+    .nav-links a{
         display:inline-block;
-        margin:5px 6px;
+        margin:5px 7px;
+        font-size:16px;
+    }
+
+    .cart-link{
+        margin-left:7px !important;
     }
 
     section{
         padding:50px 15px;
-    }
-
-    #backToTop{
-        right:15px;
-        bottom:15px;
-        width:45px;
-        height:45px;
     }
 
 }
@@ -382,7 +370,7 @@ footer{
 
 </head>
 
-<body>
+<body id="top">
 
 <!-- ==============================
      NAVIGATION
@@ -390,18 +378,16 @@ footer{
 
 <nav>
 
-<h1>MISK Fragrances</h1>
+<a href="index.html" class="logo-button">
+MISK
+</a>
 
-<div>
+<div class="nav-links">
 
 <a href="index.html">Home</a>
-
 <a href="about.html">About</a>
-
 <a href="collection.html">Collection</a>
-
 <a href="reviews.html">Reviews</a>
-
 <a href="contact.html">Contact</a>
 
 <a href="cart.html" class="cart-link">
@@ -522,25 +508,11 @@ required>
 Select a rating
 </option>
 
-<option value="1">
-⭐ 1 Star
-</option>
-
-<option value="2">
-⭐⭐ 2 Stars
-</option>
-
-<option value="3">
-⭐⭐⭐ 3 Stars
-</option>
-
-<option value="4">
-⭐⭐⭐⭐ 4 Stars
-</option>
-
-<option value="5">
-⭐⭐⭐⭐⭐ 5 Stars
-</option>
+<option value="1">⭐ 1 Star</option>
+<option value="2">⭐⭐ 2 Stars</option>
+<option value="3">⭐⭐⭐ 3 Stars</option>
+<option value="4">⭐⭐⭐⭐ 4 Stars</option>
+<option value="5">⭐⭐⭐⭐⭐ 5 Stars</option>
 
 </select>
 
@@ -570,7 +542,6 @@ Submit Review
 
 </button>
 
-
 <p class="email-note">
 
 When you click Submit Review, your email app will open with your review ready to send to MISK Fragrances.
@@ -596,13 +567,9 @@ What Our Customers Say
 <div class="reviews-list">
 
 
-<!-- HAMZA -->
-
 <div class="review-card">
 
-<div class="stars">
-★★★★★
-</div>
+<div class="stars">★★★★★</div>
 
 <div class="review-name-row">
 
@@ -629,13 +596,9 @@ Fantastic fragrance, long lasting and smells great. Would recommend.
 </div>
 
 
-<!-- UMAR GHANI -->
-
 <div class="review-card">
 
-<div class="stars">
-★★★★★
-</div>
+<div class="stars">★★★★★</div>
 
 <div class="review-name-row">
 
@@ -662,13 +625,9 @@ The creators' understanding of a person's sense of smell is unmatched. I urge al
 </div>
 
 
-<!-- MUHAMMAD.K -->
-
 <div class="review-card">
 
-<div class="stars">
-★★★★★
-</div>
+<div class="stars">★★★★★</div>
 
 <div class="review-name-row">
 
@@ -695,13 +654,9 @@ Smells so good, the whole family liked it.
 </div>
 
 
-<!-- ZAYD JAMAL - ROSE PRESTIGE -->
-
 <div class="review-card">
 
-<div class="stars">
-★★★★★
-</div>
+<div class="stars">★★★★★</div>
 
 <div class="review-name-row">
 
@@ -728,13 +683,9 @@ It's very good. This itr and all of them smell nice. I would recommend it.
 </div>
 
 
-<!-- ZAYD JAMAL - SIGNATURE HOMME -->
-
 <div class="review-card">
 
-<div class="stars">
-★★★★★
-</div>
+<div class="stars">★★★★★</div>
 
 <div class="review-name-row">
 
@@ -761,13 +712,9 @@ It's very good. This itr and all of them smell nice. I would recommend it.
 </div>
 
 
-<!-- EESAA CHOPPY -->
-
 <div class="review-card">
 
-<div class="stars">
-★★★★★
-</div>
+<div class="stars">★★★★★</div>
 
 <div class="review-name-row">
 
@@ -790,13 +737,9 @@ Rich and unique fragrance which always brings attention 🥰 would definitely re
 </div>
 
 
-<!-- HUZAIFAH -->
-
 <div class="review-card">
 
-<div class="stars">
-★★★★★
-</div>
+<div class="stars">★★★★★</div>
 
 <div class="review-name-row">
 
@@ -834,23 +777,12 @@ Absolutely beautiful oud with such a rich, luxurious scent. It smells amazing an
 </footer>
 
 
-<!-- ==============================
-     BACK TO TOP BUTTON
-============================== -->
+<!-- BACK TO TOP -->
 
-<button
-id="backToTop"
-onclick="window.scrollTo({top:0,behavior:'smooth'})"
-aria-label="Back to top">
-
-↑
-
+<button id="backToTop" onclick="topFunction()">
+↑ Back to Top
 </button>
 
-
-<!-- ==============================
-     JAVASCRIPT
-============================== -->
 
 <script>
 
@@ -858,73 +790,23 @@ aria-label="Back to top">
    CART COUNT
 ============================== */
 
+let cart =
+JSON.parse(localStorage.getItem("miskCart")) || [];
+
+
 function updateCartCount(){
 
-    const cart =
-        JSON.parse(
-            localStorage.getItem("miskCart")
-        ) || [];
+    const totalItems = cart.reduce(
+        (total,item) => total + item.quantity,
+        0
+    );
 
-    const totalItems =
-        cart.reduce(
-            (total,item) =>
-                total + Number(item.quantity || 0),
-            0
-        );
-
-    const cartCount =
-        document.getElementById("cartCount");
-
-    if(cartCount){
-        cartCount.textContent = totalItems;
-    }
+    document.getElementById("cartCount").textContent =
+        totalItems;
 
 }
 
-
-/* INITIAL CART COUNT */
-
 updateCartCount();
-
-
-/* UPDATE WHEN CART CHANGES */
-
-window.addEventListener(
-    "storage",
-    function(event){
-
-        if(event.key === "miskCart"){
-            updateCartCount();
-        }
-
-    }
-);
-
-
-/* ==============================
-   BACK TO TOP
-============================== */
-
-const backToTop =
-    document.getElementById("backToTop");
-
-
-window.addEventListener(
-    "scroll",
-    function(){
-
-        if(window.scrollY > 400){
-
-            backToTop.classList.add("show");
-
-        }else{
-
-            backToTop.classList.remove("show");
-
-        }
-
-    }
-);
 
 
 /* ==============================
@@ -933,47 +815,35 @@ window.addEventListener(
 
 document
 .getElementById("reviewForm")
-.addEventListener(
-    "submit",
-    function(event){
+.addEventListener("submit", function(event){
 
-        event.preventDefault();
+    event.preventDefault();
 
-        const name =
-            document
-            .getElementById("name")
-            .value
-            .trim();
+    const name =
+        document.getElementById("name").value.trim();
 
-        const product =
-            document
-            .getElementById("product")
-            .value;
+    const product =
+        document.getElementById("product").value;
 
-        const rating =
-            document
-            .getElementById("rating")
-            .value;
+    const rating =
+        document.getElementById("rating").value;
 
-        const review =
-            document
-            .getElementById("review")
-            .value
-            .trim();
+    const review =
+        document.getElementById("review").value.trim();
 
-        const stars =
-            "⭐".repeat(Number(rating));
+    const stars =
+        "⭐".repeat(Number(rating));
 
-        const email =
-            "miskfragrances.uk@gmail.com";
+    const email =
+        "miskfragrances.uk@gmail.com";
 
-        const subject =
-            encodeURIComponent(
-                "MISK Fragrances - New Customer Review"
-            );
+    const subject =
+        encodeURIComponent(
+            "MISK Fragrances - New Customer Review"
+        );
 
-        const body =
-            encodeURIComponent(
+    const body =
+        encodeURIComponent(
 
 `New MISK Fragrances Review
 
@@ -989,16 +859,50 @@ ${review}
 
 Please check this review and approve it before adding it to the MISK website.`
 
-            );
+        );
 
-        window.location.href =
-            `mailto:${email}?subject=${subject}&body=${body}`;
+    window.location.href =
+        `mailto:${email}?subject=${subject}&body=${body}`;
+
+});
+
+
+/* ==============================
+   BACK TO TOP
+============================== */
+
+const backToTop =
+document.getElementById("backToTop");
+
+
+window.addEventListener("scroll", function(){
+
+    if(
+        document.body.scrollTop > 300 ||
+        document.documentElement.scrollTop > 300
+    ){
+
+        backToTop.style.display = "block";
+
+    }else{
+
+        backToTop.style.display = "none";
 
     }
-);
+
+});
+
+
+function topFunction(){
+
+    window.scrollTo({
+        top:0,
+        behavior:"smooth"
+    });
+
+}
 
 </script>
 
 </body>
 </html>
-```
