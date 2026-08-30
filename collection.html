@@ -1,3 +1,4 @@
+```html
 <!DOCTYPE html>
 
 <html lang="en">
@@ -8,24 +9,21 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Collection - MISK Fragrances | Premium Fragrance Oils</title>
+<title>About - MISK Fragrances | Premium Fragrance Oils</title>
 
 <meta
 name="description"
-content="Explore the MISK Fragrances collection of premium fragrance oils, oud, musk, floral and signature scents."
-
+content="Learn about MISK Fragrances - Founded by Abdurrahman Dhorat in Leicester in 2026, providing premium fragrance oils inspired by luxury oud, musk and signature scents."
 >
 
 <meta
 name="keywords"
-content="MISK Fragrances, fragrance oils, oud, musk, attar, perfume oils, collection"
-
+content="MISK Fragrances, Abdurrahman Dhorat, Leicester fragrance, fragrance oils, oud, musk, perfume oils"
 >
 
 <meta
 name="author"
 content="MISK Fragrances"
-
 >
 
 <style>
@@ -61,7 +59,6 @@ a {
 ===================================================== */
 
 header {
-
     background: #050505;
 
     border-bottom: 1px solid rgba(212,175,55,0.25);
@@ -113,9 +110,10 @@ header {
     transition: 0.3s;
 }
 
-
 .logo:hover {
+
     color: white;
+
 }
 
 
@@ -150,7 +148,9 @@ header {
 
 
 .nav-links a:hover {
+
     color: white;
+
 }
 
 
@@ -207,12 +207,12 @@ header {
 
 
 /* =====================================================
-   COLLECTION HERO
+   ABOUT HERO
 ===================================================== */
 
-.collection-hero {
+.about-hero {
 
-    min-height: 400px;
+    min-height: 420px;
 
     display: flex;
 
@@ -222,7 +222,11 @@ header {
 
     text-align: center;
 
-    padding: 70px 20px;
+    padding: 80px 20px;
+
+    position: relative;
+
+    overflow: hidden;
 
     background:
 
@@ -242,13 +246,17 @@ header {
 }
 
 
-.collection-hero-content {
+.about-hero-content {
 
     max-width: 850px;
+
+    position: relative;
+
+    z-index: 2;
 }
 
 
-.collection-small {
+.about-small {
 
     color: #d4af37;
 
@@ -262,7 +270,7 @@ header {
 }
 
 
-.collection-hero h1 {
+.about-hero h1 {
 
     color: #d4af37;
 
@@ -291,7 +299,7 @@ header {
 }
 
 
-.collection-tagline {
+.about-tagline {
 
     color: #e5e5e5;
 
@@ -304,10 +312,54 @@ header {
 
 
 /* =====================================================
-   COLLECTION SECTION
+   ABOUT CONTENT
 ===================================================== */
 
-.collection-section {
+.about-section {
+
+    width: 90%;
+
+    max-width: 1000px;
+
+    margin: auto;
+
+    padding: 75px 0;
+}
+
+
+.about-section h2 {
+
+    color: #d4af37;
+
+    font-family: Georgia, "Times New Roman", serif;
+
+    font-size: 38px;
+
+    text-align: center;
+
+    margin-bottom: 30px;
+}
+
+
+.about-section p {
+
+    color: #cccccc;
+
+    font-size: 16px;
+
+    line-height: 1.9;
+
+    margin-bottom: 22px;
+
+    text-align: center;
+}
+
+
+/* =====================================================
+   VALUES
+===================================================== */
+
+.values-section {
 
     width: 90%;
 
@@ -315,143 +367,59 @@ header {
 
     margin: auto;
 
-    padding: 75px 0 90px;
-}
-
-
-.collection-section > h2 {
-
-    color: #d4af37;
-
-    font-family: Georgia, "Times New Roman", serif;
-
-    font-size: 40px;
-
-    text-align: center;
-
-    margin-bottom: 10px;
-}
-
-
-.collection-intro {
-
-    color: #aaaaaa;
-
-    text-align: center;
-
-    max-width: 650px;
-
-    margin: 0 auto 45px;
-
-    line-height: 1.7;
-
-    font-size: 15px;
-}
-
-
-/* =====================================================
-   PRODUCT GRID
-===================================================== */
-
-.product-grid {
+    padding: 0 0 80px;
 
     display: grid;
 
     grid-template-columns:
-        repeat(4, 1fr);
+        repeat(3, 1fr);
 
-    gap: 22px;
+    gap: 20px;
 }
 
 
-/* =====================================================
-   PRODUCT CARD
-===================================================== */
-
-.product-card {
-
-    position: relative;
+.value-card {
 
     background:
         linear-gradient(
             145deg,
-            #131313,
+            #111111,
             #080808
         );
 
-    border: 1px solid rgba(212,175,55,0.28);
+    border: 1px solid rgba(212,175,55,0.25);
 
     border-radius: 10px;
 
-    padding: 28px 22px;
+    padding: 35px 25px;
 
     text-align: center;
 
-    display: flex;
-
-    flex-direction: column;
-
-    justify-content: space-between;
-
-    min-height: 330px;
-
-    transition:
-        transform 0.3s ease,
-        border-color 0.3s ease,
-        box-shadow 0.3s ease;
+    transition: 0.3s;
 }
 
 
-.product-card:hover {
+.value-card:hover {
 
-    transform: translateY(-7px);
+    transform: translateY(-5px);
 
     border-color: #d4af37;
 
     box-shadow:
-        0 12px 35px
-        rgba(212,175,55,0.15);
+        0 10px 30px
+        rgba(212,175,55,0.12);
 }
 
 
-/* =====================================================
-   PRODUCT ICON
-===================================================== */
+.value-icon {
 
-.product-icon {
+    font-size: 34px;
 
-    width: 75px;
-
-    height: 75px;
-
-    margin: 0 auto 20px;
-
-    border-radius: 50%;
-
-    display: flex;
-
-    align-items: center;
-
-    justify-content: center;
-
-    background:
-        radial-gradient(
-            circle,
-            #222222,
-            #080808
-        );
-
-    border: 1px solid rgba(212,175,55,0.4);
-
-    font-size: 30px;
+    margin-bottom: 15px;
 }
 
 
-/* =====================================================
-   PRODUCT NAME
-===================================================== */
-
-.product-card h3 {
+.value-card h3 {
 
     color: #d4af37;
 
@@ -463,98 +431,21 @@ header {
 }
 
 
-/* =====================================================
-   PRODUCT DESCRIPTION
-===================================================== */
-
-.product-card p {
+.value-card p {
 
     color: #aaaaaa;
 
     font-size: 14px;
 
     line-height: 1.7;
-
-    margin-bottom: 15px;
 }
 
 
 /* =====================================================
-   PRICE
+   CALL TO ACTION
 ===================================================== */
 
-.price {
-
-    display: block;
-
-    color: #d4af37;
-
-    font-size: 21px;
-
-    font-weight: bold;
-
-    margin: 8px 0 18px;
-}
-
-
-/* =====================================================
-   ADD TO CART
-===================================================== */
-
-.add-cart {
-
-    width: 100%;
-
-    padding: 12px 18px;
-
-    border: 1px solid #d4af37;
-
-    border-radius: 5px;
-
-    background:
-        linear-gradient(
-            135deg,
-            #d4af37,
-            #b8860b
-        );
-
-    color: #050505;
-
-    font-weight: bold;
-
-    font-size: 14px;
-
-    cursor: pointer;
-
-    transition: 0.3s;
-}
-
-
-.add-cart:hover {
-
-    transform: translateY(-2px);
-
-    box-shadow:
-        0 7px 20px
-        rgba(212,175,55,0.25);
-}
-
-
-.add-cart.added {
-
-    background: #111111;
-
-    color: #d4af37;
-
-    border-color: #d4af37;
-}
-
-
-/* =====================================================
-   COLLECTION CTA
-===================================================== */
-
-.collection-cta {
+.about-cta {
 
     width: 90%;
 
@@ -572,7 +463,7 @@ header {
 }
 
 
-.collection-cta h2 {
+.about-cta h2 {
 
     color: #d4af37;
 
@@ -584,17 +475,17 @@ header {
 }
 
 
-.collection-cta p {
+.about-cta p {
 
     color: #cccccc;
 
-    line-height: 1.7;
-
     margin-bottom: 25px;
+
+    line-height: 1.7;
 }
 
 
-.view-cart-btn {
+.about-btn {
 
     display: inline-block;
 
@@ -602,23 +493,32 @@ header {
 
     border: 1px solid #d4af37;
 
-    border-radius: 5px;
+    border-radius: 4px;
 
-    background: transparent;
+    background:
+        linear-gradient(
+            135deg,
+            #d4af37,
+            #b8860b
+        );
 
-    color: #d4af37;
+    color: #050505;
 
     font-weight: bold;
+
+    font-size: 13px;
 
     transition: 0.3s;
 }
 
 
-.view-cart-btn:hover {
+.about-btn:hover {
 
-    background: #d4af37;
+    transform: translateY(-3px);
 
-    color: #050505;
+    box-shadow:
+        0 8px 25px
+        rgba(212,175,55,0.35);
 }
 
 
@@ -641,20 +541,20 @@ footer {
 
 
 /* =====================================================
-   BACK TO TOP BUTTON
+   BACK TO TOP
 ===================================================== */
 
 #backToTop {
 
     position: fixed;
 
-    right: 20px;
+    right: 18px;
 
-    bottom: 20px;
+    bottom: 18px;
 
-    width: 48px;
+    width: 44px;
 
-    height: 48px;
+    height: 44px;
 
     border-radius: 50%;
 
@@ -664,28 +564,17 @@ footer {
 
     color: #d4af37;
 
-    font-size: 22px;
-
-    font-weight: bold;
+    font-size: 20px;
 
     cursor: pointer;
 
-    z-index: 2000;
+    z-index: 50;
 
     opacity: 0;
 
     visibility: hidden;
 
-    transform: translateY(15px);
-
-    transition:
-        opacity 0.3s ease,
-        visibility 0.3s ease,
-        transform 0.3s ease,
-        background 0.3s ease;
-
-    box-shadow:
-        0 5px 20px rgba(0,0,0,0.5);
+    transition: 0.3s;
 }
 
 
@@ -694,50 +583,6 @@ footer {
     opacity: 1;
 
     visibility: visible;
-
-    transform: translateY(0);
-}
-
-
-#backToTop:hover {
-
-    background: #d4af37;
-
-    color: #050505;
-
-    transform: translateY(-3px);
-}
-
-
-/* =====================================================
-   DESKTOP
-===================================================== */
-
-@media (min-width: 701px) {
-
-    .product-grid {
-
-        grid-template-columns:
-            repeat(4, 1fr);
-
-    }
-
-}
-
-
-/* =====================================================
-   TABLET
-===================================================== */
-
-@media (max-width: 1000px) {
-
-    .product-grid {
-
-        grid-template-columns:
-            repeat(2, 1fr);
-
-    }
-
 }
 
 
@@ -781,15 +626,15 @@ footer {
     }
 
 
-    .collection-hero {
+    .about-hero {
 
-        min-height: 360px;
+        min-height: 380px;
 
-        padding: 60px 20px;
+        padding: 65px 20px;
     }
 
 
-    .collection-small {
+    .about-small {
 
         font-size: 10px;
 
@@ -797,7 +642,7 @@ footer {
     }
 
 
-    .collection-hero h1 {
+    .about-hero h1 {
 
         font-size: clamp(42px, 12vw, 65px);
 
@@ -805,41 +650,41 @@ footer {
     }
 
 
-    .collection-tagline {
+    .about-tagline {
 
         font-size: 23px;
     }
 
 
-    .collection-section {
+    .about-section {
 
-        padding-top: 60px;
+        padding: 60px 0;
     }
 
 
-    .collection-section > h2 {
+    .about-section h2 {
 
         font-size: 32px;
     }
 
 
-    .product-grid {
+    .about-section p {
+
+        font-size: 14px;
+
+        line-height: 1.8;
+    }
+
+
+    .values-section {
 
         grid-template-columns: 1fr;
 
-        gap: 18px;
+        padding-bottom: 60px;
     }
 
 
-    .product-card {
-
-        min-height: auto;
-
-        padding: 30px 25px;
-    }
-
-
-    .collection-cta {
+    .about-cta {
 
         margin-bottom: 60px;
 
@@ -847,24 +692,9 @@ footer {
     }
 
 
-    .collection-cta h2 {
+    .about-cta h2 {
 
         font-size: 30px;
-    }
-
-
-    #backToTop {
-
-        width: 44px;
-
-        height: 44px;
-
-        right: 15px;
-
-        bottom: 15px;
-
-        font-size: 20px;
-
     }
 
 }
@@ -888,7 +718,7 @@ footer {
     }
 
 
-    .collection-hero h1 {
+    .about-hero h1 {
 
         font-size: 40px;
     }
@@ -927,6 +757,10 @@ About
 Collection
 </a>
 
+<a href="shop.html">
+Shop Everything
+</a>
+
 <a href="reviews.html">
 Reviews
 </a>
@@ -936,17 +770,8 @@ Contact
 </a>
 
 <a href="cart.html" class="cart-link">
-
 🛒 Cart
-
-<span
-class="cart-count"
-id="cartCount"
-
->
-
-0 </span>
-
+<span class="cart-count" id="cartCount">0</span>
 </a>
 
 </div>
@@ -955,410 +780,171 @@ id="cartCount"
 
 </header>
 
+
 <!-- =====================================================
-     COLLECTION HERO
+     ABOUT HERO
 ===================================================== -->
 
-<section class="collection-hero">
+<section class="about-hero">
 
-<div class="collection-hero-content">
+<div class="about-hero-content">
 
-<p class="collection-small">
-THE MISK COLLECTION
+<p class="about-small">
+THE STORY BEHIND MISK
 </p>
 
 <h1>
-Collection
+About MISK
 </h1>
 
 <div class="gold-line"></div>
 
-<p class="collection-tagline">
-Find Your Signature Scent
+<p class="about-tagline">
+Fragrance in Every Drop
 </p>
 
 </div>
 
 </section>
 
+
 <!-- =====================================================
-     PRODUCTS
+     ABOUT CONTENT
 ===================================================== -->
 
-<section class="collection-section">
+<section class="about-section">
 
 <h2>
-Featured Collection
+Our Story
 </h2>
 
-<p class="collection-intro">
+<p>
 
-Explore our selection of premium fragrance oils,
-from rich woody ouds and smooth musk to floral
-and sophisticated signature blends.
+Founded by Abdurrahman Dhorat in Leicester in 2026,
+MISK Fragrances began with a simple mission: to provide
+premium fragrance oils that enhance your everyday
+moments and create lasting impressions.
 
 </p>
-
-<div class="product-grid">
-
-<!-- =====================================================
-     ROYAL OUD
-===================================================== -->
-
-<div class="product-card">
-
-<div>
-
-<div class="product-icon">
-🌙
-</div>
-
-<h3>
-Royal Oud
-</h3>
 
 <p>
-Rich woody oud with warm oriental notes
-for a bold and timeless fragrance.
+
+From rich woody ouds to delicate floral blends, every
+fragrance in our collection has been thoughtfully
+developed to deliver exceptional quality and longevity.
+
 </p>
-
-</div>
-
-<div>
-
-<span class="price">
-£5.99
-</span>
-
-<button
-class="add-cart"
-onclick="addToCart('Royal Oud', 5.99, this)"
-
->
-
-Add to Cart </button>
-
-</div>
-
-</div>
-
-<!-- =====================================================
-     MISK NOIR
-===================================================== -->
-
-<div class="product-card">
-
-<div>
-
-<div class="product-icon">
-🖤
-</div>
-
-<h3>
-MISK Noir
-</h3>
 
 <p>
-A luxurious dark blend of rich florals,
-woods and amber for elegant evenings.
+
+We're committed to excellence in every drop, ensuring
+that our customers experience the true essence of
+luxury fragrance.
+
 </p>
 
-</div>
+</section>
 
-<div>
-
-<span class="price">
-£5.99
-</span>
-
-<button
-class="add-cart"
-onclick="addToCart('MISK Noir', 5.99, this)"
-
->
-
-Add to Cart </button>
-
-</div>
-
-</div>
 
 <!-- =====================================================
-     IMPERIAL MUSK
+     OUR VALUES
 ===================================================== -->
 
-<div class="product-card">
+<section class="values-section">
 
-<div>
+<div class="value-card">
 
-<div class="product-icon">
+<div class="value-icon">
 ✨
 </div>
 
 <h3>
-Imperial Musk
+Quality
 </h3>
 
 <p>
-A smooth white musk with clean, soft
-and long-lasting elegance.
+
+We carefully select fragrances with
+quality and a luxurious experience
+in mind.
+
 </p>
 
 </div>
 
-<div>
 
-<span class="price">
-£4.99
-</span>
+<div class="value-card">
 
-<button
-class="add-cart"
-onclick="addToCart('Imperial Musk', 4.99, this)"
-
->
-
-Add to Cart </button>
-
-</div>
-
-</div>
-
-<!-- =====================================================
-     SIGNATURE HOMME
-===================================================== -->
-
-<div class="product-card">
-
-<div>
-
-<div class="product-icon">
-👑
+<div class="value-icon">
+🖤
 </div>
 
 <h3>
-Signature Homme
+Elegance
 </h3>
 
 <p>
-A refined masculine blend with fresh
-citrus, woods and amber.
+
+Our fragrances are designed to bring
+a sophisticated touch to everyday
+moments.
+
 </p>
 
 </div>
 
-<div>
 
-<span class="price">
-£5.99
-</span>
+<div class="value-card">
 
-<button
-class="add-cart"
-onclick="addToCart('Signature Homme', 5.99, this)"
-
->
-
-Add to Cart </button>
-
-</div>
-
-</div>
-
-<!-- =====================================================
-     ROSE PRESTIGE
-===================================================== -->
-
-<div class="product-card">
-
-<div>
-
-<div class="product-icon">
-🌹
-</div>
-
-<h3>
-Rose Prestige
-</h3>
-
-<p>
-A luxurious rose fragrance enriched
-with soft musk and warm amber.
-</p>
-
-</div>
-
-<div>
-
-<span class="price">
-£4.99
-</span>
-
-<button
-class="add-cart"
-onclick="addToCart('Rose Prestige', 4.99, this)"
-
->
-
-Add toCart </button>
-
-</div>
-
-</div>
-
-<!-- =====================================================
-     LEGACY
-===================================================== -->
-
-<div class="product-card">
-
-<div>
-
-<div class="product-icon">
+<div class="value-icon">
 ⭐
 </div>
 
 <h3>
-Legacy
+Your Experience
 </h3>
 
 <p>
-A modern, sophisticated fragrance
-combining fresh notes with smooth woods.
+
+We want every MISK fragrance to help
+you create memorable moments and
+lasting impressions.
+
 </p>
-
-</div>
-
-<div>
-
-<span class="price">
-£5.99
-</span>
-
-<button
-class="add-cart"
-onclick="addToCart('Legacy', 5.99, this)"
-
->
-
-Add to Cart </button>
-
-</div>
-
-</div>
-
-<!-- =====================================================
-     OBSIDIAN
-===================================================== -->
-
-<div class="product-card">
-
-<div>
-
-<div class="product-icon">
-🌑
-</div>
-
-<h3>
-Obsidian
-</h3>
-
-<p>
-A deep, smoky blend with dark woods
-and a mysterious oriental finish.
-</p>
-
-</div>
-
-<div>
-
-<span class="price">
-£5.99
-</span>
-
-<button
-class="add-cart"
-onclick="addToCart('Obsidian', 5.99, this)"
-
->
-
-Add to Cart </button>
-
-</div>
-
-</div>
-
-<!-- =====================================================
-     MISK ROYALE
-===================================================== -->
-
-<div class="product-card">
-
-<div>
-
-<div class="product-icon">
-💎
-</div>
-
-<h3>
-MISK Royale
-</h3>
-
-<p>
-An elegant Middle Eastern-inspired fragrance
-featuring rich oud, musk and warm oriental notes.
-</p>
-
-</div>
-
-<div>
-
-<span class="price">
-£5.99
-</span>
-
-<button
-class="add-cart"
-onclick="addToCart('MISK Royale', 5.99, this)"
-
->
-
-Add to Cart </button>
-
-</div>
-
-</div>
 
 </div>
 
 </section>
 
+
 <!-- =====================================================
-     CTA
+     CALL TO ACTION
 ===================================================== -->
 
-<section class="collection-cta">
+<section class="about-cta">
 
 <h2>
-Your Next Signature Scent
+Discover MISK
 </h2>
 
 <p>
 
-Find your favourite MISK fragrance and add it
-to your collection.
+Explore our collection and find the fragrance
+that feels right for you.
 
 </p>
 
 <a
-href="cart.html"
-class="view-cart-btn"
-
+href="shop.html"
+class="about-btn"
 >
 
-View Cart </a>
+Shop Everything
+
+</a>
 
 </section>
+
 
 <!-- =====================================================
      FOOTER
@@ -1370,21 +956,21 @@ View Cart </a>
 
 </footer>
 
+
 <!-- =====================================================
      BACK TO TOP
 ===================================================== -->
 
 <button
 id="backToTop"
+onclick="window.scrollTo({top:0,behavior:'smooth'})"
 aria-label="Back to top"
-onclick="window.scrollTo({
-top: 0,
-behavior: 'smooth'
-})"
-
 >
 
-↑ </button>
+↑
+
+</button>
+
 
 <!-- =====================================================
      JAVASCRIPT
@@ -1393,97 +979,26 @@ behavior: 'smooth'
 <script>
 
 /* =====================================================
-   LOAD CART
-===================================================== */
-
-let cart = [];
-
-try {
-
-    cart =
-        JSON.parse(
-            localStorage.getItem("miskCart")
-        ) || [];
-
-} catch (error) {
-
-    cart = [];
-
-}
-
-
-/* =====================================================
-   ADD PRODUCT TO CART
-===================================================== */
-
-function addToCart(name, price, button) {
-
-    const existingProduct =
-        cart.find(
-            item => item.name === name
-        );
-
-
-    if (existingProduct) {
-
-        existingProduct.quantity += 1;
-
-    } else {
-
-        cart.push({
-
-            name: name,
-
-            price: Number(price),
-
-            quantity: 1
-
-        });
-
-    }
-
-
-    localStorage.setItem(
-        "miskCart",
-        JSON.stringify(cart)
-    );
-
-
-    updateCartCount();
-
-
-    /* BUTTON FEEDBACK */
-
-    if (button) {
-
-        const originalText =
-            button.textContent;
-
-        button.textContent =
-            "✓ Added to Cart";
-
-        button.classList.add("added");
-
-
-        setTimeout(function() {
-
-            button.textContent =
-                originalText;
-
-            button.classList.remove("added");
-
-        }, 1200);
-
-    }
-
-}
-
-
-/* =====================================================
-   UPDATE CART COUNT
+   CART COUNT
 ===================================================== */
 
 function updateCartCount() {
+
+    let cart = [];
+
+    try {
+
+        cart =
+            JSON.parse(
+                localStorage.getItem("miskCart")
+            ) || [];
+
+    } catch (error) {
+
+        cart = [];
+
+    }
+
 
     const totalItems =
         cart.reduce(
@@ -1524,20 +1039,6 @@ window.addEventListener(
 
         if (event.key === "miskCart") {
 
-            try {
-
-                cart =
-                    JSON.parse(
-                        event.newValue
-                    ) || [];
-
-            } catch (error) {
-
-                cart = [];
-
-            }
-
-
             updateCartCount();
 
         }
@@ -1555,20 +1056,6 @@ document.addEventListener(
     function() {
 
         if (!document.hidden) {
-
-            try {
-
-                cart =
-                    JSON.parse(
-                        localStorage.getItem("miskCart")
-                    ) || [];
-
-            } catch (error) {
-
-                cart = [];
-
-            }
-
 
             updateCartCount();
 
@@ -1608,3 +1095,4 @@ window.addEventListener(
 </body>
 
 </html>
+```
