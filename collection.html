@@ -1,36 +1,24 @@
-```html
 <!DOCTYPE html>
-
 <html lang="en">
-
 <head>
 
 <meta charset="UTF-8">
 
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport"
+content="width=device-width, initial-scale=1.0">
 
-<title>About - MISK Fragrances | Premium Fragrance Oils</title>
-
-<meta
-name="description"
-content="Learn about MISK Fragrances - Founded by Abdurrahman Dhorat in Leicester in 2026, providing premium fragrance oils inspired by luxury oud, musk and signature scents."
->
-
-<meta
-name="keywords"
-content="MISK Fragrances, Abdurrahman Dhorat, Leicester fragrance, fragrance oils, oud, musk, perfume oils"
->
-
-<meta
-name="author"
-content="MISK Fragrances"
->
+<title>Collection - MISK Fragrances | Premium Fragrance Oils</title>
 
 <style>
 
-/* =====================================================
-   BASIC RESET
-===================================================== */
+:root {
+    --gold: #d4af37;
+    --gold-dark: #b8860b;
+    --silver: #c0c0c0;
+    --silver-light: #e5e5e5;
+    --bg: #0a0a0a;
+    --card: #111;
+}
 
 * {
     margin: 0;
@@ -43,686 +31,482 @@ html {
 }
 
 body {
-    background: #050505;
-    color: white;
     font-family: Arial, Helvetica, sans-serif;
-    overflow-x: hidden;
+    background: var(--bg);
+    color: white;
+    line-height: 1.6;
 }
 
-a {
-    text-decoration: none;
-}
-
-
-/* =====================================================
+/* =========================
    HEADER
-===================================================== */
+========================= */
 
 header {
-    background: #050505;
-
-    border-bottom: 1px solid rgba(212,175,55,0.25);
-
     position: sticky;
-
     top: 0;
-
     z-index: 1000;
+    background: rgba(10, 10, 10, 0.97);
+    border-bottom: 1px solid rgba(212, 175, 55, 0.35);
+    backdrop-filter: blur(10px);
 }
 
-
-.navbar {
-
-    width: 100%;
-
+.header-inner {
     max-width: 1400px;
-
     margin: auto;
-
-    padding: 18px 5%;
+    min-height: 75px;
+    padding: 0 30px;
 
     display: flex;
-
     align-items: center;
-
     justify-content: space-between;
-
-    gap: 20px;
+    gap: 25px;
 }
 
-
-/* =====================================================
-   LOGO
-===================================================== */
+/* MISK LOGO / TOP LEFT BUTTON */
 
 .logo {
-
-    color: #d4af37;
-
-    font-family: Georgia, "Times New Roman", serif;
-
-    font-size: 27px;
-
+    text-decoration: none;
+    color: var(--gold);
+    font-size: 25px;
     font-weight: bold;
-
     letter-spacing: 5px;
+    white-space: nowrap;
 
+    border: 1px solid var(--gold);
+    padding: 10px 18px;
     transition: 0.3s;
 }
 
 .logo:hover {
-
-    color: white;
-
+    background: var(--gold);
+    color: black;
 }
 
+/* NAVIGATION */
 
-/* =====================================================
-   NAVIGATION
-===================================================== */
-
-.nav-links {
-
+nav {
     display: flex;
-
     align-items: center;
-
-    justify-content: center;
-
-    flex-wrap: wrap;
-
+    justify-content: flex-end;
     gap: 25px;
+    flex-wrap: wrap;
 }
 
-
-.nav-links a {
-
-    color: #d4af37;
-
+nav a {
+    text-decoration: none;
+    color: var(--silver-light);
     font-size: 14px;
-
-    letter-spacing: 0.5px;
-
+    letter-spacing: 1px;
     transition: 0.3s;
+    white-space: nowrap;
 }
 
-
-.nav-links a:hover {
-
-    color: white;
-
+nav a:hover {
+    color: var(--gold);
 }
 
+nav a.active {
+    color: var(--gold);
+}
 
-/* =====================================================
-   CART
-===================================================== */
+/* CART */
 
 .cart-link {
-
-    border: 1px solid #d4af37;
-
-    padding: 8px 12px;
-
-    border-radius: 5px;
-
-    transition: 0.3s;
+    color: var(--gold) !important;
 }
 
-
-.cart-link:hover {
-
-    background: #d4af37;
-
-    color: #050505 !important;
-}
-
-
-.cart-count {
-
+#cartCount {
     display: inline-flex;
-
     align-items: center;
-
     justify-content: center;
 
     min-width: 20px;
-
     height: 20px;
-
-    background: #d4af37;
-
-    color: #050505;
-
-    border-radius: 50%;
-
-    padding: 2px 6px;
-
-    font-size: 11px;
 
     margin-left: 4px;
 
+    background: var(--gold);
+    color: black;
+
+    border-radius: 50%;
+
+    font-size: 11px;
     font-weight: bold;
 }
 
+/* =========================
+   HERO
+========================= */
 
-/* =====================================================
-   ABOUT HERO
-===================================================== */
-
-.about-hero {
-
-    min-height: 420px;
+.hero {
+    min-height: 430px;
 
     display: flex;
-
     align-items: center;
-
     justify-content: center;
 
     text-align: center;
 
     padding: 80px 20px;
 
-    position: relative;
-
-    overflow: hidden;
-
     background:
-
+        linear-gradient(
+            rgba(0,0,0,0.78),
+            rgba(0,0,0,0.92)
+        ),
         radial-gradient(
             circle at center,
-            rgba(212,175,55,0.10),
-            transparent 55%
-        ),
-
-        linear-gradient(
-            145deg,
-            #111111,
-            #050505
+            rgba(212,175,55,0.13),
+            transparent 60%
         );
 
-    border-bottom: 1px solid rgba(212,175,55,0.20);
+    border-bottom: 1px solid rgba(212,175,55,0.2);
 }
 
-
-.about-hero-content {
-
+.hero-content {
     max-width: 850px;
+}
+
+.hero-small {
+    color: var(--gold);
+    font-size: 13px;
+    letter-spacing: 5px;
+    margin-bottom: 18px;
+    text-transform: uppercase;
+}
+
+.hero h1 {
+    font-size: clamp(42px, 7vw, 78px);
+    letter-spacing: 8px;
+    color: var(--gold);
+    margin-bottom: 15px;
+}
+
+.hero p {
+    color: var(--silver);
+    font-size: 18px;
+    max-width: 650px;
+    margin: auto;
+}
+
+/* =========================
+   COLLECTION
+========================= */
+
+.collection {
+    max-width: 1400px;
+    margin: auto;
+    padding: 80px 30px;
+}
+
+.section-heading {
+    text-align: center;
+    margin-bottom: 55px;
+}
+
+.section-heading span {
+    color: var(--gold);
+    font-size: 13px;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+}
+
+.section-heading h2 {
+    color: white;
+    font-size: 38px;
+    margin-top: 10px;
+    letter-spacing: 2px;
+}
+
+.section-heading p {
+    color: var(--silver);
+    max-width: 650px;
+    margin: 15px auto 0;
+}
+
+/* =========================
+   PRODUCT GRID
+========================= */
+
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 25px;
+}
+
+.product-card {
+    background: linear-gradient(
+        145deg,
+        #151515,
+        #0d0d0d
+    );
+
+    border: 1px solid rgba(212,175,55,0.2);
+
+    padding: 25px;
+
+    text-align: center;
+
+    transition: 0.35s;
 
     position: relative;
-
-    z-index: 2;
+    overflow: hidden;
 }
 
-
-.about-small {
-
-    color: #d4af37;
-
-    font-size: 13px;
-
-    font-weight: bold;
-
-    letter-spacing: 5px;
-
-    margin-bottom: 15px;
+.product-card:hover {
+    transform: translateY(-7px);
+    border-color: rgba(212,175,55,0.65);
+    box-shadow: 0 15px 40px rgba(0,0,0,0.5);
 }
 
+/* PRODUCT IMAGE AREA */
 
-.about-hero h1 {
+.product-image {
+    height: 250px;
 
-    color: #d4af37;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 
-    font-family: Georgia, "Times New Roman", serif;
-
-    font-size: clamp(50px, 7vw, 85px);
-
-    letter-spacing: 5px;
-
-    margin-bottom: 15px;
-
-    text-shadow:
-        0 3px 20px rgba(0,0,0,0.8);
-}
-
-
-.gold-line {
-
-    width: 80px;
-
-    height: 2px;
-
-    background: #d4af37;
-
-    margin: 20px auto;
-}
-
-
-.about-tagline {
-
-    color: #e5e5e5;
-
-    font-family: Georgia, "Times New Roman", serif;
-
-    font-size: clamp(22px, 3vw, 34px);
-
-    font-style: italic;
-}
-
-
-/* =====================================================
-   ABOUT CONTENT
-===================================================== */
-
-.about-section {
-
-    width: 90%;
-
-    max-width: 1000px;
-
-    margin: auto;
-
-    padding: 75px 0;
-}
-
-
-.about-section h2 {
-
-    color: #d4af37;
-
-    font-family: Georgia, "Times New Roman", serif;
-
-    font-size: 38px;
-
-    text-align: center;
-
-    margin-bottom: 30px;
-}
-
-
-.about-section p {
-
-    color: #cccccc;
-
-    font-size: 16px;
-
-    line-height: 1.9;
-
-    margin-bottom: 22px;
-
-    text-align: center;
-}
-
-
-/* =====================================================
-   VALUES
-===================================================== */
-
-.values-section {
-
-    width: 90%;
-
-    max-width: 1200px;
-
-    margin: auto;
-
-    padding: 0 0 80px;
-
-    display: grid;
-
-    grid-template-columns:
-        repeat(3, 1fr);
-
-    gap: 20px;
-}
-
-
-.value-card {
+    margin-bottom: 20px;
 
     background:
-        linear-gradient(
-            145deg,
-            #111111,
-            #080808
+        radial-gradient(
+            circle,
+            rgba(212,175,55,0.08),
+            transparent 65%
         );
-
-    border: 1px solid rgba(212,175,55,0.25);
-
-    border-radius: 10px;
-
-    padding: 35px 25px;
-
-    text-align: center;
-
-    transition: 0.3s;
 }
 
-
-.value-card:hover {
-
-    transform: translateY(-5px);
-
-    border-color: #d4af37;
-
-    box-shadow:
-        0 10px 30px
-        rgba(212,175,55,0.12);
+.product-image img {
+    max-width: 90%;
+    max-height: 230px;
+    object-fit: contain;
 }
 
+/* FALLBACK PRODUCT DISPLAY */
 
-.value-icon {
+.product-placeholder {
+    width: 100%;
+    height: 230px;
 
-    font-size: 34px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 
-    margin-bottom: 15px;
+    color: var(--gold);
+
+    font-size: 25px;
+    letter-spacing: 3px;
 }
 
+/* PRODUCT INFO */
 
-.value-card h3 {
-
-    color: #d4af37;
-
-    font-family: Georgia, "Times New Roman", serif;
-
-    font-size: 23px;
-
-    margin-bottom: 12px;
+.product-card h3 {
+    color: white;
+    font-size: 21px;
+    margin-bottom: 7px;
+    letter-spacing: 1px;
 }
 
-
-.value-card p {
-
-    color: #aaaaaa;
-
+.product-card .description {
+    color: var(--silver);
     font-size: 14px;
-
-    line-height: 1.7;
-}
-
-
-/* =====================================================
-   CALL TO ACTION
-===================================================== */
-
-.about-cta {
-
-    width: 90%;
-
-    max-width: 900px;
-
-    margin: 0 auto 80px;
-
-    padding: 60px 20px;
-
-    text-align: center;
-
-    border-top: 1px solid rgba(212,175,55,0.25);
-
-    border-bottom: 1px solid rgba(212,175,55,0.25);
-}
-
-
-.about-cta h2 {
-
-    color: #d4af37;
-
-    font-family: Georgia, "Times New Roman", serif;
-
-    font-size: 36px;
-
+    min-height: 45px;
     margin-bottom: 15px;
 }
 
-
-.about-cta p {
-
-    color: #cccccc;
-
-    margin-bottom: 25px;
-
-    line-height: 1.7;
+.price {
+    color: var(--gold);
+    font-size: 21px;
+    font-weight: bold;
+    margin-bottom: 18px;
 }
 
+/* BUTTON */
 
-.about-btn {
+.add-btn {
+    width: 100%;
 
-    display: inline-block;
+    border: 1px solid var(--gold);
+    background: transparent;
 
-    padding: 13px 25px;
+    color: var(--gold);
 
-    border: 1px solid #d4af37;
+    padding: 12px 15px;
 
-    border-radius: 4px;
-
-    background:
-        linear-gradient(
-            135deg,
-            #d4af37,
-            #b8860b
-        );
-
-    color: #050505;
-
+    font-size: 13px;
     font-weight: bold;
 
-    font-size: 13px;
-
-    transition: 0.3s;
-}
-
-
-.about-btn:hover {
-
-    transform: translateY(-3px);
-
-    box-shadow:
-        0 8px 25px
-        rgba(212,175,55,0.35);
-}
-
-
-/* =====================================================
-   FOOTER
-===================================================== */
-
-footer {
-
-    padding: 30px 20px;
-
-    text-align: center;
-
-    border-top: 1px solid rgba(212,175,55,0.2);
-
-    color: #888888;
-
-    font-size: 13px;
-}
-
-
-/* =====================================================
-   BACK TO TOP
-===================================================== */
-
-#backToTop {
-
-    position: fixed;
-
-    right: 18px;
-
-    bottom: 18px;
-
-    width: 44px;
-
-    height: 44px;
-
-    border-radius: 50%;
-
-    border: 1px solid #d4af37;
-
-    background: #080808;
-
-    color: #d4af37;
-
-    font-size: 20px;
+    letter-spacing: 2px;
 
     cursor: pointer;
 
-    z-index: 50;
+    transition: 0.3s;
+}
 
-    opacity: 0;
+.add-btn:hover {
+    background: var(--gold);
+    color: black;
+}
 
-    visibility: hidden;
+.add-btn.added {
+    background: var(--gold);
+    color: black;
+}
+
+/* =========================
+   CTA
+========================= */
+
+.collection-cta {
+    text-align: center;
+    margin-top: 70px;
+
+    padding: 55px 25px;
+
+    border-top: 1px solid rgba(212,175,55,0.2);
+    border-bottom: 1px solid rgba(212,175,55,0.2);
+}
+
+.collection-cta h2 {
+    color: var(--gold);
+    font-size: 30px;
+    margin-bottom: 12px;
+}
+
+.collection-cta p {
+    color: var(--silver);
+    margin-bottom: 25px;
+}
+
+.cta-button {
+    display: inline-block;
+
+    text-decoration: none;
+
+    border: 1px solid var(--gold);
+    background: var(--gold);
+    color: black;
+
+    padding: 13px 28px;
+
+    font-weight: bold;
+    letter-spacing: 2px;
 
     transition: 0.3s;
 }
 
-
-#backToTop.show {
-
-    opacity: 1;
-
-    visibility: visible;
+.cta-button:hover {
+    background: transparent;
+    color: var(--gold);
 }
 
+/* =========================
+   FOOTER
+========================= */
 
-/* =====================================================
-   MOBILE
-===================================================== */
+footer {
+    border-top: 1px solid rgba(212,175,55,0.25);
 
-@media (max-width: 700px) {
+    text-align: center;
 
-    .navbar {
+    padding: 35px 20px;
 
-        flex-direction: column;
+    color: var(--silver);
 
-        padding: 16px 12px;
+    font-size: 13px;
+}
 
-        gap: 15px;
+footer strong {
+    color: var(--gold);
+    letter-spacing: 3px;
+}
+
+/* =========================
+   BACK TO TOP
+========================= */
+
+#backToTop {
+    position: fixed;
+
+    bottom: 25px;
+    right: 25px;
+
+    width: 45px;
+    height: 45px;
+
+    border: 1px solid var(--gold);
+    background: rgba(10,10,10,0.9);
+
+    color: var(--gold);
+
+    cursor: pointer;
+
+    display: none;
+
+    font-size: 18px;
+
+    z-index: 999;
+
+    transition: 0.3s;
+}
+
+#backToTop:hover {
+    background: var(--gold);
+    color: black;
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 1100px) {
+
+    .product-grid {
+        grid-template-columns: repeat(2, 1fr);
     }
 
+    .header-inner {
+        flex-direction: column;
+        padding: 18px 20px;
+    }
+
+    nav {
+        justify-content: center;
+    }
+}
+
+@media (max-width: 600px) {
+
+    .product-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .collection {
+        padding: 55px 18px;
+    }
+
+    .hero {
+        min-height: 350px;
+        padding: 60px 20px;
+    }
+
+    .hero h1 {
+        letter-spacing: 4px;
+    }
+
+    nav {
+        gap: 13px;
+    }
+
+    nav a {
+        font-size: 12px;
+    }
 
     .logo {
-
-        font-size: 25px;
+        font-size: 21px;
     }
-
-
-    .nav-links {
-
-        gap: 10px 14px;
-    }
-
-
-    .nav-links a {
-
-        font-size: 11px;
-    }
-
-
-    .cart-link {
-
-        padding: 7px 10px;
-    }
-
-
-    .about-hero {
-
-        min-height: 380px;
-
-        padding: 65px 20px;
-    }
-
-
-    .about-small {
-
-        font-size: 10px;
-
-        letter-spacing: 3px;
-    }
-
-
-    .about-hero h1 {
-
-        font-size: clamp(42px, 12vw, 65px);
-
-        letter-spacing: 3px;
-    }
-
-
-    .about-tagline {
-
-        font-size: 23px;
-    }
-
-
-    .about-section {
-
-        padding: 60px 0;
-    }
-
-
-    .about-section h2 {
-
-        font-size: 32px;
-    }
-
-
-    .about-section p {
-
-        font-size: 14px;
-
-        line-height: 1.8;
-    }
-
-
-    .values-section {
-
-        grid-template-columns: 1fr;
-
-        padding-bottom: 60px;
-    }
-
-
-    .about-cta {
-
-        margin-bottom: 60px;
-
-        padding: 50px 20px;
-    }
-
-
-    .about-cta h2 {
-
-        font-size: 30px;
-    }
-
-}
-
-
-/* =====================================================
-   VERY SMALL PHONES
-===================================================== */
-
-@media (max-width: 400px) {
-
-    .nav-links {
-
-        gap: 8px 10px;
-    }
-
-
-    .nav-links a {
-
-        font-size: 10px;
-    }
-
-
-    .about-hero h1 {
-
-        font-size: 40px;
-    }
-
 }
 
 </style>
@@ -731,76 +515,76 @@ footer {
 
 <body>
 
-<!-- =====================================================
+
+<!-- =========================
      HEADER
-===================================================== -->
+========================= -->
 
 <header>
 
-<nav class="navbar">
+<div class="header-inner">
 
 <a href="index.html" class="logo">
-MISK
+    MISK
 </a>
 
-<div class="nav-links">
+<nav>
 
 <a href="index.html">
-Home
+    Home
 </a>
 
 <a href="about.html">
-About
-</a>
-
-<a href="collection.html">
-Collection
+    About
 </a>
 
 <a href="shop.html">
-Shop Everything
+    Shop
+</a>
+
+<a href="collection.html" class="active">
+    Collection
 </a>
 
 <a href="reviews.html">
-Reviews
+    Reviews
 </a>
 
 <a href="contact.html">
-Contact
+    Contact
 </a>
 
 <a href="cart.html" class="cart-link">
-🛒 Cart
-<span class="cart-count" id="cartCount">0</span>
+    🛒 Cart
+    <span id="cartCount">0</span>
 </a>
 
-</div>
-
 </nav>
+
+</div>
 
 </header>
 
 
-<!-- =====================================================
-     ABOUT HERO
-===================================================== -->
+<!-- =========================
+     HERO
+========================= -->
 
-<section class="about-hero">
+<section class="hero">
 
-<div class="about-hero-content">
+<div class="hero-content">
 
-<p class="about-small">
-THE STORY BEHIND MISK
-</p>
+<div class="hero-small">
+    MISK FRAGRANCES
+</div>
 
 <h1>
-About MISK
+    THE MISK COLLECTION
 </h1>
 
-<div class="gold-line"></div>
-
-<p class="about-tagline">
-Fragrance in Every Drop
+<p>
+    Discover our collection of carefully selected fragrance oils,
+    created to leave a lasting impression.
 </p>
 
 </div>
@@ -808,291 +592,506 @@ Fragrance in Every Drop
 </section>
 
 
-<!-- =====================================================
-     ABOUT CONTENT
-===================================================== -->
+<!-- =========================
+     COLLECTION
+========================= -->
 
-<section class="about-section">
+<section class="collection">
+
+<div class="section-heading">
+
+<span>
+    Discover MISK
+</span>
 
 <h2>
-Our Story
+    Find Your Signature Scent
 </h2>
 
 <p>
-
-Founded by Abdurrahman Dhorat in Leicester in 2026,
-MISK Fragrances began with a simple mission: to provide
-premium fragrance oils that enhance your everyday
-moments and create lasting impressions.
-
+    Explore the MISK collection and find a fragrance that matches
+    your style, personality and occasion.
 </p>
 
-<p>
-
-From rich woody ouds to delicate floral blends, every
-fragrance in our collection has been thoughtfully
-developed to deliver exceptional quality and longevity.
-
-</p>
-
-<p>
-
-We're committed to excellence in every drop, ensuring
-that our customers experience the true essence of
-luxury fragrance.
-
-</p>
-
-</section>
+</div>
 
 
-<!-- =====================================================
-     OUR VALUES
-===================================================== -->
+<div class="product-grid">
 
-<section class="values-section">
 
-<div class="value-card">
+<!-- ROYAL OUD -->
 
-<div class="value-icon">
-✨
+<div class="product-card">
+
+<div class="product-image">
+
+<div class="product-placeholder">
+    ROYAL OUD
+</div>
+
 </div>
 
 <h3>
-Quality
+    Royal Oud
 </h3>
 
-<p>
-
-We carefully select fragrances with
-quality and a luxurious experience
-in mind.
-
+<p class="description">
+    A rich and luxurious oud fragrance with a deep,
+    elegant character.
 </p>
 
+<div class="price">
+    £5.99
 </div>
 
-
-<div class="value-card">
-
-<div class="value-icon">
-🖤
-</div>
-
-<h3>
-Elegance
-</h3>
-
-<p>
-
-Our fragrances are designed to bring
-a sophisticated touch to everyday
-moments.
-
-</p>
-
-</div>
-
-
-<div class="value-card">
-
-<div class="value-icon">
-⭐
-</div>
-
-<h3>
-Your Experience
-</h3>
-
-<p>
-
-We want every MISK fragrance to help
-you create memorable moments and
-lasting impressions.
-
-</p>
-
-</div>
-
-</section>
-
-
-<!-- =====================================================
-     CALL TO ACTION
-===================================================== -->
-
-<section class="about-cta">
-
-<h2>
-Discover MISK
-</h2>
-
-<p>
-
-Explore our collection and find the fragrance
-that feels right for you.
-
-</p>
-
-<a
-href="shop.html"
-class="about-btn"
+<button
+    class="add-btn"
+    onclick="addToCart('Royal Oud', 5.99, this)"
 >
+    ADD TO CART
+</button>
 
-Shop Everything
+</div>
 
+
+<!-- MISK NOIR -->
+
+<div class="product-card">
+
+<div class="product-image">
+
+<div class="product-placeholder">
+    MISK NOIR
+</div>
+
+</div>
+
+<h3>
+    MISK Noir
+</h3>
+
+<p class="description">
+    A dark and sophisticated fragrance designed
+    for a confident presence.
+</p>
+
+<div class="price">
+    £5.99
+</div>
+
+<button
+    class="add-btn"
+    onclick="addToCart('MISK Noir', 5.99, this)"
+>
+    ADD TO CART
+</button>
+
+</div>
+
+
+<!-- IMPERIAL MUSK -->
+
+<div class="product-card">
+
+<div class="product-image">
+
+<div class="product-placeholder">
+    IMPERIAL MUSK
+</div>
+
+</div>
+
+<h3>
+    Imperial Musk
+</h3>
+
+<p class="description">
+    Smooth, clean and elegant musk with a timeless
+    fragrance profile.
+</p>
+
+<div class="price">
+    £4.99
+</div>
+
+<button
+    class="add-btn"
+    onclick="addToCart('Imperial Musk', 4.99, this)"
+>
+    ADD TO CART
+</button>
+
+</div>
+
+
+<!-- SIGNATURE HOMME -->
+
+<div class="product-card">
+
+<div class="product-image">
+
+<div class="product-placeholder">
+    SIGNATURE
+</div>
+
+</div>
+
+<h3>
+    Signature Homme
+</h3>
+
+<p class="description">
+    A refined masculine fragrance made for everyday
+    confidence and style.
+</p>
+
+<div class="price">
+    £5.99
+</div>
+
+<button
+    class="add-btn"
+    onclick="addToCart('Signature Homme', 5.99, this)"
+>
+    ADD TO CART
+</button>
+
+</div>
+
+
+<!-- ROSE PRESTIGE -->
+
+<div class="product-card">
+
+<div class="product-image">
+
+<div class="product-placeholder">
+    ROSE
+</div>
+
+</div>
+
+<h3>
+    Rose Prestige
+</h3>
+
+<p class="description">
+    A beautiful floral fragrance with an elegant
+    and luxurious rose character.
+</p>
+
+<div class="price">
+    £4.99
+</div>
+
+<button
+    class="add-btn"
+    onclick="addToCart('Rose Prestige', 4.99, this)"
+>
+    ADD TO CART
+</button>
+
+</div>
+
+
+<!-- LEGACY -->
+
+<div class="product-card">
+
+<div class="product-image">
+
+<div class="product-placeholder">
+    LEGACY
+</div>
+
+</div>
+
+<h3>
+    Legacy
+</h3>
+
+<p class="description">
+    A sophisticated fragrance created to feel
+    timeless and memorable.
+</p>
+
+<div class="price">
+    £5.99
+</div>
+
+<button
+    class="add-btn"
+    onclick="addToCart('Legacy', 5.99, this)"
+>
+    ADD TO CART
+</button>
+
+</div>
+
+
+<!-- OBSIDIAN -->
+
+<div class="product-card">
+
+<div class="product-image">
+
+<div class="product-placeholder">
+    OBSIDIAN
+</div>
+
+</div>
+
+<h3>
+    Obsidian
+</h3>
+
+<p class="description">
+    Dark, smooth and mysterious with a powerful
+    luxury fragrance profile.
+</p>
+
+<div class="price">
+    £5.99
+</div>
+
+<button
+    class="add-btn"
+    onclick="addToCart('Obsidian', 5.99, this)"
+>
+    ADD TO CART
+</button>
+
+</div>
+
+
+<!-- MISK ROYALE -->
+
+<div class="product-card">
+
+<div class="product-image">
+
+<div class="product-placeholder">
+    MISK ROYALE
+</div>
+
+</div>
+
+<h3>
+    MISK Royale
+</h3>
+
+<p class="description">
+    A luxurious signature scent designed to make
+    every moment feel special.
+</p>
+
+<div class="price">
+    £5.99
+</div>
+
+<button
+    class="add-btn"
+    onclick="addToCart('MISK Royale', 5.99, this)"
+>
+    ADD TO CART
+</button>
+
+</div>
+
+
+</div>
+
+
+<!-- =========================
+     CTA
+========================= -->
+
+<div class="collection-cta">
+
+<h2>
+    Ready to Find Your Scent?
+</h2>
+
+<p>
+    Add your favourites to your cart and discover your
+    next signature fragrance.
+</p>
+
+<a href="cart.html" class="cta-button">
+    VIEW CART
 </a>
 
+</div>
+
 </section>
 
 
-<!-- =====================================================
+<!-- =========================
      FOOTER
-===================================================== -->
+========================= -->
 
 <footer>
 
-© 2026 MISK Fragrances. All Rights Reserved.
+<p>
+    <strong>MISK FRAGRANCES</strong>
+</p>
+
+<p>
+    Premium fragrance oils crafted for a lasting impression.
+</p>
+
+<p>
+    © 2026 MISK Fragrances. All rights reserved.
+</p>
 
 </footer>
 
 
-<!-- =====================================================
+<!-- =========================
      BACK TO TOP
-===================================================== -->
+========================= -->
 
-<button
-id="backToTop"
-onclick="window.scrollTo({top:0,behavior:'smooth'})"
-aria-label="Back to top"
->
-
-↑
-
+<button id="backToTop" onclick="scrollToTop()">
+    ↑
 </button>
 
 
-<!-- =====================================================
-     JAVASCRIPT
-===================================================== -->
-
 <script>
 
-/* =====================================================
-   CART COUNT
-===================================================== */
+/* =========================
+   CART
+========================= */
 
-function updateCartCount() {
+function getCart() {
 
-    let cart = [];
-
-    try {
-
-        cart =
-            JSON.parse(
-                localStorage.getItem("miskCart")
-            ) || [];
-
-    } catch (error) {
-
-        cart = [];
-
-    }
-
-
-    const totalItems =
-        cart.reduce(
-            function(total, item) {
-
-                return total +
-                    (Number(item.quantity) || 0);
-
-            },
-            0
-        );
-
-
-    const cartCount =
-        document.getElementById("cartCount");
-
-
-    if (cartCount) {
-
-        cartCount.textContent =
-            totalItems;
-
-    }
+    return JSON.parse(
+        localStorage.getItem("miskCart")
+    ) || [];
 
 }
 
 
-updateCartCount();
+/* =========================
+   SAVE CART
+========================= */
+
+function saveCart(cart) {
+
+    localStorage.setItem(
+        "miskCart",
+        JSON.stringify(cart)
+    );
+
+    updateCartCount();
+
+}
 
 
-/* =====================================================
-   UPDATE CART WHEN STORAGE CHANGES
-===================================================== */
+/* =========================
+   ADD TO CART
+========================= */
 
-window.addEventListener(
-    "storage",
-    function(event) {
+function addToCart(name, price, button) {
 
-        if (event.key === "miskCart") {
+    let cart = getCart();
 
-            updateCartCount();
+    const existingItem = cart.find(
+        item => item.name === name
+    );
 
-        }
+    if (existingItem) {
+
+        existingItem.quantity += 1;
+
+    } else {
+
+        cart.push({
+
+            name: name,
+            price: price,
+            quantity: 1
+
+        });
 
     }
-);
+
+    saveCart(cart);
+
+    button.textContent = "ADDED ✓";
+
+    button.classList.add("added");
+
+    setTimeout(() => {
+
+        button.textContent = "ADD TO CART";
+
+        button.classList.remove("added");
+
+    }, 1200);
+
+}
 
 
-/* =====================================================
-   UPDATE CART WHEN RETURNING TO PAGE
-===================================================== */
+/* =========================
+   CART COUNT
+========================= */
 
-document.addEventListener(
-    "visibilitychange",
-    function() {
+function updateCartCount() {
 
-        if (!document.hidden) {
+    const cart = getCart();
 
-            updateCartCount();
+    const totalItems = cart.reduce(
+        (total, item) => total + item.quantity,
+        0
+    );
 
-        }
+    document.getElementById("cartCount").textContent =
+        totalItems;
 
-    }
-);
+}
 
 
-/* =====================================================
+/* =========================
    BACK TO TOP
-===================================================== */
+========================= */
 
 const backToTop =
-document.getElementById("backToTop");
+    document.getElementById("backToTop");
 
+window.addEventListener("scroll", function() {
 
-window.addEventListener(
-    "scroll",
-    function() {
+    if (window.scrollY > 400) {
 
-        if (window.scrollY > 400) {
+        backToTop.style.display = "block";
 
-            backToTop.classList.add("show");
+    } else {
 
-        } else {
-
-            backToTop.classList.remove("show");
-
-        }
+        backToTop.style.display = "none";
 
     }
-);
+
+});
+
+
+function scrollToTop() {
+
+    window.scrollTo({
+
+        top: 0,
+        behavior: "smooth"
+
+    });
+
+}
+
+
+/* =========================
+   INITIALISE
+========================= */
+
+updateCartCount();
 
 </script>
 
 </body>
-
 </html>
-```
