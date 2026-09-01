@@ -33,6 +33,7 @@ body {
     font-family: Arial, Helvetica, sans-serif;
     background: var(--bg);
     color: white;
+    line-height: 1.6;
 }
 
 /* =========================
@@ -65,7 +66,9 @@ header {
     gap: 25px;
 }
 
-/* LOGO */
+/* =========================
+   MISK LOGO
+========================= */
 
 .logo {
     text-decoration: none;
@@ -73,6 +76,7 @@ header {
     color: var(--gold);
 
     font-size: 25px;
+
     font-weight: bold;
 
     letter-spacing: 5px;
@@ -91,7 +95,9 @@ header {
     color: black;
 }
 
-/* NAVIGATION */
+/* =========================
+   NAVIGATION
+========================= */
 
 nav {
     display: flex;
@@ -127,7 +133,9 @@ nav a.active {
     color: var(--gold);
 }
 
-/* CART */
+/* =========================
+   CART
+========================= */
 
 .cart-link {
     color: var(--gold) !important;
@@ -137,9 +145,11 @@ nav a.active {
     display: inline-flex;
 
     align-items: center;
+
     justify-content: center;
 
     min-width: 20px;
+
     height: 20px;
 
     margin-left: 4px;
@@ -151,6 +161,7 @@ nav a.active {
     border-radius: 50%;
 
     font-size: 11px;
+
     font-weight: bold;
 }
 
@@ -159,16 +170,17 @@ nav a.active {
 ========================= */
 
 .hero {
-    min-height: 430px;
+    min-height: 400px;
 
     display: flex;
 
     align-items: center;
+
     justify-content: center;
 
     text-align: center;
 
-    padding: 80px 20px;
+    padding: 70px 20px;
 
     background:
         linear-gradient(
@@ -221,11 +233,11 @@ nav a.active {
 }
 
 /* =========================
-   COLLECTION SECTION
+   COLLECTION
 ========================= */
 
 .collection {
-    max-width: 1250px;
+    max-width: 1400px;
 
     margin: auto;
 
@@ -293,6 +305,12 @@ nav a.active {
     text-align: center;
 
     transition: 0.35s;
+
+    min-height: 520px;
+
+    display: flex;
+
+    flex-direction: column;
 }
 
 .product-card:hover {
@@ -304,7 +322,9 @@ nav a.active {
         0 15px 40px rgba(0, 0, 0, 0.5);
 }
 
-/* PRODUCT IMAGE */
+/* =========================
+   PRODUCT IMAGE
+========================= */
 
 .product-image {
     height: 250px;
@@ -312,6 +332,7 @@ nav a.active {
     display: flex;
 
     align-items: center;
+
     justify-content: center;
 
     margin-bottom: 20px;
@@ -326,20 +347,21 @@ nav a.active {
 
 .product-image img {
     max-width: 90%;
+
     max-height: 230px;
 
     object-fit: contain;
 }
 
-/* PLACEHOLDER */
-
 .product-placeholder {
     width: 100%;
+
     height: 230px;
 
     display: flex;
 
     align-items: center;
+
     justify-content: center;
 
     color: var(--gold);
@@ -349,7 +371,9 @@ nav a.active {
     letter-spacing: 3px;
 }
 
-/* PRODUCT DETAILS */
+/* =========================
+   PRODUCT DETAILS
+========================= */
 
 .product-card h3 {
     color: white;
@@ -381,7 +405,9 @@ nav a.active {
     margin-bottom: 18px;
 }
 
-/* ADD TO CART */
+/* =========================
+   ADD TO CART
+========================= */
 
 .add-btn {
     width: 100%;
@@ -403,6 +429,8 @@ nav a.active {
     cursor: pointer;
 
     transition: 0.3s;
+
+    margin-top: auto;
 }
 
 .add-btn:hover {
@@ -503,9 +531,11 @@ footer strong {
     position: fixed;
 
     bottom: 25px;
+
     right: 25px;
 
     width: 45px;
+
     height: 45px;
 
     border: 1px solid var(--gold);
@@ -583,6 +613,7 @@ footer strong {
     .logo {
         font-size: 21px;
     }
+
 }
 
 </style>
@@ -692,12 +723,14 @@ footer strong {
 </div>
 
 
+<!-- =========================
+     FOUR PRODUCTS ONLY
+========================= -->
+
 <div class="product-grid">
 
 
-<!-- =========================
-     ROYAL OUD
-========================= -->
+<!-- ROYAL OUD -->
 
 <div class="product-card">
 
@@ -732,9 +765,7 @@ footer strong {
 </div>
 
 
-<!-- =========================
-     IMPERIAL MUSK
-========================= -->
+<!-- IMPERIAL MUSK -->
 
 <div class="product-card">
 
@@ -769,9 +800,7 @@ footer strong {
 </div>
 
 
-<!-- =========================
-     SIGNATURE HOMME
-========================= -->
+<!-- SIGNATURE HOMME -->
 
 <div class="product-card">
 
@@ -806,9 +835,7 @@ footer strong {
 </div>
 
 
-<!-- =========================
-     ROSE PRESTIGE
-========================= -->
+<!-- ROSE PRESTIGE -->
 
 <div class="product-card">
 
