@@ -6,7 +6,7 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Collection - MISK Fragrances | Premium Fragrance Oils</title>
+<title>Collection - MISK Fragrances</title>
 
 <style>
 
@@ -33,7 +33,6 @@ body {
     font-family: Arial, Helvetica, sans-serif;
     background: var(--bg);
     color: white;
-    line-height: 1.6;
 }
 
 /* =========================
@@ -54,10 +53,9 @@ header {
 
 .header-inner {
     max-width: 1400px;
-    margin: auto;
-
     min-height: 75px;
 
+    margin: auto;
     padding: 0 30px;
 
     display: flex;
@@ -67,9 +65,7 @@ header {
     gap: 25px;
 }
 
-/* =========================
-   MISK LOGO
-========================= */
+/* LOGO */
 
 .logo {
     text-decoration: none;
@@ -77,7 +73,6 @@ header {
     color: var(--gold);
 
     font-size: 25px;
-
     font-weight: bold;
 
     letter-spacing: 5px;
@@ -96,9 +91,7 @@ header {
     color: black;
 }
 
-/* =========================
-   NAVIGATION
-========================= */
+/* NAVIGATION */
 
 nav {
     display: flex;
@@ -134,9 +127,7 @@ nav a.active {
     color: var(--gold);
 }
 
-/* =========================
-   CART
-========================= */
+/* CART */
 
 .cart-link {
     color: var(--gold) !important;
@@ -146,11 +137,9 @@ nav a.active {
     display: inline-flex;
 
     align-items: center;
-
     justify-content: center;
 
     min-width: 20px;
-
     height: 20px;
 
     margin-left: 4px;
@@ -162,7 +151,6 @@ nav a.active {
     border-radius: 50%;
 
     font-size: 11px;
-
     font-weight: bold;
 }
 
@@ -176,7 +164,6 @@ nav a.active {
     display: flex;
 
     align-items: center;
-
     justify-content: center;
 
     text-align: center;
@@ -234,7 +221,7 @@ nav a.active {
 }
 
 /* =========================
-   COLLECTION
+   COLLECTION SECTION
 ========================= */
 
 .collection {
@@ -306,10 +293,6 @@ nav a.active {
     text-align: center;
 
     transition: 0.35s;
-
-    position: relative;
-
-    overflow: hidden;
 }
 
 .product-card:hover {
@@ -321,9 +304,7 @@ nav a.active {
         0 15px 40px rgba(0, 0, 0, 0.5);
 }
 
-/* =========================
-   PRODUCT IMAGE
-========================= */
+/* PRODUCT IMAGE */
 
 .product-image {
     height: 250px;
@@ -331,7 +312,6 @@ nav a.active {
     display: flex;
 
     align-items: center;
-
     justify-content: center;
 
     margin-bottom: 20px;
@@ -344,15 +324,22 @@ nav a.active {
         );
 }
 
+.product-image img {
+    max-width: 90%;
+    max-height: 230px;
+
+    object-fit: contain;
+}
+
+/* PLACEHOLDER */
+
 .product-placeholder {
     width: 100%;
-
     height: 230px;
 
     display: flex;
 
     align-items: center;
-
     justify-content: center;
 
     color: var(--gold);
@@ -362,26 +349,14 @@ nav a.active {
     letter-spacing: 3px;
 }
 
-/* If you add actual product images later */
-
-.product-image img {
-    max-width: 90%;
-
-    max-height: 230px;
-
-    object-fit: contain;
-}
-
-/* =========================
-   PRODUCT INFO
-========================= */
+/* PRODUCT DETAILS */
 
 .product-card h3 {
     color: white;
 
     font-size: 21px;
 
-    margin-bottom: 7px;
+    margin-bottom: 8px;
 
     letter-spacing: 1px;
 }
@@ -406,9 +381,7 @@ nav a.active {
     margin-bottom: 18px;
 }
 
-/* =========================
-   ADD TO CART BUTTON
-========================= */
+/* ADD TO CART */
 
 .add-btn {
     width: 100%;
@@ -530,11 +503,9 @@ footer strong {
     position: fixed;
 
     bottom: 25px;
-
     right: 25px;
 
     width: 45px;
-
     height: 45px;
 
     border: 1px solid var(--gold);
@@ -714,8 +685,8 @@ footer strong {
 </h2>
 
 <p>
-    Explore the MISK collection and find a fragrance
-    that matches your style, personality and occasion.
+    Explore our four signature fragrances and find
+    the scent that matches your style and personality.
 </p>
 
 </div>
@@ -807,7 +778,7 @@ footer strong {
 <div class="product-image">
 
 <div class="product-placeholder">
-    SIGNATURE
+    SIGNATURE HOMME
 </div>
 
 </div>
@@ -844,7 +815,7 @@ footer strong {
 <div class="product-image">
 
 <div class="product-placeholder">
-    ROSE
+    ROSE PRESTIGE
 </div>
 
 </div>
@@ -886,8 +857,8 @@ footer strong {
 </h2>
 
 <p>
-    Add your favourites to your cart and discover
-    your next signature fragrance.
+    Add your favourite fragrance to your cart
+    and discover your next signature scent.
 </p>
 
 <a href="cart.html" class="cta-button">
