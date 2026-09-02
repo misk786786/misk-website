@@ -1,781 +1,35 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
 
 <meta charset="UTF-8">
-
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>About - MISK Fragrances | Premium Fragrance Oils</title>
+<title>About MISK Fragrances | Our Story</title>
 
-<meta
-name="description"
-content="Learn about MISK Fragrances - Founded by Abdurrahman Dhorat in Leicester in 2026, providing premium fragrance oils inspired by luxury oud, musk and signature scents."
->
+<meta name="description"
+content="Learn about MISK Fragrances, our story, values and passion for premium fragrance oils.">
 
-<meta
-name="keywords"
-content="MISK Fragrances, Abdurrahman Dhorat, Leicester fragrance, fragrance oils, oud, musk, perfume oils"
->
-
-<meta
-name="author"
-content="MISK Fragrances"
->
-
-<style>
-
-/* =====================================================
-   BASIC RESET
-===================================================== */
-
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-html {
-    scroll-behavior: smooth;
-}
-
-body {
-    background: #050505;
-    color: white;
-    font-family: Arial, Helvetica, sans-serif;
-    overflow-x: hidden;
-}
-
-a {
-    text-decoration: none;
-}
-
-
-/* =====================================================
-   HEADER
-===================================================== */
-
-header {
-    background: #050505;
-
-    border-bottom: 1px solid rgba(212,175,55,0.25);
-
-    position: sticky;
-
-    top: 0;
-
-    z-index: 1000;
-}
-
-
-.navbar {
-
-    width: 100%;
-
-    max-width: 1400px;
-
-    margin: auto;
-
-    padding: 18px 5%;
-
-    display: flex;
-
-    align-items: center;
-
-    justify-content: space-between;
-
-    gap: 20px;
-}
-
-
-/* =====================================================
-   LOGO
-===================================================== */
-
-.logo {
-
-    color: #d4af37;
-
-    font-family: Georgia, "Times New Roman", serif;
-
-    font-size: 27px;
-
-    font-weight: bold;
-
-    letter-spacing: 5px;
-
-    transition: 0.3s;
-}
-
-.logo:hover {
-
-    color: white;
-
-}
-
-
-/* =====================================================
-   NAVIGATION
-===================================================== */
-
-.nav-links {
-
-    display: flex;
-
-    align-items: center;
-
-    justify-content: center;
-
-    flex-wrap: wrap;
-
-    gap: 25px;
-}
-
-
-.nav-links a {
-
-    color: #d4af37;
-
-    font-size: 14px;
-
-    letter-spacing: 0.5px;
-
-    transition: 0.3s;
-}
-
-
-.nav-links a:hover {
-
-    color: white;
-
-}
-
-
-/* ACTIVE PAGE */
-
-.nav-links a.active {
-
-    color: white;
-
-}
-
-
-/* =====================================================
-   CART
-===================================================== */
-
-.cart-link {
-
-    border: 1px solid #d4af37;
-
-    padding: 8px 12px;
-
-    border-radius: 5px;
-
-    transition: 0.3s;
-}
-
-
-.cart-link:hover {
-
-    background: #d4af37;
-
-    color: #050505 !important;
-}
-
-
-.cart-count {
-
-    display: inline-flex;
-
-    align-items: center;
-
-    justify-content: center;
-
-    min-width: 20px;
-
-    height: 20px;
-
-    background: #d4af37;
-
-    color: #050505;
-
-    border-radius: 50%;
-
-    padding: 2px 6px;
-
-    font-size: 11px;
-
-    margin-left: 4px;
-
-    font-weight: bold;
-}
-
-
-/* =====================================================
-   ABOUT HERO
-===================================================== */
-
-.about-hero {
-
-    min-height: 420px;
-
-    display: flex;
-
-    align-items: center;
-
-    justify-content: center;
-
-    text-align: center;
-
-    padding: 80px 20px;
-
-    position: relative;
-
-    overflow: hidden;
-
-    background:
-
-        radial-gradient(
-            circle at center,
-            rgba(212,175,55,0.10),
-            transparent 55%
-        ),
-
-        linear-gradient(
-            145deg,
-            #111111,
-            #050505
-        );
-
-    border-bottom: 1px solid rgba(212,175,55,0.20);
-}
-
-
-.about-hero-content {
-
-    max-width: 850px;
-
-    position: relative;
-
-    z-index: 2;
-}
-
-
-.about-small {
-
-    color: #d4af37;
-
-    font-size: 13px;
-
-    font-weight: bold;
-
-    letter-spacing: 5px;
-
-    margin-bottom: 15px;
-}
-
-
-.about-hero h1 {
-
-    color: #d4af37;
-
-    font-family: Georgia, "Times New Roman", serif;
-
-    font-size: clamp(50px, 7vw, 85px);
-
-    letter-spacing: 5px;
-
-    margin-bottom: 15px;
-
-    text-shadow:
-        0 3px 20px rgba(0,0,0,0.8);
-}
-
-
-.gold-line {
-
-    width: 80px;
-
-    height: 2px;
-
-    background: #d4af37;
-
-    margin: 20px auto;
-}
-
-
-.about-tagline {
-
-    color: #e5e5e5;
-
-    font-family: Georgia, "Times New Roman", serif;
-
-    font-size: clamp(22px, 3vw, 34px);
-
-    font-style: italic;
-}
-
-
-/* =====================================================
-   ABOUT CONTENT
-===================================================== */
-
-.about-section {
-
-    width: 90%;
-
-    max-width: 1000px;
-
-    margin: auto;
-
-    padding: 75px 0;
-}
-
-
-.about-section h2 {
-
-    color: #d4af37;
-
-    font-family: Georgia, "Times New Roman", serif;
-
-    font-size: 38px;
-
-    text-align: center;
-
-    margin-bottom: 30px;
-}
-
-
-.about-section p {
-
-    color: #cccccc;
-
-    font-size: 16px;
-
-    line-height: 1.9;
-
-    margin-bottom: 22px;
-
-    text-align: center;
-}
-
-
-/* =====================================================
-   VALUES
-===================================================== */
-
-.values-section {
-
-    width: 90%;
-
-    max-width: 1200px;
-
-    margin: auto;
-
-    padding: 0 0 80px;
-
-    display: grid;
-
-    grid-template-columns:
-        repeat(3, 1fr);
-
-    gap: 20px;
-}
-
-
-.value-card {
-
-    background:
-        linear-gradient(
-            145deg,
-            #111111,
-            #080808
-        );
-
-    border: 1px solid rgba(212,175,55,0.25);
-
-    border-radius: 10px;
-
-    padding: 35px 25px;
-
-    text-align: center;
-
-    transition: 0.3s;
-}
-
-
-.value-card:hover {
-
-    transform: translateY(-5px);
-
-    border-color: #d4af37;
-
-    box-shadow:
-        0 10px 30px
-        rgba(212,175,55,0.12);
-}
-
-
-.value-icon {
-
-    font-size: 34px;
-
-    margin-bottom: 15px;
-}
-
-
-.value-card h3 {
-
-    color: #d4af37;
-
-    font-family: Georgia, "Times New Roman", serif;
-
-    font-size: 23px;
-
-    margin-bottom: 12px;
-}
-
-
-.value-card p {
-
-    color: #aaaaaa;
-
-    font-size: 14px;
-
-    line-height: 1.7;
-}
-
-
-/* =====================================================
-   CALL TO ACTION
-===================================================== */
-
-.about-cta {
-
-    width: 90%;
-
-    max-width: 900px;
-
-    margin: 0 auto 80px;
-
-    padding: 60px 20px;
-
-    text-align: center;
-
-    border-top: 1px solid rgba(212,175,55,0.25);
-
-    border-bottom: 1px solid rgba(212,175,55,0.25);
-}
-
-
-.about-cta h2 {
-
-    color: #d4af37;
-
-    font-family: Georgia, "Times New Roman", serif;
-
-    font-size: 36px;
-
-    margin-bottom: 15px;
-}
-
-
-.about-cta p {
-
-    color: #cccccc;
-
-    margin-bottom: 25px;
-
-    line-height: 1.7;
-}
-
-
-.about-btn {
-
-    display: inline-block;
-
-    padding: 13px 25px;
-
-    border: 1px solid #d4af37;
-
-    border-radius: 4px;
-
-    background:
-        linear-gradient(
-            135deg,
-            #d4af37,
-            #b8860b
-        );
-
-    color: #050505;
-
-    font-weight: bold;
-
-    font-size: 13px;
-
-    transition: 0.3s;
-}
-
-
-.about-btn:hover {
-
-    transform: translateY(-3px);
-
-    box-shadow:
-        0 8px 25px
-        rgba(212,175,55,0.35);
-}
-
-
-/* =====================================================
-   FOOTER
-===================================================== */
-
-footer {
-
-    padding: 30px 20px;
-
-    text-align: center;
-
-    border-top: 1px solid rgba(212,175,55,0.2);
-
-    color: #888888;
-
-    font-size: 13px;
-}
-
-
-/* =====================================================
-   BACK TO TOP
-===================================================== */
-
-#backToTop {
-
-    position: fixed;
-
-    right: 18px;
-
-    bottom: 18px;
-
-    width: 44px;
-
-    height: 44px;
-
-    border-radius: 50%;
-
-    border: 1px solid #d4af37;
-
-    background: #080808;
-
-    color: #d4af37;
-
-    font-size: 20px;
-
-    cursor: pointer;
-
-    z-index: 50;
-
-    opacity: 0;
-
-    visibility: hidden;
-
-    transition: 0.3s;
-}
-
-
-#backToTop.show {
-
-    opacity: 1;
-
-    visibility: visible;
-}
-
-
-/* =====================================================
-   MOBILE
-===================================================== */
-
-@media (max-width: 700px) {
-
-    .navbar {
-
-        flex-direction: column;
-
-        padding: 16px 12px;
-
-        gap: 15px;
-    }
-
-
-    .logo {
-
-        font-size: 25px;
-    }
-
-
-    .nav-links {
-
-        gap: 10px 14px;
-    }
-
-
-    .nav-links a {
-
-        font-size: 11px;
-    }
-
-
-    .cart-link {
-
-        padding: 7px 10px;
-    }
-
-
-    .about-hero {
-
-        min-height: 380px;
-
-        padding: 65px 20px;
-    }
-
-
-    .about-small {
-
-        font-size: 10px;
-
-        letter-spacing: 3px;
-    }
-
-
-    .about-hero h1 {
-
-        font-size: clamp(42px, 12vw, 65px);
-
-        letter-spacing: 3px;
-    }
-
-
-    .about-tagline {
-
-        font-size: 23px;
-    }
-
-
-    .about-section {
-
-        padding: 60px 0;
-    }
-
-
-    .about-section h2 {
-
-        font-size: 32px;
-    }
-
-
-    .about-section p {
-
-        font-size: 14px;
-
-        line-height: 1.8;
-    }
-
-
-    .values-section {
-
-        grid-template-columns: 1fr;
-
-        padding-bottom: 60px;
-    }
-
-
-    .about-cta {
-
-        margin-bottom: 60px;
-
-        padding: 50px 20px;
-    }
-
-
-    .about-cta h2 {
-
-        font-size: 30px;
-    }
-
-}
-
-
-/* =====================================================
-   VERY SMALL PHONES
-===================================================== */
-
-@media (max-width: 400px) {
-
-    .nav-links {
-
-        gap: 8px 10px;
-    }
-
-
-    .nav-links a {
-
-        font-size: 10px;
-    }
-
-
-    .about-hero h1 {
-
-        font-size: 40px;
-    }
-
-}
-
-</style>
+<link rel="stylesheet" href="style.css">
 
 </head>
 
 <body>
 
-
-<!-- =====================================================
-     HEADER
-===================================================== -->
-
 <header>
 
 <nav class="navbar">
 
-<a href="index.html" class="logo">
-MISK
-</a>
+<a href="index.html" class="logo">MISK</a>
 
 <div class="nav-links">
 
-<a href="index.html">
-Home
-</a>
-
-<a href="about.html" class="active">
-About
-</a>
-
-<a href="collection.html">
-Collection
-</a>
-
-<a href="shop.html">
-Shop
-</a>
-
-<a href="reviews.html">
-Reviews
-</a>
-
-<a href="contact.html">
-Contact
-</a>
+<a href="index.html">Home</a>
+<a href="about.html" class="active">About</a>
+<a href="collection.html">Collection</a>
+<a href="shop.html">Shop</a>
+<a href="reviews.html">Reviews</a>
+<a href="contact.html">Contact</a>
 
 <a href="cart.html" class="cart-link">
 🛒 Cart
@@ -789,26 +43,20 @@ Contact
 </header>
 
 
-<!-- =====================================================
-     ABOUT HERO
-===================================================== -->
+<section class="page-hero">
 
-<section class="about-hero">
+<div class="hero-content">
 
-<div class="about-hero-content">
-
-<p class="about-small">
+<p class="hero-small">
 THE STORY BEHIND MISK
 </p>
 
-<h1>
-About MISK
-</h1>
+<h1>About MISK</h1>
 
 <div class="gold-line"></div>
 
-<p class="about-tagline">
-Fragrance in Every Drop
+<p class="hero-tagline">
+A Fragrance With A Story
 </p>
 
 </div>
@@ -816,108 +64,65 @@ Fragrance in Every Drop
 </section>
 
 
-<!-- =====================================================
-     ABOUT CONTENT
-===================================================== -->
+<section class="about-content">
 
-<section class="about-section">
-
-<h2>
-Our Story
-</h2>
+<h2>Our Story</h2>
 
 <p>
-
 Founded by Abdurrahman Dhorat in Leicester in 2026,
-MISK Fragrances began with a simple mission: to provide
-premium fragrance oils that enhance your everyday
-moments and create lasting impressions.
-
+MISK Fragrances was created with a passion for fragrance
+and a desire to bring beautiful fragrance oils to everyone.
 </p>
 
 <p>
-
-From rich woody ouds to delicate floral blends, every
-fragrance in our collection has been thoughtfully
-developed to deliver exceptional quality and longevity.
-
+MISK focuses on creating an experience that combines
+quality, elegance and memorable scents. Every fragrance
+is chosen with care to help you discover something that
+feels special.
 </p>
 
 <p>
-
-We're committed to excellence in every drop, ensuring
-that our customers experience the true essence of
-luxury fragrance.
-
+From rich oud and smooth musk to floral and fruity blends,
+MISK continues to explore different fragrance styles while
+keeping quality and customer experience at the heart of the brand.
 </p>
 
 </section>
 
 
-<!-- =====================================================
-     OUR VALUES
-===================================================== -->
+<section class="values-grid">
 
-<section class="values-section">
+<div class="card value-card">
 
-<div class="value-card">
-
-<div class="value-icon">
-✨
-</div>
-
-<h3>
-Quality
-</h3>
+<h3>Quality</h3>
 
 <p>
-
-We carefully select fragrances with
-quality and a luxurious experience
-in mind.
-
+We believe fragrance should feel special from the first
+moment you experience it.
 </p>
 
 </div>
 
 
-<div class="value-card">
+<div class="card value-card">
 
-<div class="value-icon">
-🖤
-</div>
-
-<h3>
-Elegance
-</h3>
+<h3>Elegance</h3>
 
 <p>
-
-Our fragrances are designed to bring
-a sophisticated touch to everyday
-moments.
-
+Our goal is to create a luxury-inspired experience through
+our scents and presentation.
 </p>
 
 </div>
 
 
-<div class="value-card">
+<div class="card value-card">
 
-<div class="value-icon">
-⭐
-</div>
-
-<h3>
-Your Experience
-</h3>
+<h3>Your Experience</h3>
 
 <p>
-
-We want every MISK fragrance to help
-you create memorable moments and
-lasting impressions.
-
+Our customers are at the centre of MISK, and every fragrance
+should be an experience worth remembering.
 </p>
 
 </div>
@@ -925,181 +130,103 @@ lasting impressions.
 </section>
 
 
-<!-- =====================================================
-     CALL TO ACTION
-===================================================== -->
+<section class="cta">
 
-<section class="about-cta">
-
-<h2>
-Discover MISK
-</h2>
+<h2>Discover MISK</h2>
 
 <p>
-
-Explore our collection and find the fragrance
-that feels right for you.
-
+Explore our fragrances and find a scent that becomes part of your story.
 </p>
 
-<a
-href="shop.html"
-class="about-btn"
->
-
-Shop Everything
-
+<a href="collection.html" class="btn btn-primary">
+View Collection
 </a>
 
 </section>
 
 
-<!-- =====================================================
-     FOOTER
-===================================================== -->
-
 <footer>
 
+<div class="footer-brand">MISK</div>
+
+<p class="footer-text">
+Premium fragrance oils crafted for a lasting impression.
+</p>
+
+<div class="footer-links">
+
+<a href="index.html">Home</a>
+<a href="about.html">About</a>
+<a href="collection.html">Collection</a>
+<a href="shop.html">Shop</a>
+<a href="reviews.html">Reviews</a>
+<a href="contact.html">Contact</a>
+
+</div>
+
+<p>
 © 2026 MISK Fragrances. All Rights Reserved.
+</p>
 
 </footer>
 
 
-<!-- =====================================================
-     BACK TO TOP
-===================================================== -->
-
-<button
-id="backToTop"
-onclick="window.scrollTo({top:0,behavior:'smooth'})"
+<button id="backToTop"
 aria-label="Back to top"
->
-
+onclick="window.scrollTo({top:0,behavior:'smooth'})">
 ↑
-
 </button>
 
 
-<!-- =====================================================
-     JAVASCRIPT
-===================================================== -->
-
 <script>
 
-/* =====================================================
-   CART COUNT
-===================================================== */
-
-function updateCartCount() {
+function updateCartCount(){
 
     let cart = [];
 
-    try {
-
+    try{
         cart =
-            JSON.parse(
-                localStorage.getItem("miskCart")
-            ) || [];
-
-    } catch (error) {
-
+            JSON.parse(localStorage.getItem("miskCart")) || [];
+    }catch(error){
         cart = [];
-
     }
 
-
-    const totalItems =
+    const total =
         cart.reduce(
-            function(total, item) {
-
-                return total +
-                    (Number(item.quantity) || 0);
-
-            },
+            (sum,item) =>
+            sum + Number(item.quantity || 0),
             0
         );
 
-
-    const cartCount =
-        document.getElementById("cartCount");
-
-
-    if (cartCount) {
-
-        cartCount.textContent =
-            totalItems;
-
-    }
-
+    document.getElementById("cartCount").textContent =
+        total;
 }
-
 
 updateCartCount();
 
+window.addEventListener("storage",updateCartCount);
 
-/* =====================================================
-   UPDATE CART WHEN STORAGE CHANGES
-===================================================== */
+document.addEventListener("visibilitychange",function(){
 
-window.addEventListener(
-    "storage",
-    function(event) {
-
-        if (event.key === "miskCart") {
-
-            updateCartCount();
-
-        }
-
+    if(!document.hidden){
+        updateCartCount();
     }
-);
 
-
-/* =====================================================
-   UPDATE CART WHEN RETURNING TO PAGE
-===================================================== */
-
-document.addEventListener(
-    "visibilitychange",
-    function() {
-
-        if (!document.hidden) {
-
-            updateCartCount();
-
-        }
-
-    }
-);
-
-
-/* =====================================================
-   BACK TO TOP
-===================================================== */
+});
 
 const backToTop =
 document.getElementById("backToTop");
 
+window.addEventListener("scroll",function(){
 
-window.addEventListener(
-    "scroll",
-    function() {
+    backToTop.classList.toggle(
+        "show",
+        window.scrollY > 400
+    );
 
-        if (window.scrollY > 400) {
-
-            backToTop.classList.add("show");
-
-        } else {
-
-            backToTop.classList.remove("show");
-
-        }
-
-    }
-);
+});
 
 </script>
 
 </body>
-
 </html>
