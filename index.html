@@ -1,1075 +1,35 @@
-```html
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
 
 <meta charset="UTF-8">
-
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>MISK Fragrances | Premium Fragrance Oils</title>
 
-<meta
-name="description"
-content="MISK Fragrances - Premium fragrance oils, oud, musk and luxury-inspired scents. Fragrance in Every Drop."
->
+<meta name="description"
+content="MISK Fragrances - Premium fragrance oils crafted for a lasting impression.">
 
-<meta
-name="keywords"
-content="MISK Fragrances, fragrance oils, attar, oud, musk, perfume oils, UK fragrance"
->
-
-<meta
-name="author"
-content="MISK Fragrances"
->
-
-<style>
-
-/* =====================================================
-   BASIC RESET
-===================================================== */
-
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-html {
-    scroll-behavior: smooth;
-}
-
-body {
-    background: #050505;
-    color: white;
-    font-family: Arial, Helvetica, sans-serif;
-    overflow-x: hidden;
-}
-
-a {
-    text-decoration: none;
-}
-
-
-/* =====================================================
-   HEADER
-===================================================== */
-
-header {
-    background: #050505;
-    border-bottom: 1px solid rgba(212,175,55,0.25);
-    position: relative;
-    z-index: 20;
-}
-
-.navbar {
-    width: 100%;
-    padding: 18px 20px;
-
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-
-    gap: 15px;
-}
-
-
-/* =====================================================
-   MISK LOGO
-===================================================== */
-
-.logo {
-    color: #d4af37;
-
-    font-family: Georgia, "Times New Roman", serif;
-
-    font-size: 27px;
-    font-weight: bold;
-
-    letter-spacing: 5px;
-
-    transition: 0.3s;
-}
-
-.logo:hover {
-    color: #ffffff;
-}
-
-
-/* =====================================================
-   NAVIGATION
-===================================================== */
-
-.nav-links {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
-    flex-wrap: wrap;
-
-    gap: 17px;
-}
-
-.nav-links a {
-    color: #d4af37;
-
-    font-size: 12px;
-
-    letter-spacing: 0.5px;
-
-    transition: 0.3s;
-}
-
-.nav-links a:hover {
-    color: white;
-}
-
-
-/* =====================================================
-   CART
-===================================================== */
-
-.cart-link {
-    border: 1px solid #d4af37;
-
-    padding: 8px 12px;
-
-    border-radius: 5px;
-
-    transition: 0.3s;
-}
-
-.cart-link:hover {
-    background: #d4af37;
-    color: #050505 !important;
-}
-
-.cart-count {
-    display: inline-flex;
-
-    justify-content: center;
-    align-items: center;
-
-    min-width: 20px;
-    height: 20px;
-
-    background: #d4af37;
-
-    color: #050505;
-
-    padding: 2px 6px;
-
-    border-radius: 50%;
-
-    font-size: 11px;
-
-    margin-left: 4px;
-
-    font-weight: bold;
-}
-
-
-/* =====================================================
-   HERO
-===================================================== */
-
-.misk-hero {
-
-    position: relative;
-
-    width: 100%;
-
-    min-height: 750px;
-
-    background: #050505;
-
-    overflow: hidden;
-
-    display: flex;
-
-    align-items: center;
-
-    justify-content: center;
-}
-
-
-/* =====================================================
-   HERO SLIDES
-===================================================== */
-
-.hero-slides {
-
-    position: absolute;
-
-    inset: 0;
-
-    width: 100%;
-    height: 100%;
-
-    z-index: 1;
-
-    overflow: hidden;
-}
-
-
-/* =====================================================
-   BOTTLE IMAGES
-===================================================== */
-
-.hero-slide {
-
-    position: absolute;
-
-    inset: 0;
-
-    width: 100%;
-    height: 100%;
-
-    object-fit: contain;
-
-    object-position: center center;
-
-    padding: 20px;
-
-    opacity: 0;
-
-    z-index: 1;
-
-    transform: scale(1.08);
-
-    transition:
-        opacity 0.7s ease,
-        transform 0.7s ease;
-}
-
-.hero-slide.active {
-    opacity: 1;
-}
-
-
-/* =====================================================
-   DARK OVERLAY
-===================================================== */
-
-.hero-overlay {
-
-    position: absolute;
-
-    inset: 0;
-
-    width: 100%;
-    height: 100%;
-
-    z-index: 2;
-
-    pointer-events: none;
-
-    background:
-        linear-gradient(
-            to right,
-            rgba(0,0,0,0.76),
-            rgba(0,0,0,0.30),
-            rgba(0,0,0,0.62)
-        );
-}
-
-
-/* =====================================================
-   HERO CONTENT
-===================================================== */
-
-.hero-content {
-
-    position: relative;
-
-    z-index: 4;
-
-    width: 90%;
-
-    max-width: 900px;
-
-    margin: 0 auto;
-
-    padding: 40px 0;
-
-    text-align: center;
-}
-
-
-/* =====================================================
-   HERO SMALL TITLE
-===================================================== */
-
-.hero-small {
-
-    color: #d4af37;
-
-    font-size: 13px;
-
-    font-weight: bold;
-
-    letter-spacing: 5px;
-
-    margin-bottom: 12px;
-
-    text-shadow: 0 2px 10px #000;
-}
-
-
-/* =====================================================
-   HERO MAIN TITLE
-===================================================== */
-
-.hero-content h1 {
-
-    color: #d4af37;
-
-    font-family: Georgia, "Times New Roman", serif;
-
-    font-size: clamp(50px, 7vw, 90px);
-
-    line-height: 1.05;
-
-    letter-spacing: 5px;
-
-    text-shadow: 0 3px 20px #000;
-
-    margin-bottom: 15px;
-}
-
-
-/* =====================================================
-   GOLD LINE
-===================================================== */
-
-.gold-line {
-
-    width: 80px;
-
-    height: 2px;
-
-    background: #d4af37;
-
-    margin: 20px auto;
-}
-
-
-/* =====================================================
-   TAGLINE
-===================================================== */
-
-.hero-tagline {
-
-    color: white;
-
-    font-family: Georgia, "Times New Roman", serif;
-
-    font-size: clamp(25px, 3vw, 40px);
-
-    font-style: italic;
-
-    text-shadow: 0 2px 10px #000;
-
-    margin-bottom: 15px;
-}
-
-
-/* =====================================================
-   DESCRIPTION
-===================================================== */
-
-.hero-description {
-
-    color: #eeeeee;
-
-    font-size: 16px;
-
-    line-height: 1.7;
-
-    max-width: 600px;
-
-    margin: 0 auto 25px;
-
-    text-shadow: 0 2px 8px #000;
-}
-
-
-/* =====================================================
-   HERO BUTTONS
-===================================================== */
-
-.hero-buttons {
-
-    display: flex;
-
-    justify-content: center;
-
-    flex-wrap: wrap;
-
-    gap: 10px;
-}
-
-
-.hero-btn {
-
-    display: inline-block;
-
-    padding: 12px 21px;
-
-    border: 1px solid #d4af37;
-
-    border-radius: 4px;
-
-    background:
-        linear-gradient(
-            135deg,
-            #d4af37,
-            #b8860b
-        );
-
-    color: #050505;
-
-    font-weight: bold;
-
-    font-size: 13px;
-
-    transition: 0.3s;
-}
-
-.hero-btn:hover {
-
-    transform: translateY(-3px);
-
-    box-shadow:
-        0 8px 25px
-        rgba(212,175,55,0.35);
-}
-
-
-.hero-btn.secondary {
-
-    background: rgba(0,0,0,0.75);
-
-    color: #d4af37;
-}
-
-
-.hero-btn.secondary:hover {
-
-    background: #d4af37;
-
-    color: #050505;
-}
-
-
-/* =====================================================
-   WELCOME SECTION
-===================================================== */
-
-.welcome-section {
-
-    width: 90%;
-
-    max-width: 900px;
-
-    margin: auto;
-
-    padding: 70px 0;
-
-    text-align: center;
-}
-
-
-.welcome-section h2 {
-
-    color: #d4af37;
-
-    font-family: Georgia, "Times New Roman", serif;
-
-    font-size: 34px;
-
-    margin-bottom: 20px;
-}
-
-
-.welcome-section p {
-
-    color: #cccccc;
-
-    font-size: 15px;
-
-    line-height: 1.8;
-}
-
-
-/* =====================================================
-   FEATURE CARDS
-===================================================== */
-
-.features-section {
-
-    width: 90%;
-
-    max-width: 1200px;
-
-    margin: auto;
-
-    padding: 0 0 80px;
-
-    display: grid;
-
-    grid-template-columns: 1fr;
-
-    gap: 18px;
-}
-
-
-.feature-card {
-
-    background:
-        linear-gradient(
-            145deg,
-            #111111,
-            #080808
-        );
-
-    border: 1px solid rgba(212,175,55,0.25);
-
-    border-radius: 10px;
-
-    padding: 30px 22px;
-
-    text-align: center;
-
-    transition: 0.3s;
-}
-
-
-.feature-card:hover {
-
-    transform: translateY(-5px);
-
-    border-color: #d4af37;
-}
-
-
-.feature-icon {
-
-    font-size: 32px;
-
-    margin-bottom: 12px;
-}
-
-
-.feature-card h3 {
-
-    color: #d4af37;
-
-    font-family: Georgia, "Times New Roman", serif;
-
-    font-size: 22px;
-
-    margin-bottom: 10px;
-}
-
-
-.feature-card p {
-
-    color: #bbbbbb;
-
-    font-size: 14px;
-
-    line-height: 1.7;
-}
-
-
-/* =====================================================
-   COLLECTION CTA
-===================================================== */
-
-.collection-cta {
-
-    width: 90%;
-
-    max-width: 900px;
-
-    margin: 0 auto 80px;
-
-    padding: 60px 20px;
-
-    text-align: center;
-
-    border-top: 1px solid rgba(212,175,55,0.25);
-
-    border-bottom: 1px solid rgba(212,175,55,0.25);
-}
-
-
-.collection-cta h2 {
-
-    color: #d4af37;
-
-    font-family: Georgia, "Times New Roman", serif;
-
-    font-size: 32px;
-
-    margin-bottom: 15px;
-}
-
-
-.collection-cta p {
-
-    color: #cccccc;
-
-    margin-bottom: 25px;
-}
-
-
-/* =====================================================
-   FOOTER
-===================================================== */
-
-footer {
-
-    padding: 30px 20px;
-
-    text-align: center;
-
-    border-top: 1px solid rgba(212,175,55,0.2);
-
-    color: #888888;
-
-    font-size: 13px;
-}
-
-
-/* =====================================================
-   BACK TO TOP
-===================================================== */
-
-#backToTop {
-
-    position: fixed;
-
-    right: 18px;
-
-    bottom: 18px;
-
-    width: 44px;
-    height: 44px;
-
-    border-radius: 50%;
-
-    border: 1px solid #d4af37;
-
-    background: #080808;
-
-    color: #d4af37;
-
-    font-size: 20px;
-
-    cursor: pointer;
-
-    z-index: 50;
-
-    opacity: 0;
-
-    visibility: hidden;
-
-    transition: 0.3s;
-}
-
-
-#backToTop.show {
-
-    opacity: 1;
-
-    visibility: visible;
-}
-
-
-/* =====================================================
-   DESKTOP
-===================================================== */
-
-@media (min-width: 701px) {
-
-    .navbar {
-
-        max-width: 1400px;
-
-        margin: auto;
-
-        padding: 20px 5%;
-
-        flex-direction: row;
-
-        justify-content: space-between;
-    }
-
-
-    .logo {
-
-        font-size: 28px;
-    }
-
-
-    .nav-links {
-
-        gap: 25px;
-    }
-
-
-    .nav-links a {
-
-        font-size: 14px;
-    }
-
-
-    /* HERO */
-
-    .misk-hero {
-
-        min-height: 720px;
-
-        display: flex;
-
-        align-items: center;
-
-        justify-content: center;
-    }
-
-
-    .hero-slides {
-
-        position: absolute;
-
-        inset: 0;
-
-        width: 100%;
-
-        height: 100%;
-    }
-
-
-    .hero-slide {
-
-        width: 100%;
-
-        height: 100%;
-
-        object-fit: contain;
-
-        object-position: center center;
-
-        padding: 20px;
-
-        transform: scale(1.08);
-    }
-
-
-    .hero-overlay {
-
-        position: absolute;
-
-        inset: 0;
-
-        width: 100%;
-
-        height: 100%;
-
-        background:
-            linear-gradient(
-                to right,
-                rgba(5,5,5,0.76),
-                rgba(5,5,5,0.30),
-                rgba(5,5,5,0.62)
-            );
-    }
-
-
-    .hero-content {
-
-        width: 80%;
-
-        max-width: 900px;
-
-        margin: 0 auto;
-
-        padding: 0;
-
-        text-align: center;
-    }
-
-
-    .hero-small {
-
-        font-size: 13px;
-
-        letter-spacing: 5px;
-    }
-
-
-    .hero-content h1 {
-
-        font-size: clamp(50px, 6vw, 85px);
-
-        letter-spacing: 5px;
-    }
-
-
-    .hero-tagline {
-
-        font-size: clamp(25px, 3vw, 40px);
-    }
-
-
-    .hero-description {
-
-        font-size: 16px;
-
-        margin-left: auto;
-
-        margin-right: auto;
-    }
-
-
-    .hero-buttons {
-
-        justify-content: center;
-    }
-
-
-    .features-section {
-
-        grid-template-columns:
-            repeat(4, 1fr);
-    }
-
-
-    .welcome-section h2 {
-
-        font-size: 42px;
-    }
-
-
-    .collection-cta h2 {
-
-        font-size: 40px;
-    }
-
-}
-
-
-/* =====================================================
-   MOBILE
-===================================================== */
-
-@media (max-width: 700px) {
-
-    .misk-hero {
-
-        min-height: 700px;
-    }
-
-
-    .hero-slide {
-
-        object-fit: contain;
-
-        object-position: center center;
-
-        padding: 15px;
-
-        transform: scale(1.05);
-    }
-
-
-    .hero-overlay {
-
-        background:
-            linear-gradient(
-                to bottom,
-                rgba(0,0,0,0.30),
-                rgba(0,0,0,0.78)
-            );
-    }
-
-
-    .hero-content {
-
-        width: 90%;
-
-        padding-top: 30px;
-    }
-
-
-    .hero-small {
-
-        font-size: 10px;
-
-        letter-spacing: 3px;
-    }
-
-
-    .hero-content h1 {
-
-        font-size: clamp(40px, 12vw, 65px);
-
-        letter-spacing: 3px;
-    }
-
-
-    .hero-tagline {
-
-        font-size: 25px;
-    }
-
-
-    .hero-description {
-
-        font-size: 14px;
-    }
-
-
-    .hero-buttons {
-
-        flex-direction: column;
-
-        align-items: center;
-    }
-
-
-    .hero-btn {
-
-        width: 220px;
-
-        text-align: center;
-    }
-
-
-    .nav-links {
-
-        gap: 10px 14px;
-    }
-
-
-    .nav-links a {
-
-        font-size: 11px;
-    }
-
-
-    .cart-link {
-
-        padding: 7px 10px;
-    }
-
-}
-
-
-/* =====================================================
-   VERY SMALL PHONES
-===================================================== */
-
-@media (max-width: 400px) {
-
-    .navbar {
-
-        padding: 15px 10px;
-    }
-
-
-    .logo {
-
-        font-size: 24px;
-
-        letter-spacing: 4px;
-    }
-
-
-    .nav-links {
-
-        gap: 8px 11px;
-    }
-
-
-    .nav-links a {
-
-        font-size: 10px;
-    }
-
-
-    .misk-hero {
-
-        min-height: 650px;
-    }
-
-
-    .hero-slide {
-
-        padding: 10px;
-
-        transform: scale(1.02);
-    }
-
-
-    .hero-content h1 {
-
-        font-size: 39px;
-    }
-
-}
-
-</style>
+<link rel="stylesheet" href="style.css">
 
 </head>
 
-
 <body>
-
-
-<!-- =====================================================
-     HEADER
-===================================================== -->
 
 <header>
 
 <nav class="navbar">
 
-
-<a href="index.html" class="logo">
-MISK
-</a>
-
+<a href="index.html" class="logo">MISK</a>
 
 <div class="nav-links">
 
-<a href="index.html">
-Home
-</a>
-
-<a href="about.html">
-About
-</a>
-
-<a href="collection.html">
-Collection
-</a>
-
-<a href="shop.html">
-Shop
-</a>
-
-<a href="reviews.html">
-Reviews
-</a>
-
-<a href="contact.html">
-Contact
-</a>
+<a href="index.html" class="active">Home</a>
+<a href="about.html">About</a>
+<a href="collection.html">Collection</a>
+<a href="shop.html">Shop</a>
+<a href="reviews.html">Reviews</a>
+<a href="contact.html">Contact</a>
 
 <a href="cart.html" class="cart-link">
 🛒 Cart
@@ -1083,456 +43,240 @@ Contact
 </header>
 
 
-<!-- =====================================================
-     HERO
-===================================================== -->
-
 <section class="misk-hero">
-
-
-<!-- =====================================================
-     BOTTLE IMAGES
-===================================================== -->
 
 <div class="hero-slides">
 
+<img src="./bottle1.jpg.jpeg" class="hero-slide active" alt="MISK Fragrance">
 
-<img
-src="./bottle1.jpg.jpeg"
-class="hero-slide active"
-alt="MISK fragrance bottle 1"
->
+<img src="./bottle2.jpg.jpeg" class="hero-slide" alt="MISK Fragrance">
 
+<img src="./bottle3.jpg.jpeg" class="hero-slide" alt="MISK Fragrance">
 
-<img
-src="./bottle2.jpg.jpeg"
-class="hero-slide"
-alt="MISK fragrance bottle 2"
->
-
-
-<img
-src="./bottle3.jpg.jpeg"
-class="hero-slide"
-alt="MISK fragrance bottle 3"
->
-
-
-<img
-src="./bottle4.jpg.jpeg"
-class="hero-slide"
-alt="MISK fragrance bottle 4"
->
-
+<img src="./bottle4.jpg.jpeg" class="hero-slide" alt="MISK Fragrance">
 
 </div>
-
-
-<!-- =====================================================
-     DARK OVERLAY
-===================================================== -->
 
 <div class="hero-overlay"></div>
 
+<div class="hero-main-content">
 
-<!-- =====================================================
-     HERO TEXT
-===================================================== -->
-
-<div class="hero-content">
-
-
-<p class="hero-small">
+<p class="hero-main-small">
 PREMIUM FRAGRANCE OILS
 </p>
 
-
-<h1>
-MISK Fragrances
-</h1>
-
+<h1>MISK Fragrances</h1>
 
 <div class="gold-line"></div>
 
-
-<p class="hero-tagline">
+<p class="hero-main-tagline">
 Fragrance in Every Drop
 </p>
 
-
 <p class="hero-description">
-
-Discover luxurious fragrance oils and timeless
-scents created to leave a lasting impression.
-
+Discover luxurious fragrance oils created to leave a lasting impression.
+Explore rich oud, smooth musk, elegant florals and unforgettable signature scents.
 </p>
-
 
 <div class="hero-buttons">
 
-
-<a
-href="shop.html"
-class="hero-btn"
->
+<a href="shop.html" class="btn btn-primary">
 Shop Everything
 </a>
 
-
-<a
-href="reviews.html"
-class="hero-btn secondary"
->
+<a href="reviews.html" class="btn btn-secondary">
 Customer Reviews
 </a>
 
-
 </div>
 
-
 </div>
-
 
 </section>
 
 
-<!-- =====================================================
-     WELCOME
-===================================================== -->
+<section class="welcome">
 
-<section class="welcome-section">
-
-
-<h2>
-Welcome to MISK
-</h2>
-
+<h2>Welcome to MISK</h2>
 
 <p>
-
-At MISK Fragrances, we believe fragrance is more than
-just a scent. It is a way to express your personality,
-create memories and leave a lasting impression.
-Explore our collection of premium fragrance oils,
-oud and musk-inspired scents.
-
+MISK Fragrances brings together luxurious fragrance oils designed
+for those who appreciate quality, elegance and memorable scents.
+Explore our collection and discover your signature fragrance.
 </p>
-
 
 </section>
 
 
-<!-- =====================================================
-     FEATURES
-===================================================== -->
+<div class="feature-grid">
 
-<section class="features-section">
+<div class="card feature-card">
 
-
-<div class="feature-card">
-
-<div class="feature-icon">
-✨
-</div>
-
-<h3>
-Premium Scents
-</h3>
+<h3>Premium Quality</h3>
 
 <p>
-Carefully selected fragrance oils
-for a luxurious experience.
+Carefully selected fragrance oils designed for a beautiful,
+lasting scent experience.
 </p>
 
 </div>
 
 
-<div class="feature-card">
+<div class="card feature-card">
 
-<div class="feature-icon">
-🌙
-</div>
-
-<h3>
-Long Lasting
-</h3>
+<h3>Luxury Scents</h3>
 
 <p>
-Elegant fragrances designed to
-leave a memorable impression.
+From oud and musk to floral and fruity blends,
+there is a fragrance for every preference.
 </p>
 
 </div>
 
 
-<div class="feature-card">
+<div class="card feature-card">
 
-<div class="feature-icon">
-🖤
-</div>
-
-<h3>
-Luxury Inspired
-</h3>
+<h3>Made to Impress</h3>
 
 <p>
-Rich oud, musk, floral and
-oriental-inspired fragrance styles.
+Distinctive fragrances created to make every moment
+feel more special.
 </p>
 
 </div>
 
 
-<div class="feature-card">
+<div class="card feature-card">
 
-<div class="feature-icon">
-⭐
-</div>
-
-<h3>
-Customer Reviews
-</h3>
+<h3>Your Signature</h3>
 
 <p>
-See what customers think about
-the MISK fragrance collection.
+Find the scent that feels uniquely yours and make it
+part of your everyday collection.
 </p>
 
 </div>
 
-
-</section>
-
-
-<!-- =====================================================
-     COLLECTION CTA
-===================================================== -->
-
-<section class="collection-cta">
+</div>
 
 
-<h2>
-Find Your Signature Scent
-</h2>
+<section class="cta">
 
+<h2>Discover Your Signature Scent</h2>
 
 <p>
-Explore all of the MISK fragrances and discover
-your next favourite scent.
+Explore the MISK collection and find your next favourite fragrance.
 </p>
 
-
-<a
-href="shop.html"
-class="hero-btn"
->
-Shop Everything
+<a href="collection.html" class="btn btn-primary">
+Explore Collection
 </a>
 
-
 </section>
 
-
-<!-- =====================================================
-     FOOTER
-===================================================== -->
 
 <footer>
 
+<div class="footer-brand">MISK</div>
+
+<p class="footer-text">
+Premium fragrance oils crafted for a lasting impression.
+</p>
+
+<div class="footer-links">
+
+<a href="index.html">Home</a>
+<a href="about.html">About</a>
+<a href="collection.html">Collection</a>
+<a href="shop.html">Shop</a>
+<a href="reviews.html">Reviews</a>
+<a href="contact.html">Contact</a>
+
+</div>
+
+<p>
 © 2026 MISK Fragrances. All Rights Reserved.
+</p>
 
 </footer>
 
 
-<!-- =====================================================
-     BACK TO TOP
-===================================================== -->
-
-<button
-id="backToTop"
-onclick="window.scrollTo({top:0,behavior:'smooth'})"
+<button id="backToTop"
 aria-label="Back to top"
->
+onclick="window.scrollTo({top:0,behavior:'smooth'})">
 ↑
 </button>
 
 
-<!-- =====================================================
-     JAVASCRIPT
-===================================================== -->
-
 <script>
-
-/* =====================================================
-   HERO SLIDESHOW
-===================================================== */
-
-let currentSlide = 0;
 
 const slides =
 document.querySelectorAll(".hero-slide");
 
+let currentSlide = 0;
 
-function showSlide(index) {
+setInterval(function(){
 
-    if (index >= slides.length) {
+    slides[currentSlide].classList.remove("active");
 
-        index = 0;
+    currentSlide =
+        (currentSlide + 1) % slides.length;
 
-    }
+    slides[currentSlide].classList.add("active");
 
-
-    if (index < 0) {
-
-        index = slides.length - 1;
-
-    }
+},5000);
 
 
-    currentSlide = index;
-
-
-    slides.forEach(function(slide) {
-
-        slide.classList.remove("active");
-
-    });
-
-
-    if (slides[currentSlide]) {
-
-        slides[currentSlide].classList.add("active");
-
-    }
-
-}
-
-
-/* CHANGE IMAGE EVERY 5 SECONDS */
-
-setInterval(function() {
-
-    showSlide(currentSlide + 1);
-
-}, 5000);
-
-
-/* =====================================================
-   CART COUNT
-===================================================== */
-
-function updateCartCount() {
+function updateCartCount(){
 
     let cart = [];
 
-    try {
-
+    try{
         cart =
             JSON.parse(
                 localStorage.getItem("miskCart")
             ) || [];
-
-    } catch (error) {
-
+    }catch(error){
         cart = [];
-
     }
 
-
-    const totalItems =
+    const total =
         cart.reduce(
-            function(total, item) {
-
-                return total +
-                    (Number(item.quantity) || 0);
-
-            },
+            (sum,item) =>
+            sum + Number(item.quantity || 0),
             0
         );
 
-
-    const cartCount =
-        document.getElementById("cartCount");
-
-
-    if (cartCount) {
-
-        cartCount.textContent =
-            totalItems;
-
-    }
-
+    document.getElementById("cartCount").textContent =
+        total;
 }
-
 
 updateCartCount();
 
+window.addEventListener("storage",updateCartCount);
+document.addEventListener("visibilitychange",function(){
 
-/* =====================================================
-   UPDATE CART WHEN STORAGE CHANGES
-===================================================== */
-
-window.addEventListener(
-    "storage",
-    function(event) {
-
-        if (event.key === "miskCart") {
-
-            updateCartCount();
-
-        }
-
+    if(!document.hidden){
+        updateCartCount();
     }
-);
 
+});
 
-/* =====================================================
-   UPDATE CART WHEN PAGE BECOMES VISIBLE
-===================================================== */
-
-document.addEventListener(
-    "visibilitychange",
-    function() {
-
-        if (!document.hidden) {
-
-            updateCartCount();
-
-        }
-
-    }
-);
-
-
-/* =====================================================
-   BACK TO TOP
-===================================================== */
 
 const backToTop =
 document.getElementById("backToTop");
 
+window.addEventListener("scroll",function(){
 
-window.addEventListener(
-    "scroll",
-    function() {
-
-        if (window.scrollY > 400) {
-
-            backToTop.classList.add("show");
-
-        } else {
-
-            backToTop.classList.remove("show");
-
-        }
-
+    if(window.scrollY > 400){
+        backToTop.classList.add("show");
+    }else{
+        backToTop.classList.remove("show");
     }
-);
+
+});
 
 </script>
 
-
 </body>
-
 </html>
-```
