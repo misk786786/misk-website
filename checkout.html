@@ -3,461 +3,30 @@
 <head>
 
 <meta charset="UTF-8">
-
-<meta name="viewport"
-content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>Checkout - MISK Fragrances</title>
 
-<style>
-
-:root{
-    --gold:#d4af37;
-    --gold-dark:#b8860b;
-    --silver:#c0c0c0;
-    --silver-light:#e5e5e5;
-    --bg:#0a0a0a;
-    --card:#111;
-}
-
-*{
-    box-sizing:border-box;
-}
-
-html{
-    scroll-behavior:smooth;
-}
-
-body{
-    margin:0;
-    font-family:Arial,Helvetica,sans-serif;
-    background:var(--bg);
-    color:var(--silver-light);
-}
-
-/* ==============================
-   NAVIGATION
-============================== */
-
-nav{
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-    padding:14px 24px;
-    background:#000;
-    border-bottom:1px solid rgba(212,175,55,.3);
-    position:sticky;
-    top:0;
-    z-index:1000;
-}
-
-.logo-button{
-    color:var(--gold);
-    text-decoration:none;
-    font-family:Georgia,"Times New Roman",serif;
-    font-size:40px;
-    font-weight:bold;
-    letter-spacing:8px;
-    transition:.3s;
-}
-
-.logo-button:hover{
-    color:white;
-}
-
-.nav-links{
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    flex-wrap:wrap;
-    gap:5px;
-}
-
-.nav-links a{
-    color:var(--gold);
-    text-decoration:none;
-    margin-left:20px;
-    font-size:16px;
-    font-weight:500;
-    transition:.3s;
-}
-
-.nav-links a:hover{
-    color:white;
-}
-
-/* ==============================
-   CART
-============================== */
-
-.cart-link{
-    border:1px solid var(--gold);
-    padding:9px 13px;
-    border-radius:6px;
-}
-
-.cart-count{
-    display:inline-flex;
-    align-items:center;
-    justify-content:center;
-    background:var(--gold);
-    color:#000;
-    min-width:24px;
-    height:24px;
-    border-radius:50%;
-    font-size:12px;
-    font-weight:bold;
-    margin-left:5px;
-}
-
-/* ==============================
-   MAIN
-============================== */
-
-.container{
-    max-width:700px;
-    margin:auto;
-    padding:65px 20px;
-    min-height:600px;
-}
-
-h2{
-    color:var(--gold);
-    text-align:center;
-    font-family:Georgia,"Times New Roman",serif;
-    font-size:42px;
-    letter-spacing:2px;
-    margin:0 0 35px;
-}
-
-/* ==============================
-   CHECKOUT BOX
-============================== */
-
-.order-box{
-    background:
-        linear-gradient(
-            145deg,
-            #151515,
-            #0c0c0c
-        );
-
-    border:1px solid rgba(212,175,55,.5);
-    border-radius:10px;
-    padding:32px;
-    box-shadow:
-        0 15px 40px rgba(0,0,0,.45);
-}
-
-/* ==============================
-   FORM
-============================== */
-
-.form-group{
-    margin-bottom:22px;
-}
-
-label{
-    display:block;
-    color:var(--gold);
-    font-weight:bold;
-    margin-bottom:8px;
-}
-
-.optional{
-    color:#888;
-    font-size:12px;
-    font-weight:normal;
-    margin-left:5px;
-}
-
-input,
-textarea{
-    width:100%;
-    padding:14px;
-    background:#000;
-    color:white;
-    border:1px solid #444;
-    border-radius:5px;
-    font-family:Arial,Helvetica,sans-serif;
-    font-size:14px;
-    transition:.3s;
-}
-
-input:focus,
-textarea:focus{
-    outline:none;
-    border-color:var(--gold);
-    box-shadow:0 0 8px rgba(212,175,55,.25);
-}
-
-textarea{
-    min-height:110px;
-    resize:vertical;
-}
-
-.note-textarea{
-    min-height:120px;
-}
-
-.note-help{
-    color:#777;
-    font-size:12px;
-    line-height:1.5;
-    margin:7px 0 0;
-}
-
-/* ==============================
-   ORDER SUMMARY
-============================== */
-
-.order-summary{
-    border-top:1px solid #333;
-    margin-top:28px;
-    padding-top:22px;
-}
-
-.order-summary h3{
-    color:var(--gold);
-    font-family:Georgia,"Times New Roman",serif;
-    font-size:22px;
-    margin:0 0 15px;
-}
-
-.order-summary p{
-    color:var(--silver);
-    line-height:1.7;
-    margin:8px 0;
-}
-
-.order-summary hr{
-    border:none;
-    border-top:1px solid #333;
-    margin:18px 0;
-}
-
-.order-total{
-    color:var(--gold);
-    font-size:20px;
-}
-
-/* ==============================
-   PLACE ORDER
-============================== */
-
-.place-order{
-    width:100%;
-    margin-top:25px;
-    padding:15px;
-    background:
-        linear-gradient(
-            135deg,
-            var(--gold),
-            var(--gold-dark)
-        );
-    border:1px solid var(--gold);
-    border-radius:5px;
-    color:#000;
-    font-weight:bold;
-    font-size:16px;
-    cursor:pointer;
-    transition:.3s;
-}
-
-.place-order:hover{
-    transform:translateY(-2px);
-    box-shadow:
-        0 7px 20px rgba(212,175,55,.3);
-}
-
-/* ==============================
-   EMPTY CART MESSAGE
-============================== */
-
-.empty-message{
-    text-align:center;
-    background:#0d0d0d;
-    border:1px solid #333;
-    border-radius:7px;
-    padding:20px;
-    color:#999;
-}
-
-.empty-message strong{
-    color:var(--gold);
-}
-
-/* ==============================
-   BACK TO CART
-============================== */
-
-.back{
-    display:block;
-    text-align:center;
-    margin-top:22px;
-    color:var(--gold);
-    text-decoration:none;
-    transition:.3s;
-}
-
-.back:hover{
-    color:white;
-}
-
-/* ==============================
-   BACK TO TOP
-============================== */
-
-#backToTop{
-    position:fixed;
-    right:20px;
-    bottom:20px;
-    width:48px;
-    height:48px;
-    border-radius:50%;
-    border:1px solid var(--gold);
-    background:#080808;
-    color:var(--gold);
-    font-size:22px;
-    font-weight:bold;
-    cursor:pointer;
-    z-index:2000;
-
-    opacity:0;
-    visibility:hidden;
-
-    transform:translateY(10px);
-
-    transition:
-        opacity .3s,
-        visibility .3s,
-        transform .3s,
-        background .3s;
-}
-
-#backToTop.show{
-    opacity:1;
-    visibility:visible;
-    transform:translateY(0);
-}
-
-#backToTop:hover{
-    background:var(--gold);
-    color:#000;
-    transform:translateY(-3px);
-}
-
-/* ==============================
-   FOOTER
-============================== */
-
-footer{
-    text-align:center;
-    padding:30px;
-    border-top:1px solid rgba(212,175,55,.3);
-    color:#777;
-    font-size:13px;
-    margin-top:40px;
-}
-
-/* ==============================
-   MOBILE
-============================== */
-
-@media(max-width:800px){
-
-    nav{
-        flex-direction:column;
-        gap:14px;
-        padding:15px;
-    }
-
-    .logo-button{
-        font-size:34px;
-    }
-
-    .nav-links{
-        gap:4px 8px;
-    }
-
-    .nav-links a{
-        margin:4px 5px;
-        font-size:13px;
-    }
-
-    .cart-link{
-        padding:7px 10px;
-    }
-
-    .container{
-        padding:50px 15px;
-    }
-
-    h2{
-        font-size:34px;
-    }
-
-    .order-box{
-        padding:23px 18px;
-    }
-
-}
-
-@media(max-width:400px){
-
-    .logo-button{
-        font-size:30px;
-        letter-spacing:6px;
-    }
-
-    .nav-links a{
-        font-size:11px;
-        margin:3px;
-    }
-
-    h2{
-        font-size:30px;
-    }
-
-}
-
-</style>
+<link rel="stylesheet" href="style.css">
 
 </head>
 
-<body id="top">
+<body>
 
-<!-- ==============================
-     NAVIGATION
-============================== -->
+<header>
 
-<nav>
+<nav class="navbar">
 
-<a href="index.html" class="logo-button">
-MISK
-</a>
+<a href="index.html" class="logo">MISK</a>
 
 <div class="nav-links">
 
-<a href="index.html">
-Home
-</a>
-
-<a href="about.html">
-About
-</a>
-
-<a href="collection.html">
-Collection
-</a>
-
-<a href="reviews.html">
-Reviews
-</a>
-
-<a href="contact.html">
-Contact
-</a>
+<a href="index.html">Home</a>
+<a href="about.html">About</a>
+<a href="collection.html">Collection</a>
+<a href="shop.html">Shop</a>
+<a href="reviews.html">Reviews</a>
+<a href="contact.html">Contact</a>
 
 <a href="cart.html" class="cart-link">
 🛒 Cart
@@ -468,22 +37,36 @@ Contact
 
 </nav>
 
+</header>
 
-<!-- ==============================
-     CHECKOUT
-============================== -->
 
-<div class="container">
+<section class="page-hero">
 
-<h2>
-Checkout
-</h2>
+<div class="hero-content">
 
-<div class="order-box">
+<p class="hero-small">
+MISK FRAGRANCES
+</p>
+
+<h1>Checkout</h1>
+
+<div class="gold-line"></div>
+
+<p class="hero-tagline">
+Complete Your Order
+</p>
+
+</div>
+
+</section>
+
+
+<div class="checkout-container">
+
+<div class="card order-box">
 
 <form id="checkoutForm">
 
-<!-- NAME -->
 
 <div class="form-group">
 
@@ -501,8 +84,6 @@ placeholder="Enter your name">
 </div>
 
 
-<!-- EMAIL -->
-
 <div class="form-group">
 
 <label for="email">
@@ -519,8 +100,6 @@ placeholder="Enter your email">
 </div>
 
 
-<!-- ADDRESS -->
-
 <div class="form-group">
 
 <label for="address">
@@ -535,8 +114,6 @@ placeholder="Enter your delivery address"></textarea>
 
 </div>
 
-
-<!-- POSTCODE -->
 
 <div class="form-group">
 
@@ -554,20 +131,15 @@ placeholder="Enter your postcode">
 </div>
 
 
-<!-- OPTIONAL NOTE -->
-
 <div class="form-group">
 
 <label for="note">
 Order Note
-<span class="optional">
-(Optional)
-</span>
+<span class="optional">(Optional)</span>
 </label>
 
 <textarea
 id="note"
-class="note-textarea"
 placeholder="Leave a note about your order..."></textarea>
 
 <p class="note-help">
@@ -577,27 +149,19 @@ Optional — leave a delivery request or any message you'd like us to see with y
 </div>
 
 
-<!-- ORDER SUMMARY -->
-
 <div class="order-summary">
 
-<h3>
-Your Order
-</h3>
+<h3>Your Order</h3>
 
 <div id="orderSummary"></div>
 
 </div>
 
 
-<!-- SEND ORDER -->
-
 <button
 type="submit"
 class="place-order">
-
 Send Order Request
-
 </button>
 
 </form>
@@ -612,91 +176,94 @@ Send Order Request
 </div>
 
 
-<!-- ==============================
-     BACK TO TOP
-============================== -->
-
-<button
-id="backToTop"
-onclick="window.scrollTo({top:0,behavior:'smooth'})"
-aria-label="Back to top">
-
-↑
-
-</button>
-
-
-<!-- ==============================
-     FOOTER
-============================== -->
-
 <footer>
 
+<div class="footer-brand">MISK</div>
+
+<p class="footer-text">
+Premium fragrance oils crafted for a lasting impression.
+</p>
+
+<div class="footer-links">
+
+<a href="index.html">Home</a>
+<a href="about.html">About</a>
+<a href="collection.html">Collection</a>
+<a href="shop.html">Shop</a>
+<a href="reviews.html">Reviews</a>
+<a href="contact.html">Contact</a>
+
+</div>
+
+<p>
 © 2026 MISK Fragrances. All Rights Reserved.
+</p>
 
 </footer>
 
 
-<script>
+<button id="backToTop"
+aria-label="Back to top"
+onclick="window.scrollTo({top:0,behavior:'smooth'})">
+↑
+</button>
 
-/* ==============================
-   LOAD CART SAFELY
-============================== */
+
+<script>
 
 let cart = [];
 
-try{
+function loadCart(){
 
-    cart =
-        JSON.parse(
-            localStorage.getItem("miskCart")
-        ) || [];
+    try{
 
-}catch(error){
+        cart =
+            JSON.parse(
+                localStorage.getItem("miskCart")
+            ) || [];
 
-    cart = [];
+    }catch(error){
 
-}
-
-
-/* ==============================
-   CART COUNT
-============================== */
-
-function updateCartCount(){
-
-    const totalItems =
-        cart.reduce(
-            function(total,item){
-
-                return total +
-                    Number(item.quantity || 0);
-
-            },
-            0
-        );
-
-    const cartCount =
-        document.getElementById("cartCount");
-
-    if(cartCount){
-
-        cartCount.textContent =
-            totalItems;
+        cart = [];
 
     }
 
 }
 
 
-/* ==============================
-   SHOW ORDER
-============================== */
+function updateCartCount(){
+
+    const total =
+        cart.reduce(
+            (sum,item) =>
+            sum + Number(item.quantity || 0),
+            0
+        );
+
+    document.getElementById("cartCount").textContent =
+        total;
+
+}
+
+
+function escapeHTML(text){
+
+    const div =
+        document.createElement("div");
+
+    div.textContent =
+        text ?? "";
+
+    return div.innerHTML;
+
+}
+
 
 function showOrder(){
 
     const summary =
         document.getElementById("orderSummary");
+
 
     if(cart.length === 0){
 
@@ -720,7 +287,6 @@ function showOrder(){
 
 
     let html = "";
-
     let total = 0;
 
 
@@ -771,27 +337,6 @@ function showOrder(){
 }
 
 
-/* ==============================
-   ESCAPE TEXT
-============================== */
-
-function escapeHTML(text){
-
-    const div =
-        document.createElement("div");
-
-    div.textContent =
-        text ?? "";
-
-    return div.innerHTML;
-
-}
-
-
-/* ==============================
-   SEND ORDER EMAIL
-============================== */
-
 document
 .getElementById("checkoutForm")
 .addEventListener(
@@ -813,42 +358,22 @@ document
 
 
         const name =
-            document
-            .getElementById("name")
-            .value
-            .trim();
-
+            document.getElementById("name").value.trim();
 
         const email =
-            document
-            .getElementById("email")
-            .value
-            .trim();
-
+            document.getElementById("email").value.trim();
 
         const address =
-            document
-            .getElementById("address")
-            .value
-            .trim();
-
+            document.getElementById("address").value.trim();
 
         const postcode =
-            document
-            .getElementById("postcode")
-            .value
-            .trim();
-
+            document.getElementById("postcode").value.trim();
 
         const note =
-            document
-            .getElementById("note")
-            .value
-            .trim();
+            document.getElementById("note").value.trim();
 
 
         let orderText = "";
-
         let total = 0;
 
 
@@ -865,15 +390,10 @@ document
 
             total += itemTotal;
 
-
             orderText +=
                 `${item.name} x ${quantity} - £${itemTotal.toFixed(2)}\n`;
 
         });
-
-
-        const noteText =
-            note || "No note provided";
 
 
         const subject =
@@ -907,7 +427,7 @@ TOTAL:
 £${total.toFixed(2)}
 
 ORDER NOTE:
-${noteText}
+${note || "No note provided"}
 
 Please contact the customer to arrange payment and delivery.`
 
@@ -921,29 +441,13 @@ Please contact the customer to arrange payment and delivery.`
 );
 
 
-/* ==============================
-   UPDATE CART IF CHANGED
-============================== */
-
 window.addEventListener(
     "storage",
     function(event){
 
         if(event.key === "miskCart"){
 
-            try{
-
-                cart =
-                    JSON.parse(
-                        event.newValue
-                    ) || [];
-
-            }catch(error){
-
-                cart = [];
-
-            }
-
+            loadCart();
             updateCartCount();
             showOrder();
 
@@ -953,25 +457,15 @@ window.addEventListener(
 );
 
 
-/* ==============================
-   BACK TO TOP
-============================== */
-
-const backToTop =
-    document.getElementById("backToTop");
-
-
-window.addEventListener(
-    "scroll",
+document.addEventListener(
+    "visibilitychange",
     function(){
 
-        if(window.scrollY > 400){
+        if(!document.hidden){
 
-            backToTop.classList.add("show");
-
-        }else{
-
-            backToTop.classList.remove("show");
+            loadCart();
+            updateCartCount();
+            showOrder();
 
         }
 
@@ -979,10 +473,23 @@ window.addEventListener(
 );
 
 
-/* ==============================
-   START
-============================== */
+const backToTop =
+document.getElementById("backToTop");
 
+window.addEventListener(
+    "scroll",
+    function(){
+
+        backToTop.classList.toggle(
+            "show",
+            window.scrollY > 400
+        );
+
+    }
+);
+
+
+loadCart();
 updateCartCount();
 showOrder();
 
