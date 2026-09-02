@@ -7,353 +7,28 @@
 
 <title>Your Cart - MISK Fragrances</title>
 
-<style>
+<link rel="stylesheet" href="style.css">
 
-:root{
-    --gold:#d4af37;
-    --gold-dark:#b8860b;
-    --silver:#c0c0c0;
-    --silver-light:#e5e5e5;
-    --bg:#0a0a0a;
-    --card:#111;
-}
-
-*{
-    box-sizing:border-box;
-}
-
-html{
-    scroll-behavior:smooth;
-}
-
-body{
-    margin:0;
-    font-family:Arial,Helvetica,sans-serif;
-    background:var(--bg);
-    color:var(--silver-light);
-}
-
-nav{
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-    padding:14px 24px;
-    background:#000;
-    border-bottom:1px solid #292929;
-    position:sticky;
-    top:0;
-    z-index:1000;
-}
-
-.logo-button{
-    color:var(--gold);
-    text-decoration:none;
-    font-family:Georgia,serif;
-    font-size:40px;
-    font-weight:bold;
-    letter-spacing:8px;
-}
-
-.logo-button:hover{
-    color:white;
-}
-
-.nav-links{
-    display:flex;
-    align-items:center;
-    flex-wrap:wrap;
-}
-
-.nav-links a{
-    color:var(--gold);
-    text-decoration:none;
-    margin-left:25px;
-    font-size:16px;
-    transition:.3s;
-}
-
-.nav-links a:hover{
-    color:white;
-}
-
-.cart-link{
-    border:1px solid var(--gold);
-    padding:9px 13px;
-    border-radius:6px;
-}
-
-.cart-count{
-    display:inline-flex;
-    align-items:center;
-    justify-content:center;
-    background:var(--gold);
-    color:#000;
-    width:23px;
-    height:23px;
-    border-radius:50%;
-    font-size:12px;
-    font-weight:bold;
-    margin-left:4px;
-}
-
-.checkout-link{
-    background:linear-gradient(var(--gold),var(--gold-dark));
-    color:#000 !important;
-    padding:9px 13px;
-    border-radius:6px;
-}
-
-.container{
-    max-width:900px;
-    margin:auto;
-    padding:60px 20px;
-    min-height:600px;
-}
-
-h2{
-    text-align:center;
-    color:var(--gold);
-    font-size:34px;
-    margin-bottom:40px;
-}
-
-.cart-item{
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-    gap:20px;
-    background:var(--card);
-    border:1px solid #333;
-    border-radius:8px;
-    padding:20px;
-    margin-bottom:15px;
-}
-
-.cart-item:hover{
-    border-color:var(--gold);
-}
-
-.item-info{
-    flex:1;
-}
-
-.item-info h3{
-    color:var(--gold);
-    margin:0 0 8px;
-}
-
-.item-price{
-    color:var(--silver);
-}
-
-.quantity{
-    display:flex;
-    align-items:center;
-    gap:10px;
-}
-
-.quantity button{
-    width:32px;
-    height:32px;
-    border:1px solid var(--gold);
-    background:#000;
-    color:var(--gold);
-    cursor:pointer;
-    border-radius:4px;
-    font-weight:bold;
-    font-size:18px;
-}
-
-.quantity button:hover{
-    background:var(--gold);
-    color:#000;
-}
-
-.quantity span{
-    min-width:25px;
-    text-align:center;
-}
-
-.remove{
-    background:#000;
-    color:#aaa;
-    border:1px solid #555;
-    padding:8px 12px;
-    border-radius:4px;
-    cursor:pointer;
-}
-
-.remove:hover{
-    color:white;
-    border-color:var(--gold);
-}
-
-.cart-total{
-    text-align:right;
-    border-top:1px solid var(--gold);
-    margin-top:30px;
-    padding-top:25px;
-}
-
-.cart-total h3{
-    color:var(--gold);
-    font-size:24px;
-}
-
-.buttons{
-    display:flex;
-    justify-content:flex-end;
-    gap:15px;
-    margin-top:25px;
-}
-
-.btn{
-    padding:13px 22px;
-    border-radius:5px;
-    text-decoration:none;
-    font-weight:bold;
-    transition:.3s;
-}
-
-.continue{
-    border:1px solid var(--gold);
-    color:var(--gold);
-    background:#000;
-}
-
-.continue:hover{
-    background:var(--gold);
-    color:#000;
-}
-
-.checkout{
-    background:linear-gradient(var(--gold),var(--gold-dark));
-    color:#000;
-}
-
-.empty{
-    text-align:center;
-    padding:50px 20px;
-    background:var(--card);
-    border:1px solid #333;
-    border-radius:8px;
-}
-
-.empty h3{
-    color:var(--gold);
-}
-
-.empty p{
-    color:var(--silver);
-}
-
-.empty a{
-    display:inline-block;
-    margin-top:20px;
-    background:var(--gold);
-    color:#000;
-    padding:12px 20px;
-    text-decoration:none;
-    border-radius:5px;
-    font-weight:bold;
-}
-
-#backToTop{
-    position:fixed;
-    right:20px;
-    bottom:20px;
-    width:48px;
-    height:48px;
-    border-radius:50%;
-    border:1px solid var(--gold);
-    background:#080808;
-    color:var(--gold);
-    font-size:22px;
-    cursor:pointer;
-    opacity:0;
-    visibility:hidden;
-    transition:.3s;
-}
-
-#backToTop.show{
-    opacity:1;
-    visibility:visible;
-}
-
-#backToTop:hover{
-    background:var(--gold);
-    color:#000;
-}
-
-footer{
-    text-align:center;
-    padding:30px;
-    border-top:1px solid var(--gold);
-    color:#777;
-}
-
-@media(max-width:700px){
-
-    nav{
-        flex-direction:column;
-        gap:15px;
-        padding:15px;
-    }
-
-    .logo-button{
-        font-size:34px;
-    }
-
-    .nav-links{
-        justify-content:center;
-    }
-
-    .nav-links a{
-        display:inline-block;
-        margin:5px 6px;
-        font-size:13px;
-    }
-
-    .container{
-        padding:45px 15px;
-    }
-
-    .cart-item{
-        flex-direction:column;
-        align-items:flex-start;
-    }
-
-    .buttons{
-        flex-direction:column;
-    }
-
-    .btn{
-        text-align:center;
-    }
-
-}
-
-</style>
 </head>
 
 <body>
 
-<nav>
+<header>
 
-<a href="index.html" class="logo-button">
-MISK
-</a>
+<nav class="navbar">
+
+<a href="index.html" class="logo">MISK</a>
 
 <div class="nav-links">
 
 <a href="index.html">Home</a>
 <a href="about.html">About</a>
-<a href="shop.html">Shop</a>
 <a href="collection.html">Collection</a>
+<a href="shop.html">Shop</a>
 <a href="reviews.html">Reviews</a>
 <a href="contact.html">Contact</a>
 
-<a href="cart.html" class="cart-link">
+<a href="cart.html" class="cart-link active">
 🛒 Cart
 <span class="cart-count" id="cartCount">0</span>
 </a>
@@ -362,29 +37,97 @@ MISK
 
 </nav>
 
-<div class="container">
+</header>
 
-<h2>Your Shopping Cart</h2>
+
+<section class="page-hero">
+
+<div class="hero-content">
+
+<p class="hero-small">
+MISK FRAGRANCES
+</p>
+
+<h1>Your Cart</h1>
+
+<div class="gold-line"></div>
+
+<p class="hero-tagline">
+Your Selected Fragrances
+</p>
+
+</div>
+
+</section>
+
+
+<div class="cart-container">
 
 <div id="cartContainer"></div>
 
 </div>
 
+
 <footer>
+
+<div class="footer-brand">MISK</div>
+
+<p class="footer-text">
+Premium fragrance oils crafted for a lasting impression.
+</p>
+
+<div class="footer-links">
+
+<a href="index.html">Home</a>
+<a href="about.html">About</a>
+<a href="collection.html">Collection</a>
+<a href="shop.html">Shop</a>
+<a href="reviews.html">Reviews</a>
+<a href="contact.html">Contact</a>
+
+</div>
+
+<p>
 © 2026 MISK Fragrances. All Rights Reserved.
+</p>
+
 </footer>
 
-<button
-id="backToTop"
-onclick="window.scrollTo({top:0,behavior:'smooth'})"
-aria-label="Back to top">
+
+<button id="backToTop"
+aria-label="Back to top"
+onclick="window.scrollTo({top:0,behavior:'smooth'})">
 ↑
 </button>
 
+
 <script>
 
-let cart =
-JSON.parse(localStorage.getItem("miskCart")) || [];
+let cart = [];
+
+function loadCart(){
+
+    try{
+        cart =
+            JSON.parse(localStorage.getItem("miskCart")) || [];
+    }catch(error){
+        cart = [];
+    }
+
+}
+
+function updateCartCount(){
+
+    const total =
+        cart.reduce(
+            (sum,item) =>
+            sum + Number(item.quantity || 0),
+            0
+        );
+
+    document.getElementById("cartCount").textContent =
+        total;
+}
 
 function displayCart(){
 
@@ -395,19 +138,20 @@ function displayCart(){
 
         container.innerHTML = `
 
-        <div class="empty">
+            <div class="card empty">
 
-            <h3>Your cart is empty</h3>
+                <h3>Your cart is empty</h3>
 
-            <p>
-            You haven't added any fragrances yet.
-            </p>
+                <p>
+                    You haven't added any fragrances yet.
+                </p>
 
-            <a href="shop.html">
-            Browse Shop
-            </a>
+                <a href="shop.html"
+                   class="btn btn-primary">
+                    Browse Shop
+                </a>
 
-        </div>
+            </div>
 
         `;
 
@@ -416,93 +160,124 @@ function displayCart(){
         return;
     }
 
+
     let html = "";
     let total = 0;
 
-    cart.forEach((item,index)=>{
+
+    cart.forEach(function(item,index){
+
+        const price =
+            Number(item.price) || 0;
+
+        const quantity =
+            Number(item.quantity) || 0;
 
         const itemTotal =
-            Number(item.price) *
-            Number(item.quantity);
+            price * quantity;
 
         total += itemTotal;
 
+
         html += `
 
-        <div class="cart-item">
+            <div class="card cart-item">
 
-            <div class="item-info">
+                <div class="item-info">
 
-                <h3>${item.name}</h3>
+                    <h3>
+                        ${escapeHTML(item.name)}
+                    </h3>
 
-                <div class="item-price">
-                £${Number(item.price).toFixed(2)} each
+                    <div class="item-price">
+                        £${price.toFixed(2)} each
+                    </div>
+
                 </div>
 
-            </div>
 
-            <div class="quantity">
+                <div class="quantity">
+
+                    <button
+                    onclick="changeQuantity(${index},-1)">
+                    −
+                    </button>
+
+                    <span>
+                        ${quantity}
+                    </span>
+
+                    <button
+                    onclick="changeQuantity(${index},1)">
+                    +
+                    </button>
+
+                </div>
+
+
+                <strong>
+                    £${itemTotal.toFixed(2)}
+                </strong>
+
 
                 <button
-                onclick="changeQuantity(${index},-1)">
-                −
-                </button>
-
-                <span>
-                ${item.quantity}
-                </span>
-
-                <button
-                onclick="changeQuantity(${index},1)">
-                +
+                class="remove"
+                onclick="removeItem(${index})">
+                    Remove
                 </button>
 
             </div>
-
-            <strong>
-            £${itemTotal.toFixed(2)}
-            </strong>
-
-            <button
-            class="remove"
-            onclick="removeItem(${index})">
-            Remove
-            </button>
-
-        </div>
 
         `;
 
     });
 
+
     html += `
 
-    <div class="cart-total">
+        <div class="cart-total">
 
-        <h3>
-        Total: £${total.toFixed(2)}
-        </h3>
+            <h3>
+                Total: £${total.toFixed(2)}
+            </h3>
 
-    </div>
+        </div>
 
-    <div class="buttons">
+        <div class="cart-buttons">
 
-        <a href="shop.html" class="btn continue">
-        Continue Shopping
-        </a>
+            <a href="shop.html"
+               class="btn btn-secondary">
+                Continue Shopping
+            </a>
 
-        <a href="checkout.html" class="btn checkout">
-        Proceed to Checkout
-        </a>
+            <a href="checkout.html"
+               class="btn btn-primary">
+                Proceed to Checkout
+            </a>
 
-    </div>
+        </div>
 
     `;
+
 
     container.innerHTML = html;
 
     updateCartCount();
+
 }
+
+
+function escapeHTML(text){
+
+    const div =
+        document.createElement("div");
+
+    div.textContent =
+        text ?? "";
+
+    return div.innerHTML;
+}
+
 
 function changeQuantity(index,change){
 
@@ -510,18 +285,24 @@ function changeQuantity(index,change){
         Number(cart[index].quantity) + change;
 
     if(cart[index].quantity <= 0){
+
         cart.splice(index,1);
+
     }
 
     saveCart();
+
 }
+
 
 function removeItem(index){
 
     cart.splice(index,1);
 
     saveCart();
+
 }
+
 
 function saveCart(){
 
@@ -531,48 +312,54 @@ function saveCart(){
     );
 
     displayCart();
+
 }
 
-function updateCartCount(){
 
-    const totalItems =
-        cart.reduce(
-            (total,item)=>
-            total + Number(item.quantity || 0),
-            0
-        );
+window.addEventListener(
+    "storage",
+    function(event){
 
-    document.getElementById("cartCount").textContent =
-        totalItems;
-}
+        if(event.key === "miskCart"){
 
-window.addEventListener("storage",function(event){
+            loadCart();
+            displayCart();
 
-    if(event.key === "miskCart"){
+        }
 
-        cart =
-            JSON.parse(
-                localStorage.getItem("miskCart")
-            ) || [];
-
-        displayCart();
     }
+);
 
-});
+
+document.addEventListener(
+    "visibilitychange",
+    function(){
+
+        if(!document.hidden){
+
+            loadCart();
+            displayCart();
+
+        }
+
+    }
+);
+
 
 const backToTop =
 document.getElementById("backToTop");
 
 window.addEventListener("scroll",function(){
 
-    if(window.scrollY > 400){
-        backToTop.classList.add("show");
-    }else{
-        backToTop.classList.remove("show");
-    }
+    backToTop.classList.toggle(
+        "show",
+        window.scrollY > 400
+    );
 
 });
 
+
+loadCart();
 displayCart();
 
 </script>
