@@ -104,7 +104,105 @@ content="Discover premium MISK Fragrances and find your signature scent.">
 }
 
 
-.product-price{
+.product-description{
+
+    line-height:1.8;
+
+    margin-bottom:30px;
+
+}
+
+
+/* =========================================
+   SIZE OPTIONS
+   ========================================= */
+
+.size-title{
+
+    font-size:18px;
+
+    font-weight:bold;
+
+    margin-bottom:15px;
+
+}
+
+
+.size-options{
+
+    display:flex;
+
+    gap:15px;
+
+    margin-bottom:30px;
+
+    flex-wrap:wrap;
+
+}
+
+
+.size-option{
+
+    position:relative;
+
+}
+
+
+.size-option input{
+
+    position:absolute;
+
+    opacity:0;
+
+    pointer-events:none;
+
+}
+
+
+.size-option label{
+
+    display:block;
+
+    min-width:120px;
+
+    padding:15px 20px;
+
+    border:1px solid #555;
+
+    text-align:center;
+
+    cursor:pointer;
+
+    transition:.2s;
+
+}
+
+
+.size-option label:hover{
+
+    border-color:#d4af37;
+
+}
+
+
+.size-option input:checked + label{
+
+    border-color:#d4af37;
+
+    background:#d4af37;
+
+    color:#000;
+
+    font-weight:bold;
+
+}
+
+
+/* =========================================
+   PRICE
+   ========================================= */
+
+.selected-price{
 
     display:block;
 
@@ -115,15 +213,6 @@ content="Discover premium MISK Fragrances and find your signature scent.">
     color:#d4af37;
 
     margin-bottom:25px;
-
-}
-
-
-.product-description{
-
-    line-height:1.8;
-
-    margin-bottom:30px;
 
 }
 
@@ -195,6 +284,13 @@ content="Discover premium MISK Fragrances and find your signature scent.">
 
     }
 
+
+    .size-options{
+
+        justify-content:center;
+
+    }
+
 }
 
 </style>
@@ -216,17 +312,29 @@ MISK
 
 <div class="nav-links">
 
-<a href="index.html">Home</a>
+<a href="index.html">
+Home
+</a>
 
-<a href="about.html">About</a>
+<a href="about.html">
+About
+</a>
 
-<a href="collection.html">Collection</a>
+<a href="collection.html">
+Collection
+</a>
 
-<a href="shop.html">Shop</a>
+<a href="shop.html">
+Shop
+</a>
 
-<a href="reviews.html">Reviews</a>
+<a href="reviews.html">
+Reviews
+</a>
 
-<a href="contact.html">Contact</a>
+<a href="contact.html">
+Contact
+</a>
 
 
 <a href="cart.html" class="cart-link">
@@ -282,16 +390,69 @@ Loading...
 </h1>
 
 
-<span
-id="productPrice"
-class="product-price">
-</span>
-
-
 <p
 id="productDescription"
 class="product-description">
 </p>
+
+
+<div class="size-title">
+Choose your size:
+</div>
+
+
+<div class="size-options">
+
+
+<div class="size-option">
+
+<input
+type="radio"
+id="size3ml"
+name="size"
+value="3ml"
+data-price="4"
+checked
+>
+
+<label for="size3ml">
+
+3ml — £4
+
+</label>
+
+</div>
+
+
+<div class="size-option">
+
+<input
+type="radio"
+id="size5ml"
+name="size"
+value="5ml"
+data-price="5"
+>
+
+<label for="size5ml">
+
+5ml — £5
+
+</label>
+
+</div>
+
+
+</div>
+
+
+<span
+id="selectedPrice"
+class="selected-price">
+
+£4.00
+
+</span>
 
 
 <button
@@ -301,6 +462,7 @@ class="add-product-cart">
 Add to Cart
 
 </button>
+
 
 </div>
 
@@ -314,6 +476,7 @@ Add to Cart
 <div class="footer-brand">
 MISK
 </div>
+
 
 <p class="footer-text">
 Premium fragrance oils crafted for a lasting impression.
@@ -368,8 +531,6 @@ const products = {
 
 "Royal Oud":{
 
-price:5.99,
-
 description:
 "Rich woody oud with warm oriental notes for a bold and timeless fragrance."
 
@@ -377,8 +538,6 @@ description:
 
 
 "MISK Noir":{
-
-price:5.99,
 
 description:
 "A luxurious dark blend of rich florals, woods and amber for elegant evenings."
@@ -388,8 +547,6 @@ description:
 
 "Imperial Musk":{
 
-price:4.99,
-
 description:
 "A smooth white musk with clean, soft and long-lasting elegance."
 
@@ -397,8 +554,6 @@ description:
 
 
 "Signature Homme":{
-
-price:5.99,
 
 description:
 "A refined masculine blend with fresh citrus, woods and amber."
@@ -408,8 +563,6 @@ description:
 
 "Rose Prestige":{
 
-price:4.99,
-
 description:
 "A luxurious rose fragrance enriched with soft musk and warm amber."
 
@@ -417,8 +570,6 @@ description:
 
 
 "Legacy":{
-
-price:5.99,
 
 description:
 "A modern, sophisticated fragrance combining fresh notes with smooth woods."
@@ -428,8 +579,6 @@ description:
 
 "Obsidian":{
 
-price:5.99,
-
 description:
 "A deep, smoky blend with dark woods and a mysterious oriental finish."
 
@@ -437,8 +586,6 @@ description:
 
 
 "MISK Royale":{
-
-price:5.99,
 
 description:
 "An elegant Middle Eastern-inspired fragrance featuring rich oud, musk and warm oriental notes."
@@ -448,8 +595,6 @@ description:
 
 "Fruity Oud":{
 
-price:5.99,
-
 description:
 "A vibrant fruity blend balanced with rich oud for a sweet and luxurious finish."
 
@@ -457,8 +602,6 @@ description:
 
 
 "Fruity Femme":{
-
-price:5.99,
 
 description:
 "A bright and feminine fruity fragrance with sweet, fresh and elegant notes."
@@ -521,13 +664,6 @@ if(product){
 
 
     document.getElementById(
-        "productPrice"
-    ).textContent =
-        "£" +
-        product.price.toFixed(2);
-
-
-    document.getElementById(
         "productDescription"
     ).textContent =
         product.description;
@@ -551,6 +687,47 @@ else{
 
 
 /* =========================================
+   SIZE / PRICE
+   ========================================= */
+
+const sizeOptions =
+document.querySelectorAll(
+    'input[name="size"]'
+);
+
+
+const selectedPrice =
+document.getElementById(
+    "selectedPrice"
+);
+
+
+sizeOptions.forEach(
+    function(option){
+
+        option.addEventListener(
+            "change",
+            function(){
+
+                const price =
+                    Number(
+                        this.dataset.price
+                    );
+
+
+                selectedPrice.textContent =
+                    "£" +
+                    price.toFixed(2);
+
+            }
+
+        );
+
+    }
+);
+
+
+/* =========================================
    CART
    ========================================= */
 
@@ -563,7 +740,9 @@ function loadCart(){
 
         cart =
             JSON.parse(
-                localStorage.getItem("miskCart")
+                localStorage.getItem(
+                    "miskCart"
+                )
             ) || [];
 
     }
@@ -582,7 +761,10 @@ function updateCartCount(){
     const total =
         cart.reduce(
             (sum,item) =>
-            sum + Number(item.quantity || 0),
+            sum +
+            Number(
+                item.quantity || 0
+            ),
             0
         );
 
@@ -601,7 +783,7 @@ updateCartCount();
 
 
 /* =========================================
-   ADD TO CART
+   ADD PRODUCT TO CART
    ========================================= */
 
 document.getElementById(
@@ -617,10 +799,32 @@ document.getElementById(
         }
 
 
+        const selectedSize =
+            document.querySelector(
+                'input[name="size"]:checked'
+            );
+
+
+        const size =
+            selectedSize.value;
+
+
+        const price =
+            Number(
+                selectedSize.dataset.price
+            );
+
+
+        /*
+        Each size is treated as its
+        own cart item.
+        */
+
         const existing =
             cart.find(
                 item =>
-                item.name === productName
+                item.name === productName &&
+                item.size === size
             );
 
 
@@ -636,9 +840,9 @@ document.getElementById(
 
                 name:productName,
 
-                price:Number(
-                    product.price
-                ),
+                size:size,
+
+                price:price,
 
                 quantity:1
 
