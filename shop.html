@@ -12,9 +12,46 @@ content="Shop all MISK Fragrances premium fragrance oils, including oud, musk, f
 
 <link rel="stylesheet" href="style.css">
 
+<style>
+
+.product-card-link{
+    text-decoration:none;
+    color:inherit;
+    display:block;
+}
+
+.product-card{
+    cursor:pointer;
+    transition:transform .25s ease, box-shadow .25s ease;
+}
+
+.product-card:hover{
+    transform:translateY(-6px);
+}
+
+.product-image{
+    width:100%;
+    height:260px;
+    object-fit:contain;
+    display:block;
+    margin-bottom:20px;
+}
+
+.product-card h3{
+    margin-bottom:10px;
+}
+
+.product-card p{
+    margin-bottom:18px;
+}
+
+</style>
+
 </head>
 
+
 <body>
+
 
 <header>
 
@@ -25,10 +62,15 @@ content="Shop all MISK Fragrances premium fragrance oils, including oud, musk, f
 <div class="nav-links">
 
 <a href="index.html">Home</a>
+
 <a href="about.html">About</a>
+
 <a href="collection.html">Collection</a>
+
 <a href="shop.html" class="active">Shop</a>
+
 <a href="reviews.html">Reviews</a>
+
 <a href="contact.html">Contact</a>
 
 <a href="cart.html" class="cart-link">
@@ -77,77 +119,7 @@ fresh signature blends and our fruity scents.
 </p>
 
 
-<div class="product-grid">
-
-
-<script>
-
-const products = [
-
-["Royal Oud","🌙","Rich woody oud with warm oriental notes for a bold and timeless fragrance.",5.99],
-
-["MISK Noir","🖤","A luxurious dark blend of rich florals, woods and amber for elegant evenings.",5.99],
-
-["Imperial Musk","✨","A smooth white musk with clean, soft and long-lasting elegance.",4.99],
-
-["Signature Homme","👑","A refined masculine blend with fresh citrus, woods and amber.",5.99],
-
-["Rose Prestige","🌹","A luxurious rose fragrance enriched with soft musk and warm amber.",4.99],
-
-["Legacy","⭐","A modern, sophisticated fragrance combining fresh notes with smooth woods.",5.99],
-
-["Obsidian","🌑","A deep, smoky blend with dark woods and a mysterious oriental finish.",5.99],
-
-["MISK Royale","💎","An elegant Middle Eastern-inspired fragrance featuring rich oud, musk and warm oriental notes.",5.99],
-
-["Fruity Oud","🍇","A vibrant fruity blend balanced with rich oud for a sweet and luxurious finish.",5.99],
-
-["Fruity Femme","🌸","A bright and feminine fruity fragrance with sweet, fresh and elegant notes.",5.99]
-
-];
-
-products.forEach(function(product){
-
-    document.write(`
-
-        <div class="card product-card">
-
-            <div>
-
-                <div class="product-icon">
-                    ${product[1]}
-                </div>
-
-                <h3>${product[0]}</h3>
-
-                <p>${product[2]}</p>
-
-            </div>
-
-            <div>
-
-                <span class="price">
-                    £${product[3].toFixed(2)}
-                </span>
-
-                <button
-                    class="add-cart"
-                    onclick="addToCart('${product[0]}',${product[3]},this)">
-                    Add to Cart
-                </button>
-
-            </div>
-
-        </div>
-
-    `);
-
-});
-
-</script>
-
-
-</div>
+<div class="product-grid" id="productGrid"></div>
 
 </section>
 
@@ -170,7 +142,9 @@ View Cart
 
 <footer>
 
-<div class="footer-brand">MISK</div>
+<div class="footer-brand">
+MISK
+</div>
 
 <p class="footer-text">
 Premium fragrance oils crafted for a lasting impression.
@@ -179,10 +153,15 @@ Premium fragrance oils crafted for a lasting impression.
 <div class="footer-links">
 
 <a href="index.html">Home</a>
+
 <a href="about.html">About</a>
+
 <a href="collection.html">Collection</a>
+
 <a href="shop.html">Shop</a>
+
 <a href="reviews.html">Reviews</a>
+
 <a href="contact.html">Contact</a>
 
 </div>
@@ -194,7 +173,8 @@ Premium fragrance oils crafted for a lasting impression.
 </footer>
 
 
-<button id="backToTop"
+<button
+id="backToTop"
 aria-label="Back to top"
 onclick="window.scrollTo({top:0,behavior:'smooth'})">
 ↑
@@ -203,18 +183,166 @@ onclick="window.scrollTo({top:0,behavior:'smooth'})">
 
 <script>
 
+
+/* =========================================
+   MISK PRODUCTS
+   ========================================= */
+
+const products = [
+
+{
+name:"Royal Oud",
+description:"Rich woody oud with warm oriental notes for a bold and timeless fragrance.",
+price:5.99
+},
+
+{
+name:"MISK Noir",
+description:"A luxurious dark blend of rich florals, woods and amber for elegant evenings.",
+price:5.99
+},
+
+{
+name:"Imperial Musk",
+description:"A smooth white musk with clean, soft and long-lasting elegance.",
+price:4.99
+},
+
+{
+name:"Signature Homme",
+description:"A refined masculine blend with fresh citrus, woods and amber.",
+price:5.99
+},
+
+{
+name:"Rose Prestige",
+description:"A luxurious rose fragrance enriched with soft musk and warm amber.",
+price:4.99
+},
+
+{
+name:"Legacy",
+description:"A modern, sophisticated fragrance combining fresh notes with smooth woods.",
+price:5.99
+},
+
+{
+name:"Obsidian",
+description:"A deep, smoky blend with dark woods and a mysterious oriental finish.",
+price:5.99
+},
+
+{
+name:"MISK Royale",
+description:"An elegant Middle Eastern-inspired fragrance featuring rich oud, musk and warm oriental notes.",
+price:5.99
+},
+
+{
+name:"Fruity Oud",
+description:"A vibrant fruity blend balanced with rich oud for a sweet and luxurious finish.",
+price:5.99
+},
+
+{
+name:"Fruity Femme",
+description:"A bright and feminine fruity fragrance with sweet, fresh and elegant notes.",
+price:5.99
+}
+
+];
+
+
+/* =========================================
+   YOUR ONE BOTTLE IMAGE
+   SAME IMAGE FOR EVERY PRODUCT
+   ========================================= */
+
+const bottleImage =
+"imagesmisk-bottle.jpg.png";
+
+
+/* =========================================
+   CREATE PRODUCT CARDS
+   ========================================= */
+
+const productGrid =
+document.getElementById("productGrid");
+
+
+products.forEach(function(product){
+
+    const card =
+        document.createElement("a");
+
+
+    card.href =
+        "product.html?name=" +
+        encodeURIComponent(product.name);
+
+
+    card.className =
+        "card product-card-link";
+
+
+    card.innerHTML = `
+
+        <div class="product-card">
+
+            <img
+                src="${bottleImage}"
+                alt="${product.name} MISK Fragrance"
+                class="product-image"
+            >
+
+            <h3>
+                ${product.name}
+            </h3>
+
+            <p>
+                ${product.description}
+            </p>
+
+            <span class="price">
+                £${product.price.toFixed(2)}
+            </span>
+
+        </div>
+
+    `;
+
+
+    productGrid.appendChild(card);
+
+});
+
+
+/* =========================================
+   CART
+   ========================================= */
+
 let cart = [];
+
 
 function loadCart(){
 
     try{
+
         cart =
-            JSON.parse(localStorage.getItem("miskCart")) || [];
-    }catch(error){
+            JSON.parse(
+                localStorage.getItem("miskCart")
+            ) || [];
+
+    }
+
+    catch(error){
+
         cart = [];
+
     }
 
 }
+
 
 function updateCartCount(){
 
@@ -225,87 +353,68 @@ function updateCartCount(){
             0
         );
 
-    document.getElementById("cartCount").textContent =
-        total;
-}
 
-function addToCart(name,price,button){
-
-    const existing =
-        cart.find(item => item.name === name);
-
-    if(existing){
-        existing.quantity += 1;
-    }else{
-        cart.push({
-            name:name,
-            price:Number(price),
-            quantity:1
-        });
-    }
-
-    localStorage.setItem(
-        "miskCart",
-        JSON.stringify(cart)
-    );
-
-    updateCartCount();
-
-    if(button){
-
-        const original =
-            button.textContent;
-
-        button.textContent =
-            "✓ Added to Cart";
-
-        button.classList.add("added");
-
-        setTimeout(function(){
-
-            button.textContent = original;
-            button.classList.remove("added");
-
-        },1200);
-
-    }
+    document.getElementById("cartCount")
+        .textContent = total;
 
 }
+
 
 loadCart();
+
 updateCartCount();
 
-window.addEventListener("storage",function(){
 
-    loadCart();
-    updateCartCount();
-
-});
-
-document.addEventListener("visibilitychange",function(){
-
-    if(!document.hidden){
+window.addEventListener(
+    "storage",
+    function(){
 
         loadCart();
+
         updateCartCount();
 
     }
+);
 
-});
+
+document.addEventListener(
+    "visibilitychange",
+    function(){
+
+        if(!document.hidden){
+
+            loadCart();
+
+            updateCartCount();
+
+        }
+
+    }
+);
+
+
+/* =========================================
+   BACK TO TOP
+   ========================================= */
 
 const backToTop =
 document.getElementById("backToTop");
 
-window.addEventListener("scroll",function(){
 
-    backToTop.classList.toggle(
-        "show",
-        window.scrollY > 400
-    );
+window.addEventListener(
+    "scroll",
+    function(){
 
-});
+        backToTop.classList.toggle(
+            "show",
+            window.scrollY > 400
+        );
+
+    }
+);
 
 </script>
+
 
 </body>
 </html>
