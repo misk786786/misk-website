@@ -45,6 +45,11 @@ content="Shop all MISK Fragrances premium fragrance oils, including oud, musk, f
     margin-bottom:18px;
 }
 
+.product-price-preview{
+    color:#d4af37;
+    font-weight:bold;
+}
+
 </style>
 
 </head>
@@ -192,70 +197,59 @@ const products = [
 
 {
 name:"Royal Oud",
-description:"Rich woody oud with warm oriental notes for a bold and timeless fragrance.",
-price:5.99
+description:"Rich woody oud with warm oriental notes for a bold and timeless fragrance."
 },
 
 {
 name:"MISK Noir",
-description:"A luxurious dark blend of rich florals, woods and amber for elegant evenings.",
-price:5.99
+description:"A luxurious dark blend of rich florals, woods and amber for elegant evenings."
 },
 
 {
 name:"Imperial Musk",
-description:"A smooth white musk with clean, soft and long-lasting elegance.",
-price:4.99
+description:"A smooth white musk with clean, soft and long-lasting elegance."
 },
 
 {
 name:"Signature Homme",
-description:"A refined masculine blend with fresh citrus, woods and amber.",
-price:5.99
+description:"A refined masculine blend with fresh citrus, woods and amber."
 },
 
 {
 name:"Rose Prestige",
-description:"A luxurious rose fragrance enriched with soft musk and warm amber.",
-price:4.99
+description:"A luxurious rose fragrance enriched with soft musk and warm amber."
 },
 
 {
 name:"Legacy",
-description:"A modern, sophisticated fragrance combining fresh notes with smooth woods.",
-price:5.99
+description:"A modern, sophisticated fragrance combining fresh notes with smooth woods."
 },
 
 {
 name:"Obsidian",
-description:"A deep, smoky blend with dark woods and a mysterious oriental finish.",
-price:5.99
+description:"A deep, smoky blend with dark woods and a mysterious oriental finish."
 },
 
 {
 name:"MISK Royale",
-description:"An elegant Middle Eastern-inspired fragrance featuring rich oud, musk and warm oriental notes.",
-price:5.99
+description:"An elegant Middle Eastern-inspired fragrance featuring rich oud, musk and warm oriental notes."
 },
 
 {
 name:"Fruity Oud",
-description:"A vibrant fruity blend balanced with rich oud for a sweet and luxurious finish.",
-price:5.99
+description:"A vibrant fruity blend balanced with rich oud for a sweet and luxurious finish."
 },
 
 {
 name:"Fruity Femme",
-description:"A bright and feminine fruity fragrance with sweet, fresh and elegant notes.",
-price:5.99
+description:"A bright and feminine fruity fragrance with sweet, fresh and elegant notes."
 }
 
 ];
 
 
 /* =========================================
-   YOUR ONE BOTTLE IMAGE
-   SAME IMAGE FOR EVERY PRODUCT
+   SAME BOTTLE IMAGE FOR EVERY PRODUCT
    ========================================= */
 
 const bottleImage =
@@ -303,9 +297,9 @@ products.forEach(function(product){
                 ${product.description}
             </p>
 
-            <span class="price">
-                £${product.price.toFixed(2)}
-            </span>
+            <div class="product-price-preview">
+                3ml - £4 &nbsp; | &nbsp; 5ml - £5
+            </div>
 
         </div>
 
