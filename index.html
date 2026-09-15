@@ -45,18 +45,6 @@ content="MISK Fragrances - Premium fragrance oils crafted for a lasting impressi
 
 <section class="misk-hero">
 
-<div class="hero-slides">
-
-<img src="./bottle1.jpg.jpeg" class="hero-slide active" alt="MISK Fragrance">
-
-<img src="./bottle2.jpg.jpeg" class="hero-slide" alt="MISK Fragrance">
-
-
-
-</div>
-
-<div class="hero-overlay"></div>
-
 <div class="hero-main-content">
 
 <p class="hero-main-small">
@@ -208,23 +196,6 @@ onclick="window.scrollTo({top:0,behavior:'smooth'})">
 
 <script>
 
-const slides =
-document.querySelectorAll(".hero-slide");
-
-let currentSlide = 0;
-
-setInterval(function(){
-
-    slides[currentSlide].classList.remove("active");
-
-    currentSlide =
-        (currentSlide + 1) % slides.length;
-
-    slides[currentSlide].classList.add("active");
-
-},5000);
-
-
 function updateCartCount(){
 
     let cart = [];
@@ -252,6 +223,7 @@ function updateCartCount(){
 updateCartCount();
 
 window.addEventListener("storage",updateCartCount);
+
 document.addEventListener("visibilitychange",function(){
 
     if(!document.hidden){
