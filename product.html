@@ -412,7 +412,6 @@ id="size3ml"
 name="size"
 value="3ml"
 data-price="4"
-checked
 >
 
 <label for="size3ml">
@@ -612,11 +611,23 @@ description:
 
 
 /* =========================================
-   SAME IMAGE FOR EVERY FRAGRANCE
+   DEFAULT PRODUCT IMAGE
    ========================================= */
 
 const bottleImage =
 "imagesmisk-bottle.jpg.png";
+
+
+/* =========================================
+   SIZE IMAGES
+   ========================================= */
+
+const image3ml =
+"bottle1.jpg.jpeg";
+
+
+const image5ml =
+"bottle2.jpg.jpeg";
 
 
 /* =========================================
@@ -687,7 +698,7 @@ else{
 
 
 /* =========================================
-   SIZE / PRICE
+   SIZE / PRICE / IMAGE
    ========================================= */
 
 const sizeOptions =
@@ -699,6 +710,12 @@ document.querySelectorAll(
 const selectedPrice =
 document.getElementById(
     "selectedPrice"
+);
+
+
+const productImage =
+document.getElementById(
+    "productImage"
 );
 
 
@@ -718,6 +735,26 @@ sizeOptions.forEach(
                 selectedPrice.textContent =
                     "£" +
                     price.toFixed(2);
+
+
+                /* 3ml = bottle 1 */
+
+                if(this.value === "3ml"){
+
+                    productImage.src =
+                        image3ml;
+
+                }
+
+
+                /* 5ml = bottle 2 */
+
+                if(this.value === "5ml"){
+
+                    productImage.src =
+                        image5ml;
+
+                }
 
             }
 
@@ -803,6 +840,15 @@ document.getElementById(
             document.querySelector(
                 'input[name="size"]:checked'
             );
+
+
+        if(!selectedSize){
+
+            alert("Please choose a size first.");
+
+            return;
+
+        }
 
 
         const size =
