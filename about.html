@@ -12,6 +12,14 @@ content="Learn about MISK Fragrances, our story, values and passion for premium 
 
 <link rel="stylesheet" href="style.css">
 
+<style>
+*,
+*::before,
+*::after{
+    font-family:"Comic Sans MS", cursive, sans-serif !important;
+}
+</style>
+
 </head>
 
 <body>
@@ -20,15 +28,22 @@ content="Learn about MISK Fragrances, our story, values and passion for premium 
 
 <nav class="navbar">
 
-<a href="index.html" class="logo">MISK</a>
+<a href="index.html" class="logo">
+MISK
+</a>
 
 <div class="nav-links">
 
 <a href="index.html">Home</a>
+
 <a href="about.html" class="active">About</a>
+
 <a href="collection.html">Collection</a>
+
 <a href="shop.html">Shop</a>
+
 <a href="reviews.html">Reviews</a>
+
 <a href="contact.html">Contact</a>
 
 <a href="cart.html" class="cart-link">
@@ -51,7 +66,9 @@ content="Learn about MISK Fragrances, our story, values and passion for premium 
 THE STORY BEHIND MISK
 </p>
 
-<h1>About MISK</h1>
+<h1>
+About MISK
+</h1>
 
 <div class="gold-line"></div>
 
@@ -66,7 +83,9 @@ A Fragrance With A Story
 
 <section class="about-content">
 
-<h2>Our Story</h2>
+<h2>
+Our Story
+</h2>
 
 <p>
 Founded by Abdurrahman Dhorat in Leicester in 2026,
@@ -94,7 +113,9 @@ keeping quality and customer experience at the heart of the brand.
 
 <div class="card value-card">
 
-<h3>Quality</h3>
+<h3>
+Quality
+</h3>
 
 <p>
 We believe fragrance should feel special from the first
@@ -106,7 +127,9 @@ moment you experience it.
 
 <div class="card value-card">
 
-<h3>Elegance</h3>
+<h3>
+Elegance
+</h3>
 
 <p>
 Our goal is to create a luxury-inspired experience through
@@ -118,7 +141,9 @@ our scents and presentation.
 
 <div class="card value-card">
 
-<h3>Your Experience</h3>
+<h3>
+Your Experience
+</h3>
 
 <p>
 Our customers are at the centre of MISK, and every fragrance
@@ -132,7 +157,9 @@ should be an experience worth remembering.
 
 <section class="cta">
 
-<h2>Discover MISK</h2>
+<h2>
+Discover MISK
+</h2>
 
 <p>
 Explore our fragrances and find a scent that becomes part of your story.
@@ -147,7 +174,9 @@ View Collection
 
 <footer>
 
-<div class="footer-brand">MISK</div>
+<div class="footer-brand">
+MISK
+</div>
 
 <p class="footer-text">
 Premium fragrance oils crafted for a lasting impression.
@@ -156,10 +185,15 @@ Premium fragrance oils crafted for a lasting impression.
 <div class="footer-links">
 
 <a href="index.html">Home</a>
+
 <a href="about.html">About</a>
+
 <a href="collection.html">Collection</a>
+
 <a href="shop.html">Shop</a>
+
 <a href="reviews.html">Reviews</a>
+
 <a href="contact.html">Contact</a>
 
 </div>
@@ -171,7 +205,8 @@ Premium fragrance oils crafted for a lasting impression.
 </footer>
 
 
-<button id="backToTop"
+<button
+id="backToTop"
 aria-label="Back to top"
 onclick="window.scrollTo({top:0,behavior:'smooth'})">
 ↑
@@ -185,10 +220,16 @@ function updateCartCount(){
     let cart = [];
 
     try{
+
         cart =
-            JSON.parse(localStorage.getItem("miskCart")) || [];
+            JSON.parse(
+                localStorage.getItem("miskCart")
+            ) || [];
+
     }catch(error){
+
         cart = [];
+
     }
 
     const total =
@@ -198,33 +239,44 @@ function updateCartCount(){
             0
         );
 
-    document.getElementById("cartCount").textContent =
-        total;
+    document.getElementById("cartCount")
+        .textContent = total;
+
 }
 
 updateCartCount();
 
-window.addEventListener("storage",updateCartCount);
+window.addEventListener(
+    "storage",
+    updateCartCount
+);
 
-document.addEventListener("visibilitychange",function(){
+document.addEventListener(
+    "visibilitychange",
+    function(){
 
-    if(!document.hidden){
-        updateCartCount();
+        if(!document.hidden){
+            updateCartCount();
+        }
+
     }
+);
 
-});
 
 const backToTop =
-document.getElementById("backToTop");
+    document.getElementById("backToTop");
 
-window.addEventListener("scroll",function(){
+window.addEventListener(
+    "scroll",
+    function(){
 
-    backToTop.classList.toggle(
-        "show",
-        window.scrollY > 400
-    );
+        backToTop.classList.toggle(
+            "show",
+            window.scrollY > 400
+        );
 
-});
+    }
+);
 
 </script>
 
