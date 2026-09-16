@@ -8,9 +8,17 @@
 <title>MISK Fragrances | Premium Fragrance Oils</title>
 
 <meta name="description"
-content="MISK Fragrances - Premium fragrance oils crafted for a lasting impression.">
+content="Discover MISK Fragrances premium fragrance oils, crafted for a lasting impression.">
 
 <link rel="stylesheet" href="style.css">
+
+<style>
+*,
+*::before,
+*::after{
+    font-family:"Comic Sans MS", cursive, sans-serif !important;
+}
+</style>
 
 </head>
 
@@ -20,15 +28,22 @@ content="MISK Fragrances - Premium fragrance oils crafted for a lasting impressi
 
 <nav class="navbar">
 
-<a href="index.html" class="logo">MISK</a>
+<a href="index.html" class="logo">
+MISK
+</a>
 
 <div class="nav-links">
 
 <a href="index.html" class="active">Home</a>
+
 <a href="about.html">About</a>
+
 <a href="collection.html">Collection</a>
+
 <a href="shop.html">Shop</a>
+
 <a href="reviews.html">Reviews</a>
+
 <a href="contact.html">Contact</a>
 
 <a href="cart.html" class="cart-link">
@@ -45,13 +60,26 @@ content="MISK Fragrances - Premium fragrance oils crafted for a lasting impressi
 
 <section class="misk-hero">
 
+<div class="hero-slides">
+
+<img
+class="hero-slide active"
+src="imagesmisk-bottle.jpg.png"
+alt="MISK Fragrances">
+
+</div>
+
+<div class="hero-overlay"></div>
+
 <div class="hero-main-content">
 
 <p class="hero-main-small">
-PREMIUM FRAGRANCE OILS
+MISK FRAGRANCES
 </p>
 
-<h1>MISK Fragrances</h1>
+<h1>
+MISK
+</h1>
 
 <div class="gold-line"></div>
 
@@ -60,18 +88,20 @@ Fragrance in Every Drop
 </p>
 
 <p class="hero-description">
-Discover luxurious fragrance oils created to leave a lasting impression.
-Explore rich oud, smooth musk, elegant florals and unforgettable signature scents.
+Discover premium fragrance oils created to leave
+a lasting impression. From rich oud and smooth musk
+to floral and fruity scents, find a fragrance that
+feels like you.
 </p>
 
 <div class="hero-buttons">
 
 <a href="shop.html" class="btn btn-primary">
-Shop Everything
+Shop MISK
 </a>
 
 <a href="reviews.html" class="btn btn-secondary">
-Customer Reviews
+Read Reviews
 </a>
 
 </div>
@@ -83,26 +113,31 @@ Customer Reviews
 
 <section class="welcome">
 
-<h2>Welcome to MISK</h2>
+<h2>
+Welcome to MISK
+</h2>
 
 <p>
-MISK Fragrances brings together luxurious fragrance oils designed
-for those who appreciate quality, elegance and memorable scents.
-Explore our collection and discover your signature fragrance.
+MISK Fragrances brings together quality, elegance
+and memorable scents. Explore our collection of
+premium fragrance oils and discover your next
+signature scent.
 </p>
 
 </section>
 
 
-<div class="feature-grid">
+<section class="feature-grid">
 
 <div class="card feature-card">
 
-<h3>Premium Quality</h3>
+<h3>
+Premium Quality
+</h3>
 
 <p>
-Carefully selected fragrance oils designed for a beautiful,
-lasting scent experience.
+Fragrance oils selected with care for a beautiful
+and memorable experience.
 </p>
 
 </div>
@@ -110,11 +145,13 @@ lasting scent experience.
 
 <div class="card feature-card">
 
-<h3>Luxury Scents</h3>
+<h3>
+Rich Scents
+</h3>
 
 <p>
-From oud and musk to floral and fruity blends,
-there is a fragrance for every preference.
+Explore oud, musk, floral, fruity and signature
+fragrance styles.
 </p>
 
 </div>
@@ -122,11 +159,13 @@ there is a fragrance for every preference.
 
 <div class="card feature-card">
 
-<h3>Made to Impress</h3>
+<h3>
+Made to Impress
+</h3>
 
 <p>
-Distinctive fragrances created to make every moment
-feel more special.
+Scents designed to create a lasting impression
+wherever you go.
 </p>
 
 </div>
@@ -134,28 +173,33 @@ feel more special.
 
 <div class="card feature-card">
 
-<h3>Your Signature</h3>
+<h3>
+Find Your Scent
+</h3>
 
 <p>
-Find the scent that feels uniquely yours and make it
-part of your everyday collection.
+Discover a fragrance that becomes part of your
+own story.
 </p>
 
 </div>
 
-</div>
+</section>
 
 
 <section class="cta">
 
-<h2>Discover Your Signature Scent</h2>
+<h2>
+Discover Your Signature Scent
+</h2>
 
 <p>
-Explore the MISK collection and find your next favourite fragrance.
+Explore the MISK collection and find a fragrance
+made for your style.
 </p>
 
 <a href="collection.html" class="btn btn-primary">
-Explore Collection
+View Collection
 </a>
 
 </section>
@@ -163,7 +207,9 @@ Explore Collection
 
 <footer>
 
-<div class="footer-brand">MISK</div>
+<div class="footer-brand">
+MISK
+</div>
 
 <p class="footer-text">
 Premium fragrance oils crafted for a lasting impression.
@@ -172,10 +218,15 @@ Premium fragrance oils crafted for a lasting impression.
 <div class="footer-links">
 
 <a href="index.html">Home</a>
+
 <a href="about.html">About</a>
+
 <a href="collection.html">Collection</a>
+
 <a href="shop.html">Shop</a>
+
 <a href="reviews.html">Reviews</a>
+
 <a href="contact.html">Contact</a>
 
 </div>
@@ -187,7 +238,8 @@ Premium fragrance oils crafted for a lasting impression.
 </footer>
 
 
-<button id="backToTop"
+<button
+id="backToTop"
 aria-label="Back to top"
 onclick="window.scrollTo({top:0,behavior:'smooth'})">
 ↑
@@ -201,12 +253,16 @@ function updateCartCount(){
     let cart = [];
 
     try{
+
         cart =
             JSON.parse(
                 localStorage.getItem("miskCart")
             ) || [];
+
     }catch(error){
+
         cart = [];
+
     }
 
     const total =
@@ -216,35 +272,44 @@ function updateCartCount(){
             0
         );
 
-    document.getElementById("cartCount").textContent =
-        total;
+    document.getElementById("cartCount")
+        .textContent = total;
+
 }
 
 updateCartCount();
 
-window.addEventListener("storage",updateCartCount);
+window.addEventListener(
+    "storage",
+    updateCartCount
+);
 
-document.addEventListener("visibilitychange",function(){
+document.addEventListener(
+    "visibilitychange",
+    function(){
 
-    if(!document.hidden){
-        updateCartCount();
+        if(!document.hidden){
+            updateCartCount();
+        }
+
     }
-
-});
+);
 
 
 const backToTop =
-document.getElementById("backToTop");
+    document.getElementById("backToTop");
 
-window.addEventListener("scroll",function(){
+window.addEventListener(
+    "scroll",
+    function(){
 
-    if(window.scrollY > 400){
-        backToTop.classList.add("show");
-    }else{
-        backToTop.classList.remove("show");
+        backToTop.classList.toggle(
+            "show",
+            window.scrollY > 400
+        );
+
     }
-
-});
+);
 
 </script>
 
