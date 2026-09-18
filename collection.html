@@ -12,71 +12,6 @@ content="Explore the MISK Fragrances collection of premium fragrance oils.">
 
 <link rel="stylesheet" href="style.css">
 
-<style>
-
-*,
-*::before,
-*::after{
-    font-family:"Comic Sans MS", cursive, sans-serif !important;
-}
-
-.collection-grid{
-    display:grid;
-    grid-template-columns:repeat(4,1fr);
-    gap:22px;
-}
-
-.collection-card{
-    padding:25px;
-    text-align:center;
-}
-
-.collection-card img{
-    width:100%;
-    height:280px;
-    object-fit:contain;
-    margin-bottom:15px;
-}
-
-.collection-card h3{
-    color:#d4af37;
-    margin-bottom:12px;
-}
-
-.collection-card p{
-    color:#aaa;
-    line-height:1.7;
-}
-
-.collection-price{
-    color:#d4af37;
-    font-weight:bold;
-    margin-top:15px;
-}
-
-.collection-card a{
-    color:inherit;
-    text-decoration:none;
-}
-
-@media(max-width:1050px){
-
-    .collection-grid{
-        grid-template-columns:repeat(2,1fr);
-    }
-
-}
-
-@media(max-width:650px){
-
-    .collection-grid{
-        grid-template-columns:1fr;
-    }
-
-}
-
-</style>
-
 </head>
 
 <body>
@@ -85,22 +20,15 @@ content="Explore the MISK Fragrances collection of premium fragrance oils.">
 
 <nav class="navbar">
 
-<a href="index.html" class="logo">
-MISK
-</a>
+<a href="index.html" class="logo">MISK</a>
 
 <div class="nav-links">
 
 <a href="index.html">Home</a>
-
 <a href="about.html">About</a>
-
 <a href="collection.html" class="active">Collection</a>
-
 <a href="shop.html">Shop</a>
-
 <a href="reviews.html">Reviews</a>
-
 <a href="contact.html">Contact</a>
 
 <a href="cart.html" class="cart-link">
@@ -123,9 +51,7 @@ MISK
 MISK FRAGRANCES
 </p>
 
-<h1>
-Our Collection
-</h1>
+<h1>Our Collection</h1>
 
 <div class="gold-line"></div>
 
@@ -145,113 +71,108 @@ Explore MISK
 </h2>
 
 <p class="section-intro">
-Discover our selection of rich, elegant and memorable
-fragrance oils. Choose your fragrance and select your
-preferred size.
+Discover some of our signature fragrance oils, from rich oud and
+smooth musk to floral and warm blends.
 </p>
 
 
 <div class="collection-grid">
 
 
-<div class="card collection-card">
-
 <a href="product.html?name=Royal%20Oud">
+
+<div class="card collection-card">
 
 <img
 src="imagesmisk-bottle.jpg.png"
-alt="Royal Oud MISK Fragrance">
+alt="Royal Oud MISK Fragrance"
+>
 
-<h3>
-Royal Oud
-</h3>
+<h3>Royal Oud</h3>
 
 <p>
 Rich woody oud with warm oriental notes for a bold and timeless fragrance.
 </p>
 
 <div class="collection-price">
-3ml £4 &nbsp; | &nbsp; 5ml £5
+3ml - £4 | 5ml - £5
+</div>
+
 </div>
 
 </a>
 
-</div>
-
-
-<div class="card collection-card">
 
 <a href="product.html?name=Imperial%20Musk">
 
+<div class="card collection-card">
+
 <img
 src="imagesmisk-bottle.jpg.png"
-alt="Imperial Musk MISK Fragrance">
+alt="Imperial Musk MISK Fragrance"
+>
 
-<h3>
-Imperial Musk
-</h3>
+<h3>Imperial Musk</h3>
 
 <p>
 A smooth white musk with clean, soft and long-lasting elegance.
 </p>
 
 <div class="collection-price">
-3ml £4 &nbsp; | &nbsp; 5ml £5
+3ml - £4 | 5ml - £5
+</div>
+
 </div>
 
 </a>
 
-</div>
-
-
-<div class="card collection-card">
 
 <a href="product.html?name=Signature%20Homme">
 
+<div class="card collection-card">
+
 <img
 src="imagesmisk-bottle.jpg.png"
-alt="Signature Homme MISK Fragrance">
+alt="Signature Homme MISK Fragrance"
+>
 
-<h3>
-Signature Homme
-</h3>
+<h3>Signature Homme</h3>
 
 <p>
 A refined masculine blend with fresh citrus, woods and amber.
 </p>
 
 <div class="collection-price">
-3ml £4 &nbsp; | &nbsp; 5ml £5
+3ml - £4 | 5ml - £5
+</div>
+
 </div>
 
 </a>
 
-</div>
-
-
-<div class="card collection-card">
 
 <a href="product.html?name=Rose%20Prestige">
 
+<div class="card collection-card">
+
 <img
 src="imagesmisk-bottle.jpg.png"
-alt="Rose Prestige MISK Fragrance">
+alt="Rose Prestige MISK Fragrance"
+>
 
-<h3>
-Rose Prestige
-</h3>
+<h3>Rose Prestige</h3>
 
 <p>
 A luxurious rose fragrance enriched with soft musk and warm amber.
 </p>
 
 <div class="collection-price">
-3ml £4 &nbsp; | &nbsp; 5ml £5
+3ml - £4 | 5ml - £5
+</div>
+
 </div>
 
 </a>
-
-</div>
 
 
 </div>
@@ -266,7 +187,7 @@ Find Your Fragrance
 </h2>
 
 <p>
-Choose your favourite MISK scent and select between 3ml and 5ml.
+Explore every MISK fragrance and discover your next signature scent.
 </p>
 
 <a href="shop.html" class="btn btn-primary">
@@ -314,9 +235,9 @@ onclick="window.scrollTo({top:0,behavior:'smooth'})">
 
 <script>
 
-function updateCartCount(){
+let cart = [];
 
-    let cart = [];
+function loadCart(){
 
     try{
 
@@ -331,6 +252,11 @@ function updateCartCount(){
 
     }
 
+}
+
+
+function updateCartCount(){
+
     const total =
         cart.reduce(
             (sum,item) =>
@@ -338,44 +264,45 @@ function updateCartCount(){
             0
         );
 
-    document.getElementById("cartCount")
-        .textContent = total;
+    document.getElementById("cartCount").textContent = total;
 
 }
 
+loadCart();
 updateCartCount();
 
-window.addEventListener(
-    "storage",
-    updateCartCount
-);
 
-document.addEventListener(
-    "visibilitychange",
-    function(){
+window.addEventListener("storage",function(){
 
-        if(!document.hidden){
-            updateCartCount();
-        }
+    loadCart();
+    updateCartCount();
+
+});
+
+
+document.addEventListener("visibilitychange",function(){
+
+    if(!document.hidden){
+
+        loadCart();
+        updateCartCount();
 
     }
-);
+
+});
 
 
 const backToTop =
     document.getElementById("backToTop");
 
-window.addEventListener(
-    "scroll",
-    function(){
+window.addEventListener("scroll",function(){
 
-        backToTop.classList.toggle(
-            "show",
-            window.scrollY > 400
-        );
+    backToTop.classList.toggle(
+        "show",
+        window.scrollY > 400
+    );
 
-    }
-);
+});
 
 </script>
 
