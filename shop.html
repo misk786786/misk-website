@@ -5,10 +5,10 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>MISK Fragrances | Our Collection</title>
+<title>Shop Everything - MISK Fragrances | Premium Fragrance Oils</title>
 
 <meta name="description"
-content="Explore the MISK Fragrances collection of premium fragrance oils.">
+content="Shop all MISK Fragrances premium fragrance oils, including oud, musk, floral, fruity and signature scents.">
 
 <link rel="stylesheet" href="style.css">
 
@@ -26,8 +26,8 @@ content="Explore the MISK Fragrances collection of premium fragrance oils.">
 
 <a href="index.html">Home</a>
 <a href="about.html">About</a>
-<a href="collection.html" class="active">Collection</a>
-<a href="shop.html">Shop</a>
+<a href="collection.html">Collection</a>
+<a href="shop.html" class="active">Shop</a>
 <a href="reviews.html">Reviews</a>
 <a href="contact.html">Contact</a>
 
@@ -48,15 +48,15 @@ content="Explore the MISK Fragrances collection of premium fragrance oils.">
 <div class="hero-content">
 
 <p class="hero-small">
-MISK FRAGRANCES
+THE COMPLETE MISK COLLECTION
 </p>
 
-<h1>Our Collection</h1>
+<h1>Shop Everything</h1>
 
 <div class="gold-line"></div>
 
 <p class="hero-tagline">
-Discover Your Signature Scent
+Find Your Signature Scent
 </p>
 
 </div>
@@ -67,115 +67,17 @@ Discover Your Signature Scent
 <section class="section">
 
 <h2 class="section-title">
-Explore MISK
+Shop All Fragrances
 </h2>
 
 <p class="section-intro">
-Discover some of our signature fragrance oils, from rich oud and
-smooth musk to floral and warm blends.
+Explore the complete MISK Fragrances collection,
+including rich oud, smooth musk, floral fragrances,
+fresh signature blends and our fruity scents.
 </p>
 
 
-<div class="collection-grid">
-
-
-<a href="product.html?name=Royal%20Oud">
-
-<div class="card collection-card">
-
-<img
-src="imagesmisk-bottle.jpg.png"
-alt="Royal Oud MISK Fragrance"
->
-
-<h3>Royal Oud</h3>
-
-<p>
-Rich woody oud with warm oriental notes for a bold and timeless fragrance.
-</p>
-
-<div class="collection-price">
-3ml - £4 | 5ml - £5
-</div>
-
-</div>
-
-</a>
-
-
-<a href="product.html?name=Imperial%20Musk">
-
-<div class="card collection-card">
-
-<img
-src="imagesmisk-bottle.jpg.png"
-alt="Imperial Musk MISK Fragrance"
->
-
-<h3>Imperial Musk</h3>
-
-<p>
-A smooth white musk with clean, soft and long-lasting elegance.
-</p>
-
-<div class="collection-price">
-3ml - £4 | 5ml - £5
-</div>
-
-</div>
-
-</a>
-
-
-<a href="product.html?name=Signature%20Homme">
-
-<div class="card collection-card">
-
-<img
-src="imagesmisk-bottle.jpg.png"
-alt="Signature Homme MISK Fragrance"
->
-
-<h3>Signature Homme</h3>
-
-<p>
-A refined masculine blend with fresh citrus, woods and amber.
-</p>
-
-<div class="collection-price">
-3ml - £4 | 5ml - £5
-</div>
-
-</div>
-
-</a>
-
-
-<a href="product.html?name=Rose%20Prestige">
-
-<div class="card collection-card">
-
-<img
-src="imagesmisk-bottle.jpg.png"
-alt="Rose Prestige MISK Fragrance"
->
-
-<h3>Rose Prestige</h3>
-
-<p>
-A luxurious rose fragrance enriched with soft musk and warm amber.
-</p>
-
-<div class="collection-price">
-3ml - £4 | 5ml - £5
-</div>
-
-</div>
-
-</a>
-
-
-</div>
+<div class="product-grid" id="productGrid"></div>
 
 </section>
 
@@ -183,15 +85,16 @@ A luxurious rose fragrance enriched with soft musk and warm amber.
 <section class="cta">
 
 <h2>
-Find Your Fragrance
+Your Next Signature Scent
 </h2>
 
 <p>
-Explore every MISK fragrance and discover your next signature scent.
+Find your favourite MISK fragrance, add it to your cart
+and make it part of your collection.
 </p>
 
-<a href="shop.html" class="btn btn-primary">
-Shop Everything
+<a href="cart.html" class="btn btn-primary">
+View Cart
 </a>
 
 </section>
@@ -235,7 +138,109 @@ onclick="window.scrollTo({top:0,behavior:'smooth'})">
 
 <script>
 
+const products = [
+
+{
+name:"Royal Oud",
+description:"Rich woody oud with warm oriental notes for a bold and timeless fragrance."
+},
+
+{
+name:"MISK Noir",
+description:"A luxurious dark blend of rich florals, woods and amber for elegant evenings."
+},
+
+{
+name:"Imperial Musk",
+description:"A smooth white musk with clean, soft and long-lasting elegance."
+},
+
+{
+name:"Signature Homme",
+description:"A refined masculine blend with fresh citrus, woods and amber."
+},
+
+{
+name:"Rose Prestige",
+description:"A luxurious rose fragrance enriched with soft musk and warm amber."
+},
+
+{
+name:"Legacy",
+description:"A modern, sophisticated fragrance combining fresh notes with smooth woods."
+},
+
+{
+name:"Obsidian",
+description:"A deep, smoky blend with dark woods and a mysterious oriental finish."
+},
+
+{
+name:"MISK Royale",
+description:"An elegant Middle Eastern-inspired fragrance featuring rich oud, musk and warm oriental notes."
+},
+
+{
+name:"Fruity Oud",
+description:"A vibrant fruity blend balanced with rich oud for a sweet and luxurious finish."
+}
+
+];
+
+
+const bottleImage =
+"imagesmisk-bottle.jpg.png";
+
+
+const productGrid =
+document.getElementById("productGrid");
+
+
+products.forEach(function(product){
+
+    const card =
+        document.createElement("a");
+
+    card.href =
+        "product.html?name=" +
+        encodeURIComponent(product.name);
+
+    card.className =
+        "product-card-link";
+
+    card.innerHTML = `
+
+        <div class="product-card">
+
+            <img
+                src="${bottleImage}"
+                alt="${product.name} MISK Fragrance"
+                class="product-image"
+            >
+
+            <h3>
+                ${product.name}
+            </h3>
+
+            <p>
+                ${product.description}
+            </p>
+
+            <div class="product-price-preview">
+                3ml - £4 &nbsp; | &nbsp; 5ml - £5
+            </div>
+
+        </div>
+
+    `;
+
+    productGrid.appendChild(card);
+
+});
+
+
 let cart = [];
+
 
 function loadCart(){
 
@@ -268,6 +273,7 @@ function updateCartCount(){
 
 }
 
+
 loadCart();
 updateCartCount();
 
@@ -294,6 +300,7 @@ document.addEventListener("visibilitychange",function(){
 
 const backToTop =
     document.getElementById("backToTop");
+
 
 window.addEventListener("scroll",function(){
 
