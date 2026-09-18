@@ -7,6 +7,9 @@
 
 <title>Checkout - MISK Fragrances</title>
 
+<meta name="description"
+content="Complete your MISK Fragrances order request.">
+
 <link rel="stylesheet" href="style.css">
 
 </head>
@@ -61,30 +64,27 @@ Complete Your Order
 </section>
 
 
-<div class="checkout-container">
+<section class="checkout-container">
 
-<div class="card order-box">
+<div class="order-box">
 
 <form id="checkoutForm">
 
+<h2>
+Delivery Details
+</h2>
 
-<div class="form-group">
 
-<label for="name">
+<label for="fullName">
 Full Name
 </label>
 
 <input
 type="text"
-id="name"
+id="fullName"
 required
-autocomplete="name"
-placeholder="Enter your name">
+>
 
-</div>
-
-
-<div class="form-group">
 
 <label for="email">
 Email Address
@@ -94,13 +94,8 @@ Email Address
 type="email"
 id="email"
 required
-autocomplete="email"
-placeholder="Enter your email">
+>
 
-</div>
-
-
-<div class="form-group">
 
 <label for="address">
 Delivery Address
@@ -108,14 +103,9 @@ Delivery Address
 
 <textarea
 id="address"
-required
-autocomplete="street-address"
-placeholder="Enter your delivery address"></textarea>
+required>
+</textarea>
 
-</div>
-
-
-<div class="form-group">
 
 <label for="postcode">
 Postcode
@@ -125,33 +115,28 @@ Postcode
 type="text"
 id="postcode"
 required
-autocomplete="postal-code"
-placeholder="Enter your postcode">
-
-</div>
+>
 
 
-<div class="form-group">
-
-<label for="note">
+<label for="orderNote">
 Order Note
-<span class="optional">(Optional)</span>
 </label>
 
 <textarea
-id="note"
-placeholder="Leave a note about your order..."></textarea>
+id="orderNote"
+placeholder="Optional">
+</textarea>
 
-<p class="note-help">
-Optional — leave a delivery request or any message you'd like us to see with your order.
+<p class="form-note">
+Optional — add any additional information about your order.
 </p>
-
-</div>
 
 
 <div class="order-summary">
 
-<h3>Your Order</h3>
+<h3>
+Your Order
+</h3>
 
 <div id="orderSummary"></div>
 
@@ -164,21 +149,23 @@ class="place-order">
 Send Order Request
 </button>
 
-</form>
 
-
-<a href="cart.html" class="back">
+<a href="cart.html" class="back-link">
 ← Back to Cart
 </a>
 
-</div>
+</form>
 
 </div>
+
+</section>
 
 
 <footer>
 
-<div class="footer-brand">MISK</div>
+<div class="footer-brand">
+MISK
+</div>
 
 <p class="footer-text">
 Premium fragrance oils crafted for a lasting impression.
@@ -202,7 +189,8 @@ Premium fragrance oils crafted for a lasting impression.
 </footer>
 
 
-<button id="backToTop"
+<button
+id="backToTop"
 aria-label="Back to top"
 onclick="window.scrollTo({top:0,behavior:'smooth'})">
 ↑
@@ -212,6 +200,7 @@ onclick="window.scrollTo({top:0,behavior:'smooth'})">
 <script>
 
 let cart = [];
+
 
 function loadCart(){
 
@@ -231,6 +220,18 @@ function loadCart(){
 }
 
 
+function escapeHTML(value){
+
+    return String(value)
+        .replace(/&/g,"&amp;")
+        .replace(/</g,"&lt;")
+        .replace(/>/g,"&gt;")
+        .replace(/"/g,"&quot;")
+        .replace(/'/g,"&#039;");
+
+}
+
+
 function updateCartCount(){
 
     const total =
@@ -246,19 +247,6 @@ function updateCartCount(){
 }
 
 
-function escapeHTML(text){
-
-    const div =
-        document.createElement("div");
-
-    div.textContent =
-        text ?? "";
-
-    return div.innerHTML;
-
-}
-
-
 function showOrder(){
 
     const summary =
@@ -269,15 +257,15 @@ function showOrder(){
 
         summary.innerHTML = `
 
-            <div class="empty-message">
+            <p>
+                Your cart is empty.
+            </p>
 
-                <strong>Your cart is empty.</strong>
-
-                <br><br>
-
-                Please add a fragrance before checking out.
-
-            </div>
+            <a
+                href="shop.html"
+                class="btn btn-secondary">
+                Browse Shop
+            </a>
 
         `;
 
@@ -286,20 +274,21 @@ function showOrder(){
     }
 
 
-    let html = "";
     let total = 0;
+
+    let html = "";
 
 
     cart.forEach(function(item){
 
-        const price =
-            Number(item.price) || 0;
-
         const quantity =
-            Number(item.quantity) || 0;
+            Number(item.quantity || 0);
+
+        const price =
+            Number(item.price || 0);
 
         const itemTotal =
-            price * quantity;
+            quantity * price;
 
         total += itemTotal;
 
@@ -307,9 +296,15 @@ function showOrder(){
         html += `
 
             <p>
+
                 ${escapeHTML(item.name)}
+                —
+                ${escapeHTML(item.size)}
                 × ${quantity}
-                — £${itemTotal.toFixed(2)}
+
+                —
+                £${itemTotal.toFixed(2)}
+
             </p>
 
         `;
@@ -319,15 +314,13 @@ function showOrder(){
 
     html += `
 
-        <hr>
-
-        <div class="order-total">
+        <p>
 
             <strong>
                 Total: £${total.toFixed(2)}
             </strong>
 
-        </div>
+        </p>
 
     `;
 
@@ -337,80 +330,98 @@ function showOrder(){
 }
 
 
+loadCart();
+
+updateCartCount();
+
+showOrder();
+
+
 document
 .getElementById("checkoutForm")
-.addEventListener(
-    "submit",
-    function(event){
+.addEventListener("submit",function(event){
 
-        event.preventDefault();
+    event.preventDefault();
 
 
-        if(cart.length === 0){
+    if(cart.length === 0){
 
-            alert(
-                "Your cart is empty. Please add a fragrance before checking out."
-            );
+        alert(
+            "Your cart is empty. Please add a fragrance before checking out."
+        );
 
-            return;
+        return;
 
-        }
-
-
-        const name =
-            document.getElementById("name").value.trim();
-
-        const email =
-            document.getElementById("email").value.trim();
-
-        const address =
-            document.getElementById("address").value.trim();
-
-        const postcode =
-            document.getElementById("postcode").value.trim();
-
-        const note =
-            document.getElementById("note").value.trim();
+    }
 
 
-        let orderText = "";
-        let total = 0;
+    const fullName =
+        document.getElementById("fullName")
+        .value.trim();
 
 
-        cart.forEach(function(item){
-
-            const price =
-                Number(item.price) || 0;
-
-            const quantity =
-                Number(item.quantity) || 0;
-
-            const itemTotal =
-                price * quantity;
-
-            total += itemTotal;
-
-            orderText +=
-                `${item.name} x ${quantity} - £${itemTotal.toFixed(2)}\n`;
-
-        });
+    const email =
+        document.getElementById("email")
+        .value.trim();
 
 
-        const subject =
-            encodeURIComponent(
-                "MISK Fragrances - New Order"
-            );
+    const address =
+        document.getElementById("address")
+        .value.trim();
 
 
-        const body =
-            encodeURIComponent(
+    const postcode =
+        document.getElementById("postcode")
+        .value.trim();
 
-`NEW MISK FRAGRANCES ORDER
+
+    const note =
+        document.getElementById("orderNote")
+        .value.trim();
+
+
+    let orderText = "";
+
+
+    let total = 0;
+
+
+    cart.forEach(function(item){
+
+        const quantity =
+            Number(item.quantity || 0);
+
+        const price =
+            Number(item.price || 0);
+
+        const itemTotal =
+            quantity * price;
+
+        total += itemTotal;
+
+
+        orderText +=
+`${item.name} - ${item.size} x ${quantity} - £${itemTotal.toFixed(2)}
+`;
+
+    });
+
+
+    const subject =
+        encodeURIComponent(
+            "MISK Fragrances - New Order"
+        );
+
+
+    const body =
+        encodeURIComponent(
+
+`MISK FRAGRANCES ORDER
 
 Customer Name:
-${name}
+${fullName}
 
-Customer Email:
+Email:
 ${email}
 
 Delivery Address:
@@ -419,79 +430,65 @@ ${address}
 Postcode:
 ${postcode}
 
-ORDER:
+Order:
 
 ${orderText}
-
-TOTAL:
+Total:
 £${total.toFixed(2)}
 
-ORDER NOTE:
-${note || "No note provided"}
-
-Please contact the customer to arrange payment and delivery.`
-
-            );
+Order Note:
+${note || "None"}`
+        );
 
 
-        window.location.href =
-            `mailto:miskfragrances.uk@gmail.com?subject=${subject}&body=${body}`;
+    window.location.href =
+        "mailto:miskfragrances.uk@gmail.com" +
+        "?subject=" +
+        subject +
+        "&body=" +
+        body;
 
-    }
-);
-
-
-window.addEventListener(
-    "storage",
-    function(event){
-
-        if(event.key === "miskCart"){
-
-            loadCart();
-            updateCartCount();
-            showOrder();
-
-        }
-
-    }
-);
+});
 
 
-document.addEventListener(
-    "visibilitychange",
-    function(){
+window.addEventListener("storage",function(){
 
-        if(!document.hidden){
+    loadCart();
 
-            loadCart();
-            updateCartCount();
-            showOrder();
+    updateCartCount();
 
-        }
+    showOrder();
+
+});
+
+
+document.addEventListener("visibilitychange",function(){
+
+    if(!document.hidden){
+
+        loadCart();
+
+        updateCartCount();
+
+        showOrder();
 
     }
-);
+
+});
 
 
 const backToTop =
-document.getElementById("backToTop");
-
-window.addEventListener(
-    "scroll",
-    function(){
-
-        backToTop.classList.toggle(
-            "show",
-            window.scrollY > 400
-        );
-
-    }
-);
+    document.getElementById("backToTop");
 
 
-loadCart();
-updateCartCount();
-showOrder();
+window.addEventListener("scroll",function(){
+
+    backToTop.classList.toggle(
+        "show",
+        window.scrollY > 400
+    );
+
+});
 
 </script>
 
