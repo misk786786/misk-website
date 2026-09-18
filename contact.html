@@ -8,7 +8,7 @@
 <title>Contact - MISK Fragrances | Get in Touch</title>
 
 <meta name="description"
-content="Contact MISK Fragrances - Have questions about our fragrances? We'd love to hear from you.">
+content="Contact MISK Fragrances for questions, fragrance information and enquiries.">
 
 <link rel="stylesheet" href="style.css">
 
@@ -56,7 +56,7 @@ GET IN TOUCH
 <div class="gold-line"></div>
 
 <p class="hero-tagline">
-We'd Love To Hear From You
+We’d Love To Hear From You
 </p>
 
 </div>
@@ -66,42 +66,43 @@ We'd Love To Hear From You
 
 <section class="section">
 
+<h2 class="section-title">
+Get In Touch
+</h2>
+
 <p class="section-intro">
-Have a question about our fragrances or an upcoming launch?
-We'd love to hear from you!
+Have a question about MISK, our fragrances or your order?
+Feel free to contact us.
 </p>
 
 
 <div class="card contact-box">
 
-<div class="contact-item">
+<h2>
+Contact MISK
+</h2>
 
-<div class="contact-label">
+
+<p class="contact-label">
 Email
-</div>
+</p>
 
-<div class="contact-value">
+<p class="contact-value">
 
 <a href="mailto:miskfragrances.uk@gmail.com">
 miskfragrances.uk@gmail.com
 </a>
 
-</div>
-
-</div>
+</p>
 
 
-<div class="contact-item">
-
-<div class="contact-label">
+<p class="contact-label">
 Response Time
-</div>
+</p>
 
-<div class="contact-value">
+<p class="contact-value">
 We aim to respond to all inquiries within 24–48 hours.
-</div>
-
-</div>
+</p>
 
 </div>
 
@@ -110,7 +111,9 @@ We aim to respond to all inquiries within 24–48 hours.
 
 <footer>
 
-<div class="footer-brand">MISK</div>
+<div class="footer-brand">
+MISK
+</div>
 
 <p class="footer-text">
 Premium fragrance oils crafted for a lasting impression.
@@ -134,7 +137,8 @@ Premium fragrance oils crafted for a lasting impression.
 </footer>
 
 
-<button id="backToTop"
+<button
+id="backToTop"
 aria-label="Back to top"
 onclick="window.scrollTo({top:0,behavior:'smooth'})">
 ↑
@@ -143,16 +147,27 @@ onclick="window.scrollTo({top:0,behavior:'smooth'})">
 
 <script>
 
-function updateCartCount(){
+let cart = [];
 
-    let cart = [];
+function loadCart(){
 
     try{
+
         cart =
-            JSON.parse(localStorage.getItem("miskCart")) || [];
+            JSON.parse(
+                localStorage.getItem("miskCart")
+            ) || [];
+
     }catch(error){
+
         cart = [];
+
     }
+
+}
+
+
+function updateCartCount(){
 
     const total =
         cart.reduce(
@@ -163,22 +178,37 @@ function updateCartCount(){
 
     document.getElementById("cartCount").textContent =
         total;
+
 }
 
+
+loadCart();
 updateCartCount();
 
-window.addEventListener("storage",updateCartCount);
+
+window.addEventListener("storage",function(){
+
+    loadCart();
+    updateCartCount();
+
+});
+
 
 document.addEventListener("visibilitychange",function(){
 
     if(!document.hidden){
+
+        loadCart();
         updateCartCount();
+
     }
 
 });
 
+
 const backToTop =
-document.getElementById("backToTop");
+    document.getElementById("backToTop");
+
 
 window.addEventListener("scroll",function(){
 
