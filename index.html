@@ -13,6 +13,181 @@ content="Discover MISK Fragrances premium fragrance oils, crafted for a lasting 
 
 <link rel="stylesheet" href="style.css">
 
+<style>
+
+.misk-hero{
+    position:relative;
+    min-height:650px;
+    display:flex;
+    align-items:center;
+    overflow:hidden;
+    background:#050505;
+}
+
+.hero-overlay{
+    position:absolute;
+    inset:0;
+    background:
+        radial-gradient(
+            circle at 75% 50%,
+            rgba(212,175,55,0.12),
+            transparent 35%
+        );
+    pointer-events:none;
+}
+
+.hero-main-content{
+    position:relative;
+    z-index:2;
+    width:50%;
+    max-width:650px;
+    padding:50px;
+    text-align:left;
+}
+
+.hero-main-content .gold-line{
+    margin-left:0;
+}
+
+.hero-description{
+    margin-left:0;
+    margin-right:0;
+}
+
+.hero-buttons{
+    justify-content:flex-start;
+}
+
+
+/* =========================
+   BOTTLE SLIDESHOW
+========================= */
+
+.hero-bottle-slider{
+    position:relative;
+    z-index:2;
+    width:50%;
+    min-height:520px;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+}
+
+.bottle-slides{
+    position:relative;
+    width:100%;
+    height:450px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+}
+
+.bottle-slide{
+    position:absolute;
+    max-width:90%;
+    width:auto;
+    height:420px;
+    object-fit:contain;
+    opacity:0;
+    transform:scale(.95);
+    transition:
+        opacity .5s ease,
+        transform .5s ease;
+    pointer-events:none;
+}
+
+.bottle-slide.active{
+    opacity:1;
+    transform:scale(1);
+}
+
+
+/* =========================
+   SLIDER DOTS
+========================= */
+
+.slider-dots{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    gap:12px;
+    margin-top:15px;
+}
+
+.slider-dot{
+    width:12px;
+    height:12px;
+    padding:0;
+    border:1px solid var(--gold);
+    border-radius:50%;
+    background:transparent;
+    cursor:pointer;
+    transition:.3s;
+}
+
+.slider-dot:hover{
+    background:var(--gold-dark);
+}
+
+.slider-dot.active{
+    background:var(--gold);
+    transform:scale(1.15);
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media(max-width:768px){
+
+    .misk-hero{
+        min-height:auto;
+        padding:50px 20px 60px;
+        flex-direction:column;
+    }
+
+    .hero-main-content{
+        width:100%;
+        max-width:700px;
+        padding:30px 10px;
+        text-align:center;
+        order:1;
+    }
+
+    .hero-main-content .gold-line{
+        margin:20px auto;
+    }
+
+    .hero-description{
+        margin-left:auto;
+        margin-right:auto;
+    }
+
+    .hero-buttons{
+        justify-content:center;
+    }
+
+    .hero-bottle-slider{
+        width:100%;
+        min-height:400px;
+        order:2;
+    }
+
+    .bottle-slides{
+        height:350px;
+    }
+
+    .bottle-slide{
+        height:330px;
+        max-width:85%;
+    }
+
+}
+
+</style>
+
 </head>
 
 <body>
@@ -54,6 +229,8 @@ MISK
 
 <div class="hero-overlay"></div>
 
+<!-- LEFT SIDE: WRITING -->
+
 <div class="hero-main-content">
 
 <p class="hero-main-small">
@@ -86,6 +263,55 @@ Shop MISK
 <a href="reviews.html" class="btn btn-secondary">
 Read Reviews
 </a>
+
+</div>
+
+</div>
+
+<!-- RIGHT SIDE: BOTTLE SLIDESHOW -->
+
+<div class="hero-bottle-slider">
+
+<div class="bottle-slides">
+
+<img
+class="bottle-slide active"
+src="imagesmisk-bottle.jpg.png"
+alt="MISK Fragrance bottle">
+
+<img
+class="bottle-slide"
+src="bottle1.jpg.jpeg"
+alt="MISK Fragrance bottle">
+
+<img
+class="bottle-slide"
+src="bottle2.jpg.jpeg"
+alt="MISK Fragrance bottle">
+
+</div>
+
+<!-- SLIDER DOTS -->
+
+<div class="slider-dots">
+
+<button
+class="slider-dot active"
+type="button"
+aria-label="Show image 1"
+onclick="showSlide(0)"> </button>
+
+<button
+class="slider-dot"
+type="button"
+aria-label="Show image 2"
+onclick="showSlide(1)"> </button>
+
+<button
+class="slider-dot"
+type="button"
+aria-label="Show image 3"
+onclick="showSlide(2)"> </button>
 
 </div>
 
@@ -221,6 +447,10 @@ onclick="window.scrollTo({top:0,behavior:'smooth'})">
 
 <script>
 
+/* =========================
+   CART COUNT
+========================= */
+
 function updateCartCount(){
 
     let cart = [];
@@ -268,6 +498,97 @@ document.addEventListener(
     }
 );
 
+
+/* =========================
+   BOTTLE SLIDESHOW
+========================= */
+
+const bottleSlides =
+    document.querySelectorAll(".bottle-slide");
+
+const sliderDots =
+    document.querySelectorAll(".slider-dot");
+
+let currentSlide = 0;
+
+let slideTimer;
+
+
+function showSlide(index){
+
+    bottleSlides.forEach(
+        function(slide){
+            slide.classList.remove("active");
+        }
+    );
+
+    sliderDots.forEach(
+        function(dot){
+            dot.classList.remove("active");
+        }
+    );
+
+    bottleSlides[index]
+        .classList.add("active");
+
+    sliderDots[index]
+        .classList.add("active");
+
+    currentSlide = index;
+
+    restartSlider();
+
+}
+
+
+function nextSlide(){
+
+    currentSlide++;
+
+    if(currentSlide >= bottleSlides.length){
+        currentSlide = 0;
+    }
+
+    bottleSlides.forEach(
+        function(slide){
+            slide.classList.remove("active");
+        }
+    );
+
+    sliderDots.forEach(
+        function(dot){
+            dot.classList.remove("active");
+        }
+    );
+
+    bottleSlides[currentSlide]
+        .classList.add("active");
+
+    sliderDots[currentSlide]
+        .classList.add("active");
+
+}
+
+
+function restartSlider(){
+
+    clearInterval(slideTimer);
+
+    slideTimer =
+        setInterval(
+            nextSlide,
+            5000
+        );
+
+}
+
+
+restartSlider();
+
+
+/* =========================
+   BACK TO TOP
+========================= */
 
 const backToTop =
     document.getElementById("backToTop");
