@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-
 <html lang="en">
 <head>
 
@@ -8,501 +7,55 @@
 
 <title>Reviews - MISK Fragrances | Customer Reviews</title>
 
-<meta name="description" content="Read customer reviews for MISK Fragrances and share your own fragrance experience.">
+<meta name="description"
+content="Read customer reviews for MISK Fragrances and share your own fragrance experience.">
 
-<style>
-
-:root{
-    --gold:#d4af37;
-    --gold-dark:#b8860b;
-    --silver:#c0c0c0;
-    --silver-light:#e5e5e5;
-    --bg:#0a0a0a;
-    --card:#111;
-}
-
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-}
-
-html{
-    scroll-behavior:smooth;
-}
-
-body{
-    font-family:Arial, Helvetica, sans-serif;
-    background:var(--bg);
-    color:#fff;
-    line-height:1.6;
-}
-
-/* HEADER */
-
-header{
-    position:sticky;
-    top:0;
-    z-index:1000;
-    background:#050505;
-    border-bottom:1px solid var(--gold);
-    padding:15px 6%;
-}
-
-.navbar{
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-    gap:30px;
-}
-
-.logo{
-    font-family:Georgia, serif;
-    font-size:32px;
-    font-weight:bold;
-    letter-spacing:5px;
-    color:var(--gold);
-}
-
-nav{
-    display:flex;
-    flex-wrap:wrap;
-    justify-content:center;
-    gap:20px;
-}
-
-nav a{
-    color:#fff;
-    text-decoration:none;
-    font-size:15px;
-    transition:.3s;
-}
-
-nav a:hover,
-nav a.active{
-    color:var(--gold);
-}
-
-.cart-link{
-    position:relative;
-}
-
-.cart-count{
-    display:inline-flex;
-    justify-content:center;
-    align-items:center;
-    min-width:18px;
-    height:18px;
-    padding:0 5px;
-    margin-left:4px;
-    background:var(--gold);
-    color:#000;
-    border-radius:50px;
-    font-size:11px;
-    font-weight:bold;
-}
-
-/* HERO */
-
-.hero{
-    min-height:45vh;
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    text-align:center;
-    padding:80px 20px;
-    background:
-        radial-gradient(circle at center, rgba(212,175,55,.16), transparent 55%),
-        linear-gradient(rgba(0,0,0,.78),rgba(0,0,0,.95));
-}
-
-.hero-content{
-    max-width:850px;
-}
-
-.hero h1{
-    color:var(--gold);
-    font-family:Georgia, serif;
-    font-size:18px;
-    letter-spacing:6px;
-    margin-bottom:15px;
-}
-
-.hero h2{
-    font-family:Georgia, serif;
-    font-size:52px;
-    margin-bottom:20px;
-}
-
-.hero p{
-    color:var(--silver-light);
-    font-size:18px;
-}
-
-/* REVIEWS SECTION */
-
-.reviews-section{
-    padding:80px 6%;
-    max-width:1200px;
-    margin:auto;
-}
-
-.section-title{
-    text-align:center;
-    margin-bottom:50px;
-}
-
-.section-title h2{
-    font-family:Georgia, serif;
-    font-size:38px;
-    color:var(--gold);
-    margin-bottom:10px;
-}
-
-.section-title p{
-    color:#bbb;
-}
-
-/* REVIEW CARDS */
-
-.reviews-grid{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
-    gap:25px;
-}
-
-.review-card{
-    background:var(--card);
-    border:1px solid #2a2a2a;
-    border-radius:12px;
-    padding:25px;
-    transition:.3s;
-}
-
-.review-card:hover{
-    transform:translateY(-5px);
-    border-color:var(--gold);
-    box-shadow:0 10px 30px rgba(212,175,55,.08);
-}
-
-.review-header{
-    display:flex;
-    justify-content:space-between;
-    align-items:flex-start;
-    gap:15px;
-    margin-bottom:15px;
-}
-
-.reviewer-name{
-    font-size:19px;
-    font-weight:bold;
-    color:#fff;
-}
-
-.product-name{
-    color:var(--gold);
-    font-size:14px;
-    margin-top:3px;
-}
-
-.stars{
-    color:var(--gold);
-    white-space:nowrap;
-    letter-spacing:2px;
-}
-
-.review-text{
-    color:#ddd;
-    font-size:15px;
-    margin-bottom:18px;
-}
-
-.verified{
-    display:inline-block;
-    padding:5px 10px;
-    border:1px solid var(--gold);
-    border-radius:20px;
-    color:var(--gold);
-    font-size:11px;
-    font-weight:bold;
-    letter-spacing:.5px;
-}
-
-/* REVIEW FORM */
-
-.review-form-section{
-    margin-top:90px;
-    background:#0d0d0d;
-    border:1px solid #252525;
-    border-radius:15px;
-    padding:40px;
-}
-
-.review-form-section h2{
-    text-align:center;
-    font-family:Georgia, serif;
-    color:var(--gold);
-    font-size:32px;
-    margin-bottom:10px;
-}
-
-.review-form-section > p{
-    text-align:center;
-    color:#aaa;
-    margin-bottom:35px;
-}
-
-.review-form{
-    max-width:750px;
-    margin:auto;
-}
-
-.form-group{
-    margin-bottom:20px;
-}
-
-.form-group label{
-    display:block;
-    margin-bottom:8px;
-    color:#ddd;
-    font-weight:bold;
-}
-
-.form-group input,
-.form-group select,
-.form-group textarea{
-    width:100%;
-    padding:14px;
-    background:#080808;
-    border:1px solid #333;
-    border-radius:7px;
-    color:#fff;
-    font-size:15px;
-    outline:none;
-}
-
-.form-group input:focus,
-.form-group select:focus,
-.form-group textarea:focus{
-    border-color:var(--gold);
-}
-
-.form-group textarea{
-    min-height:150px;
-    resize:vertical;
-}
-
-.submit-btn{
-    display:block;
-    width:100%;
-    padding:15px;
-    border:none;
-    border-radius:7px;
-    background:var(--gold);
-    color:#000;
-    font-size:16px;
-    font-weight:bold;
-    cursor:pointer;
-    transition:.3s;
-}
-
-.submit-btn:hover{
-    background:#e5c451;
-    transform:translateY(-2px);
-}
-
-.form-note{
-    text-align:center;
-    color:#777;
-    font-size:13px;
-    margin-top:15px;
-}
-
-/* CTA */
-
-.cta{
-    text-align:center;
-    padding:80px 20px;
-    background:
-        radial-gradient(circle at center, rgba(212,175,55,.12), transparent 60%);
-}
-
-.cta h2{
-    font-family:Georgia, serif;
-    font-size:38px;
-    color:var(--gold);
-    margin-bottom:15px;
-}
-
-.cta p{
-    color:#ccc;
-    margin-bottom:25px;
-}
-
-.cta-btn{
-    display:inline-block;
-    padding:13px 28px;
-    background:var(--gold);
-    color:#000;
-    text-decoration:none;
-    border-radius:7px;
-    font-weight:bold;
-    transition:.3s;
-}
-
-.cta-btn:hover{
-    background:#e5c451;
-    transform:translateY(-2px);
-}
-
-/* FOOTER */
-
-footer{
-    border-top:1px solid #222;
-    background:#050505;
-    text-align:center;
-    padding:40px 20px;
-    color:#888;
-}
-
-.footer-logo{
-    font-family:Georgia, serif;
-    font-size:25px;
-    color:var(--gold);
-    letter-spacing:4px;
-    margin-bottom:8px;
-}
-
-.footer-links{
-    margin:20px 0;
-}
-
-.footer-links a{
-    color:#aaa;
-    text-decoration:none;
-    margin:0 10px;
-    font-size:14px;
-}
-
-.footer-links a:hover{
-    color:var(--gold);
-}
-
-footer small{
-    color:#666;
-}
-
-/* BACK TO TOP */
-
-#backToTop{
-    position:fixed;
-    right:20px;
-    bottom:20px;
-    width:45px;
-    height:45px;
-    border:none;
-    border-radius:50%;
-    background:var(--gold);
-    color:#000;
-    font-size:20px;
-    font-weight:bold;
-    cursor:pointer;
-    display:none;
-    z-index:999;
-}
-
-/* MOBILE */
-
-@media(max-width:768px){
-
-    .navbar{
-        flex-direction:column;
-        gap:15px;
-    }
-
-    nav{
-        gap:12px;
-    }
-
-    nav a{
-        font-size:13px;
-    }
-
-    .hero h2{
-        font-size:38px;
-    }
-
-    .hero p{
-        font-size:16px;
-    }
-
-    .reviews-section{
-        padding:60px 5%;
-    }
-
-    .review-form-section{
-        padding:25px;
-    }
-
-    .section-title h2,
-    .cta h2{
-        font-size:30px;
-    }
-
-}
-
-</style>
+<link rel="stylesheet" href="style.css">
 
 </head>
 
 <body>
 
-<!-- HEADER -->
-
 <header>
 
-<div class="navbar">
+<nav class="navbar">
 
-<div class="logo">
-MISK
-</div>
+<a href="index.html" class="logo">MISK</a>
 
-<nav>
+<div class="nav-links">
 
 <a href="index.html">Home</a>
-
 <a href="about.html">About</a>
-
 <a href="collection.html">Collection</a>
-
 <a href="shop.html">Shop</a>
-
 <a href="reviews.html" class="active">Reviews</a>
-
 <a href="contact.html">Contact</a>
 
 <a href="cart.html" class="cart-link">
 🛒 Cart
-<span id="cartCount" class="cart-count">0</span>
+<span class="cart-count" id="cartCount">0</span>
 </a>
-
-</nav>
 
 </div>
 
+</nav>
+
 </header>
 
-<!-- HERO -->
 
-<section class="hero">
+<section class="page-hero">
 
 <div class="hero-content">
 
-<h1>MISK FRAGRANCES</h1>
+<p class="hero-small">
+MISK FRAGRANCES
+</p>
 
-<h2>Customer Reviews</h2>
+<h1>Customer Reviews</h1>
 
-<p>
+<div class="gold-line"></div>
+
+<p class="hero-tagline">
 Real thoughts from people who have experienced MISK.
 </p>
 
@@ -510,47 +63,36 @@ Real thoughts from people who have experienced MISK.
 
 </section>
 
-<!-- REVIEWS -->
 
-<section class="reviews-section">
+<section class="section">
 
-<div class="section-title">
+<h2 class="section-title">
+What Our Customers Say
+</h2>
 
-<h2>What Our Customers Say</h2>
-
-<p>
-Discover what fragrance lovers think about MISK.
+<p class="section-intro">
+See what fragrance lovers have to say about their MISK experience.
 </p>
 
-</div>
+</section>
 
-<div class="reviews-grid">
 
-<!-- HAMZA -->
+<section class="review-grid">
+
 
 <div class="review-card">
 
-<div class="review-header">
+<h3>Hamza</h3>
 
-<div>
-
-<div class="reviewer-name">
-Hamza
-</div>
-
-<div class="product-name">
+<div class="review-fragrance">
 Imperial Musk
 </div>
 
-</div>
-
-<div class="stars">
+<div class="review-stars">
 ★★★★★
 </div>
 
-</div>
-
-<p class="review-text">
+<p>
 Fantastic fragrance, long lasting and smells great.
 Would recommend.
 </p>
@@ -561,34 +103,24 @@ VERIFIED
 
 </div>
 
-<!-- UMAR GHANI -->
 
 <div class="review-card">
 
-<div class="review-header">
+<h3>Umar Ghani</h3>
 
-<div>
-
-<div class="reviewer-name">
-Umar Ghani
-</div>
-
-<div class="product-name">
+<div class="review-fragrance">
 Fruity Oud
 </div>
 
-</div>
-
-<div class="stars">
+<div class="review-stars">
 ★★★★★
 </div>
 
-</div>
-
-<p class="review-text">
+<p>
 The creators' understanding of a person's sense of smell is unmatched.
 I urge all perfume lovers to try any of his fragrances.
-They're all amazing. He has a bright future, and I look forward to his future releases.
+They're all amazing. He has a bright future, and I look forward
+to his future releases.
 </p>
 
 <span class="verified">
@@ -597,31 +129,20 @@ VERIFIED
 
 </div>
 
-<!-- MUHAMMAD.K -->
 
 <div class="review-card">
 
-<div class="review-header">
+<h3>Muhammad.k</h3>
 
-<div>
-
-<div class="reviewer-name">
-Muhammad.k
-</div>
-
-<div class="product-name">
+<div class="review-fragrance">
 Imperial Musk
 </div>
 
-</div>
-
-<div class="stars">
+<div class="review-stars">
 ★★★★★
 </div>
 
-</div>
-
-<p class="review-text">
+<p>
 Smells so good, the whole family liked it.
 </p>
 
@@ -631,31 +152,20 @@ VERIFIED PURCHASE
 
 </div>
 
-<!-- ZAYD JAMAL ROSE -->
 
 <div class="review-card">
 
-<div class="review-header">
+<h3>ZAYD Jamal</h3>
 
-<div>
-
-<div class="reviewer-name">
-ZAYD Jamal
-</div>
-
-<div class="product-name">
+<div class="review-fragrance">
 Rose Prestige
 </div>
 
-</div>
-
-<div class="stars">
+<div class="review-stars">
 ★★★★★
 </div>
 
-</div>
-
-<p class="review-text">
+<p>
 It's very good. This itr and all of them smell nice.
 I would recommend it.
 </p>
@@ -666,31 +176,20 @@ VERIFIED
 
 </div>
 
-<!-- ZAYD JAMAL SIGNATURE -->
 
 <div class="review-card">
 
-<div class="review-header">
+<h3>ZAYD Jamal</h3>
 
-<div>
-
-<div class="reviewer-name">
-ZAYD Jamal
-</div>
-
-<div class="product-name">
+<div class="review-fragrance">
 Signature Homme
 </div>
 
-</div>
-
-<div class="stars">
+<div class="review-stars">
 ★★★★★
 </div>
 
-</div>
-
-<p class="review-text">
+<p>
 It's very good. This itr and all of them smell nice.
 I would recommend it.
 </p>
@@ -701,137 +200,88 @@ VERIFIED
 
 </div>
 
-<!-- EESAA CHOPPY -->
 
 <div class="review-card">
 
-<div class="review-header">
+<h3>Eesaa Choppy</h3>
 
-<div>
-
-<div class="reviewer-name">
-Eesaa Choppy
-</div>
-
-<div class="product-name">
+<div class="review-fragrance">
 Imperial Musk
 </div>
 
-</div>
-
-<div class="stars">
+<div class="review-stars">
 ★★★★★
 </div>
 
-</div>
-
-<p class="review-text">
+<p>
 Rich and unique fragrance which always brings attention 🥰
 would definitely recommend!
 </p>
 
 </div>
 
-<!-- HUZAIFAH -->
 
 <div class="review-card">
 
-<div class="review-header">
+<h3>Huzaifah</h3>
 
-<div>
-
-<div class="reviewer-name">
-Huzaifah
-</div>
-
-<div class="product-name">
+<div class="review-fragrance">
 Royal Oud
 </div>
 
-</div>
-
-<div class="stars">
+<div class="review-stars">
 ★★★★★
 </div>
 
-</div>
-
-<p class="review-text">
+<p>
 Absolutely beautiful oud with such a rich, luxurious scent.
-It smells amazing and has a lovely long-lasting fragrance that really stands out.
-Definitely recommend!
+It smells amazing and has a lovely long-lasting fragrance
+that really stands out. Definitely recommend!
 </p>
 
 </div>
 
-<!-- ISMAIL LUNY -->
 
 <div class="review-card">
 
-<div class="review-header">
+<h3>Ismail Luny</h3>
 
-<div>
-
-<div class="reviewer-name">
-Ismail Luny
-</div>
-
-<div class="product-name">
+<div class="review-fragrance">
 Rose Prestige
 </div>
 
-</div>
-
-<div class="stars">
+<div class="review-stars">
 ★★★★★
 </div>
 
-</div>
-
-<p class="review-text">
-VERY NICE. VERY VERY NICE. 😭🔥<br><br>
-
-Rose Prestige Oil? ABSOLUTELY ELITE.
-TOP TIER. S-TIER OIL. 💯💯<br><br>
-
-I applied it. I saw the oil.
-The oil saw me. My life changed.<br><br>
-
-10/10. 100/100. 1000/1000.
-WOULD RECOMMEND. WOULD BUY AGAIN.
-WOULD FRAME THE BOTTLE. 🗿🙏<br><br>
-
+<p>
+VERY NICE. VERY VERY NICE. 😭🔥<br>
+Rose Prestige Oil? ABSOLUTELY ELITE.<br>
+TOP TIER. S-TIER OIL. 💯💯<br>
+I applied it. I saw the oil.<br>
+The oil saw me. My life changed.<br>
+10/10. 100/100. 1000/1000.<br>
+WOULD RECOMMEND. WOULD BUY AGAIN.<br>
+WOULD FRAME THE BOTTLE. 🗿🙏<br>
 Quality? YES.
-
 </p>
 
 </div>
 
-<!-- ABRAR BERA -->
 
 <div class="review-card">
 
-<div class="review-header">
+<h3>Abrar Bera</h3>
 
-<div>
-
-<div class="reviewer-name">
-Abrar Bera
-</div>
-
-<div class="product-name">
+<div class="review-fragrance">
 Fruity Oud
 </div>
 
-</div>
-
-<div class="stars">
+<div class="review-stars">
 ★★★★★
 </div>
 
-</div>
-
-<p class="review-text">
+<p>
 MashAllah, really good oud. Smells very tropical.
 Not even other itr and perfume brands can beat this.
 Just lower the price a little.
@@ -843,31 +293,20 @@ VERIFIED PURCHASE
 
 </div>
 
-<!-- ASLAM -->
 
 <div class="review-card">
 
-<div class="review-header">
+<h3>Aslam</h3>
 
-<div>
-
-<div class="reviewer-name">
-Aslam
-</div>
-
-<div class="product-name">
+<div class="review-fragrance">
 Royal Oud
 </div>
 
-</div>
-
-<div class="stars">
+<div class="review-stars">
 ★★★★★
 </div>
 
-</div>
-
-<p class="review-text">
+<p>
 Very pleased with the perfumes I purchased.
 The scents are rich without being too overwhelming.
 Definitely recommend buying from MISK.
@@ -879,160 +318,108 @@ VERIFIED PURCHASE
 
 </div>
 
-<!-- MATCHA -->
 
 <div class="review-card">
 
-<div class="review-header">
+<h3>Matcha</h3>
 
-<div>
-
-<div class="reviewer-name">
-Matcha
-</div>
-
-<div class="product-name">
+<div class="review-fragrance">
 Rose Prestige
 </div>
 
-</div>
-
-<div class="stars">
+<div class="review-stars">
 ★★★★★
 </div>
 
-</div>
-
-<p class="review-text">
-ONE OF THE BEST PERFUMES I'VE EVER USED IN MY LIFE!!!<br><br>
-
-I got it for my friend's birthday and she LOVED IT!!<br><br>
-
-Defo would recommend to other ppl.
-
-</p>
-
-</div>
-
-</div>
-
-<!-- REVIEW FORM -->
-
-<div class="review-form-section">
-
-<h2>Leave a Review</h2>
-
 <p>
-Tried MISK? Share your experience with us.
+ONE OF THE BEST PERFUMES I'VE EVER USED IN MY LIFE!!!
+I got it for my friend's birthday and she LOVED IT!!
+Defo would recommend to other ppl.
 </p>
 
-<form class="review-form" onsubmit="submitReview(event)">
+</div>
 
-<div class="form-group">
 
-<label for="name">
+</section>
+
+
+<section class="section">
+
+<div class="review-form">
+
+<h2>
+Leave a Review
+</h2>
+
+<form onsubmit="submitReview(event)">
+
+<label for="reviewName">
 Your Name
 </label>
 
 <input
 type="text"
-id="name"
-name="name"
-placeholder="Enter your name"
+id="reviewName"
 required
-
 >
 
-</div>
 
-<div class="form-group">
-
-<label for="fragrance">
+<label for="reviewFragrance">
 Fragrance
 </label>
 
-<select id="fragrance" name="fragrance" required>
+<select id="reviewFragrance" required>
 
 <option value="">
 Select a fragrance
 </option>
 
 <option>Royal Oud</option>
-
 <option>MISK Noir</option>
-
 <option>Imperial Musk</option>
-
 <option>Signature Homme</option>
-
 <option>Rose Prestige</option>
-
 <option>Legacy</option>
-
 <option>Obsidian</option>
-
 <option>MISK Royale</option>
-
 <option>Fruity Oud</option>
-
 <option>Fruity Femme</option>
 
 </select>
 
-</div>
 
-<div class="form-group">
-
-<label for="rating">
+<label for="reviewRating">
 Rating
 </label>
 
-<select id="rating" name="rating" required>
+<select id="reviewRating" required>
 
 <option value="">
-Select your rating
+Select rating
 </option>
 
-<option value="5">
-★★★★★
-</option>
-
-<option value="4">
-★★★★☆
-</option>
-
-<option value="3">
-★★★☆☆
-</option>
-
-<option value="2">
-★★☆☆☆
-</option>
-
-<option value="1">
-★☆☆☆☆
-</option>
+<option value="5">★★★★★ - 5 Stars</option>
+<option value="4">★★★★ - 4 Stars</option>
+<option value="3">★★★ - 3 Stars</option>
+<option value="2">★★ - 2 Stars</option>
+<option value="1">★ - 1 Star</option>
 
 </select>
 
-</div>
 
-<div class="form-group">
-
-<label for="review">
+<label for="reviewText">
 Your Review
 </label>
 
 <textarea
-id="review"
-name="review"
-placeholder="Tell us about your experience..."
-required
-></textarea>
+id="reviewText"
+required>
+</textarea>
 
-</div>
 
-<button type="submit" class="submit-btn">
+<button
+type="submit"
+class="btn btn-primary">
 Submit Review
 </button>
 
@@ -1046,7 +433,6 @@ Reviews are checked before being displayed on the website.
 
 </section>
 
-<!-- CTA -->
 
 <section class="cta">
 
@@ -1055,129 +441,70 @@ Have Your Own MISK Story?
 </h2>
 
 <p>
-Try one of our fragrances and share your experience with us.
+Discover your next fragrance and experience MISK for yourself.
 </p>
 
-<a href="shop.html" class="cta-btn">
+<a href="shop.html" class="btn btn-primary">
 Shop MISK
 </a>
 
 </section>
 
-<!-- FOOTER -->
 
 <footer>
 
-<div class="footer-logo">
-MISK FRAGRANCES
+<div class="footer-brand">
+MISK
 </div>
 
-<p>
-Premium Fragrance Oils
+<p class="footer-text">
+Premium fragrance oils crafted for a lasting impression.
 </p>
 
 <div class="footer-links">
 
-<a href="index.html">
-Home
-</a>
-
-<a href="about.html">
-About
-</a>
-
-<a href="collection.html">
-Collection
-</a>
-
-<a href="shop.html">
-Shop
-</a>
-
-<a href="reviews.html">
-Reviews
-</a>
-
-<a href="contact.html">
-Contact
-</a>
+<a href="index.html">Home</a>
+<a href="about.html">About</a>
+<a href="collection.html">Collection</a>
+<a href="shop.html">Shop</a>
+<a href="reviews.html">Reviews</a>
+<a href="contact.html">Contact</a>
 
 </div>
 
-<small>
-© 2026 MISK Fragrances. All rights reserved.
-</small>
+<p>
+© 2026 MISK Fragrances. All Rights Reserved.
+</p>
 
 </footer>
 
-<!-- BACK TO TOP -->
 
-<button id="backToTop" onclick="window.scrollTo({top:0,behavior:'smooth'})">
+<button
+id="backToTop"
+aria-label="Back to top"
+onclick="window.scrollTo({top:0,behavior:'smooth'})">
 ↑
 </button>
 
+
 <script>
-
-/* CART COUNT */
-
-function updateCartCount(){
-
-    const cartCount = document.getElementById("cartCount");
-
-    if(!cartCount) return;
-
-    try{
-
-        const cart = JSON.parse(localStorage.getItem("miskCart")) || [];
-
-        const total = cart.reduce(function(sum,item){
-
-            return sum + (Number(item.quantity) || 0);
-
-        },0);
-
-        cartCount.textContent = total;
-
-    }catch(error){
-
-        cartCount.textContent = "0";
-
-    }
-
-}
-
-updateCartCount();
-
-window.addEventListener("storage", updateCartCount);
-
-document.addEventListener("visibilitychange", function(){
-
-    if(!document.hidden){
-
-        updateCartCount();
-
-    }
-
-});
-
-
-/* SUBMIT REVIEW */
 
 function submitReview(event){
 
     event.preventDefault();
 
+
     const name =
-        document.getElementById("name").value.trim();
+        document.getElementById("reviewName").value.trim();
 
     const fragrance =
-        document.getElementById("fragrance").value;
+        document.getElementById("reviewFragrance").value;
 
     const rating =
-        document.getElementById("rating").value;
+        document.getElementById("reviewRating").value;
 
     const review =
-        document.getElementById("review").value.trim();
+        document.getElementById("reviewText").value.trim();
 
 
     const subject =
@@ -1192,7 +519,7 @@ function submitReview(event){
 
 Fragrance: ${fragrance}
 
-Rating: ${rating} stars
+Rating: ${rating}/5
 
 Review:
 ${review}`
@@ -1200,28 +527,84 @@ ${review}`
 
 
     window.location.href =
-        `mailto:miskfragrances.uk@gmail.com?subject=${subject}&body=${body}`;
+        "mailto:miskfragrances.uk@gmail.com" +
+        "?subject=" + subject +
+        "&body=" + body;
 
 }
 
 
-/* BACK TO TOP */
+/* CART */
+
+let cart = [];
+
+function loadCart(){
+
+    try{
+
+        cart =
+            JSON.parse(
+                localStorage.getItem("miskCart")
+            ) || [];
+
+    }catch(error){
+
+        cart = [];
+
+    }
+
+}
+
+
+function updateCartCount(){
+
+    const total =
+        cart.reduce(
+            (sum,item) =>
+            sum + Number(item.quantity || 0),
+            0
+        );
+
+    document.getElementById("cartCount").textContent =
+        total;
+
+}
+
+
+loadCart();
+updateCartCount();
+
+
+window.addEventListener("storage",function(){
+
+    loadCart();
+    updateCartCount();
+
+});
+
+
+document.addEventListener("visibilitychange",function(){
+
+    if(!document.hidden){
+
+        loadCart();
+        updateCartCount();
+
+    }
+
+});
+
 
 const backToTop =
     document.getElementById("backToTop");
 
 
-window.addEventListener("scroll", function(){
+window.addEventListener("scroll",function(){
 
-    if(window.scrollY > 400){
-
-        backToTop.style.display = "block";
-
-    }else{
-
-        backToTop.style.display = "none";
-
-    }
+    backToTop.classList.toggle(
+        "show",
+        window.scrollY > 400
+    );
 
 });
 
