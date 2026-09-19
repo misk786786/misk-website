@@ -17,9 +17,7 @@
 
 </head>
 
-
 <body>
-
 
 <!-- ================= HEADER ================= -->
 
@@ -54,15 +52,13 @@
 </header>
 
 
-
 <!-- ================= HERO ================= -->
 
 <section class="hero">
 
     <div class="hero-content">
 
-
-        <!-- ===== BOTTLE SLIDESHOW ===== -->
+        <!-- ================= BOTTLE SLIDESHOW ================= -->
 
         <div class="hero-image-slider">
 
@@ -95,7 +91,7 @@
             </div>
 
 
-            <!-- ===== SLIDER DOTS ===== -->
+            <!-- ================= SLIDER DOTS ================= -->
 
             <div class="slider-dots">
 
@@ -128,8 +124,7 @@
         </div>
 
 
-
-        <!-- ===== HERO TEXT ===== -->
+        <!-- ================= HERO TEXT ================= -->
 
         <div class="hero-text">
 
@@ -174,7 +169,6 @@
 </section>
 
 
-
 <!-- ================= WELCOME ================= -->
 
 <section class="section">
@@ -203,7 +197,7 @@
     <div class="feature-grid">
 
 
-        <!-- FEATURE 1 -->
+        <!-- ================= FEATURE 1 ================= -->
 
         <div class="feature-card">
 
@@ -223,8 +217,7 @@
         </div>
 
 
-
-        <!-- FEATURE 2 -->
+        <!-- ================= FEATURE 2 ================= -->
 
         <div class="feature-card">
 
@@ -244,8 +237,7 @@
         </div>
 
 
-
-        <!-- FEATURE 3 -->
+        <!-- ================= FEATURE 3 ================= -->
 
         <div class="feature-card">
 
@@ -265,8 +257,7 @@
         </div>
 
 
-
-        <!-- FEATURE 4 -->
+        <!-- ================= FEATURE 4 ================= -->
 
         <div class="feature-card">
 
@@ -288,7 +279,6 @@
     </div>
 
 </section>
-
 
 
 <!-- ================= CTA ================= -->
@@ -319,13 +309,11 @@
 </section>
 
 
-
 <!-- ================= FOOTER ================= -->
 
 <footer>
 
     <div class="footer-content">
-
 
         <div class="footer-brand">
 
@@ -382,7 +370,6 @@
 </footer>
 
 
-
 <!-- ================= BACK TO TOP ================= -->
 
 <button
@@ -392,145 +379,140 @@
 </button>
 
 
-
 <!-- ================= JAVASCRIPT ================= -->
 
 <script>
 
-    /* ================= CART COUNT ================= */
+/* ================= CART COUNT ================= */
 
-    function updateCartCount() {
+function updateCartCount() {
 
-        const cartCount = document.getElementById("cartCount");
+    const cartCount = document.getElementById("cartCount");
 
-        if (!cartCount) return;
+    if (!cartCount) return;
 
-        let cart = [];
+    let cart = [];
 
-        try {
+    try {
 
-            cart = JSON.parse(
-                localStorage.getItem("miskCart")
-            ) || [];
+        cart = JSON.parse(
+            localStorage.getItem("miskCart")
+        ) || [];
 
-        } catch (error) {
+    } catch (error) {
 
-            cart = [];
-
-        }
-
-        const totalQuantity = cart.reduce(
-            (total, item) => total + Number(item.quantity || 0),
-            0
-        );
-
-        cartCount.textContent = totalQuantity;
+        cart = [];
 
     }
 
+    const totalQuantity = cart.reduce(
+        (total, item) => total + Number(item.quantity || 0),
+        0
+    );
 
-    updateCartCount();
+    cartCount.textContent = totalQuantity;
 
+}
 
-
-    /* ================= SLIDESHOW ================= */
-
-    let currentSlide = 0;
-
-    const slides = document.querySelectorAll(".slide");
-
-    const dots = document.querySelectorAll(".dot");
+updateCartCount();
 
 
-    function showSlide(index) {
+/* ================= SLIDESHOW ================= */
 
-        if (!slides.length) return;
+let currentSlide = 0;
 
-        slides.forEach((slide) => {
+const slides = document.querySelectorAll(".slide");
 
-            slide.classList.remove("active");
-
-        });
+const dots = document.querySelectorAll(".dot");
 
 
-        dots.forEach((dot) => {
+function showSlide(index) {
 
-            dot.classList.remove("active");
+    if (!slides.length) return;
 
-        });
+    slides.forEach(function(slide) {
 
-
-        currentSlide = index;
-
-
-        slides[currentSlide].classList.add("active");
-
-        if (dots[currentSlide]) {
-
-            dots[currentSlide].classList.add("active");
-
-        }
-
-    }
-
-
-
-    function nextSlide() {
-
-        currentSlide++;
-
-        if (currentSlide >= slides.length) {
-
-            currentSlide = 0;
-
-        }
-
-        showSlide(currentSlide);
-
-    }
-
-
-
-    /* Change image every 5 seconds */
-
-    setInterval(nextSlide, 5000);
-
-
-
-    /* ================= BACK TO TOP ================= */
-
-    const backToTop = document.getElementById("backToTop");
-
-
-    window.addEventListener("scroll", function () {
-
-        if (window.scrollY > 300) {
-
-            backToTop.classList.add("show");
-
-        } else {
-
-            backToTop.classList.remove("show");
-
-        }
+        slide.classList.remove("active");
 
     });
 
 
-    backToTop.addEventListener("click", function () {
+    dots.forEach(function(dot) {
 
-        window.scrollTo({
-
-            top: 0,
-
-            behavior: "smooth"
-
-        });
+        dot.classList.remove("active");
 
     });
+
+
+    currentSlide = index;
+
+
+    slides[currentSlide].classList.add("active");
+
+    if (dots[currentSlide]) {
+
+        dots[currentSlide].classList.add("active");
+
+    }
+
+}
+
+
+/* ================= NEXT SLIDE ================= */
+
+function nextSlide() {
+
+    currentSlide++;
+
+    if (currentSlide >= slides.length) {
+
+        currentSlide = 0;
+
+    }
+
+    showSlide(currentSlide);
+
+}
+
+
+/* ================= CHANGE EVERY 5 SECONDS ================= */
+
+setInterval(nextSlide, 5000);
+
+
+/* ================= BACK TO TOP ================= */
+
+const backToTop = document.getElementById("backToTop");
+
+
+window.addEventListener("scroll", function() {
+
+    if (window.scrollY > 300) {
+
+        backToTop.classList.add("show");
+
+    } else {
+
+        backToTop.classList.remove("show");
+
+    }
+
+});
+
+
+backToTop.addEventListener("click", function() {
+
+    window.scrollTo({
+
+        top: 0,
+
+        behavior: "smooth"
+
+    });
+
+});
 
 </script>
-
 
 </body>
 
