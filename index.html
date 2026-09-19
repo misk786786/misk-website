@@ -1,519 +1,430 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
 
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>MISK Fragrances | Premium Fragrance Oils</title>
+<title>MISK Fragrances | Premium Fragrance Oils</title>
 
-    <meta
-        name="description"
-        content="MISK Fragrances - Premium fragrance oils crafted for a lasting impression."
-    >
+<meta name="description"
+content="Discover MISK Fragrances premium fragrance oils, crafted for a lasting impression.">
 
-    <link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="style.css">
 
 </head>
 
 <body>
 
-<!-- ================= HEADER ================= -->
-
 <header>
 
-    <nav class="navbar">
+<nav class="navbar">
 
-        <a href="index.html" class="logo">MISK</a>
+<a href="index.html" class="logo">MISK</a>
 
-        <div class="nav-links">
+<div class="nav-links">
 
-            <a href="index.html" class="active">Home</a>
+<a href="index.html" class="active">Home</a>
+<a href="about.html">About</a>
+<a href="collection.html">Collection</a>
+<a href="shop.html">Shop</a>
+<a href="reviews.html">Reviews</a>
+<a href="contact.html">Contact</a>
 
-            <a href="about.html">About</a>
+<a href="cart.html" class="cart-link">
+🛒 Cart
+<span class="cart-count" id="cartCount">0</span>
+</a>
 
-            <a href="collection.html">Collection</a>
+</div>
 
-            <a href="shop.html">Shop</a>
-
-            <a href="reviews.html">Reviews</a>
-
-            <a href="contact.html">Contact</a>
-
-            <a href="cart.html">
-                Cart (<span id="cartCount">0</span>)
-            </a>
-
-        </div>
-
-    </nav>
+</nav>
 
 </header>
 
 
-<!-- ================= HERO ================= -->
+<section class="misk-hero">
 
-<section class="hero">
-
-    <div class="hero-content">
-
-        <!-- ================= BOTTLE SLIDESHOW ================= -->
-
-        <div class="hero-image-slider">
-
-            <div class="slider-images">
-
-                <img
-                    src="imagesmisk-bottle.jpg.png"
-                    alt="MISK Fragrance Bottle"
-                    class="slide active"
-                >
-
-                <img
-                    src="bottle1.jpg.jpeg"
-                    alt="MISK Fragrance Bottle"
-                    class="slide"
-                >
-
-                <img
-                    src="bottle2.jpg.jpeg"
-                    alt="MISK Fragrance Bottle"
-                    class="slide"
-                >
-
-                <img
-                    src="Allbottles-misk.png"
-                    alt="MISK Fragrances Collection"
-                    class="slide"
-                >
-
-            </div>
+<div class="hero-overlay"></div>
 
 
-            <!-- ================= SLIDER DOTS ================= -->
+<div class="hero-bottle-slider">
 
-            <div class="slider-dots">
+<div class="bottle-slides">
 
-                <button
-                    class="dot active"
-                    onclick="showSlide(0)"
-                    aria-label="Show slide 1">
-                </button>
+<img
+src="imagesmisk-bottle.jpg.png"
+alt="MISK Fragrances bottle"
+class="bottle-slide active"
+>
 
-                <button
-                    class="dot"
-                    onclick="showSlide(1)"
-                    aria-label="Show slide 2">
-                </button>
+<img
+src="bottle1.jpg.jpeg"
+alt="MISK Fragrances bottle"
+class="bottle-slide"
+>
 
-                <button
-                    class="dot"
-                    onclick="showSlide(2)"
-                    aria-label="Show slide 3">
-                </button>
+<img
+src="bottle2.jpg.jpeg"
+alt="MISK Fragrances bottle"
+class="bottle-slide"
+>
 
-                <button
-                    class="dot"
-                    onclick="showSlide(3)"
-                    aria-label="Show slide 4">
-                </button>
+<img
+src="Allbottles-misk.png"
+alt="MISK Fragrances collection"
+class="bottle-slide"
+>
 
-            </div>
-
-        </div>
+</div>
 
 
-        <!-- ================= HERO TEXT ================= -->
+<div class="slider-dots">
 
-        <div class="hero-text">
+<button
+class="slider-dot active"
+onclick="showSlide(0)"
+aria-label="Show first bottle">
+</button>
 
-            <p class="eyebrow">
-                MISK FRAGRANCES
-            </p>
+<button
+class="slider-dot"
+onclick="showSlide(1)"
+aria-label="Show second bottle">
+</button>
 
-            <h1>
-                MISK
-            </h1>
+<button
+class="slider-dot"
+onclick="showSlide(2)"
+aria-label="Show third bottle">
+</button>
 
-            <div class="gold-line"></div>
+<button
+class="slider-dot"
+onclick="showSlide(3)"
+aria-label="Show fourth bottle collection">
+</button>
 
-            <h2>
-                Fragrance in Every Drop
-            </h2>
+</div>
 
-            <p>
-                Discover premium fragrance oils created to leave
-                a lasting impression. From rich oud and smooth musk
-                to floral and fruity scents, find a fragrance that
-                feels like you.
-            </p>
+</div>
 
 
-            <div class="hero-buttons">
+<div class="hero-main-content">
 
-                <a href="shop.html" class="btn">
-                    Shop MISK
-                </a>
+<p class="hero-main-small">
+MISK FRAGRANCES
+</p>
 
-                <a href="reviews.html" class="btn btn-outline">
-                    Read Reviews
-                </a>
+<h1>MISK</h1>
 
-            </div>
+<div class="gold-line"></div>
 
-        </div>
+<p class="hero-main-tagline">
+Fragrance in Every Drop
+</p>
 
-    </div>
+<p class="hero-description">
+Discover premium fragrance oils created to leave a lasting impression.
+From rich oud and smooth musk to floral and fruity scents,
+find a fragrance that feels like you.
+</p>
+
+<div class="hero-buttons">
+
+<a href="shop.html" class="btn btn-primary">
+Shop MISK
+</a>
+
+<a href="reviews.html" class="btn btn-secondary">
+Read Reviews
+</a>
+
+</div>
+
+</div>
 
 </section>
 
 
-<!-- ================= WELCOME ================= -->
+<section class="welcome">
 
-<section class="section">
+<h2>
+Welcome to MISK
+</h2>
 
-    <div class="section-heading">
-
-        <p class="eyebrow">
-            WELCOME TO MISK
-        </p>
-
-        <h2>
-            Premium Fragrance Oils
-        </h2>
-
-        <div class="gold-line"></div>
-
-        <p>
-            At MISK Fragrances, we believe a fragrance is more than
-            just a scent. It is part of your identity, your memories,
-            and the impression you leave behind.
-        </p>
-
-    </div>
-
-
-    <div class="feature-grid">
-
-
-        <!-- ================= FEATURE 1 ================= -->
-
-        <div class="feature-card">
-
-            <div class="feature-icon">
-                ✦
-            </div>
-
-            <h3>
-                Premium Quality
-            </h3>
-
-            <p>
-                Carefully selected fragrance oils made to deliver
-                beautiful and memorable scents.
-            </p>
-
-        </div>
-
-
-        <!-- ================= FEATURE 2 ================= -->
-
-        <div class="feature-card">
-
-            <div class="feature-icon">
-                ✧
-            </div>
-
-            <h3>
-                Rich Scents
-            </h3>
-
-            <p>
-                Explore rich oud, smooth musk, floral blends,
-                fruity fragrances and more.
-            </p>
-
-        </div>
-
-
-        <!-- ================= FEATURE 3 ================= -->
-
-        <div class="feature-card">
-
-            <div class="feature-icon">
-                ◆
-            </div>
-
-            <h3>
-                Made to Impress
-            </h3>
-
-            <p>
-                Fragrances designed to make every moment
-                feel special and memorable.
-            </p>
-
-        </div>
-
-
-        <!-- ================= FEATURE 4 ================= -->
-
-        <div class="feature-card">
-
-            <div class="feature-icon">
-                ✦
-            </div>
-
-            <h3>
-                Find Your Scent
-            </h3>
-
-            <p>
-                Discover a fragrance that matches your style,
-                personality and occasion.
-            </p>
-
-        </div>
-
-    </div>
+<p>
+Premium fragrance oils crafted with care, elegance and character.
+Explore our collection and discover a scent made for you.
+</p>
 
 </section>
 
 
-<!-- ================= CTA ================= -->
+<section class="feature-grid">
 
-<section class="cta-section">
+<div class="card feature-card">
 
-    <div class="cta-content">
+<h3>Premium Quality</h3>
 
-        <p class="eyebrow">
-            YOUR SIGNATURE SCENT
-        </p>
+<p>
+Carefully selected fragrance oils created with quality in mind.
+</p>
 
-        <h2>
-            Discover Your Signature Scent
-        </h2>
+</div>
 
-        <p>
-            Explore the MISK collection and find the fragrance
-            that feels uniquely yours.
-        </p>
 
-        <a href="collection.html" class="btn">
-            Explore Collection
-        </a>
+<div class="card feature-card">
 
-    </div>
+<h3>Rich Scents</h3>
+
+<p>
+Discover oud, musk, floral, fruity and signature fragrance blends.
+</p>
+
+</div>
+
+
+<div class="card feature-card">
+
+<h3>Made to Impress</h3>
+
+<p>
+Beautiful fragrances designed to leave a memorable impression.
+</p>
+
+</div>
+
+
+<div class="card feature-card">
+
+<h3>Find Your Scent</h3>
+
+<p>
+Explore MISK and discover a fragrance that feels like you.
+</p>
+
+</div>
 
 </section>
 
 
-<!-- ================= FOOTER ================= -->
+<section class="cta">
+
+<h2>
+Discover Your Signature Scent
+</h2>
+
+<p>
+Explore the MISK collection and find your next favourite fragrance.
+</p>
+
+<a href="collection.html" class="btn btn-primary">
+Explore Collection
+</a>
+
+</section>
+
 
 <footer>
 
-    <div class="footer-content">
+<div class="footer-brand">
+MISK
+</div>
 
-        <div class="footer-brand">
+<p class="footer-text">
+Premium fragrance oils crafted for a lasting impression.
+</p>
 
-            <h3>
-                MISK
-            </h3>
+<div class="footer-links">
 
-            <p>
-                Premium Fragrance Oils
-            </p>
+<a href="index.html">Home</a>
+<a href="about.html">About</a>
+<a href="collection.html">Collection</a>
+<a href="shop.html">Shop</a>
+<a href="reviews.html">Reviews</a>
+<a href="contact.html">Contact</a>
 
-        </div>
+</div>
 
-
-        <div class="footer-links">
-
-            <a href="index.html">
-                Home
-            </a>
-
-            <a href="about.html">
-                About
-            </a>
-
-            <a href="collection.html">
-                Collection
-            </a>
-
-            <a href="shop.html">
-                Shop
-            </a>
-
-            <a href="reviews.html">
-                Reviews
-            </a>
-
-            <a href="contact.html">
-                Contact
-            </a>
-
-        </div>
-
-    </div>
-
-
-    <div class="footer-bottom">
-
-        <p>
-            © 2026 MISK Fragrances. All rights reserved.
-        </p>
-
-    </div>
+<p>
+© 2026 MISK Fragrances. All Rights Reserved.
+</p>
 
 </footer>
 
 
-<!-- ================= BACK TO TOP ================= -->
-
 <button
-    id="backToTop"
-    aria-label="Back to top">
-    ↑
+id="backToTop"
+aria-label="Back to top"
+onclick="window.scrollTo({top:0,behavior:'smooth'})">
+↑
 </button>
 
 
-<!-- ================= JAVASCRIPT ================= -->
-
 <script>
 
-/* ================= CART COUNT ================= */
 
-function updateCartCount() {
 
-    const cartCount = document.getElementById("cartCount");
 
-    if (!cartCount) return;
 
-    let cart = [];
+/* CART */
 
-    try {
+let cart = [];
 
-        cart = JSON.parse(
-            localStorage.getItem("miskCart")
-        ) || [];
+function loadCart(){
 
-    } catch (error) {
+    try{
+
+        cart =
+            JSON.parse(
+                localStorage.getItem("miskCart")
+            ) || [];
+
+    }catch(error){
 
         cart = [];
 
     }
 
-    const totalQuantity = cart.reduce(
-        (total, item) => total + Number(item.quantity || 0),
-        0
-    );
+}
 
-    cartCount.textContent = totalQuantity;
+
+function updateCartCount(){
+
+    const total =
+        cart.reduce(
+            (sum,item) =>
+            sum + Number(item.quantity || 0),
+            0
+        );
+
+    document.getElementById("cartCount").textContent = total;
 
 }
 
+loadCart();
 updateCartCount();
 
 
-/* ================= SLIDESHOW ================= */
+window.addEventListener("storage",function(){
+
+    loadCart();
+    updateCartCount();
+
+});
+
+
+document.addEventListener("visibilitychange",function(){
+
+    if(!document.hidden){
+
+        loadCart();
+        updateCartCount();
+
+    }
+
+});
+
+
+
+
+
+/* BOTTLE SLIDER */
+
+const slides =
+    document.querySelectorAll(".bottle-slide");
+
+const dots =
+    document.querySelectorAll(".slider-dot");
 
 let currentSlide = 0;
-
-const slides = document.querySelectorAll(".slide");
-
-const dots = document.querySelectorAll(".dot");
+let sliderTimer;
 
 
-function showSlide(index) {
-
-    if (!slides.length) return;
-
-    slides.forEach(function(slide) {
-
-        slide.classList.remove("active");
-
-    });
-
-
-    dots.forEach(function(dot) {
-
-        dot.classList.remove("active");
-
-    });
-
+function showSlide(index){
 
     currentSlide = index;
 
+    slides.forEach(function(slide,i){
 
-    slides[currentSlide].classList.add("active");
+        slide.classList.toggle(
+            "active",
+            i === index
+        );
 
-    if (dots[currentSlide]) {
+    });
 
-        dots[currentSlide].classList.add("active");
 
-    }
+    dots.forEach(function(dot,i){
+
+        dot.classList.toggle(
+            "active",
+            i === index
+        );
+
+    });
 
 }
 
 
-/* ================= NEXT SLIDE ================= */
+function nextSlide(){
 
-function nextSlide() {
-
-    currentSlide++;
-
-    if (currentSlide >= slides.length) {
-
-        currentSlide = 0;
-
-    }
+    currentSlide =
+        (currentSlide + 1) % slides.length;
 
     showSlide(currentSlide);
 
 }
 
 
-/* ================= CHANGE EVERY 5 SECONDS ================= */
+function restartSlider(){
 
-setInterval(nextSlide, 5000);
+    clearInterval(sliderTimer);
+
+    sliderTimer =
+        setInterval(
+            nextSlide,
+            5000
+        );
+
+}
 
 
-/* ================= BACK TO TOP ================= */
+dots.forEach(function(dot,index){
 
-const backToTop = document.getElementById("backToTop");
+    dot.addEventListener("click",function(){
 
+        showSlide(index);
+        restartSlider();
 
-window.addEventListener("scroll", function() {
-
-    if (window.scrollY > 300) {
-
-        backToTop.classList.add("show");
-
-    } else {
-
-        backToTop.classList.remove("show");
-
-    }
+    });
 
 });
 
 
-backToTop.addEventListener("click", function() {
+showSlide(0);
+restartSlider();
 
-    window.scrollTo({
 
-        top: 0,
 
-        behavior: "smooth"
 
-    });
+
+/* BACK TO TOP */
+
+const backToTop =
+    document.getElementById("backToTop");
+
+window.addEventListener("scroll",function(){
+
+    backToTop.classList.toggle(
+        "show",
+        window.scrollY > 400
+    );
 
 });
 
 </script>
 
 </body>
-
 </html>
