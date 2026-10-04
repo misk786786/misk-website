@@ -138,6 +138,8 @@ onclick="window.scrollTo({top:0,behavior:'smooth'})">
 
 <script>
 
+/* ================= PRODUCTS ================= */
+
 const products = [
 
 {
@@ -158,6 +160,11 @@ description:"A smooth white musk with clean, soft and long-lasting elegance."
 {
 name:"Signature Homme",
 description:"A refined masculine blend with fresh citrus, woods and amber."
+},
+
+{
+name:"Signature Femme",
+description:"An elegant feminine fragrance with soft floral notes, delicate sweetness and a sophisticated finish."
 },
 
 {
@@ -239,6 +246,8 @@ products.forEach(function(product){
 });
 
 
+/* ================= CART ================= */
+
 let cart = [];
 
 
@@ -297,6 +306,8 @@ document.addEventListener("visibilitychange",function(){
 
 });
 
+
+/* ================= BACK TO TOP ================= */
 
 const backToTop =
     document.getElementById("backToTop");
