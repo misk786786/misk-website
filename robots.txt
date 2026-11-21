@@ -1,5 +1,0 @@
-
-User-agent: *
-Allow: /
-
-Sitemap: https://misk786786.github.io/misk-website/sitemap.xml
