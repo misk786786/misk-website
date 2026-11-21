@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -9,20 +10,71 @@
 
 <meta name="description" content="Discover MISK Fragrances premium fragrance oils, including oud, musk, floral and fruity scents, crafted to leave a lasting impression.">
 
+<meta name="robots" content="index, follow">
+<meta name="author" content="MISK Fragrances">
+<meta name="theme-color" content="#0a0a0a">
+
 <link rel="canonical" href="https://misk786786.github.io/misk-website/">
+
+<!-- Open Graph -->
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="MISK Fragrances">
 <meta property="og:title" content="MISK Fragrances | Premium Fragrance Oils">
 <meta property="og:description" content="Discover MISK Fragrances premium fragrance oils, including oud, musk, floral and fruity scents, crafted to leave a lasting impression.">
 <meta property="og:url" content="https://misk786786.github.io/misk-website/">
 <meta property="og:image" content="https://misk786786.github.io/misk-website/3ml%20Perfume%20Bottle%20on%20a%20Sunset%20Shoreline.png">
+<meta property="og:image:alt" content="MISK Fragrances 3ml perfume bottle on a sunset shoreline">
+<meta property="og:locale" content="en_GB">
+
+<!-- Twitter / X -->
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="MISK Fragrances | Premium Fragrance Oils">
 <meta name="twitter:description" content="Discover MISK Fragrances premium fragrance oils, including oud, musk, floral and fruity scents, crafted to leave a lasting impression.">
 <meta name="twitter:image" content="https://misk786786.github.io/misk-website/3ml%20Perfume%20Bottle%20on%20a%20Sunset%20Shoreline.png">
-
+<meta name="twitter:image:alt" content="MISK Fragrances 3ml perfume bottle on a sunset shoreline">
 
 <link rel="stylesheet" href="style.css">
+
+<!-- Structured Data -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://misk786786.github.io/misk-website/#organization",
+      "name": "MISK Fragrances",
+      "url": "https://misk786786.github.io/misk-website/",
+      "description": "MISK Fragrances offers premium fragrance oils, including oud, musk, floral and fruity scents."
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://misk786786.github.io/misk-website/#website",
+      "url": "https://misk786786.github.io/misk-website/",
+      "name": "MISK Fragrances",
+      "description": "Discover MISK Fragrances premium fragrance oils, including oud, musk, floral and fruity scents.",
+      "publisher": {
+        "@id": "https://misk786786.github.io/misk-website/#organization"
+      },
+      "inLanguage": "en-GB"
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://misk786786.github.io/misk-website/#webpage",
+      "url": "https://misk786786.github.io/misk-website/",
+      "name": "MISK Fragrances | Premium Fragrance Oils",
+      "description": "Discover MISK Fragrances premium fragrance oils, including oud, musk, floral and fruity scents, crafted to leave a lasting impression.",
+      "isPartOf": {
+        "@id": "https://misk786786.github.io/misk-website/#website"
+      },
+      "about": {
+        "@id": "https://misk786786.github.io/misk-website/#organization"
+      },
+      "inLanguage": "en-GB"
+    }
+  ]
+}
+</script>
 
 </head>
 
@@ -54,6 +106,7 @@
 
 </header>
 
+<main>
 
 <section class="misk-hero">
 
@@ -65,61 +118,75 @@
 
 <img
 src="imagesmisk-bottle.jpg.png"
-alt="MISK Fragrances bottle"
+alt="MISK Fragrances perfume bottle"
 class="bottle-slide active"
+fetchpriority="high"
+decoding="async"
 >
 
 <img
 src="3ml Perfume Bottle on a Sunset Shoreline.png"
 alt="3ml MISK perfume bottle on a sunset shoreline"
 class="bottle-slide"
+loading="lazy"
+decoding="async"
 >
 
 <img
 src="5ml Perfume Bottle on a Sunset Shoreline.png"
 alt="5ml MISK perfume bottle on a sunset shoreline"
 class="bottle-slide"
+loading="lazy"
+decoding="async"
 >
 
 <img
 src="Allbottles-misk.png"
-alt="MISK Fragrances collection"
+alt="MISK Fragrances perfume bottle collection"
 class="bottle-slide"
+loading="lazy"
+decoding="async"
 >
 
 </div>
 
-
 <div class="slider-dots">
 
 <button
+type="button"
 class="slider-dot active"
 onclick="showSlide(0)"
-aria-label="Show first bottle">
+aria-label="Show first bottle"
+aria-pressed="true">
 </button>
 
 <button
+type="button"
 class="slider-dot"
 onclick="showSlide(1)"
-aria-label="Show 3ml perfume bottle on sunset shoreline">
+aria-label="Show 3ml perfume bottle on sunset shoreline"
+aria-pressed="false">
 </button>
 
 <button
+type="button"
 class="slider-dot"
 onclick="showSlide(2)"
-aria-label="Show 5ml perfume bottle on sunset shoreline">
+aria-label="Show 5ml perfume bottle on sunset shoreline"
+aria-pressed="false">
 </button>
 
 <button
+type="button"
 class="slider-dot"
 onclick="showSlide(3)"
-aria-label="Show full bottle collection">
+aria-label="Show full bottle collection"
+aria-pressed="false">
 </button>
 
 </div>
 
 </div>
-
 
 <div class="hero-main-content">
 
@@ -157,7 +224,6 @@ Read Reviews
 
 </section>
 
-
 <section class="welcome">
 
 <h2>
@@ -171,7 +237,6 @@ Explore our collection and discover a scent made for you.
 
 </section>
 
-
 <section class="feature-grid">
 
 <div class="card feature-card">
@@ -184,7 +249,6 @@ Carefully selected fragrance oils created with quality in mind.
 
 </div>
 
-
 <div class="card feature-card">
 
 <h3>Rich Scents</h3>
@@ -195,7 +259,6 @@ Discover oud, musk, floral, fruity and signature fragrance blends.
 
 </div>
 
-
 <div class="card feature-card">
 
 <h3>Made to Impress</h3>
@@ -205,7 +268,6 @@ Beautiful fragrances designed to leave a memorable impression.
 </p>
 
 </div>
-
 
 <div class="card feature-card">
 
@@ -218,7 +280,6 @@ Explore MISK and discover a fragrance that feels like you.
 </div>
 
 </section>
-
 
 <section class="cta">
 
@@ -236,6 +297,7 @@ Explore Collection
 
 </section>
 
+</main>
 
 <footer>
 
@@ -264,14 +326,13 @@ Premium fragrance oils crafted for a lasting impression.
 
 </footer>
 
-
 <button
+type="button"
 id="backToTop"
 aria-label="Back to top"
 onclick="window.scrollTo({top:0,behavior:'smooth'})">
 ↑
 </button>
-
 
 <script>
 
@@ -283,10 +344,10 @@ function loadCart(){
 
     try{
 
-        cart =
-            JSON.parse(
-                localStorage.getItem("miskCart")
-            ) || [];
+        const savedCart =
+            JSON.parse(localStorage.getItem("miskCart"));
+
+        cart = Array.isArray(savedCart) ? savedCart : [];
 
     }catch(error){
 
@@ -295,7 +356,6 @@ function loadCart(){
     }
 
 }
-
 
 function updateCartCount(){
 
@@ -313,14 +373,12 @@ function updateCartCount(){
 loadCart();
 updateCartCount();
 
-
 window.addEventListener("storage",function(){
 
     loadCart();
     updateCartCount();
 
 });
-
 
 document.addEventListener("visibilitychange",function(){
 
@@ -345,7 +403,6 @@ const dots =
 let currentSlide = 0;
 let sliderTimer;
 
-
 function showSlide(index){
 
     if(index < 0 || index >= slides.length){
@@ -363,7 +420,6 @@ function showSlide(index){
 
     });
 
-
     dots.forEach(function(dot,i){
 
         dot.classList.toggle(
@@ -371,10 +427,14 @@ function showSlide(index){
             i === index
         );
 
+        dot.setAttribute(
+            "aria-pressed",
+            i === index ? "true" : "false"
+        );
+
     });
 
 }
-
 
 function nextSlide(){
 
@@ -384,7 +444,6 @@ function nextSlide(){
     showSlide(currentSlide);
 
 }
-
 
 function restartSlider(){
 
@@ -398,7 +457,6 @@ function restartSlider(){
 
 }
 
-
 dots.forEach(function(dot,index){
 
     dot.addEventListener("click",function(){
@@ -409,7 +467,6 @@ dots.forEach(function(dot,index){
     });
 
 });
-
 
 showSlide(0);
 restartSlider();
