@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -5,24 +6,102 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Shop Everything - MISK Fragrances | Premium Fragrance Oils</title>
+<title>Shop Fragrance Oils UK | MISK Fragrances</title>
 
-<meta name="description" content="Shop MISK Fragrances premium fragrance oils, including oud, musk, floral, fruity and signature scents. Find your next favourite fragrance.">
+<meta name="description" content="Shop MISK Fragrances premium fragrance oils. Explore 10 luxurious oud, musk, floral, fruity and signature scents. Available in 3ml and 5ml bottles.">
+
+<meta name="robots" content="index,follow">
 
 <link rel="canonical" href="https://misk786786.github.io/misk-website/shop.html">
+
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="MISK Fragrances">
 <meta property="og:title" content="Shop Premium Fragrance Oils | MISK Fragrances">
-<meta property="og:description" content="Shop MISK Fragrances premium fragrance oils, including oud, musk, floral, fruity and signature scents. Find your next favourite fragrance.">
+<meta property="og:description" content="Explore 10 MISK Fragrances scents, including oud, musk, floral, fruity and signature fragrance oils. Available in 3ml and 5ml bottles.">
 <meta property="og:url" content="https://misk786786.github.io/misk-website/shop.html">
 <meta property="og:image" content="https://misk786786.github.io/misk-website/3ml%20Perfume%20Bottle%20on%20a%20Sunset%20Shoreline.png">
+
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Shop Premium Fragrance Oils | MISK Fragrances">
-<meta name="twitter:description" content="Shop MISK Fragrances premium fragrance oils, including oud, musk, floral, fruity and signature scents. Find your next favourite fragrance.">
+<meta name="twitter:description" content="Explore the MISK Fragrances collection of premium fragrance oils.">
 <meta name="twitter:image" content="https://misk786786.github.io/misk-website/3ml%20Perfume%20Bottle%20on%20a%20Sunset%20Shoreline.png">
 
-
 <link rel="stylesheet" href="style.css">
+
+<!-- FRAGRANCE COLLECTION STRUCTURED DATA -->
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ItemList",
+  "name": "MISK Fragrances Collection",
+  "description": "Explore the collection of premium fragrance oils from MISK Fragrances.",
+  "url": "https://misk786786.github.io/misk-website/shop.html",
+  "numberOfItems": 10,
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Royal Oud",
+      "url": "https://misk786786.github.io/misk-website/product.html?name=Royal%20Oud"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "MISK Noir",
+      "url": "https://misk786786.github.io/misk-website/product.html?name=MISK%20Noir"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "Imperial Musk",
+      "url": "https://misk786786.github.io/misk-website/product.html?name=Imperial%20Musk"
+    },
+    {
+      "@type": "ListItem",
+      "position": 4,
+      "name": "Signature Homme",
+      "url": "https://misk786786.github.io/misk-website/product.html?name=Signature%20Homme"
+    },
+    {
+      "@type": "ListItem",
+      "position": 5,
+      "name": "Signature Femme",
+      "url": "https://misk786786.github.io/misk-website/product.html?name=Signature%20Femme"
+    },
+    {
+      "@type": "ListItem",
+      "position": 6,
+      "name": "Rose Prestige",
+      "url": "https://misk786786.github.io/misk-website/product.html?name=Rose%20Prestige"
+    },
+    {
+      "@type": "ListItem",
+      "position": 7,
+      "name": "Legacy",
+      "url": "https://misk786786.github.io/misk-website/product.html?name=Legacy"
+    },
+    {
+      "@type": "ListItem",
+      "position": 8,
+      "name": "Obsidian",
+      "url": "https://misk786786.github.io/misk-website/product.html?name=Obsidian"
+    },
+    {
+      "@type": "ListItem",
+      "position": 9,
+      "name": "MISK Royale",
+      "url": "https://misk786786.github.io/misk-website/product.html?name=MISK%20Royale"
+    },
+    {
+      "@type": "ListItem",
+      "position": 10,
+      "name": "Fruity Oud",
+      "url": "https://misk786786.github.io/misk-website/product.html?name=Fruity%20Oud"
+    }
+  ]
+}
+</script>
 
 </head>
 
@@ -76,6 +155,8 @@ Find Your Signature Scent
 </section>
 
 
+<main>
+
 <section class="section">
 
 <h2 class="section-title">
@@ -87,7 +168,6 @@ Explore the complete MISK Fragrances collection,
 including rich oud, smooth musk, floral fragrances,
 fresh signature blends and our fruity scents.
 </p>
-
 
 <div class="product-grid" id="productGrid"></div>
 
@@ -110,6 +190,8 @@ View Cart
 </a>
 
 </section>
+
+</main>
 
 
 <footer>
@@ -215,45 +297,83 @@ const productGrid =
 document.getElementById("productGrid");
 
 
+/* ================= CREATE PRODUCT CARDS ================= */
+
 products.forEach(function(product){
 
-    const card =
+    const cardLink =
         document.createElement("a");
 
-    card.href =
+    cardLink.href =
         "product.html?name=" +
         encodeURIComponent(product.name);
 
-    card.className =
+    cardLink.className =
         "product-card-link";
 
-    card.innerHTML = `
 
-        <div class="product-card">
+    const card =
+        document.createElement("div");
 
-            <img
-                src="${bottleImage}"
-                alt="${product.name} MISK Fragrance"
-                class="product-image"
-            >
+    card.className =
+        "product-card";
 
-            <h3>
-                ${product.name}
-            </h3>
 
-            <p>
-                ${product.description}
-            </p>
+    const image =
+        document.createElement("img");
 
-            <div class="product-price-preview">
-                3ml - £4 &nbsp; | &nbsp; 5ml - £5
-            </div>
+    image.src =
+        bottleImage;
 
-        </div>
+    image.alt =
+        product.name +
+        " fragrance oil by MISK Fragrances";
 
-    `;
+    image.className =
+        "product-image";
 
-    productGrid.appendChild(card);
+    image.loading =
+        "lazy";
+
+    image.decoding =
+        "async";
+
+
+    const heading =
+        document.createElement("h3");
+
+    heading.textContent =
+        product.name;
+
+
+    const description =
+        document.createElement("p");
+
+    description.textContent =
+        product.description;
+
+
+    const price =
+        document.createElement("div");
+
+    price.className =
+        "product-price-preview";
+
+    price.textContent =
+        "3ml - £4 | 5ml - £5";
+
+
+    card.appendChild(image);
+
+    card.appendChild(heading);
+
+    card.appendChild(description);
+
+    card.appendChild(price);
+
+    cardLink.appendChild(card);
+
+    productGrid.appendChild(cardLink);
 
 });
 
@@ -290,18 +410,21 @@ function updateCartCount(){
             0
         );
 
-    document.getElementById("cartCount").textContent = total;
+    document.getElementById("cartCount").textContent =
+        total;
 
 }
 
 
 loadCart();
+
 updateCartCount();
 
 
 window.addEventListener("storage",function(){
 
     loadCart();
+
     updateCartCount();
 
 });
@@ -312,6 +435,7 @@ document.addEventListener("visibilitychange",function(){
     if(!document.hidden){
 
         loadCart();
+
         updateCartCount();
 
     }
