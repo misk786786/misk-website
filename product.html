@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -6,20 +7,22 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>MISK Fragrances | Premium Fragrance Oils</title>
-<link id="productCanonical" rel="canonical" href="https://misk786786.github.io/misk-website/product.html">
 
+<meta name="description" content="Discover premium fragrance oils from MISK Fragrances. Explore our collection of luxurious scents.">
 
+<link id="productCanonical" rel="canonical"
+href="https://misk786786.github.io/misk-website/product.html">
 
-
-<meta name="description" content="Discover MISK Fragrances premium fragrance oils. Explore the fragrance details and choose your preferred bottle size.">
 <meta property="og:type" content="product">
 <meta property="og:site_name" content="MISK Fragrances">
-<meta property="og:title" content="Shop Fragrance Oils | MISK Fragrances">
-<meta property="og:description" content="Discover MISK Fragrances premium fragrance oils. Explore the fragrance details and choose your preferred bottle size.">
+<meta property="og:title" content="MISK Fragrances | Premium Fragrance Oils">
+<meta property="og:description" content="Discover premium fragrance oils from MISK Fragrances.">
 <meta property="og:image" content="https://misk786786.github.io/misk-website/3ml%20Perfume%20Bottle%20on%20a%20Sunset%20Shoreline.png">
+<meta property="og:url" content="https://misk786786.github.io/misk-website/product.html" id="ogUrl">
+
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Shop Fragrance Oils | MISK Fragrances">
-<meta name="twitter:description" content="Discover MISK Fragrances premium fragrance oils. Explore the fragrance details and choose your preferred bottle size.">
+<meta name="twitter:title" content="MISK Fragrances | Premium Fragrance Oils">
+<meta name="twitter:description" content="Discover premium fragrance oils from MISK Fragrances.">
 <meta name="twitter:image" content="https://misk786786.github.io/misk-website/3ml%20Perfume%20Bottle%20on%20a%20Sunset%20Shoreline.png">
 
 <link rel="stylesheet" href="style.css">
@@ -91,8 +94,8 @@ Find Your Signature Scent
 
 <img
 id="productImage"
-src="imagesmisk-bottle.jpg.png"
-alt="MISK Fragrance"
+src="3ml Perfume Bottle on a Sunset Shoreline.png"
+alt="MISK Fragrances 3ml perfume bottle"
 class="product-detail-image"
 >
 
@@ -205,6 +208,8 @@ onclick="window.scrollTo({top:0,behavior:'smooth'})">
 
 <script>
 
+/* PRODUCT INFORMATION */
+
 const productData = {
 
 "Royal Oud":
@@ -243,15 +248,11 @@ const productData = {
 };
 
 
-const params =
-    new URLSearchParams(
-        window.location.search
-    );
+/* GET PRODUCT FROM URL */
 
+const params = new URLSearchParams(window.location.search);
 
-const productNameFromURL =
-    params.get("name");
-
+const productNameFromURL = params.get("name");
 
 const productName =
     productNameFromURL &&
@@ -259,6 +260,8 @@ const productName =
         ? productNameFromURL
         : null;
 
+
+/* PAGE ELEMENTS */
 
 const productImage =
     document.getElementById("productImage");
@@ -272,30 +275,67 @@ const heroProductName =
 const productDescription =
     document.getElementById("productDescription");
 
+const productMetaDescription =
+    document.querySelector('meta[name="description"]');
 
-const productMetaDescription = document.querySelector('meta[name="description"]');
-const productCanonical = document.getElementById("productCanonical");
-const productOgTitle = document.querySelector('meta[property="og:title"]');
-const productOgDescription = document.querySelector('meta[property="og:description"]');
-const productTwitterTitle = document.querySelector('meta[name="twitter:title"]');
+const productCanonical =
+    document.getElementById("productCanonical");
+
+const productOgTitle =
+    document.querySelector('meta[property="og:title"]');
+
+const productOgDescription =
+    document.querySelector('meta[property="og:description"]');
+
+const productTwitterTitle =
+    document.querySelector('meta[name="twitter:title"]');
+
+const productTwitterDescription =
+    document.querySelector('meta[name="twitter:description"]');
+
+const ogUrl =
+    document.getElementById("ogUrl");
+
+
+/* UPDATE SEO INFORMATION */
 
 if(productName){
-    const productTitle = productName + " | MISK Fragrances";
-    const productMetaText = productData[productName] + " Shop " + productName + " from MISK Fragrances in 3ml or 5ml.";
+
+    const productTitle =
+        productName + " Fragrance Oil | MISK Fragrances";
+
+    const productMetaText =
+        "Discover " + productName +
+        " by MISK Fragrances. " +
+        productData[productName] +
+        " Available in 3ml and 5ml bottles.";
+
+    const canonicalURL =
+        "https://misk786786.github.io/misk-website/product.html?name=" +
+        encodeURIComponent(productName);
+
     document.title = productTitle;
-    if(productMetaDescription) productMetaDescription.setAttribute("content", productMetaText);
-    if(productCanonical) productCanonical.href = window.location.origin + window.location.pathname + "?name=" + encodeURIComponent(productName);
-    if(productOgTitle) productOgTitle.setAttribute("content", productTitle);
-    if(productOgDescription) productOgDescription.setAttribute("content", productMetaText);
-    if(productTwitterTitle) productTwitterTitle.setAttribute("content", productTitle);
-}else{
-    const robotsMeta = document.createElement("meta");
-    robotsMeta.name = "robots";
-    robotsMeta.content = "noindex,follow";
-    document.head.appendChild(robotsMeta);
-}
 
-if(productName){
+    productMetaDescription.content =
+        productMetaText;
+
+    productCanonical.href =
+        canonicalURL;
+
+    productOgTitle.content =
+        productTitle;
+
+    productOgDescription.content =
+        productMetaText;
+
+    productTwitterTitle.content =
+        productTitle;
+
+    productTwitterDescription.content =
+        productMetaText;
+
+    ogUrl.content =
+        canonicalURL;
 
     productNameElement.textContent =
         productName;
@@ -306,7 +346,75 @@ if(productName){
     productDescription.textContent =
         productData[productName];
 
+
+    /* PRODUCT STRUCTURED DATA */
+
+    const structuredData = {
+
+        "@context": "https://schema.org",
+
+        "@type": "Product",
+
+        "name": productName,
+
+        "description": productData[productName],
+
+        "image": [
+            "https://misk786786.github.io/misk-website/3ml%20Perfume%20Bottle%20on%20a%20Sunset%20Shoreline.png",
+            "https://misk786786.github.io/misk-website/5ml%20Perfume%20Bottle%20on%20a%20Sunset%20Shoreline.png"
+        ],
+
+        "brand": {
+            "@type": "Brand",
+            "name": "MISK Fragrances"
+        },
+
+        "offers": [
+
+            {
+                "@type": "Offer",
+                "name": "3ml",
+                "price": "4",
+                "priceCurrency": "GBP",
+                "url": canonicalURL
+            },
+
+            {
+                "@type": "Offer",
+                "name": "5ml",
+                "price": "5",
+                "priceCurrency": "GBP",
+                "url": canonicalURL
+            }
+
+        ]
+
+    };
+
+    const schemaScript =
+        document.createElement("script");
+
+    schemaScript.type =
+        "application/ld+json";
+
+    schemaScript.textContent =
+        JSON.stringify(structuredData);
+
+    document.head.appendChild(schemaScript);
+
+
 }else{
+
+    const robotsMeta =
+        document.createElement("meta");
+
+    robotsMeta.name =
+        "robots";
+
+    robotsMeta.content =
+        "noindex,follow";
+
+    document.head.appendChild(robotsMeta);
 
     productNameElement.textContent =
         "Product Not Found";
@@ -320,17 +428,17 @@ if(productName){
 }
 
 
+/* SIZE SELECTOR */
+
 const sizeInputs =
     document.querySelectorAll(
         'input[name="size"]'
     );
 
-
 const sizeOptions =
     document.querySelectorAll(
         ".size-option"
     );
-
 
 const priceElement =
     document.getElementById("productPrice");
@@ -346,7 +454,6 @@ function updateSize(){
     if(!selected){
         return;
     }
-
 
     const price =
         selected.dataset.price;
@@ -368,15 +475,23 @@ function updateSize(){
     });
 
 
+    /* UPDATED PRODUCT IMAGES */
+
     if(selected.value === "3ml"){
 
         productImage.src =
-            "bottle1.jpg.jpeg";
+            "3ml Perfume Bottle on a Sunset Shoreline.png";
+
+        productImage.alt =
+            "MISK Fragrances 3ml perfume bottle";
 
     }else{
 
         productImage.src =
-            "bottle2.jpg.jpeg";
+            "5ml Perfume Bottle on a Sunset Shoreline.png";
+
+        productImage.alt =
+            "MISK Fragrances 5ml perfume bottle";
 
     }
 
@@ -445,8 +560,11 @@ function updateCartCount(){
 
 
 loadCart();
+
 updateCartCount();
 
+
+/* ADD TO CART */
 
 document
 .getElementById("addToCart")
@@ -455,24 +573,23 @@ document
     if(!productName){
 
         alert("Product not found.");
+
         return;
 
     }
-
 
     const selected =
         document.querySelector(
             'input[name="size"]:checked'
         );
 
-
     if(!selected){
 
         alert("Please select a size.");
+
         return;
 
     }
-
 
     const size =
         selected.value;
@@ -501,10 +618,13 @@ document
 
         cart.push({
 
-            name:productName,
-            size:size,
-            price:price,
-            quantity:1
+            name: productName,
+
+            size: size,
+
+            price: price,
+
+            quantity: 1
 
         });
 
@@ -512,12 +632,12 @@ document
 
 
     saveCart();
+
     updateCartCount();
 
 
     const button =
         document.getElementById("addToCart");
-
 
     button.textContent =
         "✓ Added to Cart";
@@ -533,9 +653,12 @@ document
 });
 
 
+/* KEEP CART COUNT UPDATED */
+
 window.addEventListener("storage",function(){
 
     loadCart();
+
     updateCartCount();
 
 });
@@ -546,12 +669,15 @@ document.addEventListener("visibilitychange",function(){
     if(!document.hidden){
 
         loadCart();
+
         updateCartCount();
 
     }
 
 });
 
+
+/* BACK TO TOP */
 
 const backToTop =
     document.getElementById("backToTop");
