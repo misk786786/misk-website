@@ -1,0 +1,572 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>MISK Fragrances | Premium Fragrance Oils</title>
+<link id="productCanonical" rel="canonical" href="https://misk786786.github.io/misk-website/product.html">
+
+
+
+
+<meta name="description" content="Discover MISK Fragrances premium fragrance oils. Explore the fragrance details and choose your preferred bottle size.">
+<meta property="og:type" content="product">
+<meta property="og:site_name" content="MISK Fragrances">
+<meta property="og:title" content="Shop Fragrance Oils | MISK Fragrances">
+<meta property="og:description" content="Discover MISK Fragrances premium fragrance oils. Explore the fragrance details and choose your preferred bottle size.">
+<meta property="og:image" content="https://misk786786.github.io/misk-website/3ml%20Perfume%20Bottle%20on%20a%20Sunset%20Shoreline.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Shop Fragrance Oils | MISK Fragrances">
+<meta name="twitter:description" content="Discover MISK Fragrances premium fragrance oils. Explore the fragrance details and choose your preferred bottle size.">
+<meta name="twitter:image" content="https://misk786786.github.io/misk-website/3ml%20Perfume%20Bottle%20on%20a%20Sunset%20Shoreline.png">
+
+<link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+<header>
+
+<nav class="navbar">
+
+<a href="index.html" class="logo">MISK</a>
+
+<div class="nav-links">
+
+<a href="index.html">Home</a>
+<a href="about.html">About</a>
+<a href="collection.html">Collection</a>
+<a href="shop.html" class="active">Shop</a>
+<a href="reviews.html">Reviews</a>
+<a href="contact.html">Contact</a>
+
+<a href="cart.html" class="cart-link">
+🛒 Cart
+<span class="cart-count" id="cartCount">0</span>
+</a>
+
+</div>
+
+</nav>
+
+</header>
+
+
+<section class="page-hero">
+
+<div class="hero-content">
+
+<p class="hero-small">
+MISK FRAGRANCES
+</p>
+
+<h1 id="heroProductName">
+Our Fragrance
+</h1>
+
+<div class="gold-line"></div>
+
+<p class="hero-tagline">
+Find Your Signature Scent
+</p>
+
+</div>
+
+</section>
+
+
+<main class="product-page">
+
+<a href="shop.html" class="product-back">
+← Back to Shop
+</a>
+
+
+<div class="product-detail">
+
+<div>
+
+<img
+id="productImage"
+src="imagesmisk-bottle.jpg.png"
+alt="MISK Fragrance"
+class="product-detail-image"
+>
+
+</div>
+
+
+<div class="product-info">
+
+<h1 id="productName">
+MISK Fragrance
+</h1>
+
+<p id="productDescription">
+Discover a beautiful MISK fragrance created to leave
+a lasting impression.
+</p>
+
+
+<h3>
+Choose Your Size
+</h3>
+
+
+<div class="size-selector">
+
+<label class="size-option active">
+
+<input
+type="radio"
+name="size"
+value="3ml"
+data-price="4"
+checked
+>
+
+3ml - £4
+
+</label>
+
+
+<label class="size-option">
+
+<input
+type="radio"
+name="size"
+value="5ml"
+data-price="5"
+>
+
+5ml - £5
+
+</label>
+
+</div>
+
+
+<div class="product-price" id="productPrice">
+£4
+</div>
+
+
+<button
+id="addToCart"
+class="btn btn-primary">
+Add to Cart
+</button>
+
+</div>
+
+</div>
+
+</main>
+
+
+<footer>
+
+<div class="footer-brand">
+MISK
+</div>
+
+<p class="footer-text">
+Premium fragrance oils crafted for a lasting impression.
+</p>
+
+<div class="footer-links">
+
+<a href="index.html">Home</a>
+<a href="about.html">About</a>
+<a href="collection.html">Collection</a>
+<a href="shop.html">Shop</a>
+<a href="reviews.html">Reviews</a>
+<a href="contact.html">Contact</a>
+
+</div>
+
+<p>
+© 2026 MISK Fragrances. All Rights Reserved.
+</p>
+
+</footer>
+
+
+<button
+id="backToTop"
+aria-label="Back to top"
+onclick="window.scrollTo({top:0,behavior:'smooth'})">
+↑
+</button>
+
+
+<script>
+
+const productData = {
+
+"Royal Oud":
+"Rich woody oud with warm oriental notes for a bold and timeless fragrance.",
+
+"MISK Noir":
+"A luxurious dark blend of rich florals, woods and amber for elegant evenings.",
+
+"Imperial Musk":
+"A smooth white musk with clean, soft and long-lasting elegance.",
+
+"Signature Homme":
+"A refined masculine blend with fresh citrus, woods and amber.",
+
+"Signature Femme":
+"An elegant feminine fragrance with soft floral notes, delicate sweetness and a sophisticated finish.",
+
+"Rose Prestige":
+"A luxurious rose fragrance enriched with soft musk and warm amber.",
+
+"Legacy":
+"A modern, sophisticated fragrance combining fresh notes with smooth woods.",
+
+"Obsidian":
+"A deep, smoky blend with dark woods and a mysterious oriental finish.",
+
+"MISK Royale":
+"An elegant Middle Eastern-inspired fragrance featuring rich oud, musk and warm oriental notes.",
+
+"Fruity Oud":
+"A vibrant fruity blend balanced with rich oud for a sweet and luxurious finish.",
+
+"Fruity Femme":
+"A bright and fruity fragrance created with a soft, elegant and feminine character."
+
+};
+
+
+const params =
+    new URLSearchParams(
+        window.location.search
+    );
+
+
+const productNameFromURL =
+    params.get("name");
+
+
+const productName =
+    productNameFromURL &&
+    productData[productNameFromURL]
+        ? productNameFromURL
+        : null;
+
+
+const productImage =
+    document.getElementById("productImage");
+
+const productNameElement =
+    document.getElementById("productName");
+
+const heroProductName =
+    document.getElementById("heroProductName");
+
+const productDescription =
+    document.getElementById("productDescription");
+
+
+const productMetaDescription = document.querySelector('meta[name="description"]');
+const productCanonical = document.getElementById("productCanonical");
+const productOgTitle = document.querySelector('meta[property="og:title"]');
+const productOgDescription = document.querySelector('meta[property="og:description"]');
+const productTwitterTitle = document.querySelector('meta[name="twitter:title"]');
+
+if(productName){
+    const productTitle = productName + " | MISK Fragrances";
+    const productMetaText = productData[productName] + " Shop " + productName + " from MISK Fragrances in 3ml or 5ml.";
+    document.title = productTitle;
+    if(productMetaDescription) productMetaDescription.setAttribute("content", productMetaText);
+    if(productCanonical) productCanonical.href = window.location.origin + window.location.pathname + "?name=" + encodeURIComponent(productName);
+    if(productOgTitle) productOgTitle.setAttribute("content", productTitle);
+    if(productOgDescription) productOgDescription.setAttribute("content", productMetaText);
+    if(productTwitterTitle) productTwitterTitle.setAttribute("content", productTitle);
+}else{
+    const robotsMeta = document.createElement("meta");
+    robotsMeta.name = "robots";
+    robotsMeta.content = "noindex,follow";
+    document.head.appendChild(robotsMeta);
+}
+
+if(productName){
+
+    productNameElement.textContent =
+        productName;
+
+    heroProductName.textContent =
+        productName;
+
+    productDescription.textContent =
+        productData[productName];
+
+}else{
+
+    productNameElement.textContent =
+        "Product Not Found";
+
+    heroProductName.textContent =
+        "Product Not Found";
+
+    productDescription.textContent =
+        "The fragrance you are looking for could not be found.";
+
+}
+
+
+const sizeInputs =
+    document.querySelectorAll(
+        'input[name="size"]'
+    );
+
+
+const sizeOptions =
+    document.querySelectorAll(
+        ".size-option"
+    );
+
+
+const priceElement =
+    document.getElementById("productPrice");
+
+
+function updateSize(){
+
+    const selected =
+        document.querySelector(
+            'input[name="size"]:checked'
+        );
+
+    if(!selected){
+        return;
+    }
+
+
+    const price =
+        selected.dataset.price;
+
+    priceElement.textContent =
+        "£" + price;
+
+
+    sizeOptions.forEach(function(option){
+
+        const input =
+            option.querySelector("input");
+
+        option.classList.toggle(
+            "active",
+            input.checked
+        );
+
+    });
+
+
+    if(selected.value === "3ml"){
+
+        productImage.src =
+            "bottle1.jpg.jpeg";
+
+    }else{
+
+        productImage.src =
+            "bottle2.jpg.jpeg";
+
+    }
+
+}
+
+
+sizeInputs.forEach(function(input){
+
+    input.addEventListener(
+        "change",
+        updateSize
+    );
+
+});
+
+
+updateSize();
+
+
+/* CART */
+
+let cart = [];
+
+
+function loadCart(){
+
+    try{
+
+        cart =
+            JSON.parse(
+                localStorage.getItem("miskCart")
+            ) || [];
+
+    }catch(error){
+
+        cart = [];
+
+    }
+
+}
+
+
+function saveCart(){
+
+    localStorage.setItem(
+        "miskCart",
+        JSON.stringify(cart)
+    );
+
+}
+
+
+function updateCartCount(){
+
+    const total =
+        cart.reduce(
+            (sum,item) =>
+            sum + Number(item.quantity || 0),
+            0
+        );
+
+    document.getElementById("cartCount").textContent =
+        total;
+
+}
+
+
+loadCart();
+updateCartCount();
+
+
+document
+.getElementById("addToCart")
+.addEventListener("click",function(){
+
+    if(!productName){
+
+        alert("Product not found.");
+        return;
+
+    }
+
+
+    const selected =
+        document.querySelector(
+            'input[name="size"]:checked'
+        );
+
+
+    if(!selected){
+
+        alert("Please select a size.");
+        return;
+
+    }
+
+
+    const size =
+        selected.value;
+
+    const price =
+        Number(selected.dataset.price);
+
+
+    const existing =
+        cart.find(function(item){
+
+            return (
+                item.name === productName &&
+                item.size === size
+            );
+
+        });
+
+
+    if(existing){
+
+        existing.quantity =
+            Number(existing.quantity || 0) + 1;
+
+    }else{
+
+        cart.push({
+
+            name:productName,
+            size:size,
+            price:price,
+            quantity:1
+
+        });
+
+    }
+
+
+    saveCart();
+    updateCartCount();
+
+
+    const button =
+        document.getElementById("addToCart");
+
+
+    button.textContent =
+        "✓ Added to Cart";
+
+
+    setTimeout(function(){
+
+        button.textContent =
+            "Add to Cart";
+
+    },1500);
+
+});
+
+
+window.addEventListener("storage",function(){
+
+    loadCart();
+    updateCartCount();
+
+});
+
+
+document.addEventListener("visibilitychange",function(){
+
+    if(!document.hidden){
+
+        loadCart();
+        updateCartCount();
+
+    }
+
+});
+
+
+const backToTop =
+    document.getElementById("backToTop");
+
+
+window.addEventListener("scroll",function(){
+
+    backToTop.classList.toggle(
+        "show",
+        window.scrollY > 400
+    );
+
+});
+
+</script>
+
+</body>
+</html>

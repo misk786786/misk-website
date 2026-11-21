@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Shop Everything - MISK Fragrances | Premium Fragrance Oils</title>
+
+<meta name="description" content="Shop MISK Fragrances premium fragrance oils, including oud, musk, floral, fruity and signature scents. Find your next favourite fragrance.">
+
+<link rel="canonical" href="https://misk786786.github.io/misk-website/shop.html">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="MISK Fragrances">
+<meta property="og:title" content="Shop Premium Fragrance Oils | MISK Fragrances">
+<meta property="og:description" content="Shop MISK Fragrances premium fragrance oils, including oud, musk, floral, fruity and signature scents. Find your next favourite fragrance.">
+<meta property="og:url" content="https://misk786786.github.io/misk-website/shop.html">
+<meta property="og:image" content="https://misk786786.github.io/misk-website/3ml%20Perfume%20Bottle%20on%20a%20Sunset%20Shoreline.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Shop Premium Fragrance Oils | MISK Fragrances">
+<meta name="twitter:description" content="Shop MISK Fragrances premium fragrance oils, including oud, musk, floral, fruity and signature scents. Find your next favourite fragrance.">
+<meta name="twitter:image" content="https://misk786786.github.io/misk-website/3ml%20Perfume%20Bottle%20on%20a%20Sunset%20Shoreline.png">
+
+
+<link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+<header>
+
+<nav class="navbar">
+
+<a href="index.html" class="logo">MISK</a>
+
+<div class="nav-links">
+
+<a href="index.html">Home</a>
+<a href="about.html">About</a>
+<a href="collection.html">Collection</a>
+<a href="shop.html" class="active">Shop</a>
+<a href="reviews.html">Reviews</a>
+<a href="contact.html">Contact</a>
+
+<a href="cart.html" class="cart-link">
+🛒 Cart
+<span class="cart-count" id="cartCount">0</span>
+</a>
+
+</div>
+
+</nav>
+
+</header>
+
+
+<section class="page-hero">
+
+<div class="hero-content">
+
+<p class="hero-small">
+THE COMPLETE MISK COLLECTION
+</p>
+
+<h1>Shop Everything</h1>
+
+<div class="gold-line"></div>
+
+<p class="hero-tagline">
+Find Your Signature Scent
+</p>
+
+</div>
+
+</section>
+
+
+<section class="section">
+
+<h2 class="section-title">
+Shop All Fragrances
+</h2>
+
+<p class="section-intro">
+Explore the complete MISK Fragrances collection,
+including rich oud, smooth musk, floral fragrances,
+fresh signature blends and our fruity scents.
+</p>
+
+
+<div class="product-grid" id="productGrid"></div>
+
+</section>
+
+
+<section class="cta">
+
+<h2>
+Your Next Signature Scent
+</h2>
+
+<p>
+Find your favourite MISK fragrance, add it to your cart
+and make it part of your collection.
+</p>
+
+<a href="cart.html" class="btn btn-primary">
+View Cart
+</a>
+
+</section>
+
+
+<footer>
+
+<div class="footer-brand">
+MISK
+</div>
+
+<p class="footer-text">
+Premium fragrance oils crafted for a lasting impression.
+</p>
+
+<div class="footer-links">
+
+<a href="index.html">Home</a>
+<a href="about.html">About</a>
+<a href="collection.html">Collection</a>
+<a href="shop.html">Shop</a>
+<a href="reviews.html">Reviews</a>
+<a href="contact.html">Contact</a>
+
+</div>
+
+<p>
+© 2026 MISK Fragrances. All Rights Reserved.
+</p>
+
+</footer>
+
+
+<button
+id="backToTop"
+aria-label="Back to top"
+onclick="window.scrollTo({top:0,behavior:'smooth'})">
+↑
+</button>
+
+
+<script>
+
+/* ================= PRODUCTS ================= */
+
+const products = [
+
+{
+name:"Royal Oud",
+description:"Rich woody oud with warm oriental notes for a bold and timeless fragrance."
+},
+
+{
+name:"MISK Noir",
+description:"A luxurious dark blend of rich florals, woods and amber for elegant evenings."
+},
+
+{
+name:"Imperial Musk",
+description:"A smooth white musk with clean, soft and long-lasting elegance."
+},
+
+{
+name:"Signature Homme",
+description:"A refined masculine blend with fresh citrus, woods and amber."
+},
+
+{
+name:"Signature Femme",
+description:"An elegant feminine fragrance with soft floral notes, delicate sweetness and a sophisticated finish."
+},
+
+{
+name:"Rose Prestige",
+description:"A luxurious rose fragrance enriched with soft musk and warm amber."
+},
+
+{
+name:"Legacy",
+description:"A modern, sophisticated fragrance combining fresh notes with smooth woods."
+},
+
+{
+name:"Obsidian",
+description:"A deep, smoky blend with dark woods and a mysterious oriental finish."
+},
+
+{
+name:"MISK Royale",
+description:"An elegant Middle Eastern-inspired fragrance featuring rich oud, musk and warm oriental notes."
+},
+
+{
+name:"Fruity Oud",
+description:"A vibrant fruity blend balanced with rich oud for a sweet and luxurious finish."
+}
+
+];
+
+
+const bottleImage =
+"imagesmisk-bottle.jpg.png";
+
+
+const productGrid =
+document.getElementById("productGrid");
+
+
+products.forEach(function(product){
+
+    const card =
+        document.createElement("a");
+
+    card.href =
+        "product.html?name=" +
+        encodeURIComponent(product.name);
+
+    card.className =
+        "product-card-link";
+
+    card.innerHTML = `
+
+        <div class="product-card">
+
+            <img
+                src="${bottleImage}"
+                alt="${product.name} MISK Fragrance"
+                class="product-image"
+            >
+
+            <h3>
+                ${product.name}
+            </h3>
+
+            <p>
+                ${product.description}
+            </p>
+
+            <div class="product-price-preview">
+                3ml - £4 &nbsp; | &nbsp; 5ml - £5
+            </div>
+
+        </div>
+
+    `;
+
+    productGrid.appendChild(card);
+
+});
+
+
+/* ================= CART ================= */
+
+let cart = [];
+
+
+function loadCart(){
+
+    try{
+
+        cart =
+            JSON.parse(
+                localStorage.getItem("miskCart")
+            ) || [];
+
+    }catch(error){
+
+        cart = [];
+
+    }
+
+}
+
+
+function updateCartCount(){
+
+    const total =
+        cart.reduce(
+            (sum,item) =>
+            sum + Number(item.quantity || 0),
+            0
+        );
+
+    document.getElementById("cartCount").textContent = total;
+
+}
+
+
+loadCart();
+updateCartCount();
+
+
+window.addEventListener("storage",function(){
+
+    loadCart();
+    updateCartCount();
+
+});
+
+
+document.addEventListener("visibilitychange",function(){
+
+    if(!document.hidden){
+
+        loadCart();
+        updateCartCount();
+
+    }
+
+});
+
+
+/* ================= BACK TO TOP ================= */
+
+const backToTop =
+    document.getElementById("backToTop");
+
+
+window.addEventListener("scroll",function(){
+
+    backToTop.classList.toggle(
+        "show",
+        window.scrollY > 400
+    );
+
+});
+
+</script>
+
+</body>
+</html>
